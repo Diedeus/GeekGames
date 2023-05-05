@@ -1,0 +1,518 @@
+@charset "utf-8";
+
+
+header,
+section,
+footer,
+aside,
+nav,
+main,
+article,
+figure {
+    display: block;
+}
+
+div,
+header,
+nav,
+article,
+section,
+aside,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+li,
+figure,
+figcaption,
+class,
+img {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    border: 0 solid transparent;
+    font-size: 16px;
+    margin: 0;
+    min-height: 100%;
+    padding: 0;
+    width: 100%;
+    display: block;
+    font-family: 'montserrat', sans-serif;
+}
+
+// body::-webkit-scrollbar {
+//     background-color: #0e0e0e;
+//     width: 5px;
+// }
+
+// body::-webkit-scrollbar-thumb {
+//     background-color: #4281bb;
+//     height: 150px;
+//     padding-top: 10px;
+// }
+
+img,
+object,
+embed,
+canvas,
+video,
+audio,
+picture {
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+input,
+textarea {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+    border: 0;
+    line-height: 40px;
+    text-indent: 20px;
+    outline: none;
+}
+.clear {
+    display: block;
+    zoom: 1;
+
+    &:after {
+        content: " ";
+        display: block;
+        font-size: 0;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+header#test{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../asset/background-ratchetclank.jpg);
+    background-size: cover;
+    transition: all 0.5s;
+    nav.home{
+        z-index: 1000;
+        float: left;
+        margin-top: 70px;
+        margin-left: 70px;
+        ul{
+            display: flex;
+            li{
+                list-style-type: none;
+                margin-right: 20px;
+                a{
+                    padding: 10px 15px;
+                    color: white;
+                    font-size: 18px;
+                    font-weight: 600;
+                    transition: all 0.5s;
+                    &:hover{
+                        background-color: white;
+                        color: #3c2d87;
+                    }
+                }
+                a.on {
+                    background-color: white;
+                    color: #3c2d87;
+                }
+            }
+        }
+    }
+    div.right{
+        z-index: 1000;
+        margin-top: 65px;
+        margin-right: 115px;
+        margin-bottom: 15px;
+        float: right;
+        display: flex;
+        #searchbar{
+            width:300px ;
+            height: 40px;
+            outline: none;
+            margin: 0;
+        }
+        img{
+            width:40px ;
+            height: 40px;
+            background-color: #3c2d87;
+            padding: 7px;
+            margin-left: 50px;
+        }
+        a.log{
+            color: white;
+            background-color: #3c2d87;
+            line-height: 40px;
+            padding: 0 10px;
+            transition: all 0.5s;
+            &:hover{
+                background-color: #2b2064;
+            }
+        }
+        a.sign{
+            color: white;
+            line-height: 40px;
+            padding: 0 10px;
+            transition: all 0.5s;
+            &:hover{
+                background-color: white;
+                    color: #3c2d87;
+            }
+        }
+    }
+    span.barre{
+        z-index: 1000;
+        display: block;
+        height: 2px;
+        width: 92.5%;
+        background-color: white;
+        margin: 0 auto;
+    }
+    div.rondlogo{
+        height: 500px;
+        margin-left: 35px;
+        margin-bottom: 50px;
+        display: flex;
+        align-items: center;
+        article.span{
+            margin-top: 150px;
+            display: flex;
+            flex-direction: column;
+            margin-right: 60px;
+        span{
+            display: block;
+            height: 23px;
+            width: 23px;
+            border: 2px solid white;
+            border-radius: 50%;
+            margin: 7px 0;
+            transition: all 0.5s;
+        }
+        span.rondun{
+            display: block;
+            height: 23px;
+            width: 23px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 7px 0;
+        }
+    }
+    article.logotexte{
+        padding-top: 70px;
+        img{
+            width: 825px;
+            margin-bottom: 10px;
+        }
+        p{
+        padding-left: 10px;
+        color: white;
+        font-size: 18px;
+        font-weight: 400;
+        }
+    }
+    article.textejeu{
+        display: none;
+        margin-top: 70px;
+        margin-bottom: 18px;
+        h1{
+            font-size: 60px;
+            margin-left: 10px;
+            font-weight: 1000;
+            margin-bottom: 20px;
+            color: white;
+            transition: all 0.5s;
+        }
+        p{
+            transition: all 0.5s;
+            padding-left: 10px;
+            color: white;
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            }
+            a{
+                color: white;
+                padding: 15px 20px;
+                background-color: #130546 ;
+                margin-left: 10px;
+            }
+    }
+    }
+
+    section.minijeu{
+        width: 97%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        div.jeux{
+            display: flex;
+            justify-content: space-between;
+            article{
+                width: 280px;
+                transition: all 0.5s;
+                &:hover{
+                    cursor: pointer;
+                    scale: 1.01;
+                }
+                h2{
+                    text-align: center;
+                    background-color: white;
+                    padding: 5px 0;
+                    font-size: 15px;
+                    font-weight: 800;
+                    color: black;
+                }
+            }
+        }
+    }
+
+}
+
+section.login{
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.858);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div.connexion{
+        background-color: white;
+        width: 550px;
+        height: 540px;
+        padding: 110px 95px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 63px;
+            h2{
+                color: #393795;
+                text-align: center;
+                font-size: 50px;
+                font-weight: 800;
+                margin-bottom: 25px;
+            }
+            input{
+                background-color: #d2d2d2;
+            }
+            input.connecter{
+                text-indent: 0;
+                background-color: #393795;
+                color: white;
+                cursor: pointer;
+                width: 40%;
+                height: 40px;
+                &:hover{
+                    background-color: #2b2064;
+                }
+            }
+            p{
+                font-size: 13px;
+            }
+        }
+        img{
+            width: 110px;
+            margin-bottom: 5px;
+        }
+        p.inscriptionhome{
+            color: #191919;
+            a{
+                color: #393795;
+            }
+        }
+    }
+    img.closelogin{
+        width: 25px;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        cursor: pointer;
+    }
+}
+
+header#inscription{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../asset/background-ratchetclank.jpg);
+    background-size: cover;
+    transition: all 0.5s;
+    section.inscriptiondroite{
+        width: 50%;
+        height: 100vh;
+        float: right;
+        div.droithaut{
+            background-image: url(../asset/backmarioinscription.jpg);
+            height: 65%;
+            background-position: top;
+        }
+        div.droitbas{
+            background-color: white;
+            padding-top: 25px;
+            height: 35%;
+            img{
+                margin: 0 auto 25px;
+                width: 550px
+            }
+            p{
+                color: #3c2d87;
+                text-align: center;
+            }
+        }
+    }
+    section.inscriptiongauche{
+        background-image: url(../asset/backgaucheinscription.jpg);
+        height: 100vh;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        form{
+            display: flex;
+            flex-wrap: wrap;
+            width: 500px;
+            margin-top: 100px;
+            justify-content: space-between;
+            h1{
+                color: white;
+                font-size: 45px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            input.nomprenom{
+                width: 200px;
+            }
+            input.boutonenvoyer{
+                width: 200px;
+                background-color: white;
+                cursor: pointer;
+                color: #3c2d87;
+                padding: 0;
+                transition: all 0.5s;
+                text-indent: 0;
+                &:hover{
+                    color: white;
+                    background-color: #130546;
+                }
+            }
+            p{
+                color: white;
+            }
+        }
+    }
+    div.navinscri{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        nav.home{
+            z-index: 1000;
+            float: left;
+            margin-top: 70px;
+            margin-left: 70px;
+            ul{
+                display: flex;
+                li{
+                    list-style-type: none;
+                    margin-right: 20px;
+                    a{
+                        padding: 10px 15px;
+                        color: white;
+                        font-size: 18px;
+                        font-weight: 600;
+                        transition: all 0.5s;
+                        &:hover{
+                            background-color: white;
+                            color: #3c2d87;
+                        }
+                    }
+                    a.on {
+                        background-color: white;
+                        color: #3c2d87;
+                    }
+                }
+            }
+        }
+        div.right{
+            margin-top: 65px;
+            margin-right: 115px;
+            margin-bottom: 15px;
+            float: right;
+            display: flex;
+            #searchbar{
+                width:300px ;
+                height: 40px;
+                outline: none;
+                margin: 0;
+            }
+            img{
+                width:40px ;
+                height: 40px;
+                background-color: #3c2d87;
+                padding: 7px;
+                margin-left: 50px;
+            }
+            a.log{
+                color: white;
+                background-color: #3c2d87;
+                line-height: 40px;
+                padding: 0 10px;
+                transition: all 0.5s;
+                &:hover{
+                    background-color: #2b2064;
+                }
+            }
+            a.sign{
+                color: white;
+                line-height: 40px;
+                padding: 0 10px;
+                transition: all 0.5s;
+                &:hover{
+                    background-color: white;
+                        color: #3c2d87;
+                }
+            }
+        }
+        span.barre{
+            display: block;
+            height: 2px;
+            width: 92.5%;
+            background-color: white;
+            margin: 0 auto;
+        }
+    }
+}
