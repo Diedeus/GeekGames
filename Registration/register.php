@@ -24,26 +24,33 @@
       <?php
     require('config.php');
 
-    if(isset($_REQUEST["username"],$_REQUEST["email"],$_REQUEST["password"],$_REQUEST["birthday"],$_REQUEST["adresse"])){
+    if(isset($_REQUEST["Nom"],$_REQUEST["Prenom"],$_REQUEST["Nom_utilisateur"],$_REQUEST["Email"],$_REQUEST["Date_de_naissance"],$_REQUEST["adresse"],$_REQUEST["Mot_de_passe"])){
 
+
+        $Nom = stripslashes($_REQUEST["Nom"]);
+        $Nom = mysqli_real_escape_string($conn, $Nom);
+
+        $Prenom = stripslashes($_REQUEST["Prenom"]);
+        $Prenom = mysqli_real_escape_string($conn, $Prenom);
       
-        $username = stripslashes($_REQUEST["username"]);
-        $username = mysqli_real_escape_string($conn, $username);
+        $Nom_utilisateur = stripslashes($_REQUEST["Nom_utilisateur"]);
+        $Nom_utilisateur = mysqli_real_escape_string($conn, $Nom_utilisateur);
 
-        $email =  stripslashes($_REQUEST["email"]);
-        $email = mysqli_real_escape_string($conn, $email);
+        $Email =  stripslashes($_REQUEST["Email"]);
+        $Email = mysqli_real_escape_string($conn, $Email);
 
-        $password = stripslashes($_REQUEST["password"]);
-        $password = mysqli_real_escape_string($conn, $password);
-
-        $birthday = stripslashes($_REQUEST["birthday"]);
-        $birthday = mysqli_real_escape_string($conn, $birthday);
+        $Date_de_naissance = stripslashes($_REQUEST["Date_de_naissance"]);
+        $Date_de_naissance = mysqli_real_escape_string($conn, $Date_de_naissance);
 
         $adresse = stripslashes($_REQUEST["adresse"]);
         $adresse = mysqli_real_escape_string($conn, $adresse);
 
-        $query = "INSERT into `users` (username, email, type, password, birthday, adresse) 
-        VALUES ('$username', '$email', 'user', '".hash('sha256', $password)."','$birthday', '$adresse')";
+        $Mot_de_passe = stripslashes($_REQUEST["Mot_de_passe"]);
+        $Mot_de_passe = mysqli_real_escape_string($conn, $Mot_de_passe);
+
+
+        $query = "INSERT into `users` (Nom, Prenom, Nom_utilisateur, Email, Date_de_naissance, adresse, Mot_de_passe, Admin) 
+        VALUES ('$Nom', '$Prenom', '$Nom_utilisateur','$Email', '$Date_de_naissance', '$adresse', '".hash('sha256', $Mot_de_passe)."', 0)";
     
         $res = mysqli_query($conn, $query);
         if($res){
@@ -57,19 +64,19 @@
       <form class="box" action="" method="post">
         <h1>PAGE D'INSCRIPTION</h1>
 
-        <input type="text" class="nomprenom" name="nom" placeholder="Votre nom :" required />
+        <input type="text" class="nomprenom" name="Nom" placeholder="Votre nom :" required />
 
-        <input type="text" class="nomprenom" name="prenom" placeholder="Votre prenom" required />
+        <input type="text" class="nomprenom" name="Prenom" placeholder="Votre prenom" required />
 
-        <input type="text" class="box-input" name="username" placeholder="Nom d'utilisateur" required />
+        <input type="text" class="box-input" name="Nom_utilisateur" placeholder="Nom d'utilisateur" required />
 
-        <input type="text" class="box-input" name="email" placeholder="Email" required />
+        <input type="text" class="box-input" name="Email" placeholder="Email" required />
 
-        <input type="text" class="box-input" name="birthday" placeholder="Date de naissance" required />
+        <input type="text" class="box-input" name="Date_de_naissance" placeholder="Date de naissance" required />
 
         <input type="text" class="box-input" name="adresse" placeholder="Votre adresse" required />
 
-        <input type="password" class="box-input" name="password" placeholder="Mot de passe" required />
+        <input type="password" class="box-input" name="Mot_de_passe" placeholder="Mot de passe" required />
 
         <input type="submit" name="submit" value="S'inscrire" class="boutonenvoyer" />
 
