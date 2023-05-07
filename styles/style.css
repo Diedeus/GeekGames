@@ -261,7 +261,7 @@ header#test section.minijeu div.jeux article {
 }
 header#test section.minijeu div.jeux article:hover {
   cursor: pointer;
-  scale: 1.01;
+  scale: 1.07;
 }
 header#test section.minijeu div.jeux article h2 {
   text-align: center;
