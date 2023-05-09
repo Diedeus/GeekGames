@@ -15,6 +15,7 @@
 
 <body>
 <?php
+  
   // Initialiser la session
   session_start();
   $id_user = $_SESSION['id_users'];
@@ -25,6 +26,7 @@
     exit(); 
   }
 ?>
+
 
 
 
@@ -44,10 +46,16 @@
 </form>
 <img src="asset/logogeekgame.png" alt="">
 
-        
+
+    
+
+
+
 <?php 
 
 require('../Registration/config.php');
+
+
 
    if(isset($_REQUEST["Intitule_question"],$_REQUEST["Reponse_A"],$_REQUEST["Reponse_B"],$_REQUEST["Reponse_C"],$_REQUEST["Reponse_D"],$_REQUEST["Reponse_Quizz"],$_REQUEST["Difficulte_question"])){
     
@@ -85,7 +93,62 @@ require('../Registration/config.php');
     echo "<p>Erreur<\p>";
    }}       
 ?>
+<table>
+    <tr>
+        <td>id_question</td>
+        <td>Intitule_question</td>
+        <td>Reponse_A</td>
+        <td>Reponse_B</td>
+        <td>Reponse_C</td>
+        <td>Reponse_D</td>
+        <td>Reponse_Quizz</td>
+        <td>Difficulte_question</td>
+    </tr>
+<?php 
+if ($conn->connect_error) {
+        echo "Impossible de se connecter à MySQL: " . $conn->connect_error;
+        exit();
+      }
 
+    $sql = "SELECT * FROM Jeu_Quizz ORDER BY id_question";
+    $reponse = mysqli_query($conn, $sql);
+    while($donnees = mysqli_fetch_array($reponse, MYSQLI_ASSOC))
+    {
+    ?>
+    <tr>
+      <td><?php echo $donnees["id_question"];?></td>
+      <td><?php echo $donnees['Intitule_question'];?></td>
+      <td><?php echo $donnees['Reponse_A'];?></td>
+      <td><?php echo $donnees['Reponse_B'];?></td>
+      <td><?php echo $donnees['Reponse_C'];?></td>
+      <td><?php echo $donnees['Reponse_D'];?></td>
+      <td><?php echo $donnees['Reponse_Quizz'];?></td>
+      <td><?php echo $donnees['Difficulte_question'];?></td>
+    </tr>
+    <?php
+    }
+  
+    ?>
+ </table>
+ 
+ <form class="box" action="" method="post" name="Jeu_Quizz">
+<h2 class="box-title">Suppression des questions</h2>
+<input type="text" class="box-input" name="id_question" placeholder="Quelle ligne est à supprimer">
+<input type="submit" value="Supprimer" name="submit" class="connecter">
+</form>
+  
 
+<?php
+
+if(isset($_REQUEST["id_question"])){
+
+    $id_question = stripslashes($_REQUEST["id_question"]);
+    $id_question = mysqli_real_escape_string($conn, $id_question);
+
+    $query = "DELETE FROM `Jeu_Quizz`  WHERE id_question = $id_question";
+    $reponse2 = mysqli_query($conn, $query);
+}
+
+?>
 
 </body>
