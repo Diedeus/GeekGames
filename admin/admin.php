@@ -10,6 +10,7 @@
     <title>GeekGames - Home</title>
     <link rel="stylesheet" href="../styles/style.css">
     <script src="../script/script.js" defer></script>
+    
 
 </head>
 
@@ -151,4 +152,48 @@ if(isset($_REQUEST["id_question"])){
 
 ?>
 
+<form class="box" action="" method="post" name="Jeu_Quizz">
+<h2 class="box-title">Mise à jour des questions</h2>
+<input type="text" class="box-input" name="id_question2" placeholder="Quelle ligne est à mettre à jour">
+<input type="submit" value="Sélectionnez" name="submit" class="connecter">
+</form>
+
+
+<?php
+
+if(isset($_REQUEST["id_question2"])){
+  echo '<br>';
+  
+
+  $id_question2 = $_REQUEST["id_question2"];
+  $id_question2 = mysqli_real_escape_string($conn, $id_question2);
+  $res = (int) $id_question2;
+
+  echo '<br>';
+ 
+  // $query2 = "SELECT * FROM `Jeu_Quizz`  WHERE id_question = $res";
+  // $reponse3 = mysqli_real_query($conn, $query2);
+  $result = $conn->query("SELECT * FROM `Jeu_Quizz` WHERE id_question = $res");
+
+
+
+ $donnees2 = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+ if(isset($donnees2)&& count($donnees2)> 0){
+ 
+ echo $donnees2["Intitule_question"]; echo '<br>';
+ echo $donnees2["Reponse_A"]; echo '<br>';
+ echo $donnees2["Reponse_B"]; echo '<br>';
+ echo $donnees2["Reponse_C"]; echo '<br>';
+ echo $donnees2["Reponse_D"]; echo '<br>';
+ echo $donnees2["Reponse_Quizz"]; echo '<br>';
+ echo $donnees2["Difficulte_question"]; echo '<br>';
+
+}
+}
+
+
+
+
+?>
 </body>
