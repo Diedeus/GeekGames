@@ -178,22 +178,46 @@ if(isset($_REQUEST["id_question2"])){
 
 
  $donnees2 = mysqli_fetch_array($result, MYSQLI_ASSOC);
+}
 
- if(isset($donnees2)&& count($donnees2)> 0){
+if(isset($donnees2) && count($donnees2) > 0 || isset($_POST['save2D'])){
  
- echo $donnees2["Intitule_question"]; echo '<br>';
- echo $donnees2["Reponse_A"]; echo '<br>';
- echo $donnees2["Reponse_B"]; echo '<br>';
- echo $donnees2["Reponse_C"]; echo '<br>';
- echo $donnees2["Reponse_D"]; echo '<br>';
- echo $donnees2["Reponse_Quizz"]; echo '<br>';
- echo $donnees2["Difficulte_question"]; echo '<br>';
+  $idselect = (isset($donnees2["id_question"]) && count($donnees2) > 0)? $donnees2["id_question"]:$_POST['saveID'];
+  $intitule = (isset($donnees2["Intitule_question"]) && count($donnees2) > 0)? $donnees2["Intitule_question"]:$_POST['save2D']; 
+  echo $intitule;
+  echo '<br>';
+  echo '<form method="post" action="#" name="Jeu_Quizz">';
+  echo '<input type="text" name="majIntitule">';
+  echo '<input type="text" name="save2D" value="'.$intitule.'">';
+  echo '<input type="text" name="saveID" value="'.$idselect.'">';
+  echo '<input type="submit" name="submit2" value="modifier" class="connecter"></form>';
+  echo '<br>';
+  var_dump($idselect);
+
+
+  if(isset($_POST["majIntitule"])){
+    var_dump($idselect);
+    $majIntitule = $_POST["majIntitule"];
+    $majIntitule = mysqli_real_escape_string($conn, $majIntitule);
+    // $query = "UPDATE `Jeu_Quizz` SET Intitule_question = '$majIntitule' WHERE id_question = $idselect";
+    // $reponse4 = mysqli_query($conn, $query);
+    $reponse4 = $conn->query("UPDATE `Jeu_Quizz` SET `Intitule_question` = '".$majIntitule."' WHERE id_question = '".$idselect."'");
+  }
+  // echo $donnees2["Reponse_A"]; echo '<br>';
+  // echo $donnees2["Reponse_B"]; echo '<br>';
+  // echo $donnees2["Reponse_C"]; echo '<br>';
+  // echo $donnees2["Reponse_D"]; echo '<br>';
+  // echo $donnees2["Reponse_Quizz"]; echo '<br>';
+  // echo $donnees2["Difficulte_question"]; echo '<br>';
+  
 
 }
-}
-
-
 
 
 ?>
+
+
+
+
+
 </body>
