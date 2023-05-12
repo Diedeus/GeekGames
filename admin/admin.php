@@ -57,7 +57,7 @@ require('../Registration/config.php');
    if(isset($_REQUEST["Intitule_question"],$_REQUEST["Reponse_A"],$_REQUEST["Reponse_B"],$_REQUEST["Reponse_C"],$_REQUEST["Reponse_D"],$_REQUEST["Reponse_Quizz"],$_REQUEST["Difficulte_question"])){
     
 
-    // On supprime les caractères d'échappement des variables avec la fonction "stripslashes() et on empêche les injections SQL avec la fonction "mysqli_real_escape_string"
+    //! On supprime les caractères d'échappement des variables avec la fonction "stripslashes() et on empêche les injections SQL avec la fonction "mysqli_real_escape_string"
     $Intitule_question = stripslashes($_REQUEST["Intitule_question"]);
     $Intitule_question = mysqli_real_escape_string($conn, $Intitule_question);
 
@@ -80,11 +80,11 @@ require('../Registration/config.php');
     $Difficulte_question = mysqli_real_escape_string($conn, $Difficulte_question);
 
 
-    // On créer une requete SQL  pour faire une insertion des données recuperé dans notre formulaire
+    //todo On créer une requete SQL  pour faire une insertion des données recuperé dans notre formulaire
     $query = "INSERT into `jeu_quizz` (Intitule_question, Reponse_A, Reponse_B, Reponse_C, Reponse_D, Reponse_Quizz, Difficulte_question) 
     VALUES ('$Intitule_question', '$Reponse_A', '$Reponse_B','$Reponse_C', '$Reponse_D', '$Reponse_Quizz', '$Difficulte_question')";
 
-// On exécute la requête avec la fonction "mysqli_query()
+//todo On exécute la requête avec la fonction "mysqli_query()
     $res = mysqli_query($conn, $query);
 
 
@@ -96,11 +96,11 @@ require('../Registration/config.php');
    } else {
     echo "<p>Erreur<\p>";
    }}       
-?>
-<!-- FIN CREATION DE QUESTION -->
+// ?>
+//!  <!-- FIN CREATION DE QUESTION -->
 
 
-<!-- Création d'un tableau HTML -->
+//! <!-- Création d'un tableau HTML -->
   <table>
     <tr>
       <td>id_question</td>
@@ -114,24 +114,24 @@ require('../Registration/config.php');
     </tr>
     <?php 
 
-    // Si la connexion à la DB ne se fais alors il y a un message d'erreur 
+    //todo Si la connexion à la DB ne se fais alors il y a un message d'erreur 
 if ($conn->connect_error) {
         echo "Impossible de se connecter à MySQL: " . $conn->connect_error;
         exit();
       }
 
-      // On sélectionne toutes les colonnes de la table "Jeu_Quizz grace a la requete SQL
+      //todo On sélectionne toutes les colonnes de la table "Jeu_Quizz grace a la requete SQL
     $sql = "SELECT * FROM Jeu_Quizz ORDER BY id_question";
 
-    // On exécute la requête et renvoie le résultat dans un objet
+    //todo On exécute la requête et renvoie le résultat dans un objet
     $reponse = mysqli_query($conn, $sql);
 
-    // La boucle permet de parcourir chaque ligne du résultat et de stocker les données de chaque colonne dans un tableau
+    //todo La boucle permet de parcourir chaque ligne du résultat et de stocker les données de chaque colonne dans un tableau
     while($donnees = mysqli_fetch_array($reponse, MYSQLI_ASSOC))
     {
     ?>
 
-<!-- chaque valeur du tableau est affichée dans une cellule du tableau -->
+//! <!-- chaque valeur du tableau est affichée dans une cellule du tableau -->
     <tr>
       <td><?php echo $donnees["id_question"];?></td>
       <td><?php echo $donnees['Intitule_question'];?></td>
@@ -147,10 +147,10 @@ if ($conn->connect_error) {
   
     ?>
   </table>
-<!-- Fin du tableau -->
+//! <!-- Fin du tableau -->
 
 
-<!-- Formulaire pour supprimer les questions -->
+//! <!-- Formulaire pour supprimer les questions -->
   <form class="box" action="" method="post" name="Jeu_Quizz">
     <h2 class="box-title">Suppression des questions</h2>
     <input type="text" class="box-input" name="id_question" placeholder="Quelle ligne est à supprimer">
@@ -159,23 +159,23 @@ if ($conn->connect_error) {
 
   <?php
 
-// on vérifie si le champ "id_question" est défini 
+//todo on vérifie si le champ "id_question" est défini 
 if(isset($_REQUEST["id_question"])){
 
-  // on récupère la valeur de ce champ et on empeche les injections SQL
+  //todo on récupère la valeur de ce champ et on empeche les injections SQL
     $id_question = stripslashes($_REQUEST["id_question"]);
     $id_question = mysqli_real_escape_string($conn, $id_question);
 
     $query = "DELETE FROM `Jeu_Quizz`  WHERE id_question = $id_question";
 
-    // on exécute une requête de suppression sur la base de données, On supprime la ligne correspondant à l'ID de la question spécifié dans le champ de texte.
+    //todo on exécute une requête de suppression sur la base de données, On supprime la ligne correspondant à l'ID de la question spécifié dans le champ de texte.
     $reponse2 = mysqli_query($conn, $query);
 }
 ?>
-<!-- Fin du formulaire de suppression -->
+//! <!-- Fin du formulaire de suppression -->
 
 
-<!-- Formulaire UPDATE des questions qui demande l'identifiant de la question à mettre à jour -->
+//!<!-- Formulaire UPDATE des questions qui demande l'identifiant de la question à mettre à jour -->
   <form class="box" action="" method="post" name="Jeu_Quizz">
     <h2 class="box-title">Mise à jour des questions</h2>
     <input type="text" class="box-input" name="id_question2" placeholder="Quelle ligne est à mettre à jour">
@@ -188,20 +188,20 @@ if(isset($_REQUEST["id_question"])){
 if(isset($_REQUEST["id_question2"])){
   echo '<br>';
   
-// On nettoie le code et on empeche l'injection de SQL 
+//todo On nettoie le code et on empeche l'injection de SQL 
   $id_question2 = $_REQUEST["id_question2"];
   $id_question2 = mysqli_real_escape_string($conn, $id_question2);
 
-  // On convertit l'identifiant en integer avec la fonction (int)
+  //todo On convertit l'identifiant en integer avec la fonction (int)
   $res = (int) $id_question2;
 
   echo '<br>';
  
-  // $query2 = "SELECT * FROM `Jeu_Quizz`  WHERE id_question = $res";
-  // $reponse3 = mysqli_real_query($conn, $query2);
+  //* $query2 = "SELECT * FROM `Jeu_Quizz`  WHERE id_question = $res";
+  //* $reponse3 = mysqli_real_query($conn, $query2);
 
   
-  //  On sélectionne toutes les données de la table
+  //todo  On sélectionne toutes les données de la table
   $result = $conn->query("SELECT * FROM `Jeu_Quizz` WHERE id_question = $res");
 
 
@@ -232,12 +232,33 @@ if(isset($donnees2) && count($donnees2) > 0 || isset($_POST['save2D'])){
     // $reponse4 = mysqli_query($conn, $query);
     $reponse4 = $conn->query("UPDATE `Jeu_Quizz` SET `Intitule_question` = '".$majIntitule."' WHERE id_question = '".$idselect."'");
   }
-  // echo $donnees2["Reponse_A"]; echo '<br>';
-  // echo $donnees2["Reponse_B"]; echo '<br>';
-  // echo $donnees2["Reponse_C"]; echo '<br>';
-  // echo $donnees2["Reponse_D"]; echo '<br>';
-  // echo $donnees2["Reponse_Quizz"]; echo '<br>';
-  // echo $donnees2["Difficulte_question"]; echo '<br>';
+  
+
+  echo $donnees2["Reponse_A"]; echo '<br>';
+
+  $ReponseA= (isset($donnees2["Reponse_A"]) && count($donnees2) > 0)? $donnees2["Reponse_A"]:$_POST['saveRA']; 
+  echo '<br>';
+  echo '<form method="post" action="#" name="Jeu_Quizz">';
+  echo '<input type="text" name="majReponseA">';
+  echo '<input type="text" name="saveRa" value="'.$ReponseA.'">';
+  echo '<input type="text" name="saveID" value="'.$idselect.'">';
+  echo '<input type="submit" name="submit3" value="modifier" class="connecter"></form>';
+  echo '<br>';
+
+  if(isset($_POST["majReponseA"])){
+    var_dump($idselect);
+    $majReponseA = $_POST["majReponseA"];
+    $majReponseA = mysqli_real_escape_string($conn, $majReponseA);
+    // $query = "UPDATE `Jeu_Quizz` SET Intitule_question = '$majIntitule' WHERE id_question = $idselect";
+    // $reponse4 = mysqli_query($conn, $query);
+    $reponse5 = $conn->query("UPDATE `Jeu_Quizz` SET `Reponse_A` = '".$majReponseA."' WHERE id_question = '".$idselect."'");
+  }
+
+  echo $donnees2["Reponse_B"]; echo '<br>';
+  echo $donnees2["Reponse_C"]; echo '<br>';
+  echo $donnees2["Reponse_D"]; echo '<br>';
+  echo $donnees2["Reponse_Quizz"]; echo '<br>';
+  echo $donnees2["Difficulte_question"]; echo '<br>';
   
 
 }
