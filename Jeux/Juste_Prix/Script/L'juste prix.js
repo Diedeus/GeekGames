@@ -30,6 +30,7 @@ submit.addEventListener("click", function(e){
     if(valeur < x) {
         
         newp.textContent = "Votre réponse est en dessous du résultat attendu ==>" + valeur 
+        newp.style.backgroundColor="#ff0000"
         y = x - valeur;
         console.log(y)
         barrechofroi (y)
@@ -38,12 +39,14 @@ submit.addEventListener("click", function(e){
     } else if (valeur > x) {
         
         newp.textContent = "votre réponse est au dessus du résultat attendu ==>" + valeur
+        newp.style.backgroundColor="#ff8400"
         y = Math.abs( x - valeur );
         barrechofroi (y)
 
     } else if ( valeur === x) {
        
        newp.textContent = "WOW gg bro, tu as trouver la réponse ==>" + valeur
+       newp.style.backgroundColor="#20de06"
        y = x - valeur;
        barrechofroi (y)
        
@@ -59,28 +62,29 @@ let a = document.querySelector('#tou')
 
 function barrechofroi(y) {
 console.log("fonction",y)
-if(1 <= y && y < 5) {
-        a.style.height = "180px";
-        a.style.width = "40px";
-        a.style.backgroundColor = "red";
+if(1 <= y && y < 5 || 1 > y && y >=5) {
+        a.style.width = "80%";
+        a.style.backgroundColor = "#ff8400";
+        
 
-} else if ( 5 <= y && y < 10) {
-        a.style.height = "140px";
-        a.style.width = "40px";
-        a.style.backgroundColor = "orange";
 
-} else if ( 10 <= y && y < 15) {
-        a.style.height = "100px";
-        a.style.width = "40px";
-        a.style.backgroundColor = "yellow"
-} else if ( 15 <= y && y < 20) {
-        a.style.height = "50px"
-        a.style.witdh = "40px"
-        a.style.backgroundColor = "blue"
+} else if ( 5 <= y && y < 10 || 5> y && y >=10) {
+        a.style.width = "60%";
+        a.style.backgroundColor = "#ffd800";
+
+
+} else if ( 10 <= y && y < 15 || 10 > y && y >=15) {
+        a.style.width = "40%";
+        a.style.backgroundColor = "#20de06";
+
+} else if ( 15 <= y && y < 20 || 15> y && y >= 20) {
+        a.style.width = "20%";
+        a.style.backgroundColor = "#068ade";
+
 } else if ( y === 0 ) {
-        a.style.height = "200px"
-        a.style.width = "40px"
-        a.style.backgroundColor = "red"
+        a.style.width = "100%";
+        a.style.backgroundColor = "#ff0000";
+
 
 } }
 
