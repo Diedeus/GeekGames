@@ -62,7 +62,7 @@ remaining essentially unchanged. It was popularised in the 1960s <br>
 with the release of Letraset sheets containing Lorem Ipsum passages <br>
 and more recently with desktop publishing software like Aldus <br>
 PageMaker including versions of Lorem Ipsum.</p>
-                    <a href="./Jeux/Juste Prix/justeprix.php">Jouer au jeu</a>
+                    <a href="./Jeux/Juste_Prix/justeprix.php">Jouer au jeu</a>
             </article>
         </div>
 
