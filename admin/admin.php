@@ -97,10 +97,10 @@ require('../Registration/config.php');
     echo "<p>Erreur<\p>";
    }}       
 // ?>
-//!  <!-- FIN CREATION DE QUESTION -->
+ <!-- FIN CREATION DE QUESTION -->
 
 
-//! <!-- Création d'un tableau HTML -->
+<!-- Création d'un tableau HTML -->
   <table>
     <tr>
       <td>id_question</td>
@@ -130,8 +130,7 @@ if ($conn->connect_error) {
     while($donnees = mysqli_fetch_array($reponse, MYSQLI_ASSOC))
     {
     ?>
-
-//! <!-- chaque valeur du tableau est affichée dans une cellule du tableau -->
+<!-- chaque valeur du tableau est affichée dans une cellule du tableau -->
     <tr>
       <td><?php echo $donnees["id_question"];?></td>
       <td><?php echo $donnees['Intitule_question'];?></td>
@@ -147,10 +146,9 @@ if ($conn->connect_error) {
   
     ?>
   </table>
-//! <!-- Fin du tableau -->
+<!-- Fin du tableau -->
 
-
-//! <!-- Formulaire pour supprimer les questions -->
+<!-- Formulaire pour supprimer les questions -->
   <form class="box" action="" method="post" name="Jeu_Quizz">
     <h2 class="box-title">Suppression des questions</h2>
     <input type="text" class="box-input" name="id_question" placeholder="Quelle ligne est à supprimer">
@@ -172,99 +170,95 @@ if(isset($_REQUEST["id_question"])){
     $reponse2 = mysqli_query($conn, $query);
 }
 ?>
-//! <!-- Fin du formulaire de suppression -->
+ <!-- Fin du formulaire de suppression -->
+
+ <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Affichage du formulaire pour sélectionner une question à modifier
+echo '<form class="box" action="" method="post" name="Jeu_Quizz">';
+echo '<h2 class="box-title">Mise à jour des questions</h2>';
+echo '<input type="text" class="box-input" name="id_question2" placeholder="Quelle ligne est à mettre à jour">';
+echo '<input type="submit" value="Sélectionnez" name="submit" class="connecter">';
+echo '</form>';
 
 
-//!<!-- Formulaire UPDATE des questions qui demande l'identifiant de la question à mettre à jour -->
-  <form class="box" action="" method="post" name="Jeu_Quizz">
-    <h2 class="box-title">Mise à jour des questions</h2>
-    <input type="text" class="box-input" name="id_question2" placeholder="Quelle ligne est à mettre à jour">
-    <input type="submit" value="Sélectionnez" name="submit" class="connecter">
-  </form>
+// Vérification de la soumission du formulaire de sélection
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_question2'])){
+    if (isset($_POST['id_question2'])) {
+        $id_question = $_POST['id_question2'];
 
+        // Récupération de l'enregistrement existant depuis la base de données
+        $stmt = $conn->prepare("SELECT * FROM Jeu_Quizz WHERE id_question = ?");
+        $stmt->bind_param("i", $id_question);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-  <?php
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $id = $row['id_question'];
+            $intitule = $row['Intitule_question'];
+            $reponseA = $row['Reponse_A'];
+            $reponseB = $row['Reponse_B'];
+            $reponseC = $row['Reponse_C'];
+            $reponseD = $row['Reponse_D'];
+            $reponseQuizz = $row['Reponse_Quizz'];
+            $difficulte = $row['Difficulte_question'];
 
-if(isset($_REQUEST["id_question2"])){
-  echo '<br>';
-  
-//todo On nettoie le code et on empeche l'injection de SQL 
-  $id_question2 = $_REQUEST["id_question2"];
-  $id_question2 = mysqli_real_escape_string($conn, $id_question2);
-
-  //todo On convertit l'identifiant en integer avec la fonction (int)
-  $res = (int) $id_question2;
-
-  echo '<br>';
- 
-  //* $query2 = "SELECT * FROM `Jeu_Quizz`  WHERE id_question = $res";
-  //* $reponse3 = mysqli_real_query($conn, $query2);
-
-  
-  //todo  On sélectionne toutes les données de la table
-  $result = $conn->query("SELECT * FROM `Jeu_Quizz` WHERE id_question = $res");
-
-
-
- $donnees2 = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            // Affichage du formulaire de modification avec les valeurs existantes
+            echo '<form method="POST" action="#" name="editForm">';
+            echo '<input type="hidden" name="id" value="' . $id . '">';
+            echo 'Intitule_question: <input type="text" name="intitule" value="' . $intitule .'"><br>';
+            echo 'Reponse_A: <input type="text" name="reponseA" value="' . $reponseA . '"><br>';
+            echo 'Reponse_B: <input type="text" name="reponseB" value="' . $reponseB . '"><br>';
+            echo 'Reponse_C: <input type="text" name="reponseC" value="' . $reponseC . '"><br>';
+            echo 'Reponse_D: <input type="text" name="reponseD" value="' . $reponseD . '"><br>';
+            echo 'Reponse_Quizz: <input type="text" name="reponseQuizz" value="' . $reponseQuizz . '"><br>';
+            echo 'Difficulte_question: <input type="text" name="difficulte" value="' . $difficulte . '"><br>';
+            echo '<input type="submit" value="Modifier">';
+            echo '</form>';
+        } else {
+            echo "Aucun enregistrement trouvé avec cet ID.";
+        }
+    } else {
+        echo "Erreur : ID manquant dans la soumission du formulaire.";
+    }
 }
 
-if(isset($donnees2) && count($donnees2) > 0 || isset($_POST['save2D'])){
- 
-  $idselect = (isset($donnees2["id_question"]) && count($donnees2) > 0)? $donnees2["id_question"]:$_POST['saveID'];
-  $intitule = (isset($donnees2["Intitule_question"]) && count($donnees2) > 0)? $donnees2["Intitule_question"]:$_POST['save2D']; 
-  echo $intitule;
-  echo '<br>';
-  echo '<form method="post" action="#" name="Jeu_Quizz">';
-  echo '<input type="text" name="majIntitule">';
-  echo '<input type="text" name="save2D" value="'.$intitule.'">';
-  echo '<input type="text" name="saveID" value="'.$idselect.'">';
-  echo '<input type="submit" name="submit2" value="modifier" class="connecter"></form>';
-  echo '<br>';
-  var_dump($idselect);
+// Vérification de la soumission du formulaire de modification
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  if (isset($_POST['id'], $_POST['intitule'], $_POST['reponseA'], $_POST['reponseB'], $_POST['reponseC'], $_POST['reponseD'], $_POST['reponseQuizz'], $_POST['difficulte'])) {
+      $id = $_POST['id'];
+      $intitule = $_POST['intitule'];
+      $reponseA = $_POST['reponseA'];
+      $reponseB = $_POST['reponseB'];
+      $reponseC = $_POST['reponseC'];
+      $reponseD = $_POST['reponseD'];
+      $reponseQuizz = $_POST['reponseQuizz'];
+      $difficulte = $_POST['difficulte'];
 
+      // Mise à jour de l'enregistrement dans la base de données
+      $stmt = $conn->prepare("UPDATE Jeu_Quizz SET Intitule_question = ?, Reponse_A = ?, Reponse_B = ?, Reponse_C = ?, Reponse_D = ?, Reponse_Quizz = ?, Difficulte_question = ? WHERE id_question = ?");
+      $stmt->bind_param("sssssssi", $intitule, $reponseA, $reponseB, $reponseC, $reponseD, $reponseQuizz, $difficulte, $id);
 
-  if(isset($_POST["majIntitule"])){
-    var_dump($idselect);
-    $majIntitule = $_POST["majIntitule"];
-    $majIntitule = mysqli_real_escape_string($conn, $majIntitule);
-    // $query = "UPDATE `Jeu_Quizz` SET Intitule_question = '$majIntitule' WHERE id_question = $idselect";
-    // $reponse4 = mysqli_query($conn, $query);
-    $reponse4 = $conn->query("UPDATE `Jeu_Quizz` SET `Intitule_question` = '".$majIntitule."' WHERE id_question = '".$idselect."'");
+      if ($stmt->execute()) {
+          echo "Enregistrement mis à jour avec succès.";
+      } else {
+          echo "Erreur lors de la mise à jour de l'enregistrement : " . $stmt->error;
+      }
+  } else {
+      echo "Erreur : Données du formulaire manquantes.";
   }
-  
-
-  echo $donnees2["Reponse_A"]; echo '<br>';
-
-  $ReponseA= (isset($donnees2["Reponse_A"]) && count($donnees2) > 0)? $donnees2["Reponse_A"]:$_POST['saveRA']; 
-  echo '<br>';
-  echo '<form method="post" action="#" name="Jeu_Quizz">';
-  echo '<input type="text" name="majReponseA">';
-  echo '<input type="text" name="saveRa" value="'.$ReponseA.'">';
-  echo '<input type="text" name="saveID" value="'.$idselect.'">';
-  echo '<input type="submit" name="submit3" value="modifier" class="connecter"></form>';
-  echo '<br>';
-
-  if(isset($_POST["majReponseA"])){
-    var_dump($idselect);
-    $majReponseA = $_POST["majReponseA"];
-    $majReponseA = mysqli_real_escape_string($conn, $majReponseA);
-    // $query = "UPDATE `Jeu_Quizz` SET Intitule_question = '$majIntitule' WHERE id_question = $idselect";
-    // $reponse4 = mysqli_query($conn, $query);
-    $reponse5 = $conn->query("UPDATE `Jeu_Quizz` SET `Reponse_A` = '".$majReponseA."' WHERE id_question = '".$idselect."'");
-  }
-
-  echo $donnees2["Reponse_B"]; echo '<br>';
-  echo $donnees2["Reponse_C"]; echo '<br>';
-  echo $donnees2["Reponse_D"]; echo '<br>';
-  echo $donnees2["Reponse_Quizz"]; echo '<br>';
-  echo $donnees2["Difficulte_question"]; echo '<br>';
-  
-
 }
+
+
 
 
 ?>
+
+
 <!-- Fin du formulaire UPDATE -->
 
 
