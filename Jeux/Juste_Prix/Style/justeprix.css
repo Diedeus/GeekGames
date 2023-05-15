@@ -1,0 +1,235 @@
+@charset "utf-8";
+header,
+section,
+footer,
+aside,
+nav,
+main,
+article,
+figure {
+  display: block;
+}
+div,
+header,
+nav,
+article,
+section,
+aside,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+li,
+figure,
+figcaption,
+class,
+img {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  border: 0 solid transparent;
+  font-size: 16px;
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+  width: 100%;
+  display: block;
+  font-family: 'montserrat', sans-serif;
+}
+img,
+object,
+embed,
+canvas,
+video,
+audio,
+picture {
+  max-width: 100%;
+  height: auto;
+}
+img {
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+input,
+textarea {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 15px;
+  border: 0;
+  line-height: 40px;
+  text-indent: 20px;
+  outline: none;
+}
+.clear {
+  display: block;
+  zoom: 1;
+}
+.clear:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+header {
+  width: 100%;
+  height: 100vh;
+  background-color: #3c2d87;
+  display: flex;
+}
+header .corps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background-image: url(../../../asset/backjusteprix.jpg);
+  background-position: center;
+}
+header .corps h1 {
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+}
+header .corps input {
+  width: 500px;
+  height: 50px;
+}
+header .corps button {
+  width: 500px;
+  height: 40px;
+  cursor: pointer;
+}
+header .corps span {
+  height: 10px;
+  width: 100%;
+  background-color: #161616;
+  display: block;
+  position: absolute;
+  bottom: 0;
+}
+header div.right {
+  width: 50%;
+  height: 100%;
+}
+header div.right .imageprix {
+  width: 100%;
+  height: 70%;
+  background-color: #161616;
+}
+header div.right .reponse {
+  background-color: white;
+  height: 30%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header div.right .reponse p {
+  background-color: #3c2d87;
+  line-height: 60px;
+  height: 23%;
+  color: white;
+  width: 99%;
+  text-align: center;
+  margin: 0.3% 0;
+}
+header div.navinscri {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+header div.navinscri nav.home {
+  z-index: 1000;
+  float: left;
+  margin-top: 70px;
+  margin-left: 70px;
+}
+header div.navinscri nav.home ul {
+  display: flex;
+}
+header div.navinscri nav.home ul li {
+  list-style-type: none;
+  margin-right: 20px;
+}
+header div.navinscri nav.home ul li a {
+  padding: 10px 15px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+header div.navinscri nav.home ul li a:hover {
+  background-color: white;
+  color: #3c2d87;
+}
+header div.navinscri nav.home ul li a.on {
+  background-color: white;
+  color: #3c2d87;
+}
+header div.navinscri div.navright {
+  margin-top: 65px;
+  margin-right: 115px;
+  margin-bottom: 15px;
+  float: right;
+  display: flex;
+}
+header div.navinscri div.navright #searchbar {
+  width: 300px ;
+  height: 40px;
+  outline: none;
+  margin: 0;
+}
+header div.navinscri div.navright img {
+  width: 40px ;
+  height: 40px;
+  background-color: #3c2d87;
+  padding: 7px;
+  margin-left: 50px;
+}
+header div.navinscri div.navright a.log {
+  color: white;
+  background-color: #3c2d87;
+  line-height: 40px;
+  padding: 0 10px;
+  transition: all 0.5s;
+}
+header div.navinscri div.navright a.log:hover {
+  background-color: #2b2064;
+}
+header div.navinscri div.navright a.sign {
+  color: white;
+  line-height: 40px;
+  padding: 0 10px;
+  transition: all 0.5s;
+}
+header div.navinscri div.navright a.sign:hover {
+  background-color: white;
+  color: #3c2d87;
+}
+header div.navinscri span.barre {
+  display: block;
+  height: 2px;
+  width: 92.5%;
+  background-color: white;
+  margin: 0 auto;
+}
