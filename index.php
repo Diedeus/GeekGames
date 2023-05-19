@@ -175,6 +175,14 @@ if (isset($_POST['Nom_utilisateur'])){
         </div>
         <img class="closelogin" src="asset/croix.png" alt="">
     </section>
+
+    <Section class="delogin">
+        <div class="deconnexion">
+            <p>êtes vous sûr de vouloir vous déconnecter?</p>
+            <a href="./Registration/deconnexion.php" class="deco2">Deconnexion</a>
+        </div>
+        <img class="closelogin" src="asset/croix.png" alt="">
+    </Section>
 </body>
 
 </html>

@@ -32,7 +32,7 @@ if ($result->num_rows > 0) {
     $question = $result->fetch_assoc();
     $_SESSION['Reponse_Quizz'] = $question['Reponse_Quizz'];
     // header('content-type: application/json');
-    json_encode($_SESSION['Reponse_Quizz']);
+    // json_encode($_SESSION['Reponse_Quizz']);
     displayQuestion($question);
     } else {
     echo "Aucune question trouvée dans la base de données.";
@@ -50,6 +50,10 @@ function displayQuestion($question) {
 
 
 ?>
+
+<script>
+ let Reponse_quizz = <?php echo json_encode($_SESSION['Reponse_Quizz']); ?>;
+   </script>
 <p class="reponse"></p>
 
 
