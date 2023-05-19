@@ -151,7 +151,18 @@ header#test div.right a.log {
   padding: 0 10px;
   transition: all 0.5s;
 }
+
+header#test div.right a.user {
+  color: white;
+  background-color: #3c2d87;
+  line-height: 40px;
+  padding: 0 10px;
+  transition: all 0.5s;
+}
 header#test div.right a.log:hover {
+  background-color: #2b2064;
+}
+header#test div.right a.user:hover {
   background-color: #2b2064;
 }
 header#test div.right a.sign {
@@ -160,7 +171,17 @@ header#test div.right a.sign {
   padding: 0 10px;
   transition: all 0.5s;
 }
+header#test div.right a.design {
+  color: white;
+  line-height: 40px;
+  padding: 0 10px;
+  transition: all 0.5s;
+}
 header#test div.right a.sign:hover {
+  background-color: white;
+  color: #3c2d87;
+}
+header#test div.right a.design:hover {
   background-color: white;
   color: #3c2d87;
 }

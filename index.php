@@ -16,7 +16,10 @@
 </head>
 
 <body>
-    <?php session_start(); ?>
+    <?php 
+    session_save_path("./tmp");
+    session_start(); ?>
+
     <header id="test">
         <nav class="home">
             <ul>
@@ -26,11 +29,25 @@
             </ul>
         </nav>
 
+
         <div class="right">
             <input id="searchbar" type="text" name="search" placeholder="Rechercher un jeu ...">
-            <img src="./asset/icone-mario.png" alt="">
+            <?php
+            if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) {
+                // echo "<p> bonjour " . $_SESSION['Nom_utilisateur'] . "</p>";
+                echo '<img src="./asset/icone-mario.png" alt="">';
+                echo '<a  class="user" href="./profil/profil.php">bonjour ' . $_SESSION['Nom_utilisateur'] . '</a>';
+                echo '<a class="design" href="#">Deconnexion</a>';
+
+            } else{
+                ?>
+                <img src="./asset/icone-mario.png" alt="">
             <a class="log" href="#">Se connecter</a>
             <a class="sign" href="./Registration/register.php">S'inscrire</a>
+            <?php
+            }
+            ?>   
+            
         </div>
         <div class="clear"></div>
         <span class="barre"></span>
@@ -125,6 +142,8 @@ if (isset($_POST['Nom_utilisateur'])){
   if (mysqli_num_rows($result) == 1) {
     $user = mysqli_fetch_assoc($result); 
     $_SESSION['id_users'] = $user['id_users'];
+    $_SESSION['Nom_utilisateur'] = $user['Nom_utilisateur'];
+    $_SESSION['loggedIn'] = true;
     // vérifier si l'utilisateur est un administrateur ou un utilisateur
     if ($user['Admin']) {
     //   header('location: ./admin/admin.php');
@@ -156,6 +175,14 @@ if (isset($_POST['Nom_utilisateur'])){
         </div>
         <img class="closelogin" src="asset/croix.png" alt="">
     </section>
+
+    <Section class="delogin">
+        <div class="deconnexion">
+            <p>êtes vous sûr de vouloir vous déconnecter?</p>
+            <a href="./Registration/deconnexion.php" class="deco2">Deconnexion</a>
+        </div>
+        <img class="closelogin" src="asset/croix.png" alt="">
+    </Section>
 </body>
 
 </html>
