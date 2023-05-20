@@ -4,8 +4,7 @@ let jprix = document.querySelector('#justeprix');
 let jeusnake = document.querySelector('#snake');
 let flappy = document.querySelector('#flappybird');
 let pingpong = document.querySelector('#pingpong');
-
-
+let x = 1
 
 let articlelogo = document.querySelector('.logotexte');
 let articlejeu = document.querySelector('.textejeu');
@@ -39,6 +38,9 @@ quiz.addEventListener("click", function (){
         rond6.style.border="2px solid white";
         rond1.style.backgroundColor ="white";
         rond1.style.border="none";
+        x = 1
+        console.log(x)
+        refresh(x)
 
 });
 
@@ -59,6 +61,10 @@ diff.addEventListener("click", function (){
         rond6.style.border="2px solid white";
         rond2.style.backgroundColor ="white";
         rond2.style.border="none";
+        x = 2
+        console.log(x)
+        refresh(x)
+
 });
 
 jprix.addEventListener("click", function (){
@@ -78,6 +84,10 @@ jprix.addEventListener("click", function (){
         rond6.style.border="2px solid white";
         rond3.style.backgroundColor ="white";
         rond3.style.border="none";
+        x = 3
+        console.log(x)
+        refresh(x)
+
 });
 
 jeusnake.addEventListener("click", function (){
@@ -97,6 +107,9 @@ jeusnake.addEventListener("click", function (){
         rond6.style.border="2px solid white";
         rond4.style.backgroundColor ="white";
         rond4.style.border="none";
+        x = 4
+        console.log(x)
+        refresh(x)
 });
 
 flappy.addEventListener("click", function (){
@@ -116,6 +129,10 @@ flappy.addEventListener("click", function (){
         rond6.style.border="2px solid white";
         rond5.style.backgroundColor ="white";
         rond5.style.border="none";
+        x = 5
+        console.log(x)
+        refresh(x)
+
 });
 
 
@@ -136,6 +153,10 @@ pingpong.addEventListener("click", function (){
         rond5.style.border="2px solid white";
         rond6.style.backgroundColor ="white";
         rond6.style.border="none";
+        x = 6
+        console.log(x)
+        refresh(x)
+
 });
 
 let connexion = document.querySelector('.log');
@@ -149,4 +170,125 @@ connexion.addEventListener("click", function (){
 closelogin.addEventListener("click", function (){
     loginuser.style.visibility="hidden";
 });
+
+// let aquizz = document.querySelector('#aquizz')
+// let a7diff = document.querySelector('#a7diff')
+// let ajusteprix = document.querySelector('#ajusteprix')
+// let asnake = document.querySelector('#asnake')
+// let aflappybird = document.querySelector('#aflappybird')
+// let apingpong = document.querySelector('#apingpong')
+
+function refresh(x) {
+    let aquizz = document.querySelector('#aquizz')
+    let a7diff = document.querySelector('#a7diff')
+    let ajusteprix = document.querySelector('#ajusteprix')
+    let asnake = document.querySelector('#asnake')
+    let aflappybird = document.querySelector('#aflappybird')
+    let apingpong = document.querySelector('#apingpong')
+    let descijeuid = document.querySelector('#descijeuid')
+
+    if ( x === 1 ){
+        aquizz.style.display = "block"
+        a7diff.style.display = "none"
+        ajusteprix.style.display = "none"
+        asnake.style.display = "none"
+        aflappybird.style.display = "none"
+        apingpong.style.display = "none"
+        descijeuid.innerHTML = "1) orem Ipsum is simply dummy text of the printing and typesetting <br>" +
+  "industry. Lorem Ipsum has been the industry\'s standard dummy text <br>" +
+  "ever since the 1500s, when an unknown printer took a galley of type <br>" +
+  "and scrambled it to make a type specimen book. It has survived not <br>" +
+  "only five centuries, but also the leap into electronic typesetting, <br>" +
+  "remaining essentially unchanged. It was popularised in the 1960s <br>" +
+  "with the release of Letraset sheets containing Lorem Ipsum passages <br>" +
+  "and more recently with desktop publishing software like Aldus <br>" +
+  "PageMaker including versions of Lorem Ipsum.";
+    }if ( x === 2){
+        aquizz.style.display = "none"
+        a7diff.style.display = "block"
+        ajusteprix.style.display = "none"
+        asnake.style.display = "none"
+        aflappybird.style.display = "none"
+        apingpong.style.display = "none"
+        descijeuid.innerHTML = "2) orem Ipsum is simply dummy text of the printing and typesetting <br>" +
+        "industry. Lorem Ipsum has been the industry\'s standard dummy text <br>" +
+        "ever since the 1500s, when an unknown printer took a galley of type <br>" +
+        "and scrambled it to make a type specimen book. It has survived not <br>" +
+        "only five centuries, but also the leap into electronic typesetting, <br>" +
+        "remaining essentially unchanged. It was popularised in the 1960s <br>" +
+        "with the release of Letraset sheets containing Lorem Ipsum passages <br>" +
+        "and more recently with desktop publishing software like Aldus <br>" +
+        "PageMaker including versions of Lorem Ipsum.";
+
+    }if ( x === 3 ){
+        aquizz.style.display = "none"
+        a7diff.style.display = "none"
+        ajusteprix.style.display = "block"
+        asnake.style.display = "none"
+        aflappybird.style.display = "none"
+        apingpong.style.display = "none"
+        descijeuid.innerHTML = "3) orem Ipsum is simply dummy text of the printing and typesetting <br>" +
+        "industry. Lorem Ipsum has been the industry\'s standard dummy text <br>" +
+        "ever since the 1500s, when an unknown printer took a galley of type <br>" +
+        "and scrambled it to make a type specimen book. It has survived not <br>" +
+        "only five centuries, but also the leap into electronic typesetting, <br>" +
+        "remaining essentially unchanged. It was popularised in the 1960s <br>" +
+        "with the release of Letraset sheets containing Lorem Ipsum passages <br>" +
+        "and more recently with desktop publishing software like Aldus <br>" +
+        "PageMaker including versions of Lorem Ipsum.";
+
+    }if ( x === 4 ){
+        aquizz.style.display = "none"
+        a7diff.style.display = "none"
+        ajusteprix.style.display = "none"
+        asnake.style.display = "block"
+        aflappybird.style.display = "none"
+        apingpong.style.display = "none"
+        descijeuid.innerHTML = "4) orem Ipsum is simply dummy text of the printing and typesetting <br>" +
+        "industry. Lorem Ipsum has been the industry\'s standard dummy text <br>" +
+        "ever since the 1500s, when an unknown printer took a galley of type <br>" +
+        "and scrambled it to make a type specimen book. It has survived not <br>" +
+        "only five centuries, but also the leap into electronic typesetting, <br>" +
+        "remaining essentially unchanged. It was popularised in the 1960s <br>" +
+        "with the release of Letraset sheets containing Lorem Ipsum passages <br>" +
+        "and more recently with desktop publishing software like Aldus <br>" +
+        "PageMaker including versions of Lorem Ipsum.";
+
+    }if ( x === 5 ){
+        aquizz.style.display = "none"
+        a7diff.style.display = "none"
+        ajusteprix.style.display = "none"
+        asnake.style.display = "none"
+        aflappybird.style.display = "block"
+        apingpong.style.display = "none"
+        descijeuid.innerHTML = "5) orem Ipsum is simply dummy text of the printing and typesetting <br>" +
+        "industry. Lorem Ipsum has been the industry\'s standard dummy text <br>" +
+        "ever since the 1500s, when an unknown printer took a galley of type <br>" +
+        "and scrambled it to make a type specimen book. It has survived not <br>" +
+        "only five centuries, but also the leap into electronic typesetting, <br>" +
+        "remaining essentially unchanged. It was popularised in the 1960s <br>" +
+        "with the release of Letraset sheets containing Lorem Ipsum passages <br>" +
+        "and more recently with desktop publishing software like Aldus <br>" +
+        "PageMaker including versions of Lorem Ipsum.";
+
+    }if ( x === 6 ){
+        aquizz.style.display = "none"
+        a7diff.style.display = "none"
+        ajusteprix.style.display = "none"
+        asnake.style.display = "none"
+        aflappybird.style.display = "none"
+        apingpong.style.display = "block"
+        descijeuid.innerHTML = "6) orem Ipsum is simply dummy text of the printing and typesetting <br>" +
+        "industry. Lorem Ipsum has been the industry\'s standard dummy text <br>" +
+        "ever since the 1500s, when an unknown printer took a galley of type <br>" +
+        "and scrambled it to make a type specimen book. It has survived not <br>" +
+        "only five centuries, but also the leap into electronic typesetting, <br>" +
+        "remaining essentially unchanged. It was popularised in the 1960s <br>" +
+        "with the release of Letraset sheets containing Lorem Ipsum passages <br>" +
+        "and more recently with desktop publishing software like Aldus <br>" +
+        "PageMaker including versions of Lorem Ipsum.";
+
+    }
+
+}
 

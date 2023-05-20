@@ -37,14 +37,18 @@
                 // echo "<p> bonjour " . $_SESSION['Nom_utilisateur'] . "</p>";
                 echo '<img src="./asset/icone-mario.png" alt="">';
                 echo '<a  class="user" href="./profil/profil.php">bonjour ' . $_SESSION['Nom_utilisateur'] . '</a>';
-                echo '<a class="design" href="#">Deconnexion</a>';
-
+                echo '<a class="design" href="./Registration/deconnexion.php">Deconnexion</a>';
+                
             } else{
                 ?>
                 <img src="./asset/icone-mario.png" alt="">
             <a class="log" href="#">Se connecter</a>
             <a class="sign" href="./Registration/register.php">S'inscrire</a>
+            
             <?php
+            }
+            if(isset($_SESSION['Admin'])&& $_SESSION['Admin'] === '1' ){
+                echo '<a class="design" href="./admin/admin.php">Admin</a>';
             }
             ?>   
             
@@ -70,16 +74,13 @@
 
             <article class="textejeu">
                 <h1 id="titrejeu"></h1>
-                <p class="descrijeu">Lorem Ipsum is simply dummy text of the printing and typesetting <br>
-industry. Lorem Ipsum has been the industry's standard dummy text <br>
-ever since the 1500s, when an unknown printer took a galley of type <br>
-and scrambled it to make a type specimen book. It has survived not <br>
-only five centuries, but also the leap into electronic typesetting, <br>
-remaining essentially unchanged. It was popularised in the 1960s <br>
-with the release of Letraset sheets containing Lorem Ipsum passages <br>
-and more recently with desktop publishing software like Aldus <br>
-PageMaker including versions of Lorem Ipsum.</p>
-                    <a href="./Jeux/Juste_Prix/justeprix.php">Jouer au jeu</a>
+                <p class="descrijeu" id="descijeuid"></p>
+                    <a id="aquizz" href="./Jeux/Quizz/Quizz.php" style="display:block">Jouer au Quizz</a>
+                    <a id="a7diff" href="./Jeux/Juste_Prix/justeprix.php" style="display:none">Jouer au Sept Diff</a>
+                    <a id="ajusteprix" href="#" style="display:none">Jouer au juste prix</a>
+                    <a id="asnake" href="#" style="display:none">Jouer au snake</a>
+                    <a id="aflappybird" href="#" style="display:none">Jouer au flappy bird</a>
+                    <a id="apingpong" href="#" style="display:none">Jouer au ping pong</a>
             </article>
         </div>
 
@@ -87,32 +88,32 @@ PageMaker including versions of Lorem Ipsum.</p>
             <h2>LISTE DES JEUX</h2>
             <div class="jeux">
                 <article id="quiz">
-                    <img src="asset/backjeuun.jpg" alt="">
+                    <img id="imgquizz" src="asset/backjeuun.jpg" alt="">
                     <h2>QUIZ GEEK</h2>
                 </article>
 
                 <article id="septdiff">
-                    <img src="asset/backjeudeux.jpg" alt="">
+                    <img id="imgseptdiff" src="asset/backjeudeux.jpg" alt="">
                     <h2>7 DIFFERENCES</h2>
                 </article>
 
                 <article  id="justeprix">
-                    <img src="asset/backjeutrois.jpg" alt="">
+                    <img id="imgjusteprix" src="asset/backjeutrois.jpg" alt="">
                     <h2>LE JUSTE PRIX</h2>
                 </article>
 
                 <article id="snake">
-                    <img src="asset/backjeuquatre.jpg" alt="">
+                    <img id="imgsnake" src="asset/backjeuquatre.jpg" alt="">
                     <h2>SNAKE</h2>
                 </article>
 
                 <article id="flappybird">
-                    <img src="asset/backjeucinq.jpg" alt="">
+                    <img id="imgflappybird" src="asset/backjeucinq.jpg" alt="">
                     <h2>FLAPPY BIRD</h2>
                 </article>
 
                 <article id="pingpong">
-                    <img src="asset/backjeusix.jpg" alt="">
+                    <img id="imgpingpong" src="asset/backjeusix.jpg" alt="">
                     <h2>PING PONG</h2>
                 </article>
             </div>
@@ -143,16 +144,12 @@ if (isset($_POST['Nom_utilisateur'])){
     $user = mysqli_fetch_assoc($result); 
     $_SESSION['id_users'] = $user['id_users'];
     $_SESSION['Nom_utilisateur'] = $user['Nom_utilisateur'];
+    $_SESSION['id_users'] = $user['id_users'];
     $_SESSION['loggedIn'] = true;
-    // vérifier si l'utilisateur est un administrateur ou un utilisateur
-    if ($user['Admin']) {
-    //   header('location: ./admin/admin.php');
-      echo '<script language = Javascript> document.location.replace("./admin/admin.php");</script>';
-      exit();     
-    }else{
-        echo '<script language = Javascript> document.location.replace("./index.php");</script>';
-      
-    }
+    $_SESSION['Admin'] = $user['Admin'];
+   
+   
+    
   }else{
     $message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
     
@@ -176,13 +173,7 @@ if (isset($_POST['Nom_utilisateur'])){
         <img class="closelogin" src="asset/croix.png" alt="">
     </section>
 
-    <Section class="delogin">
-        <div class="deconnexion">
-            <p>êtes vous sûr de vouloir vous déconnecter?</p>
-            <a href="./Registration/deconnexion.php" class="deco2">Deconnexion</a>
-        </div>
-        <img class="closelogin" src="asset/croix.png" alt="">
-    </Section>
+
 </body>
 
 </html>

@@ -24,13 +24,19 @@
         </nav>
         <div class="clear"></div>
         <span class="barre"></span>
+        <div>
+          <a href="../index.php">Retour à l'accueil</a>
+          <a href="../Registration/deconnexion.php">Deconnexion</a>
+        </div>
 
   <section class="container_formquiz">
 <div class="formleft">
+
   <?php
   // VERIFICATION ADMIN OU UTILISATEUR
 
   // Initialiser la session
+  session_save_path("../tmp");
   session_start();
   $id_user = $_SESSION['id_users'];
   $admin = "SELECT admin FROM users WHERE id_users=$id_user" ;
