@@ -1,0 +1,20 @@
+.demarrage {
+
+display:block;
+}
+
+.question1 {
+    display: none;
+}
+
+.reussite {
+    display: none;
+}
+
+.echec {
+    display: none;
+}
+
+.question2{
+    display: none;
+}
