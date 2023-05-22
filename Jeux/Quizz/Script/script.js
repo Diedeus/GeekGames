@@ -41,7 +41,7 @@ RepA.addEventListener("click", function () {
         RepB.disabled = true
         RepC.disabled = true
         RepD.disabled = true
-        
+        scoreForm.style.display = "block"
 
     }
 }) 
@@ -65,6 +65,7 @@ RepB.addEventListener("click", function () {
         RepB.disabled = true
         RepC.disabled = true
         RepD.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -87,6 +88,7 @@ RepC.addEventListener("click", function () {
         RepB.disabled = true
         RepC.disabled = true
         RepD.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -109,6 +111,7 @@ RepD.addEventListener("click", function () {
         RepB.disabled = true
         RepC.disabled = true
         RepD.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -145,6 +148,8 @@ RepA2.addEventListener("click", function () {
         RepB2.disabled = true
         RepC2.disabled = true
         RepD2.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepA2.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -166,6 +171,8 @@ RepB2.addEventListener("click", function () {
         RepB2.disabled = true
         RepC2.disabled = true
         RepD2.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepB2.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -187,6 +194,8 @@ RepC2.addEventListener("click", function () {
         RepB2.disabled = true
         RepC2.disabled = true
         RepD2.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepC2.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -208,6 +217,8 @@ RepD2.addEventListener("click", function () {
         RepB2.disabled = true
         RepC2.disabled = true
         RepD2.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepD2.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -234,6 +245,8 @@ RepA3.addEventListener("click", function () {
         RepB3.disabled = true
         RepC3.disabled = true
         RepD3.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepA3.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -242,6 +255,7 @@ RepA3.addEventListener("click", function () {
         RepB3.disabled = true
         RepC3.disabled = true
         RepD3.disabled = true
+        scoreForm.style.display = "block"
     }
 }) 
 
@@ -254,6 +268,8 @@ RepB3.addEventListener("click", function () {
         RepB3.disabled = true
         RepC3.disabled = true
         RepD3.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepB3.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -262,6 +278,7 @@ RepB3.addEventListener("click", function () {
         RepB3.disabled = true
         RepC3.disabled = true
         RepD3.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -274,6 +291,8 @@ RepC3.addEventListener("click", function () {
         RepB3.disabled = true
         RepC3.disabled = true
         RepD3.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepC3.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -282,6 +301,7 @@ RepC3.addEventListener("click", function () {
         RepB3.disabled = true
         RepC3.disabled = true
         RepD3.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -294,6 +314,8 @@ RepD3.addEventListener("click", function () {
         RepB3.disabled = true
         RepC3.disabled = true
         RepD3.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepD3.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -302,6 +324,7 @@ RepD3.addEventListener("click", function () {
         RepB3.disabled = true
         RepC3.disabled = true
         RepD3.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -319,6 +342,8 @@ RepA4.addEventListener("click", function () {
         RepB4.disabled = true
         RepC4.disabled = true
         RepD4.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepA4.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -327,6 +352,7 @@ RepA4.addEventListener("click", function () {
         RepB4.disabled = true
         RepC4.disabled = true
         RepD4.disabled = true
+        scoreForm.style.display = "block"
     }
 }) 
 
@@ -339,6 +365,8 @@ RepB4.addEventListener("click", function () {
         RepB4.disabled = true
         RepC4.disabled = true
         RepD4.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepB4.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -347,6 +375,7 @@ RepB4.addEventListener("click", function () {
         RepB4.disabled = true
         RepC4.disabled = true
         RepD4.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -359,6 +388,8 @@ RepC4.addEventListener("click", function () {
         RepB4.disabled = true
         RepC4.disabled = true
         RepD4.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepC4.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -367,6 +398,7 @@ RepC4.addEventListener("click", function () {
         RepB4.disabled = true
         RepC4.disabled = true
         RepD4.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -378,7 +410,9 @@ RepD4.addEventListener("click", function () {
         RepA4.disabled = true
         RepB4.disabled = true
         RepC4.disabled = true
-        RepD4.disabled = true
+        RepD4.disabled = true 
+        score += 50
+        scoreInput.value = score
     } else {
         RepD4.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -387,6 +421,7 @@ RepD4.addEventListener("click", function () {
         RepB4.disabled = true
         RepC4.disabled = true
         RepD4.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -404,6 +439,8 @@ RepA5.addEventListener("click", function () {
         RepB5.disabled = true
         RepC5.disabled = true
         RepD5.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepA5.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -412,6 +449,7 @@ RepA5.addEventListener("click", function () {
         RepB5.disabled = true
         RepC5.disabled = true
         RepD5.disabled = true
+        scoreForm.style.display = "block"
     }
 }) 
 
@@ -424,6 +462,8 @@ RepB5.addEventListener("click", function () {
         RepB5.disabled = true
         RepC5.disabled = true
         RepD5.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepB5.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -432,6 +472,7 @@ RepB5.addEventListener("click", function () {
         RepB5.disabled = true
         RepC5.disabled = true
         RepD5.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -444,6 +485,8 @@ RepC5.addEventListener("click", function () {
         RepB5.disabled = true
         RepC5.disabled = true
         RepD5.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepC5.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -452,6 +495,7 @@ RepC5.addEventListener("click", function () {
         RepB5.disabled = true
         RepC5.disabled = true
         RepD5.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -464,6 +508,8 @@ RepD5.addEventListener("click", function () {
         RepB5.disabled = true
         RepC5.disabled = true
         RepD5.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepD5.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -472,6 +518,7 @@ RepD5.addEventListener("click", function () {
         RepB5.disabled = true
         RepC5.disabled = true
         RepD5.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -489,6 +536,8 @@ RepA6.addEventListener("click", function () {
         RepB6.disabled = true
         RepC6.disabled = true
         RepD6.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepA6.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -497,6 +546,7 @@ RepA6.addEventListener("click", function () {
         RepB6.disabled = true
         RepC6.disabled = true
         RepD6.disabled = true
+        scoreForm.style.display = "block"
     }
 }) 
 
@@ -509,6 +559,8 @@ RepB6.addEventListener("click", function () {
         RepB6.disabled = true
         RepC6.disabled = true
         RepD6.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepB6.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -517,6 +569,7 @@ RepB6.addEventListener("click", function () {
         RepB6.disabled = true
         RepC6.disabled = true
         RepD6.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -529,6 +582,8 @@ RepC6.addEventListener("click", function () {
         RepB6.disabled = true
         RepC6.disabled = true
         RepD6.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepC6.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -537,6 +592,7 @@ RepC6.addEventListener("click", function () {
         RepB6.disabled = true
         RepC6.disabled = true
         RepD6.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -549,6 +605,8 @@ RepD6.addEventListener("click", function () {
         RepB6.disabled = true
         RepC6.disabled = true
         RepD6.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepD6.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -557,6 +615,7 @@ RepD6.addEventListener("click", function () {
         RepB6.disabled = true
         RepC6.disabled = true
         RepD6.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -574,6 +633,8 @@ RepA7.addEventListener("click", function () {
         RepB7.disabled = true
         RepC7.disabled = true
         RepD7.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepA7.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -582,6 +643,7 @@ RepA7.addEventListener("click", function () {
         RepB7.disabled = true
         RepC7.disabled = true
         RepD7.disabled = true
+        scoreForm.style.display = "block"
     }
 }) 
 
@@ -594,6 +656,8 @@ RepB7.addEventListener("click", function () {
         RepB7.disabled = true
         RepC7.disabled = true
         RepD7.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepB7.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -602,6 +666,7 @@ RepB7.addEventListener("click", function () {
         RepB7.disabled = true
         RepC7.disabled = true
         RepD7.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -614,6 +679,8 @@ RepC7.addEventListener("click", function () {
         RepB7.disabled = true
         RepC7.disabled = true
         RepD7.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepC7.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -622,6 +689,7 @@ RepC7.addEventListener("click", function () {
         RepB7.disabled = true
         RepC7.disabled = true
         RepD7.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -634,6 +702,8 @@ RepD7.addEventListener("click", function () {
         RepB7.disabled = true
         RepC7.disabled = true
         RepD7.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepD7.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -642,6 +712,7 @@ RepD7.addEventListener("click", function () {
         RepB7.disabled = true
         RepC7.disabled = true
         RepD7.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -659,6 +730,8 @@ RepA8.addEventListener("click", function () {
         RepB8.disabled = true
         RepC8.disabled = true
         RepD8.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepA8.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -667,6 +740,7 @@ RepA8.addEventListener("click", function () {
         RepB8.disabled = true
         RepC8.disabled = true
         RepD8.disabled = true
+        scoreForm.style.display = "block"
     }
 }) 
 
@@ -679,6 +753,8 @@ RepB8.addEventListener("click", function () {
         RepB8.disabled = true
         RepC8.disabled = true
         RepD8.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepB8.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -687,6 +763,7 @@ RepB8.addEventListener("click", function () {
         RepB8.disabled = true
         RepC8.disabled = true
         RepD8.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -699,6 +776,8 @@ RepC8.addEventListener("click", function () {
         RepB8.disabled = true
         RepC8.disabled = true
         RepD8.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepC8.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -707,6 +786,7 @@ RepC8.addEventListener("click", function () {
         RepB8.disabled = true
         RepC8.disabled = true
         RepD8.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -719,6 +799,8 @@ RepD8.addEventListener("click", function () {
         RepB8.disabled = true
         RepC8.disabled = true
         RepD8.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepD8.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -727,6 +809,7 @@ RepD8.addEventListener("click", function () {
         RepB8.disabled = true
         RepC8.disabled = true
         RepD8.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -744,6 +827,8 @@ RepA9.addEventListener("click", function () {
         RepB9.disabled = true
         RepC9.disabled = true
         RepD9.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepA9.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -752,6 +837,7 @@ RepA9.addEventListener("click", function () {
         RepB9.disabled = true
         RepC9.disabled = true
         RepD9.disabled = true
+        scoreForm.style.display = "block"
     }
 }) 
 
@@ -764,6 +850,8 @@ RepB9.addEventListener("click", function () {
         RepB9.disabled = true
         RepC9.disabled = true
         RepD9.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepB9.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -772,6 +860,7 @@ RepB9.addEventListener("click", function () {
         RepB9.disabled = true
         RepC9.disabled = true
         RepD9.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -784,6 +873,8 @@ RepC9.addEventListener("click", function () {
         RepB9.disabled = true
         RepC9.disabled = true
         RepD9.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepC9.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -792,6 +883,7 @@ RepC9.addEventListener("click", function () {
         RepB9.disabled = true
         RepC9.disabled = true
         RepD9.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -804,6 +896,8 @@ RepD9.addEventListener("click", function () {
         RepB9.disabled = true
         RepC9.disabled = true
         RepD9.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepD9.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -812,6 +906,7 @@ RepD9.addEventListener("click", function () {
         RepB9.disabled = true
         RepC9.disabled = true
         RepD9.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -829,6 +924,9 @@ RepA10.addEventListener("click", function () {
         RepB10.disabled = true
         RepC10.disabled = true
         RepD10.disabled = true
+        score += 50
+        scoreInput.value = score
+        scoreForm.style.display = "block"
     } else {
         RepA10.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -837,6 +935,7 @@ RepA10.addEventListener("click", function () {
         RepB10.disabled = true
         RepC10.disabled = true
         RepD10.disabled = true
+        scoreForm.style.display = "block"
     }
 }) 
 
@@ -849,6 +948,9 @@ RepB10.addEventListener("click", function () {
         RepB10.disabled = true
         RepC10.disabled = true
         RepD10.disabled = true
+        score += 50
+        scoreInput.value = score
+        scoreForm.style.display = "block"
     } else {
         RepB10.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -857,6 +959,7 @@ RepB10.addEventListener("click", function () {
         RepB10.disabled = true
         RepC10.disabled = true
         RepD10.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -869,6 +972,9 @@ RepC10.addEventListener("click", function () {
         RepB10.disabled = true
         RepC10.disabled = true
         RepD10.disabled = true
+        score += 50
+        scoreInput.value = score
+        scoreForm.style.display = "block"
     } else {
         RepC10.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -877,6 +983,7 @@ RepC10.addEventListener("click", function () {
         RepB10.disabled = true
         RepC10.disabled = true
         RepD10.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -889,6 +996,9 @@ RepD10.addEventListener("click", function () {
         RepB10.disabled = true
         RepC10.disabled = true
         RepD10.disabled = true
+        score += 50
+        scoreInput.value = score
+        scoreForm.style.display = "block"
     } else {
         RepD10.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -897,6 +1007,7 @@ RepD10.addEventListener("click", function () {
         RepB10.disabled = true
         RepC10.disabled = true
         RepD10.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 

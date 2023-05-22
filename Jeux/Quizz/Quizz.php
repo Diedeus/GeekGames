@@ -431,7 +431,7 @@ if(isset($_POST['score'])){
     $datescore = date( 'Y-m-d' );
     echo $datescore ; 
     $id = $_SESSION['id_users'];
-    $query11 = "INSERT into `Score_quizz`(Score_Quizz, Date_Scquizz, id_users) VALUES ($score, $datescore, $id)";
+    $query11 = "INSERT into `Score_quizz`(Score_Quizz, Date_Scquizz, id_users) VALUES ('$score', '$datescore', '$id')";
     $result11 = $conn->query($query11); 
 }
 
