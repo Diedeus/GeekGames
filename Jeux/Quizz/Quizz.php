@@ -418,5 +418,11 @@ function displayQuestion10($question10) {
     <button class="questionSuivante">Question suivante</button>
 </section>
 
+
+   
+
+
+    
+
 </body>
 </html>
