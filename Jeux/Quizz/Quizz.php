@@ -418,5 +418,29 @@ function displayQuestion10($question10) {
     <button class="questionSuivante">Question suivante</button>
 </section>
 
+<form id="scoreForm" method="POST" style="display: none;">
+  <input type="hidden" id="scoreInput" name="score" value="">
+  <input type="submit" id="submitScore" value="Envoyer le score">
+</form>
+
+<?php
+
+
+if(isset($_POST['score'])){
+    $score = $_POST['score'];
+    $datescore = date( 'Y-m-d' );
+    echo $datescore ; 
+    $id = $_SESSION['id_users'];
+    $query11 = "INSERT into `Score_quizz`(Score_Quizz, Date_Scquizz, id_users) VALUES ($score, $datescore, $id)";
+    $result11 = $conn->query($query11); 
+}
+
+?>
+
+   
+
+
+    
+
 </body>
 </html>

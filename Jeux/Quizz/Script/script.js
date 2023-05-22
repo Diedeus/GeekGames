@@ -15,18 +15,34 @@ let Rep = document.querySelector('.reponse');
 let btnsui = document.querySelector('.reussite')
 let btnechec = document.querySelector('.echec')
 
+
 console.log(Reponse_quizz1)
-  
+let score = 0 
+let scoreInput = document.getElementById("scoreInput")
+let scoreForm = document.querySelector('#scoreForm')
+
 
 RepA.addEventListener("click", function () {
     if (Reponse_quizz1 === 'A') {
         RepA.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA.disabled = true
+        RepB.disabled = true
+        RepC.disabled = true
+        RepD.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepA.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA.disabled = true
+        RepB.disabled = true
+        RepC.disabled = true
+        RepD.disabled = true
+        
+
     }
 }) 
 
@@ -35,10 +51,20 @@ RepB.addEventListener("click", function () {
         RepB.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA.disabled = true
+        RepB.disabled = true
+        RepC.disabled = true
+        RepD.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepB.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA.disabled = true
+        RepB.disabled = true
+        RepC.disabled = true
+        RepD.disabled = true
     }
 })
 
@@ -47,10 +73,20 @@ RepC.addEventListener("click", function () {
         RepC.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA.disabled = true
+        RepB.disabled = true
+        RepC.disabled = true
+        RepD.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepC.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA.disabled = true
+        RepB.disabled = true
+        RepC.disabled = true
+        RepD.disabled = true
     }
 })
 
@@ -59,10 +95,20 @@ RepD.addEventListener("click", function () {
         RepD.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA.disabled = true
+        RepB.disabled = true
+        RepC.disabled = true
+        RepD.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepD.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA.disabled = true
+        RepB.disabled = true
+        RepC.disabled = true
+        RepD.disabled = true
     }
 })
 
@@ -95,10 +141,19 @@ RepA2.addEventListener("click", function () {
         RepA2.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA2.disabled = true
+        RepB2.disabled = true
+        RepC2.disabled = true
+        RepD2.disabled = true
     } else {
         RepA2.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA2.disabled = true
+        RepB2.disabled = true
+        RepC2.disabled = true
+        RepD2.disabled = true
+        scoreForm.style.display = "block"
     }
 }) 
 
@@ -107,10 +162,19 @@ RepB2.addEventListener("click", function () {
         RepB2.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA2.disabled = true
+        RepB2.disabled = true
+        RepC2.disabled = true
+        RepD2.disabled = true
     } else {
         RepB2.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA2.disabled = true
+        RepB2.disabled = true
+        RepC2.disabled = true
+        RepD2.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -119,10 +183,19 @@ RepC2.addEventListener("click", function () {
         RepC2.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA2.disabled = true
+        RepB2.disabled = true
+        RepC2.disabled = true
+        RepD2.disabled = true
     } else {
         RepC2.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA2.disabled = true
+        RepB2.disabled = true
+        RepC2.disabled = true
+        RepD2.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -131,10 +204,19 @@ RepD2.addEventListener("click", function () {
         RepD2.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA2.disabled = true
+        RepB2.disabled = true
+        RepC2.disabled = true
+        RepD2.disabled = true
     } else {
         RepD2.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA2.disabled = true
+        RepB2.disabled = true
+        RepC2.disabled = true
+        RepD2.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -148,10 +230,18 @@ RepA3.addEventListener("click", function () {
         RepA3.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA3.disabled = true
+        RepB3.disabled = true
+        RepC3.disabled = true
+        RepD3.disabled = true
     } else {
         RepA3.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA3.disabled = true
+        RepB3.disabled = true
+        RepC3.disabled = true
+        RepD3.disabled = true
     }
 }) 
 
@@ -160,10 +250,18 @@ RepB3.addEventListener("click", function () {
         RepB3.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA3.disabled = true
+        RepB3.disabled = true
+        RepC3.disabled = true
+        RepD3.disabled = true
     } else {
         RepB3.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA3.disabled = true
+        RepB3.disabled = true
+        RepC3.disabled = true
+        RepD3.disabled = true
     }
 })
 
@@ -172,10 +270,18 @@ RepC3.addEventListener("click", function () {
         RepC3.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA3.disabled = true
+        RepB3.disabled = true
+        RepC3.disabled = true
+        RepD3.disabled = true
     } else {
         RepC3.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA3.disabled = true
+        RepB3.disabled = true
+        RepC3.disabled = true
+        RepD3.disabled = true
     }
 })
 
@@ -184,10 +290,18 @@ RepD3.addEventListener("click", function () {
         RepD3.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA3.disabled = true
+        RepB3.disabled = true
+        RepC3.disabled = true
+        RepD3.disabled = true
     } else {
         RepD3.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA3.disabled = true
+        RepB3.disabled = true
+        RepC3.disabled = true
+        RepD3.disabled = true
     }
 })
 
@@ -201,10 +315,18 @@ RepA4.addEventListener("click", function () {
         RepA4.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA4.disabled = true
+        RepB4.disabled = true
+        RepC4.disabled = true
+        RepD4.disabled = true
     } else {
         RepA4.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA4.disabled = true
+        RepB4.disabled = true
+        RepC4.disabled = true
+        RepD4.disabled = true
     }
 }) 
 
@@ -213,10 +335,18 @@ RepB4.addEventListener("click", function () {
         RepB4.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA4.disabled = true
+        RepB4.disabled = true
+        RepC4.disabled = true
+        RepD4.disabled = true
     } else {
         RepB4.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA4.disabled = true
+        RepB4.disabled = true
+        RepC4.disabled = true
+        RepD4.disabled = true
     }
 })
 
@@ -225,10 +355,18 @@ RepC4.addEventListener("click", function () {
         RepC4.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA4.disabled = true
+        RepB4.disabled = true
+        RepC4.disabled = true
+        RepD4.disabled = true
     } else {
         RepC4.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA4.disabled = true
+        RepB4.disabled = true
+        RepC4.disabled = true
+        RepD4.disabled = true
     }
 })
 
@@ -237,10 +375,18 @@ RepD4.addEventListener("click", function () {
         RepD4.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA4.disabled = true
+        RepB4.disabled = true
+        RepC4.disabled = true
+        RepD4.disabled = true
     } else {
         RepD4.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA4.disabled = true
+        RepB4.disabled = true
+        RepC4.disabled = true
+        RepD4.disabled = true
     }
 })
 
@@ -254,10 +400,18 @@ RepA5.addEventListener("click", function () {
         RepA5.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA5.disabled = true
+        RepB5.disabled = true
+        RepC5.disabled = true
+        RepD5.disabled = true
     } else {
         RepA5.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA5.disabled = true
+        RepB5.disabled = true
+        RepC5.disabled = true
+        RepD5.disabled = true
     }
 }) 
 
@@ -266,10 +420,18 @@ RepB5.addEventListener("click", function () {
         RepB5.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA5.disabled = true
+        RepB5.disabled = true
+        RepC5.disabled = true
+        RepD5.disabled = true
     } else {
         RepB5.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA5.disabled = true
+        RepB5.disabled = true
+        RepC5.disabled = true
+        RepD5.disabled = true
     }
 })
 
@@ -278,10 +440,18 @@ RepC5.addEventListener("click", function () {
         RepC5.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA5.disabled = true
+        RepB5.disabled = true
+        RepC5.disabled = true
+        RepD5.disabled = true
     } else {
         RepC5.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA5.disabled = true
+        RepB5.disabled = true
+        RepC5.disabled = true
+        RepD5.disabled = true
     }
 })
 
@@ -290,10 +460,18 @@ RepD5.addEventListener("click", function () {
         RepD5.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA5.disabled = true
+        RepB5.disabled = true
+        RepC5.disabled = true
+        RepD5.disabled = true
     } else {
         RepD5.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA5.disabled = true
+        RepB5.disabled = true
+        RepC5.disabled = true
+        RepD5.disabled = true
     }
 })
 
@@ -307,10 +485,18 @@ RepA6.addEventListener("click", function () {
         RepA6.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA6.disabled = true
+        RepB6.disabled = true
+        RepC6.disabled = true
+        RepD6.disabled = true
     } else {
         RepA6.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA6.disabled = true
+        RepB6.disabled = true
+        RepC6.disabled = true
+        RepD6.disabled = true
     }
 }) 
 
@@ -319,10 +505,18 @@ RepB6.addEventListener("click", function () {
         RepB6.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA6.disabled = true
+        RepB6.disabled = true
+        RepC6.disabled = true
+        RepD6.disabled = true
     } else {
         RepB6.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA6.disabled = true
+        RepB6.disabled = true
+        RepC6.disabled = true
+        RepD6.disabled = true
     }
 })
 
@@ -331,10 +525,18 @@ RepC6.addEventListener("click", function () {
         RepC6.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA6.disabled = true
+        RepB6.disabled = true
+        RepC6.disabled = true
+        RepD6.disabled = true
     } else {
         RepC6.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA6.disabled = true
+        RepB6.disabled = true
+        RepC6.disabled = true
+        RepD6.disabled = true
     }
 })
 
@@ -343,10 +545,18 @@ RepD6.addEventListener("click", function () {
         RepD6.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA6.disabled = true
+        RepB6.disabled = true
+        RepC6.disabled = true
+        RepD6.disabled = true
     } else {
         RepD6.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA6.disabled = true
+        RepB6.disabled = true
+        RepC6.disabled = true
+        RepD6.disabled = true
     }
 })
 
@@ -360,10 +570,18 @@ RepA7.addEventListener("click", function () {
         RepA7.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA7.disabled = true
+        RepB7.disabled = true
+        RepC7.disabled = true
+        RepD7.disabled = true
     } else {
         RepA7.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA7.disabled = true
+        RepB7.disabled = true
+        RepC7.disabled = true
+        RepD7.disabled = true
     }
 }) 
 
@@ -372,10 +590,18 @@ RepB7.addEventListener("click", function () {
         RepB7.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA7.disabled = true
+        RepB7.disabled = true
+        RepC7.disabled = true
+        RepD7.disabled = true
     } else {
         RepB7.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA7.disabled = true
+        RepB7.disabled = true
+        RepC7.disabled = true
+        RepD7.disabled = true
     }
 })
 
@@ -384,10 +610,18 @@ RepC7.addEventListener("click", function () {
         RepC7.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA7.disabled = true
+        RepB7.disabled = true
+        RepC7.disabled = true
+        RepD7.disabled = true
     } else {
         RepC7.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA7.disabled = true
+        RepB7.disabled = true
+        RepC7.disabled = true
+        RepD7.disabled = true
     }
 })
 
@@ -396,10 +630,18 @@ RepD7.addEventListener("click", function () {
         RepD7.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA7.disabled = true
+        RepB7.disabled = true
+        RepC7.disabled = true
+        RepD7.disabled = true
     } else {
         RepD7.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA7.disabled = true
+        RepB7.disabled = true
+        RepC7.disabled = true
+        RepD7.disabled = true
     }
 })
 
@@ -413,10 +655,18 @@ RepA8.addEventListener("click", function () {
         RepA8.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA8.disabled = true
+        RepB8.disabled = true
+        RepC8.disabled = true
+        RepD8.disabled = true
     } else {
         RepA8.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA8.disabled = true
+        RepB8.disabled = true
+        RepC8.disabled = true
+        RepD8.disabled = true
     }
 }) 
 
@@ -425,10 +675,18 @@ RepB8.addEventListener("click", function () {
         RepB8.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA8.disabled = true
+        RepB8.disabled = true
+        RepC8.disabled = true
+        RepD8.disabled = true
     } else {
         RepB8.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA8.disabled = true
+        RepB8.disabled = true
+        RepC8.disabled = true
+        RepD8.disabled = true
     }
 })
 
@@ -437,10 +695,18 @@ RepC8.addEventListener("click", function () {
         RepC8.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA8.disabled = true
+        RepB8.disabled = true
+        RepC8.disabled = true
+        RepD8.disabled = true
     } else {
         RepC8.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA8.disabled = true
+        RepB8.disabled = true
+        RepC8.disabled = true
+        RepD8.disabled = true
     }
 })
 
@@ -449,10 +715,18 @@ RepD8.addEventListener("click", function () {
         RepD8.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA8.disabled = true
+        RepB8.disabled = true
+        RepC8.disabled = true
+        RepD8.disabled = true
     } else {
         RepD8.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA8.disabled = true
+        RepB8.disabled = true
+        RepC8.disabled = true
+        RepD8.disabled = true
     }
 })
 
@@ -466,10 +740,18 @@ RepA9.addEventListener("click", function () {
         RepA9.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA9.disabled = true
+        RepB9.disabled = true
+        RepC9.disabled = true
+        RepD9.disabled = true
     } else {
         RepA9.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA9.disabled = true
+        RepB9.disabled = true
+        RepC9.disabled = true
+        RepD9.disabled = true
     }
 }) 
 
@@ -478,10 +760,18 @@ RepB9.addEventListener("click", function () {
         RepB9.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA9.disabled = true
+        RepB9.disabled = true
+        RepC9.disabled = true
+        RepD9.disabled = true
     } else {
         RepB9.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA9.disabled = true
+        RepB9.disabled = true
+        RepC9.disabled = true
+        RepD9.disabled = true
     }
 })
 
@@ -490,10 +780,18 @@ RepC9.addEventListener("click", function () {
         RepC9.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA9.disabled = true
+        RepB9.disabled = true
+        RepC9.disabled = true
+        RepD9.disabled = true
     } else {
         RepC9.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA9.disabled = true
+        RepB9.disabled = true
+        RepC9.disabled = true
+        RepD9.disabled = true
     }
 })
 
@@ -502,10 +800,18 @@ RepD9.addEventListener("click", function () {
         RepD9.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA9.disabled = true
+        RepB9.disabled = true
+        RepC9.disabled = true
+        RepD9.disabled = true
     } else {
         RepD9.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA9.disabled = true
+        RepB9.disabled = true
+        RepC9.disabled = true
+        RepD9.disabled = true
     }
 })
 
@@ -519,10 +825,18 @@ RepA10.addEventListener("click", function () {
         RepA10.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA10.disabled = true
+        RepB10.disabled = true
+        RepC10.disabled = true
+        RepD10.disabled = true
     } else {
         RepA10.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA10.disabled = true
+        RepB10.disabled = true
+        RepC10.disabled = true
+        RepD10.disabled = true
     }
 }) 
 
@@ -531,10 +845,18 @@ RepB10.addEventListener("click", function () {
         RepB10.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA10.disabled = true
+        RepB10.disabled = true
+        RepC10.disabled = true
+        RepD10.disabled = true
     } else {
         RepB10.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA10.disabled = true
+        RepB10.disabled = true
+        RepC10.disabled = true
+        RepD10.disabled = true
     }
 })
 
@@ -543,10 +865,18 @@ RepC10.addEventListener("click", function () {
         RepC10.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA10.disabled = true
+        RepB10.disabled = true
+        RepC10.disabled = true
+        RepD10.disabled = true
     } else {
         RepC10.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA10.disabled = true
+        RepB10.disabled = true
+        RepC10.disabled = true
+        RepD10.disabled = true
     }
 })
 
@@ -555,9 +885,18 @@ RepD10.addEventListener("click", function () {
         RepD10.style.backgroundColor = "green";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
+        RepA10.disabled = true
+        RepB10.disabled = true
+        RepC10.disabled = true
+        RepD10.disabled = true
     } else {
         RepD10.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
+        RepA10.disabled = true
+        RepB10.disabled = true
+        RepC10.disabled = true
+        RepD10.disabled = true
     }
 })
+
