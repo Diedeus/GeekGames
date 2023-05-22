@@ -17,7 +17,10 @@ let btnechec = document.querySelector('.echec')
 
 
 console.log(Reponse_quizz1)
-  
+let score = 0 
+let scoreInput = document.getElementById("scoreInput")
+let scoreForm = document.querySelector('#scoreForm')
+
 
 RepA.addEventListener("click", function () {
     if (Reponse_quizz1 === 'A') {
@@ -28,6 +31,8 @@ RepA.addEventListener("click", function () {
         RepB.disabled = true
         RepC.disabled = true
         RepD.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepA.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -36,6 +41,8 @@ RepA.addEventListener("click", function () {
         RepB.disabled = true
         RepC.disabled = true
         RepD.disabled = true
+        
+
     }
 }) 
 
@@ -48,6 +55,8 @@ RepB.addEventListener("click", function () {
         RepB.disabled = true
         RepC.disabled = true
         RepD.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepB.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -68,6 +77,8 @@ RepC.addEventListener("click", function () {
         RepB.disabled = true
         RepC.disabled = true
         RepD.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepC.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -88,6 +99,8 @@ RepD.addEventListener("click", function () {
         RepB.disabled = true
         RepC.disabled = true
         RepD.disabled = true
+        score += 50
+        scoreInput.value = score
     } else {
         RepD.style.backgroundColor = "red";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
@@ -140,6 +153,7 @@ RepA2.addEventListener("click", function () {
         RepB2.disabled = true
         RepC2.disabled = true
         RepD2.disabled = true
+        scoreForm.style.display = "block"
     }
 }) 
 
@@ -160,6 +174,7 @@ RepB2.addEventListener("click", function () {
         RepB2.disabled = true
         RepC2.disabled = true
         RepD2.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -180,6 +195,7 @@ RepC2.addEventListener("click", function () {
         RepB2.disabled = true
         RepC2.disabled = true
         RepD2.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
@@ -200,6 +216,7 @@ RepD2.addEventListener("click", function () {
         RepB2.disabled = true
         RepC2.disabled = true
         RepD2.disabled = true
+        scoreForm.style.display = "block"
     }
 })
 
