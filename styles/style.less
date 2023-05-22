@@ -152,12 +152,52 @@ header#test{
             padding: 7px;
             margin-left: 50px;
         }
-        a.log{
+        a.user{
             color: white;
             background-color: #3c2d87;
             line-height: 40px;
             padding: 0 10px;
             transition: all 0.5s;
+
+            border: 0;
+            &:hover{
+                background-color: #2b2064;
+            }
+        }
+        a.btnadmin{
+            color: white;
+            line-height: 40px;
+            padding: 0 10px;
+            background-color: red;
+            transition: all 0.5s;
+            &:hover{
+                background-color: rgb(182, 2, 2);
+            }
+        }
+        a.design{
+            color: white;
+            font-size: 16px;
+            line-height: 40px;
+            padding: 0 10px;
+            margin-left: 10px;
+            transition: all 0.5s;
+            &:hover{
+                background-color: white;
+                color: #2b2064;
+            }
+        }
+        button.log{
+            color: white;
+            background-color: #3c2d87;
+            line-height: 40px;
+            padding: 0 10px;
+            transition: all 0.5s;
+            margin-right: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            font-family: 'montserrat', sans-serif;
+
+            border: 0;
             &:hover{
                 background-color: #2b2064;
             }
@@ -246,8 +286,31 @@ header#test{
             a{
                 color: white;
                 padding: 15px 20px;
-                background-color: #130546 ;
+                background-color: #393795 ;
                 margin-left: 10px;
+                text-align: center;
+                transition: all 0.5s;
+                &:hover{
+                    background-color: #2b2064;
+                }
+            }
+            a#aquizz{
+                width: 180px;
+            }
+            a#a7diff{
+                width: 200px;
+            }
+            a#ajusteprix{
+                width: 200px;
+            }
+            a#asnake{
+                width: 170px;
+            }
+            a#aflappybird{
+                width: 210px;
+            }
+            a#apingpong{
+                width: 210px;
             }
     }
     }

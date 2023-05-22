@@ -171,12 +171,9 @@ closelogin.addEventListener("click", function () {
     loginuser.style.visibility = "hidden";
 });
 
-// let aquizz = document.querySelector('#aquizz')
-// let a7diff = document.querySelector('#a7diff')
-// let ajusteprix = document.querySelector('#ajusteprix')
-// let asnake = document.querySelector('#asnake')
-// let aflappybird = document.querySelector('#aflappybird')
-// let apingpong = document.querySelector('#apingpong')
+
+
+
 
 function refresh(x) {
     let aquizz = document.querySelector('#aquizz')

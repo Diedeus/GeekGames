@@ -74,7 +74,6 @@ textarea {
   line-height: 40px;
   text-indent: 20px;
   outline: none;
-
 }
 .clear {
   display: block;
@@ -144,25 +143,52 @@ header#test div.right img {
   padding: 7px;
   margin-left: 50px;
 }
-header#test div.right a.log {
-  color: white;
-  background-color: #3c2d87;
-  line-height: 40px;
-  padding: 0 10px;
-  transition: all 0.5s;
-}
-
 header#test div.right a.user {
   color: white;
   background-color: #3c2d87;
   line-height: 40px;
   padding: 0 10px;
   transition: all 0.5s;
-}
-header#test div.right a.log:hover {
-  background-color: #2b2064;
+  border: 0;
 }
 header#test div.right a.user:hover {
+  background-color: #2b2064;
+}
+header#test div.right a.btnadmin {
+  color: white;
+  line-height: 40px;
+  padding: 0 10px;
+  background-color: red;
+  transition: all 0.5s;
+}
+header#test div.right a.btnadmin:hover {
+  background-color: #b60202;
+}
+header#test div.right a.design {
+  color: white;
+  font-size: 16px;
+  line-height: 40px;
+  padding: 0 10px;
+  margin-left: 10px;
+  transition: all 0.5s;
+}
+header#test div.right a.design:hover {
+  background-color: white;
+  color: #2b2064;
+}
+header#test div.right button.log {
+  color: white;
+  background-color: #3c2d87;
+  line-height: 40px;
+  padding: 0 10px;
+  transition: all 0.5s;
+  margin-right: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'montserrat', sans-serif;
+  border: 0;
+}
+header#test div.right button.log:hover {
   background-color: #2b2064;
 }
 header#test div.right a.sign {
@@ -171,17 +197,7 @@ header#test div.right a.sign {
   padding: 0 10px;
   transition: all 0.5s;
 }
-header#test div.right a.design {
-  color: white;
-  line-height: 40px;
-  padding: 0 10px;
-  transition: all 0.5s;
-}
 header#test div.right a.sign:hover {
-  background-color: white;
-  color: #3c2d87;
-}
-header#test div.right a.design:hover {
   background-color: white;
   color: #3c2d87;
 }
@@ -260,8 +276,31 @@ header#test div.rondlogo article.textejeu p {
 header#test div.rondlogo article.textejeu a {
   color: white;
   padding: 15px 20px;
-  background-color: #130546;
+  background-color: #393795;
   margin-left: 10px;
+  text-align: center;
+  transition: all 0.5s;
+}
+header#test div.rondlogo article.textejeu a:hover {
+  background-color: #2b2064;
+}
+header#test div.rondlogo article.textejeu a#aquizz {
+  width: 180px;
+}
+header#test div.rondlogo article.textejeu a#a7diff {
+  width: 200px;
+}
+header#test div.rondlogo article.textejeu a#ajusteprix {
+  width: 200px;
+}
+header#test div.rondlogo article.textejeu a#asnake {
+  width: 170px;
+}
+header#test div.rondlogo article.textejeu a#aflappybird {
+  width: 210px;
+}
+header#test div.rondlogo article.textejeu a#apingpong {
+  width: 210px;
 }
 header#test section.minijeu {
   width: 97%;

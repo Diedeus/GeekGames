@@ -99,6 +99,7 @@ textarea {
 }
 
 body{
+    background-color: #3c2d87;
     nav.home{
         z-index: 1000;
         float: left;
@@ -127,16 +128,63 @@ body{
             }
         }
     }
+    div.droite {
+        float: right;
+        margin-top: 70px;
+        margin-right: 70px;
+        a{
+            color: white;
+            line-height: 40px;
+            margin: 0 5px;
+            padding: 10px 10px;
+            background-color: #241a5a;
+            transition: all 0.5s;
+            &:hover{
+                background-color: #181140;
+            }
+        }
+        a.btndeco{
+            background-color: red;
+            transition: all 0.5s;
+            &:hover{
+                background-color: #b00404;
+            }
+        }
+    }
     span.barre{
         z-index: 1000;
         display: block;
         height: 2px;
         width: 92.5%;
         background-color: white;
-        margin: 30px auto 70px;
+        margin: 10px auto 0px;
     }
-    background-color: #3c2d87;
+    div.selecupdate{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        button{
+            background-color: white;
+            color: #241a5a;
+            width: 300px;
+            height: 40px;
+            font-size: 20px;
+            border: 0;
+            cursor: pointer;
+        }
+        .selectquizz{
+            background-color: rgb(205, 205, 205);
+        }
+        .selectjusteprix{
+            background-color: rgb(205, 205, 205);
+        }
+    }
+    
+
+section.container_quizzgeek{
+    display: none;
     section.container_formquiz{
+        display: none;
         padding: 0 40px;
         height: 75vh;
         display: flex;
@@ -269,4 +317,11 @@ body{
             }
         }
     }
+}
+section.container_update7diff{
+    display: none;
+}
+section.container_updatejusteprix{
+    display: none;
+}
 }

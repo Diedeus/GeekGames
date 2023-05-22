@@ -42,13 +42,14 @@
             } else{
                 ?>
                 <img src="./asset/icone-mario.png" alt="">
-            <a class="log" href="#">Se connecter</a>
+                <button class="log"><p>Se connecter</p></button>
+            <!-- <a class="log" href="#">*</a> -->
             <a class="sign" href="./Registration/register.php">S'inscrire</a>
             
             <?php
             }
             if(isset($_SESSION['Admin'])&& $_SESSION['Admin'] === '1' ){
-                echo '<a class="design" href="./admin/admin.php">Admin</a>';
+                echo '<a class="btnadmin" href="./admin/admin.php">Admin</a>';
             }
             ?>   
             
@@ -76,8 +77,8 @@
                 <h1 id="titrejeu"></h1>
                 <p class="descrijeu" id="descijeuid"></p>
                     <a id="aquizz" href="./Jeux/Quizz/Quizz.php" style="display:block">Jouer au Quizz</a>
-                    <a id="a7diff" href="./Jeux/Juste_Prix/justeprix.php" style="display:none">Jouer au Sept Diff</a>
-                    <a id="ajusteprix" href="#" style="display:none">Jouer au juste prix</a>
+                    <a id="a7diff" href="" style="display:none">Jouer au Sept Diff</a>
+                    <a id="ajusteprix" href="./Jeux/Juste_Prix/justeprix.php" style="display:none">Jouer au juste prix</a>
                     <a id="asnake" href="#" style="display:none">Jouer au snake</a>
                     <a id="aflappybird" href="#" style="display:none">Jouer au flappy bird</a>
                     <a id="apingpong" href="#" style="display:none">Jouer au ping pong</a>
@@ -148,13 +149,17 @@ if (isset($_POST['Nom_utilisateur'])){
     $_SESSION['loggedIn'] = true;
     $_SESSION['Admin'] = $user['Admin'];
    
-   
-    
+   ?>
+   <script>
+     window.location.href = "../index.php"
+   </script>
+   <?php 
   }else{
     $message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
     
   }
 }
+
 ?>
 <form class="box" action="" method="post" name="login">
 <h2 class="box-title">CONNEXION</h2>

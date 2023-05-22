@@ -81,7 +81,7 @@
         <input type="submit" name="submit" value="S'inscrire" class="boutonenvoyer" />
 
         <p class="box-register">Vous êtes déjà inscrit?
-          <a href="login.php">Connectez-vous !</a></p>
+          <a href="../index.php">Connectez-vous !</a></p>
       </form>
       <?php } ?>
     </section>
