@@ -118,142 +118,195 @@ body nav.home ul li a.on {
   background-color: white;
   color: #3c2d87;
 }
+body div.droite {
+  float: right;
+  margin-top: 70px;
+  margin-right: 70px;
+}
+body div.droite a {
+  color: white;
+  line-height: 40px;
+  margin: 0 5px;
+  padding: 10px 10px;
+  background-color: #241a5a;
+  transition: all 0.5s;
+}
+body div.droite a:hover {
+  background-color: #181140;
+}
+body div.droite a.btndeco {
+  background-color: red;
+  transition: all 0.5s;
+}
+body div.droite a.btndeco:hover {
+  background-color: #b00404;
+}
 body span.barre {
   z-index: 1000;
   display: block;
   height: 2px;
   width: 92.5%;
   background-color: white;
-  margin: 30px auto 70px;
+  margin: 10px auto 0px;
 }
-body section.container_formquiz {
+body div.selecupdate {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+body div.selecupdate button {
+  background-color: white;
+  color: #241a5a;
+  width: 300px;
+  height: 40px;
+  font-size: 20px;
+  border: 0;
+  cursor: pointer;
+}
+body div.selecupdate .selectquizz {
+  background-color: #cdcdcd;
+}
+body div.selecupdate .selectjusteprix {
+  background-color: #cdcdcd;
+}
+body section.container_quizzgeek {
+  display: none;
+}
+body section.container_quizzgeek section.container_formquiz {
+  display: none;
   padding: 0 40px;
   height: 75vh;
   display: flex;
   align-items: center;
   margin-bottom: 50px;
 }
-body section.container_formquiz div.formleft {
+body section.container_quizzgeek section.container_formquiz div.formleft {
   width: 80%;
   padding-right: 60px;
 }
-body section.container_formquiz div.formleft form {
+body section.container_quizzgeek section.container_formquiz div.formleft form {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-body section.container_formquiz div.formleft form h2 {
+body section.container_quizzgeek section.container_formquiz div.formleft form h2 {
   color: white;
   margin-bottom: 10px;
   text-align: center;
 }
-body section.container_formquiz div.formleft form input.box-reponse {
+body section.container_quizzgeek section.container_formquiz div.formleft form input.box-reponse {
   width: 49%;
 }
-body section.container_formquiz div.formleft form input.update-delete {
+body section.container_quizzgeek section.container_formquiz div.formleft form input.update-delete {
   background-color: #241a5a;
   color: white;
   cursor: pointer;
   transition: all 0.5s;
 }
-body section.container_formquiz div.formleft form input.update-delete:hover {
+body section.container_quizzgeek section.container_formquiz div.formleft form input.update-delete:hover {
   background-color: #181140;
 }
-body section.container_formquiz div.formleft div.succes {
+body section.container_quizzgeek section.container_formquiz div.formleft div.succes {
   width: 100%;
   background-color: #24ff00;
   border: 1px solid white;
   margin-bottom: 30px;
 }
-body section.container_formquiz div.formleft div.succes h3 {
+body section.container_quizzgeek section.container_formquiz div.formleft div.succes h3 {
   color: white;
   text-align: center;
   padding: 15px 0;
 }
-body section.container_formquiz div.formleft div.error {
+body section.container_quizzgeek section.container_formquiz div.formleft div.error {
   width: 100%;
   background-color: #ff0000;
   border: 1px solid white;
   margin-bottom: 30px;
 }
-body section.container_formquiz div.formleft div.error h3 {
+body section.container_quizzgeek section.container_formquiz div.formleft div.error h3 {
   color: white;
   text-align: center;
   padding: 15px 0;
 }
-body section.container_formquiz div.tableauquiz {
+body section.container_quizzgeek section.container_formquiz div.tableauquiz {
   height: 700px;
   overflow: scroll;
 }
-body section.container_formquiz div.tableauquiz table {
+body section.container_quizzgeek section.container_formquiz div.tableauquiz table {
   height: 700px;
   background-color: white;
 }
-body section.container_formquiz div.tableauquiz table tr {
+body section.container_quizzgeek section.container_formquiz div.tableauquiz table tr {
   text-align: center;
   overflow: scroll;
   height: 40px;
 }
-body section.container_formquiz div.tableauquiz table tr.titrecolonne {
+body section.container_quizzgeek section.container_formquiz div.tableauquiz table tr.titrecolonne {
   text-align: center;
   height: 60px;
   background-color: #241a5a;
   color: white;
 }
-body section.container_formquiz div.tableauquiz table tr.titrecolonne td {
+body section.container_quizzgeek section.container_formquiz div.tableauquiz table tr.titrecolonne td {
   border: 0;
   padding: 0 10px;
 }
-body section.update_quizz {
+body section.container_quizzgeek section.update_quizz {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-body section.update_quizz form {
+body section.container_quizzgeek section.update_quizz form {
   width: 800px;
   margin-bottom: 50px;
 }
-body section.update_quizz form h2 {
+body section.container_quizzgeek section.update_quizz form h2 {
   text-align: center;
   color: white;
   margin-bottom: 20px;
 }
-body section.update_quizz form label {
+body section.container_quizzgeek section.update_quizz form label {
   color: white;
   margin-bottom: 10px;
 }
-body section.update_quizz form input.id_question {
+body section.container_quizzgeek section.update_quizz form input.id_question {
   color: white;
   background-color: #241a5a;
   transition: all 0.5s;
   cursor: pointer;
 }
-body section.update_quizz form input.id_question:hover {
+body section.container_quizzgeek section.update_quizz form input.id_question:hover {
   background-color: #181140;
 }
-body section.update_quizz form.updateform {
+body section.container_quizzgeek section.update_quizz form.updateform {
   margin-bottom: 20px;
 }
-body section.update_quizz div.succes {
+body section.container_quizzgeek section.update_quizz div.succes {
   width: 800px;
   background-color: #24ff00;
   border: 1px solid white;
   margin-bottom: 30px;
 }
-body section.update_quizz div.succes h3 {
+body section.container_quizzgeek section.update_quizz div.succes h3 {
   color: white;
   text-align: center;
   padding: 15px 0;
 }
-body section.update_quizz div.error {
+body section.container_quizzgeek section.update_quizz div.error {
   width: 800px;
   background-color: #ff0000;
   border: 1px solid white;
   margin-bottom: 30px;
 }
-body section.update_quizz div.error h3 {
+body section.container_quizzgeek section.update_quizz div.error h3 {
   color: white;
   text-align: center;
   padding: 15px 0;
+}
+body section.container_update7diff {
+  display: none;
+}
+body section.container_updatejusteprix {
+  display: none;
 }

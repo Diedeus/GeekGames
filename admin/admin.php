@@ -9,7 +9,7 @@
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
   <title>GeekGames - Home</title>
   <link rel="stylesheet" href="admin.css">
-  <script src="../script/script.js" defer></script>
+  <script src="./script/admin.js" defer></script>
 
 
 </head>
@@ -22,13 +22,23 @@
                 <li><a href="#">NOUS CONTACTER</a></li>
             </ul>
         </nav>
+        <div class="droite">
+          <a href="../index.php">Retour à l'accueil</a>
+          <a class="btndeco" href="../Registration/deconnexion.php">Deconnexion</a>
+        </div>
         <div class="clear"></div>
         <span class="barre"></span>
-        <div>
-          <a href="../index.php">Retour à l'accueil</a>
-          <a href="../Registration/deconnexion.php">Deconnexion</a>
+        <div class="selecupdate">
+          <button class="selectuser">Utilisateurs</button>
+          <button class="selectquizz">Quizz geek</button>
+          <button class="select7diff">7 différences</button>
+          <button class="selectjusteprix">Juste prix</button>
         </div>
+<section class="container_updateuser">
+  <h1>UPDATE USER</h1>
+</section>
 
+<section class="container_quizzgeek">
   <section class="container_formquiz">
 <div class="formleft">
 
@@ -303,6 +313,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <!-- Fin du formulaire UPDATE -->
+</section>
+</section>
+
+<section class="container_update7diff">
+  <h1>UPDATE 7DIFF</h1>
+</section>
+
+<section class="container_updatejusteprix">
+  <h1>UPDATE JUSTE PRIX</h1>
 </section>
 
 
