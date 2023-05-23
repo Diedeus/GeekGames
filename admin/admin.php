@@ -15,6 +15,11 @@
 </head>
 
 <body>
+
+<?php
+  // ON VA CHERCHER LES LOGS DE LA DB DANS LE FICHIER CONFIG.PHP
+require('../Registration/config.php');
+?>
 <nav class="home">
             <ul>
                 <li><a href="../index.php">MINI JEUX</a></li>
@@ -35,7 +40,251 @@
           <button class="selectjusteprix">Juste prix</button>
         </div>
 <section class="container_updateuser">
-  <h1>UPDATE USER</h1>
+<div class="formleft">
+
+<form class="box" action="" method="post" name="users">
+    <h2 class="box-title">Création d'un nouvel utilisateur</h2>
+    <input type="text" class="box-input" name="Nom" placeholder="Quel est son nom?" required>
+    <input type="text" class="box-input" name="Prenom" placeholder="Quel est son prenom" required>
+    <input type="text" class="box-input" name="Nom_utilisateur" placeholder="Quel est son pseudo" required>
+    <input type="text" class="box-input" name="Email" placeholder="Quel est son email" required>
+    <input type="text" class="box-input" name="Date_de_naissance" placeholder="Quand est il né?" required>
+    <input type="text" class="box-input" name="adresse" placeholder="Quel est son adresse" required>
+    <input type="text" class="box-input" name="Mot_de_passe" placeholder="Quel est le mot de passe" required>
+    <input type="text" class="box-input" name="Admin" placeholder="Est il admin ? 0 pour non, 1 pour oui" required>
+    <input class="update-delete" type="submit" value="Creer l'utilisateur" name="submit" class="connecter">
+    <?php if (! empty($message)) { ?>
+    <p class="errorMessage"><?php echo $message; ?></p>
+    <?php } ?>
+</form>
+
+<?php
+
+if(isset($_REQUEST['Nom'], $_REQUEST['Prenom'], $_REQUEST['Nom_utilisateur'], $_REQUEST['Email'], $_REQUEST['Date_de_naissance'], $_REQUEST['adresse'], $_REQUEST['Admin'])){
+
+  $NomCreauti = stripslashes($_REQUEST['Nom']);
+  $NomCreauti = mysqli_real_escape_string($conn, $NomCreauti);
+
+  $PrenomCreauti = stripslashes($_REQUEST['Prenom']);
+  $PrenomCreauti = mysqli_real_escape_string($conn, $PrenomCreauti);
+
+  $NomutiCreauti = stripslashes($_REQUEST['Nom_utilisateur']);
+  $NomutiCreauti = mysqli_real_escape_string($conn, $NomutiCreauti);
+
+  $EmailCreauti = stripslashes($_REQUEST['Email']);
+  $EmailCreauti = mysqli_real_escape_string($conn, $EmailCreauti);
+
+  $birthdayCreauti = stripslashes($_REQUEST['Date_de_naissance']);
+  $birthdayCreauti = mysqli_real_escape_string($conn, $birthdayCreauti);
+
+  $adresseCreauti = stripslashes($_REQUEST['adresse']);
+  $adresseCreauti = mysqli_real_escape_string($conn, $adresseCreauti);
+
+  $MotdepasseCreauti = stripslashes($_REQUEST['Mot_de_passe']);
+  $MotdepasseCreauti = mysqli_real_escape_string($conn, $MotdepasseCreauti);
+
+  $AdminCreauti = stripslashes($_REQUEST['Admin']);
+  $AdminCreauti = mysqli_real_escape_string($conn, $AdminCreauti);
+
+  $query = "INSERT into `users` (Nom, Prenom, Nom_utilisateur, Email, Date_de_naissance, adresse, Mot_de_passe, Admin) 
+  VALUES ('$NomCreauti', '$PrenomCreauti', '$NomutiCreauti', '$EmailCreauti', '$birthdayCreauti', '$adresseCreauti', '".hash('sha256', $MotdepasseCreauti)."', '$AdminCreauti')";
+
+ 
+$res = mysqli_query($conn, $query);
+  
+  
+      // Si l'insertion a réussi, il affiche un message de succès, sinon il affiche un message d'erreur
+      if($res){
+        echo "<div class='succes'>
+              <h3>La question a été inscrite avec succès </h3>
+        </div>";
+     } else {
+      echo "<div class='error'>
+              <h3>Impossible de créer la question, verifier le formulaire</h3>
+        </div>";
+     }}       
+
+
+
+?>
+
+<form class="box" action="" method="post" name="users">
+    <h2 class="box-title">Suppression des questions</h2>
+    <input type="text" class="box-input" name="id_userssup" placeholder="Quelle ligne est à supprimer">
+    <input class="update-delete" type="submit" value="Supprimer la question" name="submit" class="connecter">
+  </form>
+
+  <?php
+
+//todo on vérifie si le champ "id_question" est défini 
+if(isset($_REQUEST["id_userssup"])){
+
+  //todo on récupère la valeur de ce champ et on empeche les injections SQL
+    $id_userssup = stripslashes($_REQUEST["id_userssup"]);
+    $id_userssup = mysqli_real_escape_string($conn, $id_userssup);
+
+    $query = "DELETE FROM `users`  WHERE id_users = $id_userssup";
+
+    //todo on exécute une requête de suppression sur la base de données, On supprime la ligne correspondant à l'ID de la question spécifié dans le champ de texte.
+    $reponse10 = mysqli_query($conn, $query);
+}
+?>
+ <!-- Fin du formulaire de suppression -->
+ </div>
+
+ <div class="tableauquiz">
+  
+ <!-- FIN CREATION DE QUESTION -->
+
+
+<!-- Création d'un tableau HTML -->
+  <table>
+    <tr class="titrecolonne">
+      <td>ID</td>
+      <td>Nom</td>
+      <td>Prenom</td>
+      <td>pseudo</td>
+      <td>Email</td>
+      <td>Date de naissance</td>
+      <td>adresse</td>
+      <td>Admin</td>
+    </tr>
+
+    <?php
+    if ($conn->connect_error) {
+        echo "Impossible de se connecter à MySQL: " . $conn->connect_error;
+        exit();
+      }
+
+      //todo On sélectionne toutes les colonnes de la table "Jeu_Quizz grace a la requete SQL
+    $sql = "SELECT * FROM users ORDER BY id_users";
+
+    //todo On exécute la requête et renvoie le résultat dans un objet
+    $reponse = mysqli_query($conn, $sql);
+
+    //todo La boucle permet de parcourir chaque ligne du résultat et de stocker les données de chaque colonne dans un tableau
+    while($donnees = mysqli_fetch_array($reponse, MYSQLI_ASSOC))
+    {
+    ?>
+<!-- chaque valeur du tableau est affichée dans une cellule du tableau -->
+    <tr>
+      <td><?php echo $donnees["id_users"];?></td>
+      <td><?php echo $donnees['Nom'];?></td>
+      <td><?php echo $donnees['Prenom'];?></td>
+      <td><?php echo $donnees['Nom_utilisateur'];?></td>
+      <td><?php echo $donnees['Email'];?></td>
+      <td><?php echo $donnees['Date_de_naissance'];?></td>
+      <td><?php echo $donnees['adresse'];?></td>
+      <td><?php echo $donnees['Admin'];?></td>
+    </tr>
+    <?php
+    }
+  
+    ?>
+  </table>
+
+  <section class="update_quizz">
+ <?php
+
+// Affichage du formulaire pour sélectionner une question à modifier
+echo '<form class="box" action="" method="post" name="users">';
+echo '<h2 class="box-title">Choisir un Utilisateur à mettre à jour</h2>';
+echo '<input type="text" class="box-input" name="id_users2" placeholder="Quelle ligne est à mettre à jour">';
+echo '<input class="id_question" type="submit" value="Sélectionnez" name="submit" class="connecter">';
+echo '</form>';
+
+
+// Vérification de la soumission du formulaire de sélection
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_users2'])){
+    if (isset($_POST['id_users2'])) {
+        $id_users = $_POST['id_users2'];
+
+        // Récupération de l'enregistrement existant depuis la base de données
+        $stmt = $conn->prepare("SELECT * FROM users WHERE id_users = ?");
+        $stmt->bind_param("i", $id_users);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $idu = $row['id_users'];
+            $Nomu = $row['Nom'];
+            $Prenomu = $row['Prenom'];
+            $Pseudou = $row['Nom_utilisateur'];
+            $Emailu = $row['Email'];
+            $Birthdayu = $row['Date_de_naissance'];
+            $Adresseu = $row['adresse'];
+            $Adminu = $row['Admin'];
+
+            // Affichage du formulaire de modification avec les valeurs existantes
+            echo '<form method="POST" action="#" name="editForm" class="updateform">';
+            echo '<h2 class="box-title">Mettre à jour cet utilisateur</h2>';
+            echo '<input type="hidden" name="idu" value="' . $idu . '">';
+            echo '<label>Nom : </label>
+            <input type="text" name="Nomu" value="' . $Nomu .'"><br>';
+            echo '<label>Prenom : </label>
+            <input type="text" class="box-reponse" name="Prenomu" value="' . $Prenomu . '"><br>';
+            echo '<label>Nom d\'utilisateur : </label>
+            <input type="text" class="box-reponse" name="Pseudou" value="' . $Pseudou . '"><br>';
+            echo '<label>Email : </label>
+            <input type="text" class="box-reponse" name="Emailu" value="' . $Emailu . '"><br>';
+            echo '<label> Date de naissance : </label>
+            <input type="text" class="box-reponse" name="Birthdayu" value="' . $Birthdayu . '"><br>';
+            echo '<label> Adresse : </label>
+            <input type="text" class="box-reponse" name="Adresseu" value="' . $Adresseu . '"><br>';
+            echo '<label>Admin : </label><input type="text" class="box-reponse" name="Adminu" value="' . $Adminu . '"><br>';
+            echo '<input type="submit" value="Modifier" class="id_question">';
+            echo '</form>';
+        } else {
+            echo "<div class='error'>
+        <h3>Aucun enregistrement trouvé avec cet ID.</h3>
+  </div>";
+        }
+    } else {
+        echo "<div class='error'>
+        <h3>Erreur : ID manquant dans la soumission du formulaire.</h3>
+  </div>";
+    }
+}
+
+// Vérification de la soumission du formulaire de modification
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  if (isset($_POST['idu'], $_POST['Nomu'], $_POST['Prenomu'], $_POST['Pseudou'], $_POST['Emailu'], $_POST['Birthdayu'], $_POST['Adresseu'], $_POST['Adminu'])) {
+      $idu2 = $_POST['idu'];
+      $Nomu2 = $_POST['Nomu'];
+      $Prenomu2 = $_POST['Prenomu'];
+      $Pseudou2 = $_POST['Pseudou'];
+      $Emailu2 = $_POST['Emailu'];
+      $Birthdayu2 = $_POST['Birthdayu'];
+      $Adresseu2 = $_POST['Adresseu'];
+      $Adminu2 = $_POST['Adminu'];
+
+      // Mise à jour de l'enregistrement dans la base de données
+      $stmt = $conn->prepare("UPDATE users SET Nom = ?, Prenom = ?, Nom_utilisateur = ?, Email = ?, Date_de_naissance = ?, adresse = ?, Admin = ? WHERE id_users = ?");
+      $stmt->bind_param("sssssssi", $Nomu2, $Prenomu2, $Pseudou2, $Emailu2, $Birthdayu2, $Adresseu2, $Adminu2, $idu2);
+
+      if ($stmt->execute()) {
+          echo "<div class='succes'>
+              <h3>Enregistrement mis à jour avec succès. </h3>
+        </div>";
+      } else {
+        echo "<div class='error'>
+        <h3>Erreur lors de la mise à jour de l'enregistrement : </h3>
+  </div>" . $stmt->error;
+        
+      }
+  } 
+  // else {
+  //     echo "Erreur : Données du formulaire manquantes.";
+  // }
+}
+?>
+<!-- Fin du formulaire UPDATE -->
+</section>
+<!-- Fin du tableau -->
+</div>
+
+
 </section>
 
 <section class="container_quizzgeek">
@@ -77,10 +326,7 @@
 
   
 
-<?php
-  // ON VA CHERCHER LES LOGS DE LA DB DANS LE FICHIER CONFIG.PHP
-require('../Registration/config.php');
-?>
+
 <?php 
   
 
