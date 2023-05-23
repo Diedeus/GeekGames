@@ -11,31 +11,54 @@
     <script src="./Script/script.js" defer></script>
     <script src="./script/refresh.js" defer></script>
     <link rel="stylesheet" href="./style/style.css">
-    
+
 
 </head>
 
 <body>
 
-<?php 
+    <?php 
 
 require('../../../geekgames/Registration/config.php');
 
 ?>
 
-<Section class="demarage">
-    <div class="explication">
-        <h2>Bienvenue dans ce Quizz</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias iure amet illum minima eveniet asperiores impedit similique voluptatum! Ipsum ratione atque facere fuga fugit distinctio totam quos impedit ab assumenda!</p>
-        <button id="demQuizz">Démarrer le quizz</button>
-    </div>
-    
-</Section>
+    <header>
+
+        <nav class="home">
+            <ul>
+                <li><a href="../../index.php">MINI JEUX</a></li>
+                <li><a href="#">CREDITS</a></li>
+                <li><a href="#">NOUS CONTACTER</a></li>
+            </ul>
+        </nav>
+
+        <div class="right">
+            <input id="searchbar" type="text" name="search" placeholder="Rechercher un jeu ...">
+            <img src="../../asset/icone-mario.png" alt="">
+            <button class=log>Se connecter</button>
+            <a class="sign" href="register.php">S'inscrire</a>
+        </div>
+        <div class="clear"></div>
+        <span class="barre"></span>
+
+        <section class="container_quizz">
+            <h1>QUIZZ GEEK</h1>
+            <Section class="demarage">
+                <div class="explication">
+                    <h2>Bienvenue dans ce Quizz</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias iure amet illum minima
+                        eveniet asperiores impedit similique voluptatum! Ipsum ratione atque facere fuga fugit
+                        distinctio totam quos impedit ab assumenda!</p>
+                    <button id="demQuizz">Démarrer le quizz</button>
+                </div>
+
+            </Section>
 
 
-<section class="question1">
-    <div class="Q1">
-        <?php
+            <section class="question1">
+                <div class="Q1">
+                    <?php
         $query1 = "SELECT intitule_question, Reponse_A, Reponse_B, Reponse_C, Reponse_D, Reponse_Quizz, Difficulte_question FROM jeu_quizz WHERE Difficulte_question = 1 ORDER BY RAND() LIMIT 1";
         $result1 = $conn->query($query1);
         session_save_path("../../tmp");
@@ -52,30 +75,26 @@ require('../../../geekgames/Registration/config.php');
 
 // Fonction pour afficher une question
         function displayQuestion($question1) {
-            echo "Question: " . $question1["intitule_question"] . "<br>";
-            echo "<input type='submit' id='RA' value='A) " . $question1["Reponse_A"] . "'><br>";
-            echo "<input type='submit' id='RB' value='B) " . $question1["Reponse_B"] . "'><br>";
-            echo "<input type='submit' id='RC' value='C) " . $question1["Reponse_C"] . "'><br>";
-            echo "<input type='submit' id='RD' value='D) " . $question1["Reponse_D"] . "'><br>";
-            echo "--------------------<br>";
+            echo "<p>Question: " . $question1["intitule_question"] . "</p><br>";
+            echo "<div class=\"clear\"></div> ";
+            echo "<input type='submit' id='RA' value='" . $question1["Reponse_A"] . "'><br>";
+            echo "<input type='submit' id='RB' value='" . $question1["Reponse_B"] . "'><br>";
+            echo "<input type='submit' id='RC' value='" . $question1["Reponse_C"] . "'><br>";
+            echo "<input type='submit' id='RD' value='" . $question1["Reponse_D"] . "'><br>";
         }
-
-
         ?>
         <p class="reponse"></p>
-
-        <script>
-        let Reponse_quizz1 = <?php echo json_encode($_SESSION['Reponse_Quizz']); ?>;
-        </script>
-    </div>
-</section>
-
-</div>
+                    <script>
+                        let Reponse_quizz1 = <?php echo json_encode($_SESSION['Reponse_Quizz']); ?> ;
+                    </script>
+                </div>
+            </section>
 
 
-<section class="question2">
-<div class="Q2">
-<?php
+
+            <section class="question2">
+                <div class="Q2">
+                    <?php
 unset($_SESSION['Reponse_Quizz']);
 $query2 = "SELECT intitule_question, Reponse_A, Reponse_B, Reponse_C, Reponse_D, Reponse_Quizz, Difficulte_question FROM jeu_quizz WHERE Difficulte_question = 1 ORDER BY RAND() LIMIT 1";
 $result2 = $conn->query($query2);
@@ -103,16 +122,16 @@ function displayQuestion2($question2) {
 
 
 ?>
-<p class="reponse"></p>
+                    <p class="reponse"></p>
 
-<script>
- let Reponse_quizz2 = <?php echo json_encode($_SESSION['Reponse_Quizz']); ?>;
-   </script>
-</section>
+                    <script>
+                        let Reponse_quizz2 = <?php echo json_encode($_SESSION['Reponse_Quizz']); ?> ;
+                    </script>
+            </section>
 
-<section class="question3">
-<div class="Q3">
-<?php
+            <section class="question3">
+                <div class="Q3">
+                    <?php
 unset($_SESSION['Reponse_Quizz']);
 $query3 = "SELECT intitule_question, Reponse_A, Reponse_B, Reponse_C, Reponse_D, Reponse_Quizz, Difficulte_question FROM jeu_quizz WHERE Difficulte_question = 1 ORDER BY RAND() LIMIT 1";
 $result3 = $conn->query($query3);
@@ -140,16 +159,16 @@ function displayQuestion3($question3) {
 
 
 ?>
-<p class="reponse"></p>
+                    <p class="reponse"></p>
 
-<script>
- let Reponse_quizz3 = <?php echo json_encode($_SESSION['Reponse_Quizz']); ?>;
-   </script>
-</section>
+                    <script>
+                        let Reponse_quizz3 = <?php echo json_encode($_SESSION['Reponse_Quizz']); ?> ;
+                    </script>
+            </section>
 
-<section class="question4">
-<div class="Q4">
-<?php
+            <section class="question4">
+                <div class="Q4">
+                    <?php
 unset($_SESSION['Reponse_Quizz']);
 $query4 = "SELECT intitule_question, Reponse_A, Reponse_B, Reponse_C, Reponse_D, Reponse_Quizz, Difficulte_question FROM jeu_quizz WHERE Difficulte_question = 1 ORDER BY RAND() LIMIT 1";
 $result4 = $conn->query($query4);
@@ -177,16 +196,16 @@ function displayQuestion4($question4) {
 
 
 ?>
-<p class="reponse"></p>
+                    <p class="reponse"></p>
 
-<script>
- let Reponse_quizz4 = <?php echo json_encode($_SESSION['Reponse_Quizz']); ?>;
-   </script>
-</section>
+                    <script>
+                        let Reponse_quizz4 = < ? php echo json_encode($_SESSION['Reponse_Quizz']); ? > ;
+                    </script>
+            </section>
 
-<section class="question5">
-<div class="Q5">
-<?php
+            <section class="question5">
+                <div class="Q5">
+                    <?php
 unset($_SESSION['Reponse_Quizz']);
 $query5 = "SELECT intitule_question, Reponse_A, Reponse_B, Reponse_C, Reponse_D, Reponse_Quizz, Difficulte_question FROM jeu_quizz WHERE Difficulte_question = 2 ORDER BY RAND() LIMIT 1";
 $result5 = $conn->query($query5);
@@ -214,16 +233,16 @@ function displayQuestion5($question5) {
 
 
 ?>
-<p class="reponse"></p>
+                    <p class="reponse"></p>
 
-<script>
- let Reponse_quizz5 = <?php echo json_encode($_SESSION['Reponse_Quizz']); ?>;
-   </script>
-</section>
+                    <script>
+                        let Reponse_quizz5 = < ? php echo json_encode($_SESSION['Reponse_Quizz']); ? > ;
+                    </script>
+            </section>
 
-<section class="question6">
-<div class="Q6">
-<?php
+            <section class="question6">
+                <div class="Q6">
+                    <?php
 unset($_SESSION['Reponse_Quizz']);
 $query6 = "SELECT intitule_question, Reponse_A, Reponse_B, Reponse_C, Reponse_D, Reponse_Quizz, Difficulte_question FROM jeu_quizz WHERE Difficulte_question = 2 ORDER BY RAND() LIMIT 1";
 $result6 = $conn->query($query6);
@@ -251,16 +270,16 @@ function displayQuestion6($question6) {
 
 
 ?>
-<p class="reponse"></p>
+                    <p class="reponse"></p>
 
-<script>
- let Reponse_quizz6 = <?php echo json_encode($_SESSION['Reponse_Quizz']); ?>;
-   </script>
-</section>
+                    <script>
+                        let Reponse_quizz6 = < ? php echo json_encode($_SESSION['Reponse_Quizz']); ? > ;
+                    </script>
+            </section>
 
-<section class="question7">
-<div class="Q7">
-<?php
+            <section class="question7">
+                <div class="Q7">
+                    <?php
 unset($_SESSION['Reponse_Quizz']);
 $query7 = "SELECT intitule_question, Reponse_A, Reponse_B, Reponse_C, Reponse_D, Reponse_Quizz, Difficulte_question FROM jeu_quizz WHERE Difficulte_question = 2 ORDER BY RAND() LIMIT 1";
 $result7 = $conn->query($query7);
@@ -288,16 +307,16 @@ function displayQuestion7($question7) {
 
 
 ?>
-<p class="reponse"></p>
+                    <p class="reponse"></p>
 
-<script>
- let Reponse_quizz7 = <?php echo json_encode($_SESSION['Reponse_Quizz']); ?>;
-   </script>
-</section>
+                    <script>
+                        let Reponse_quizz7 = < ? php echo json_encode($_SESSION['Reponse_Quizz']); ? > ;
+                    </script>
+            </section>
 
-<section class="question8">
-<div class="Q8">
-<?php
+            <section class="question8">
+                <div class="Q8">
+                    <?php
 unset($_SESSION['Reponse_Quizz']);
 $query8 = "SELECT intitule_question, Reponse_A, Reponse_B, Reponse_C, Reponse_D, Reponse_Quizz, Difficulte_question FROM jeu_quizz WHERE Difficulte_question = 2 ORDER BY RAND() LIMIT 1";
 $result8 = $conn->query($query8);
@@ -325,16 +344,16 @@ function displayQuestion8($question8) {
 
 
 ?>
-<p class="reponse"></p>
+                    <p class="reponse"></p>
 
-<script>
- let Reponse_quizz8 = <?php echo json_encode($_SESSION['Reponse_Quizz']); ?>;
-   </script>
-</section>
+                    <script>
+                        let Reponse_quizz8 = < ? php echo json_encode($_SESSION['Reponse_Quizz']); ? > ;
+                    </script>
+            </section>
 
-<section class="question9">
-<div class="Q9">
-<?php
+            <section class="question9">
+                <div class="Q9">
+                    <?php
 unset($_SESSION['Reponse_Quizz']);
 $query9 = "SELECT intitule_question, Reponse_A, Reponse_B, Reponse_C, Reponse_D, Reponse_Quizz, Difficulte_question FROM jeu_quizz WHERE Difficulte_question = 3 ORDER BY RAND() LIMIT 1";
 $result9 = $conn->query($query9);
@@ -362,16 +381,16 @@ function displayQuestion9($question9) {
 
 
 ?>
-<p class="reponse"></p>
+                    <p class="reponse"></p>
 
-<script>
- let Reponse_quizz9 = <?php echo json_encode($_SESSION['Reponse_Quizz']); ?>;
-   </script>
-</section>
+                    <script>
+                        let Reponse_quizz9 = < ? php echo json_encode($_SESSION['Reponse_Quizz']); ? > ;
+                    </script>
+            </section>
 
-<section class="question10">
-<div class="Q10">
-<?php
+            <section class="question10">
+                <div class="Q10">
+                    <?php
 unset($_SESSION['Reponse_Quizz']);
 $query10 = "SELECT intitule_question, Reponse_A, Reponse_B, Reponse_C, Reponse_D, Reponse_Quizz, Difficulte_question FROM jeu_quizz WHERE Difficulte_question = 3 ORDER BY RAND() LIMIT 1";
 $result10 = $conn->query($query10);
@@ -398,33 +417,6 @@ function displayQuestion10($question10) {
 }
 
 
-?>
-<p class="reponse"></p>
-
-<script>
- let Reponse_quizz10 = <?php echo json_encode($_SESSION['Reponse_Quizz']); ?>;
-   </script>
-</section>
-
-<section class="echec">
-    <button class="acc">Retour à l'accueil</button>
-    <button class="reco">Recommencer</button>
-    <div class="scoreObtenu"></div>
-
-</section>
-
-
-<section class="reussite">
-    <button class="questionSuivante">Question suivante</button>
-</section>
-
-<form id="scoreForm" method="POST" style="display: none;">
-  <input type="hidden" id="scoreInput" name="score" value="">
-  <input type="submit" id="submitScore" value="Envoyer le score">
-</form>
-
-<?php
-
 
 if(isset($_POST['score'])){
     $score = $_POST['score'];
@@ -434,13 +426,41 @@ if(isset($_POST['score'])){
     $query11 = "INSERT into `Score_quizz`(Score_Quizz, Date_Scquizz, id_users) VALUES ('$score', '$datescore', '$id')";
     $result11 = $conn->query($query11); 
 }
-
 ?>
+                    <p class="reponse"></p>
 
-   
+                    <script>
+                        let Reponse_quizz10 = < ? php echo json_encode($_SESSION['Reponse_Quizz']); ? > ;
+                    </script>
+            </section>
+
+            <section class="echec">
+                <button class="acc">Retour à l'accueil</button>
+                <button class="reco">Recommencer</button>
+                <div class="scoreObtenu"></div>
+
+            </section>
 
 
-    
+            <section class="reussite">
+                <button class="questionSuivante">Question suivante</button>
+            </section>
+
+            <form id="scoreForm" method="POST" style="display: none;">
+                <input type="hidden" id="scoreInput" name="score" value="">
+                <input type="submit" id="submitScore" value="Envoyer le score">
+            </form>
+
+        </section>
+
+    </header>
+
+
+
+
+
+
 
 </body>
+
 </html>
