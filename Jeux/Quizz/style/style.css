@@ -1,52 +1,302 @@
-.demarrage {
-
-display:block;
+@charset "utf-8";
+header,
+section,
+footer,
+aside,
+nav,
+main,
+article,
+figure {
+  display: block;
 }
-
+div,
+header,
+nav,
+article,
+section,
+aside,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+li,
+figure,
+figcaption,
+class,
+img {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  border: 0 solid transparent;
+  font-size: 16px;
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+  width: 100%;
+  display: block;
+  font-family: 'montserrat', sans-serif;
+}
+img,
+object,
+embed,
+canvas,
+video,
+audio,
+picture {
+  max-width: 100%;
+  height: auto;
+}
+img {
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+input,
+textarea {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 15px;
+  border: 0;
+  line-height: 40px;
+  text-indent: 20px;
+  outline: none;
+}
+.clear {
+  display: block;
+  zoom: 1;
+  width: 100%;
+}
+.clear:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+header {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../asset/back.jpg);
+  background-size: cover;
+  transition: all 0.5s;
+}
+header nav.home {
+  z-index: 1000;
+  float: left;
+  margin-top: 70px;
+  margin-left: 70px;
+}
+header nav.home ul {
+  display: flex;
+}
+header nav.home ul li {
+  list-style-type: none;
+  margin-right: 20px;
+}
+header nav.home ul li a {
+  padding: 10px 15px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+header nav.home ul li a:hover {
+  background-color: white;
+  color: #3c2d87;
+}
+header nav.home ul li a.on {
+  background-color: white;
+  color: #3c2d87;
+}
+header div.right {
+  z-index: 1000;
+  margin-top: 65px;
+  margin-right: 115px;
+  margin-bottom: 15px;
+  float: right;
+  display: flex;
+}
+header div.right #searchbar {
+  width: 300px ;
+  height: 40px;
+  outline: none;
+  margin: 0;
+}
+header div.right img {
+  width: 40px ;
+  height: 40px;
+  background-color: #3c2d87;
+  padding: 7px;
+  margin-left: 50px;
+}
+header div.right a.user {
+  color: white;
+  background-color: #3c2d87;
+  line-height: 40px;
+  padding: 0 10px;
+  transition: all 0.5s;
+  border: 0;
+}
+header div.right a.user:hover {
+  background-color: #2b2064;
+}
+header div.right a.btnadmin {
+  color: white;
+  line-height: 40px;
+  padding: 0 10px;
+  background-color: red;
+  transition: all 0.5s;
+}
+header div.right a.btnadmin:hover {
+  background-color: #b60202;
+}
+header div.right a.design {
+  color: white;
+  font-size: 16px;
+  line-height: 40px;
+  padding: 0 10px;
+  margin-left: 10px;
+  transition: all 0.5s;
+}
+header div.right a.design:hover {
+  background-color: white;
+  color: #2b2064;
+}
+header div.right button.log {
+  color: white;
+  background-color: #3c2d87;
+  line-height: 40px;
+  padding: 0 10px;
+  transition: all 0.5s;
+  margin-right: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'montserrat', sans-serif;
+  border: 0;
+}
+header div.right button.log:hover {
+  background-color: #2b2064;
+}
+header div.right a.sign {
+  color: white;
+  line-height: 40px;
+  padding: 0 10px;
+  transition: all 0.5s;
+}
+header div.right a.sign:hover {
+  background-color: white;
+  color: #3c2d87;
+}
+header span.barre {
+  z-index: 1000;
+  display: block;
+  height: 2px;
+  width: 92.5%;
+  background-color: white;
+  margin: 0 auto 125px;
+}
+header section.container_quizz {
+  width: 1100px;
+  height: 560px;
+  margin: 0 auto;
+  background-color: #0b0b0b;
+  padding-top: 70px;
+}
+header section.container_quizz h1 {
+  color: white;
+  font-size: 90px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+header section.container_quizz section.demarage {
+  padding: 50px;
+}
+header section.container_quizz section.demarage div.explication h2 {
+  color: white;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+header section.container_quizz section.demarage div.explication p {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+header section.container_quizz section.demarage div.explication button {
+  width: 40%;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.5s;
+  border: 0;
+}
+header section.container_quizz section.demarage div.explication button:hover {
+  background-color: #d2d2d2;
+}
+header section.container_quizz section div {
+  padding: 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+header section.container_quizz section div p {
+  color: white;
+  margin-bottom: 15px;
+}
+header section.container_quizz section div input {
+  width: 48%;
+  margin: 0 10px 15px;
+}
+.demarage {
+  display: block;
+}
 .question1 {
-    display: none;
+  margin-top: 40px;
+  display: none;
 }
-
 .reussite {
-    display: none;
+  display: none;
 }
-
 .echec {
-    display: none;
+  display: none;
 }
-
-.question2{
-    display: none;
+.question2 {
+  display: none;
 }
-
-.question3{
-    display: none;
+.question3 {
+  display: none;
 }
-
-.question4{
-    display: none;
+.question4 {
+  display: none;
 }
-
-.question5{
-    display: none;
+.question5 {
+  display: none;
 }
-
-.question6{
-    display: none;
+.question6 {
+  display: none;
 }
-
-.question7{
-    display: none;
+.question7 {
+  display: none;
 }
-
-.question8{
-    display: none;
+.question8 {
+  display: none;
 }
-
-.question9{
-    display: none;
+.question9 {
+  display: none;
 }
-
-.question10{
-    display: none;
+.question10 {
+  display: none;
 }
