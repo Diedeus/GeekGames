@@ -33,3 +33,4 @@ updatejusteprix.addEventListener("click", function () {
     section7diff.style.display="none";
     sectionuser.style.display="none";
 });
+

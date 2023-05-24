@@ -20,6 +20,22 @@
   // ON VA CHERCHER LES LOGS DE LA DB DANS LE FICHIER CONFIG.PHP
 require('../Registration/config.php');
 ?>
+
+<?php
+  // VERIFICATION ADMIN OU UTILISATEUR
+
+  // Initialiser la session
+  session_save_path("../tmp");
+  session_start();
+  $id_user = $_SESSION['id_users'];
+  $admin = "SELECT admin FROM users WHERE id_users=$id_user" ;
+  // Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
+  if(!isset($admin) || $admin === 0){
+    header("Location: index.php");
+    exit(); 
+  }
+?>
+
 <nav class="home">
             <ul>
                 <li><a href="../index.php">MINI JEUX</a></li>
@@ -291,20 +307,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <section class="container_formquiz">
 <div class="formleft">
 
-  <?php
-  // VERIFICATION ADMIN OU UTILISATEUR
 
-  // Initialiser la session
-  session_save_path("../tmp");
-  session_start();
-  $id_user = $_SESSION['id_users'];
-  $admin = "SELECT admin FROM users WHERE id_users=$id_user" ;
-  // Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
-  if(!isset($admin) || $admin === 0){
-    header("Location: index.php");
-    exit(); 
-  }
-?>
 
 
 
@@ -568,6 +571,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <section class="container_updatejusteprix">
   <h1>UPDATE JUSTE PRIX</h1>
+
+  <form method="post" enctype="multipart/form-data">
+            <input type="file" name="photo">
+            <input type="text" name="prix">
+            <input type="submit">
+        </form>
+        
+
+    <?php
+  if (isset($_FILES['photo']['tmp_name'])) {
+    $destinationFolder = '../Jeux/Juste_Prix/Images/'; // Spécifiez ici le chemin de destination souhaité
+    $destinationFile = $destinationFolder . $_FILES['photo']['name'];
+    $NomFileBdd = 'http://localhost:4000/Jeux/Juste_Prix/Images/' . $_FILES['photo']['name'];
+    echo $NomFileBdd;
+
+    $retour = copy($_FILES['photo']['tmp_name'], $destinationFile);
+    $prix = $_POST["prix"];
+    echo $prix;
+      
+        if(isset($prix) && isset($NomFileBdd)){
+      
+      $query = "INSERT into `jeu_jprix` (Element_Jprix, Reponse_Jprix) VALUES ('$NomFileBdd', '$prix')";
+      $reponse12 = mysqli_query($conn, $query);
+        }
+  } else {
+      echo '<p>Erreur lors de l\'enregistrement de la photo dans le dossier de destination.</p>';
+  }
+
+    ?>
 </section>
 
 
