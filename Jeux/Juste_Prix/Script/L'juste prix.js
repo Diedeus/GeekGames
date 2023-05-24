@@ -61,7 +61,7 @@ let a = document.querySelector('#tou')
  //! fonction pour la barre chaud froid pour indice utilisateurs
 
 function barrechofroi(y) {
-console.log("fonction",y)
+
 if(1 <= y && y < 5 || 1 > y && y >=5) {
         a.style.width = "80%";
         a.style.backgroundColor = "#ff8400";

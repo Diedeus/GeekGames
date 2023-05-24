@@ -93,8 +93,13 @@ header {
   background-color: #3c2d87;
   display: flex;
 }
-header .corps {
+header .accueil {
   display: flex;
+}
+header .jeujp{
+  display: none;
+}
+header .corps {
   justify-content: center;
   align-items: center;
   flex-direction: column;
