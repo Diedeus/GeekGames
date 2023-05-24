@@ -132,13 +132,13 @@ header div.right {
   display: flex;
 }
 header div.right #searchbar {
-  width: 300px ;
+  width: 300px;
   height: 40px;
   outline: none;
   margin: 0;
 }
 header div.right img {
-  width: 40px ;
+  width: 40px;
   height: 40px;
   background-color: #3c2d87;
   padding: 7px;
@@ -248,17 +248,247 @@ header section.container_quizz section.demarage div.explication button:hover {
 }
 header section.container_quizz section div {
   padding: 0 50px;
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 header section.container_quizz section div p {
   color: white;
   margin-bottom: 15px;
 }
-header section.container_quizz section div input {
+header section.container_quizz section div div.flex {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+  margin-bottom: 15px;
+}
+header section.container_quizz section div div.flex input {
   width: 48%;
-  margin: 0 10px 15px;
+  cursor: pointer;
+}
+section.echec {
+  position: relative;
+  display: none;
+  top: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: #0b0b0bf6;
+  overflow: hidden;
+}
+section.echec img {
+  width: auto;
+  height: 100vh;
+  z-index: 1;
+}
+section.echec .echtop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: echtopslide 0.2s linear;
+}
+section.echec .echbot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  animation: echbotslide 0.2s linear;
+}
+section.echec div.affichage_echec {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  animation: showscoreechec 1s linear;
+}
+section.echec div.affichage_echec div.position_echec {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section.echec div.affichage_echec div.position_echec h2 {
+  color: white;
+  font-size: 157px;
+  font-weight: 1000;
+}
+section.echec div.affichage_echec div.position_echec p {
+  color: white;
+  font-size: 30px;
+  margin-bottom: 80px;
+}
+section.echec div.affichage_echec div.position_echec article.bouton_echec {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+section.echec div.affichage_echec div.position_echec article.bouton_echec button {
+  width: 30%;
+  height: 50px;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+section.echec div.affichage_echec div.position_echec article.bouton_echec button:hover {
+  background-color: #c1c1c1;
+}
+section.echec div.affichage_echec div.position_echec article.bouton_echec button.reco {
+  margin: 0 15px;
+  background-color: #ff0036;
+  color: white;
+  transition: all 0.5s;
+}
+section.echec div.affichage_echec div.position_echec article.bouton_echec button.reco:hover {
+  background-color: #c8012c;
+}
+section.echec div.affichage_echec div.position_echec article.bouton_echec form {
+  width: 30%;
+}
+section.echec div.affichage_echec div.position_echec article.bouton_echec form input {
+  text-indent: 0;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+section.echec div.affichage_echec div.position_echec article.bouton_echec form input:hover {
+  background-color: #c1c1c1;
+}
+@keyframes echtopslide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes echbotslide {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes showscoreechec {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+section.win {
+  position: relative;
+  display: none;
+  top: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: #0b0b0bf6;
+  overflow: hidden;
+}
+section.win img {
+  width: auto;
+  height: 100vh;
+  z-index: 1;
+}
+section.win .wintop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: wintopslide 0.2s linear;
+}
+section.win .winbot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  animation: winbotslide 0.2s linear;
+}
+section.win div.affichage_win {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  animation: showscore 1s linear;
+}
+section.win div.affichage_win div.position_win {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section.win div.affichage_win div.position_win h2 {
+  color: white;
+  font-size: 157px;
+  font-weight: 1000;
+}
+section.win div.affichage_win div.position_win p {
+  color: white;
+  font-size: 30px;
+  margin-bottom: 80px;
+}
+section.win div.affichage_win div.position_win article.bouton_win {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+section.win div.affichage_win div.position_win article.bouton_win button {
+  width: 30%;
+  height: 50px;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+section.win div.affichage_win div.position_win article.bouton_win button:hover {
+  background-color: #c1c1c1;
+}
+section.win div.affichage_win div.position_win article.bouton_win button.reco2 {
+  margin: 0 15px;
+  background-color: #3c2d87;
+  color: white;
+  transition: all 0.5s;
+}
+section.win div.affichage_win div.position_win article.bouton_win button.reco2:hover {
+  background-color: #2b2064;
+}
+section.win div.affichage_win div.position_win article.bouton_win form {
+  width: 30%;
+}
+section.win div.affichage_win div.position_win article.bouton_win form input {
+  text-indent: 0;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+section.win div.affichage_win div.position_win article.bouton_win form input:hover {
+  background-color: #c1c1c1;
+}
+@keyframes wintopslide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes winbotslide {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes showscore {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
 }
 .demarage {
   display: block;
@@ -269,9 +499,14 @@ header section.container_quizz section div input {
 }
 .reussite {
   display: none;
+  padding-left: 50px;
 }
-.echec {
-  display: none;
+.reussite button.questionSuivante {
+  width: 25%;
+  height: 30px;
+  background-color: white;
+  border: 0;
+  cursor: pointer;
 }
 .question2 {
   display: none;
