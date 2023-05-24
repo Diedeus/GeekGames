@@ -33,3 +33,22 @@ updatejusteprix.addEventListener("click", function () {
     section7diff.style.display="none";
     sectionuser.style.display="none";
 });
+
+function uploadImage() {
+    let fileInput = document.getElementById("fileInput");
+    let file = fileInput.files[0];
+    
+    if (file) {
+        let formData = new FormData();
+        formData.append("image", file);
+        console.log(file)
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://localhost:4000/admin/admin.php", true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log("Image téléchargée avec succès !");
+            }
+        };
+        xhr.send(formData);
+    }
+}

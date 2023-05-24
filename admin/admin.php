@@ -20,6 +20,22 @@
   // ON VA CHERCHER LES LOGS DE LA DB DANS LE FICHIER CONFIG.PHP
 require('../Registration/config.php');
 ?>
+
+<?php
+  // VERIFICATION ADMIN OU UTILISATEUR
+
+  // Initialiser la session
+  session_save_path("../tmp");
+  session_start();
+  $id_user = $_SESSION['id_users'];
+  $admin = "SELECT admin FROM users WHERE id_users=$id_user" ;
+  // Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
+  if(!isset($admin) || $admin === 0){
+    header("Location: index.php");
+    exit(); 
+  }
+?>
+
 <nav class="home">
             <ul>
                 <li><a href="../index.php">MINI JEUX</a></li>
@@ -291,20 +307,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <section class="container_formquiz">
 <div class="formleft">
 
-  <?php
-  // VERIFICATION ADMIN OU UTILISATEUR
 
-  // Initialiser la session
-  session_save_path("../tmp");
-  session_start();
-  $id_user = $_SESSION['id_users'];
-  $admin = "SELECT admin FROM users WHERE id_users=$id_user" ;
-  // Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
-  if(!isset($admin) || $admin === 0){
-    header("Location: index.php");
-    exit(); 
-  }
-?>
 
 
 
@@ -568,6 +571,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <section class="container_updatejusteprix">
   <h1>UPDATE JUSTE PRIX</h1>
+
+    <input type="file" name="image" id="fileInput">
+    <button onclick="uploadImage()">Télécharger</button>
+
+  <?php
+  
+    if(isset($_FILES["image"]) && $_FILES["image"]["error"] == UPLOAD_ERR_OK) {
+    
+    $targetDir = "http://localhost:4000/Jeux/Juste_Prix/Images/";
+    $targetFile = $targetDir . basename($_FILES["image"]["name"]);
+    $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+
+    // Vérifier le type de fichier (optionnel)
+    if($imageFileType == "jpg" || $imageFileType == "jpeg" || $imageFileType == "png") {
+        // Déplacer le fichier vers le dossier de destination
+        if(move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
+            echo "Image téléchargée avec succès !";
+        } else {
+            echo "Erreur lors du téléchargement de l'image.";
+        }
+    } else {
+        echo "Seules les images de type JPG, JPEG et PNG sont autorisées.";
+    }
+} else {
+    echo "Une erreur s'est produite lors du téléchargement de l'image.";
+}
+?>
 </section>
 
 
