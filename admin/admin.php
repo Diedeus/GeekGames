@@ -572,32 +572,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <section class="container_updatejusteprix">
   <h1>UPDATE JUSTE PRIX</h1>
 
-    <input type="file" name="image" id="fileInput">
-    <button onclick="uploadImage()">Télécharger</button>
+  <form method="post" enctype="multipart/form-data">
+            <input type="file" name="photo">
+            <input type="text" name="prix">
+            <input type="submit">
+        </form>
+        
 
-  <?php
-  
-    if(isset($_FILES["image"]) && $_FILES["image"]["error"] == UPLOAD_ERR_OK) {
-    
-    $targetDir = "http://localhost:4000/Jeux/Juste_Prix/Images/";
-    $targetFile = $targetDir . basename($_FILES["image"]["name"]);
-    $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+    <?php
+  if (isset($_FILES['photo']['tmp_name'])) {
+    $destinationFolder = '../Jeux/Juste_Prix/Images/'; // Spécifiez ici le chemin de destination souhaité
+    $destinationFile = $destinationFolder . $_FILES['photo']['name'];
+    $NomFileBdd = 'http://localhost:4000/Jeux/Juste_Prix/Images/' . $_FILES['photo']['name'];
+    echo $NomFileBdd;
 
-    // Vérifier le type de fichier (optionnel)
-    if($imageFileType == "jpg" || $imageFileType == "jpeg" || $imageFileType == "png") {
-        // Déplacer le fichier vers le dossier de destination
-        if(move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
-            echo "Image téléchargée avec succès !";
-        } else {
-            echo "Erreur lors du téléchargement de l'image.";
+    $retour = copy($_FILES['photo']['tmp_name'], $destinationFile);
+    $prix = $_POST["prix"];
+    echo $prix;
+      
+        if(isset($prix) && isset($NomFileBdd)){
+      
+      $query = "INSERT into `jeu_jprix` (Element_Jprix, Reponse_Jprix) VALUES ('$NomFileBdd', '$prix')";
+      $reponse12 = mysqli_query($conn, $query);
         }
-    } else {
-        echo "Seules les images de type JPG, JPEG et PNG sont autorisées.";
-    }
-} else {
-    echo "Une erreur s'est produite lors du téléchargement de l'image.";
-}
-?>
+  } else {
+      echo '<p>Erreur lors de l\'enregistrement de la photo dans le dossier de destination.</p>';
+  }
+
+    ?>
 </section>
 
 
