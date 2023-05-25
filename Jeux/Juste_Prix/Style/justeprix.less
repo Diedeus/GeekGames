@@ -9,7 +9,7 @@ nav,
 main,
 article,
 figure {
-    display: block;
+    display: block; 
 }
 
 div,
@@ -98,14 +98,43 @@ textarea {
     }
 }
 
+header .accueil {
+    display: flex;
+  }
+  header .jeujp{
+    display: none;
+  }
 
 header{
     width: 100%;
     height: 100vh;
     background-color: #3c2d87;
     display: flex;
+    section.accueil{
+        div.startgame{
+            width: 505px;
+            h1{
+                margin-bottom: 0;
+            }
+            P{
+                color: white;
+                margin-bottom: 10px;
+            }
+            button{
+                background-color: #241a5a;
+                transition: all 0.5s;
+                color: white;
+                border: 0;
+                &:hover{
+                    background-color: #181140;
+                }
+            }
+        }
+    }
+    .jeujp{
+        display: none;
+    }
     .corps{
-        display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
@@ -128,6 +157,15 @@ header{
                 width: 500px;
                 height: 40px;
                 cursor: pointer;
+                margin-bottom: 50px;
+            }
+            p{
+                color: white;
+                margin-bottom: 10px;
+            }
+            p.affichscore{
+                font-weight: 800;
+                font-size: 40px;
             }
         
         span {
@@ -147,6 +185,19 @@ header{
             width: 100%;
             height: 70%;
             background-color: #161616;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            p.trouvezprix{
+                color: white;
+                font-size: 25px;
+                margin-bottom: 15px;
+                display: none;
+            }
+            img{
+                width: 50%;
+            }
         }
 
         .reponse {
@@ -254,7 +305,118 @@ header{
 
 
 
+section.win {
+    position: relative;
+    display: none;
+    top: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: #0b0b0bf6;
+    overflow: hidden;
+    video {
+        width: 120%;
+        height: 116%;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        opacity: 85%;
+    }
 
+
+    div.affichage_win {
+        position: absolute;
+        z-index: 10;
+        width: 100%;
+        height: 100vh;
+        animation: showscore 1s linear;
+        
+
+        div.position_win {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            img{
+                margin-bottom: 10px;
+            }
+            p.titrescore{
+                color: white;
+                font-size: 30px;
+            }
+            p.scorejp{
+                color: white;
+                font-size: 60px;
+                margin-bottom: 30px;
+                font-weight: 800;
+            }
+            article.bouton_win{
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                button{
+                    width: 30%;
+                    height: 50px;
+                    border: 0;
+                    cursor: pointer;
+                    transition: all 0.5s;
+                    &:hover{
+                        background-color: rgb(193, 193, 193);
+                    }
+                }
+                button.reco{
+                    margin: 0 15px;
+                    background-color: #ffa800;
+                    color: white;
+                    transition:all 0.5s;
+                    &:hover{
+                        background-color: #d38d02;
+                    }
+                }
+                form{
+                    width: 30%;
+                    input{
+                        text-indent: 0;
+                        cursor: pointer;
+                        transition: all 0.5s;
+                        &:hover{
+                            background-color: rgb(193, 193, 193);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes wintopslide {
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+@keyframes winbotslide {
+    0%{
+        right: -100%;
+    }
+    100%{
+        right: 0;
+    }
+}
+@keyframes showscore {
+    0%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100;
+    }
+}
 
 
 

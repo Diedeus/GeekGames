@@ -20,9 +20,12 @@ session_start();
 
     <header>
         <section class="accueil corps">
+            <div class="startgame">
             <h1>Bienvenue au Juste Prix</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium sapiente sint recusandae dolorum ea minus officia ab dolor laboriosam aliquam dolore beatae mollitia reprehenderit, debitis placeat, cumque iusto molestias aperiam.</p>
+            <p>Trouvez le prix de l'objet demandé avec le moins de tentatives possible !<br>
+        </p>
             <button id="comm">Commencer</button>
+        </div>
         </section>
 
         <section class="jeujp corps">
@@ -46,12 +49,16 @@ session_start();
             <h1>Le Juste Prix</h1>
             <input type="number" id="prix" placeholder="Proposez votre prix :">
             <button type="submit" id="btt">Vérifier</button>
+            <p>Nombre de tentatives : </p>
+            <p class="affichscore"></p>
+
             <span class="chofroi"><span id="tou"></span></span>
 
         </section>
                     
         <div class="right">
         <section class="imageprix">
+            <p class="trouvezprix">Trouvez le prix de :</p>
 
         </section>
         <section class="reponse">
@@ -84,10 +91,31 @@ session_start();
 
 
     </header>
-    <form id="myForm" method="post">
+    <section class="win">
+    <video autoplay muted loop>
+  <source src="./Images/testanimwin.mov">
+</video>
+        <div class="affichage_win">
+            <div class="position_win">
+                <img src="./Images/winlogo.png" alt="">
+                <p class="titrescore">Votre score</p>
+                <p class="scorejp"></p>
+                <article class="bouton_win">
+                    <button class="acc">Retour à l'accueil</button>
+                    <button class="reco">Recommencer</button>
+                    <form id="myForm" method="post">
+                        <input type="hidden" name="scorefinal" id="valeurCacheeInput">
+                        <input type="submit" value="Enregistrer votre Score" style="z-index:10">
+                    </form>
+                </article>
+            </div>
+        </div>
+    </section>
+    
+    <!-- <form id="myForm" method="post">
         <input type="hidden" name="scorefinal" id="valeurCacheeInput">
         <input type="submit" value="Enregistrer votre Score" style="z-index:10">
-        </form>
+        </form> -->
 
         <?php
         if(isset($_POST['scorefinal'])){

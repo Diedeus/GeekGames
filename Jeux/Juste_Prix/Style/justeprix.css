@@ -87,16 +87,38 @@ textarea {
   clear: both;
   visibility: hidden;
 }
+header .accueil {
+  display: flex;
+}
+header .jeujp {
+  display: none;
+}
 header {
   width: 100%;
   height: 100vh;
   background-color: #3c2d87;
   display: flex;
 }
-header .accueil {
-  display: flex;
+header section.accueil div.startgame {
+  width: 505px;
 }
-header .jeujp{
+header section.accueil div.startgame h1 {
+  margin-bottom: 0;
+}
+header section.accueil div.startgame P {
+  color: white;
+  margin-bottom: 10px;
+}
+header section.accueil div.startgame button {
+  background-color: #241a5a;
+  transition: all 0.5s;
+  color: white;
+  border: 0;
+}
+header section.accueil div.startgame button:hover {
+  background-color: #181140;
+}
+header .jeujp {
   display: none;
 }
 header .corps {
@@ -123,6 +145,15 @@ header .corps button {
   width: 500px;
   height: 40px;
   cursor: pointer;
+  margin-bottom: 50px;
+}
+header .corps p {
+  color: white;
+  margin-bottom: 10px;
+}
+header .corps p.affichscore {
+  font-weight: 800;
+  font-size: 40px;
 }
 header .corps span {
   height: 10px;
@@ -140,6 +171,19 @@ header div.right .imageprix {
   width: 100%;
   height: 70%;
   background-color: #161616;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+header div.right .imageprix p.trouvezprix {
+  color: white;
+  font-size: 25px;
+  margin-bottom: 15px;
+  display: none;
+}
+header div.right .imageprix img {
+  width: 50%;
 }
 header div.right .reponse {
   background-color: white;
@@ -237,4 +281,110 @@ header div.navinscri span.barre {
   width: 92.5%;
   background-color: white;
   margin: 0 auto;
+}
+section.win {
+  position: relative;
+  display: none;
+  top: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: #0b0b0bf6;
+  overflow: hidden;
+}
+section.win video {
+  width: 120%;
+  height: 116%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  opacity: 85%;
+}
+section.win div.affichage_win {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  animation: showscore 1s linear;
+}
+section.win div.affichage_win div.position_win {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section.win div.affichage_win div.position_win img {
+  margin-bottom: 10px;
+}
+section.win div.affichage_win div.position_win p.titrescore {
+  color: white;
+  font-size: 30px;
+}
+section.win div.affichage_win div.position_win p.scorejp {
+  color: white;
+  font-size: 60px;
+  margin-bottom: 30px;
+  font-weight: 800;
+}
+section.win div.affichage_win div.position_win article.bouton_win {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+section.win div.affichage_win div.position_win article.bouton_win button {
+  width: 30%;
+  height: 50px;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+section.win div.affichage_win div.position_win article.bouton_win button:hover {
+  background-color: #c1c1c1;
+}
+section.win div.affichage_win div.position_win article.bouton_win button.reco {
+  margin: 0 15px;
+  background-color: #ffa800;
+  color: white;
+  transition: all 0.5s;
+}
+section.win div.affichage_win div.position_win article.bouton_win button.reco:hover {
+  background-color: #d38d02;
+}
+section.win div.affichage_win div.position_win article.bouton_win form {
+  width: 30%;
+}
+section.win div.affichage_win div.position_win article.bouton_win form input {
+  text-indent: 0;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+section.win div.affichage_win div.position_win article.bouton_win form input:hover {
+  background-color: #c1c1c1;
+}
+@keyframes wintopslide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes winbotslide {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes showscore {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
 }
