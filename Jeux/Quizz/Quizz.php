@@ -438,11 +438,12 @@ function displayQuestion10($question10) {
 if(isset($_POST['score'])){
     $score = $_POST['score'];
     $datescore = date( 'Y-m-d' );
-    echo $datescore ; 
     $id = $_SESSION['id_users'];
     $query11 = "INSERT into `Score_quizz`(Score_Quizz, Date_Scquizz, id_users) VALUES ('$score', '$datescore', '$id')";
     $result11 = $conn->query($query11); 
 }
+
+
 ?>
                     <p class="reponse10"></p>
 
@@ -454,35 +455,7 @@ if(isset($_POST['score'])){
             <section class="reussite">
                 <button class="questionSuivante">Question suivante</button>
             </section>
-
-            <!-- <form id="scoreForm" method="POST" style="display: none;">
-                <input type="hidden" id="scoreInput" name="score" value="">
-                <input type="submit" id="submitScore" value="Envoyer le score">
-            </form> -->
-
         </section>
-
-        <!-- <section class="echec">
-                <div class="affichage_win">
-                    <button class="acc">Retour à l'accueil</button>
-                    <button class="reco">Recommencer</button>
-                    <form id="scoreForm" method="POST">
-                        <input type="hidden" id="scoreInput" name="score" value="">
-                        <input type="submit" id="submitScore" value="Envoyer le score">
-                    </form>
-                </div>
-            </section>
-
-            <section class="win">
-                <div class="affichage_win">
-                    <button class="acc">Retour à l'accueil</button>
-                    <button class="reco">Recommencer</button>
-                    <form id="scoreForm" method="POST">
-                        <input type="hidden" id="scoreInput" name="score" value="">
-                        <input type="submit" id="submitScore" value="Envoyer le score">
-                    </form>
-                </div>
-            </section> -->
 
     </header>
 
@@ -491,7 +464,8 @@ if(isset($_POST['score'])){
                 <div class="affichage_echec">
                     <div class="position_echec">
                     <h2>GAME OVER ...</h2>
-                    <p>Votre score</p>
+                    <p class="titrescore">Votre score</p>
+                    <p class="scoreechec"></p>
                     <article class="bouton_echec">
                     <button class="acc">Retour à l'accueil</button>
                     <button class="reco">Recommencer</button>
@@ -512,7 +486,8 @@ if(isset($_POST['score'])){
                 <div class="affichage_win">
                     <div class="position_win">
                     <h2>VICTORY !</h2>
-                    <p>Votre score</p>
+                    <p class="titrescore">Votre score</p>
+                    <p class="scorewinner"></p>
                     <article class="bouton_win">
                     <button class="acc2">Retour à l'accueil</button>
                     <button class="reco2">Recommencer</button>

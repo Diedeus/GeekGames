@@ -27,6 +27,8 @@ let btnsui = document.querySelector('.reussite')
 let btnechec = document.querySelector('.echec')
 let winner = document.querySelector('.win')
 
+let scoreechec = document.querySelector('.scoreechec');
+
 
 console.log(Reponse_quizz1)
 let score = 0 
@@ -37,6 +39,7 @@ let scoreForm = document.querySelector('#scoreForm')
 RepA.addEventListener("click", function () {
     if (Reponse_quizz1 === 'A') {
         RepA.style.backgroundColor = "green";
+        RepA.style.color = "white";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA.disabled = true
@@ -47,6 +50,7 @@ RepA.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepA.style.backgroundColor = "red";
+        RepA.style.color = "white";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA.disabled = true
@@ -54,6 +58,7 @@ RepA.addEventListener("click", function () {
         RepC.disabled = true
         RepD.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
 
     }
 }) 
@@ -61,6 +66,7 @@ RepA.addEventListener("click", function () {
 RepB.addEventListener("click", function () {
     if (Reponse_quizz1 === 'B') {
         RepB.style.backgroundColor = "green";
+        RepB.style.color = "white";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA.disabled = true
@@ -71,6 +77,7 @@ RepB.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepB.style.backgroundColor = "red";
+        RepB.style.color = "white";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA.disabled = true
@@ -78,12 +85,14 @@ RepB.addEventListener("click", function () {
         RepC.disabled = true
         RepD.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepC.addEventListener("click", function () {
     if (Reponse_quizz1 === 'C') {
         RepC.style.backgroundColor = "green";
+        RepC.style.color = "white";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA.disabled = true
@@ -94,6 +103,7 @@ RepC.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepC.style.backgroundColor = "red";
+        RepC.style.color = "white";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA.disabled = true
@@ -101,12 +111,14 @@ RepC.addEventListener("click", function () {
         RepC.disabled = true
         RepD.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepD.addEventListener("click", function () {
     if (Reponse_quizz1 === 'D') {
         RepD.style.backgroundColor = "green";
+        RepD.style.color = "white";
         Rep.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA.disabled = true
@@ -117,6 +129,7 @@ RepD.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepD.style.backgroundColor = "red";
+        RepD.style.color = "white";
         Rep.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA.disabled = true
@@ -124,6 +137,7 @@ RepD.addEventListener("click", function () {
         RepC.disabled = true
         RepD.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
@@ -164,6 +178,7 @@ let RepD2 = document.querySelector('#RD2');
 RepA2.addEventListener("click", function () {
     if (Reponse_quizz2 === 'A') {
         RepA2.style.backgroundColor = "green";
+        RepA2.style.color = "white";
         Rep2.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA2.disabled = true
@@ -174,6 +189,7 @@ RepA2.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepA2.style.backgroundColor = "red";
+        RepA2.style.color = "white";
         Rep2.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA2.disabled = true
@@ -181,12 +197,14 @@ RepA2.addEventListener("click", function () {
         RepC2.disabled = true
         RepD2.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 }) 
 
 RepB2.addEventListener("click", function () {
     if (Reponse_quizz2 === 'B') {
         RepB2.style.backgroundColor = "green";
+        RepB2.style.color = "white";
         Rep2.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA2.disabled = true
@@ -197,6 +215,7 @@ RepB2.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepB2.style.backgroundColor = "red";
+        RepB2.style.color = "white";
         Rep2.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA2.disabled = true
@@ -204,12 +223,14 @@ RepB2.addEventListener("click", function () {
         RepC2.disabled = true
         RepD2.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepC2.addEventListener("click", function () {
     if (Reponse_quizz2 === 'C') {
         RepC2.style.backgroundColor = "green";
+        RepC2.style.color = "white";
         Rep2.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA2.disabled = true
@@ -220,6 +241,7 @@ RepC2.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepC2.style.backgroundColor = "red";
+        RepC2.style.color = "white";
         Rep2.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA2.disabled = true
@@ -227,12 +249,14 @@ RepC2.addEventListener("click", function () {
         RepC2.disabled = true
         RepD2.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepD2.addEventListener("click", function () {
     if (Reponse_quizz2 === 'D') {
         RepD2.style.backgroundColor = "green";
+        RepD2.style.color = "white";
         Rep2.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA2.disabled = true
@@ -243,6 +267,7 @@ RepD2.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepD2.style.backgroundColor = "red";
+        RepD2.style.color = "white";
         Rep2.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA2.disabled = true
@@ -250,6 +275,7 @@ RepD2.addEventListener("click", function () {
         RepC2.disabled = true
         RepD2.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
@@ -261,6 +287,7 @@ let RepD3 = document.querySelector('#RD3');
 RepA3.addEventListener("click", function () {
     if (Reponse_quizz3 === 'A') {
         RepA3.style.backgroundColor = "green";
+        RepA3.style.color = "white";
         Rep3.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA3.disabled = true
@@ -271,6 +298,7 @@ RepA3.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepA3.style.backgroundColor = "red";
+        RepA3.style.color = "white";
         Rep3.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA3.disabled = true
@@ -278,12 +306,14 @@ RepA3.addEventListener("click", function () {
         RepC3.disabled = true
         RepD3.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 }) 
 
 RepB3.addEventListener("click", function () {
     if (Reponse_quizz3 === 'B') {
         RepB3.style.backgroundColor = "green";
+        RepB3.style.color = "white";
         Rep3.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA3.disabled = true
@@ -294,6 +324,7 @@ RepB3.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepB3.style.backgroundColor = "red";
+        RepB3.style.color = "white";
         Rep3.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA3.disabled = true
@@ -301,12 +332,14 @@ RepB3.addEventListener("click", function () {
         RepC3.disabled = true
         RepD3.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepC3.addEventListener("click", function () {
     if (Reponse_quizz3 === 'C') {
         RepC3.style.backgroundColor = "green";
+        RepC3.style.color = "white";
         Rep3.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA3.disabled = true
@@ -317,6 +350,7 @@ RepC3.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepC3.style.backgroundColor = "red";
+        RepC3.style.color = "white";
         Rep3.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA3.disabled = true
@@ -324,12 +358,14 @@ RepC3.addEventListener("click", function () {
         RepC3.disabled = true
         RepD3.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepD3.addEventListener("click", function () {
     if (Reponse_quizz3 === 'D') {
         RepD3.style.backgroundColor = "green";
+        RepD3.style.color = "white";
         Rep3.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA3.disabled = true
@@ -340,6 +376,7 @@ RepD3.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepD3.style.backgroundColor = "red";
+        RepD3.style.color = "white";
         Rep3.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA3.disabled = true
@@ -347,6 +384,7 @@ RepD3.addEventListener("click", function () {
         RepC3.disabled = true
         RepD3.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
@@ -358,6 +396,7 @@ let RepD4 = document.querySelector('#RD4');
 RepA4.addEventListener("click", function () {
     if (Reponse_quizz4 === 'A') {
         RepA4.style.backgroundColor = "green";
+        RepA4.style.color = "white";
         Rep4.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA4.disabled = true
@@ -368,6 +407,7 @@ RepA4.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepA4.style.backgroundColor = "red";
+        RepA4.style.color = "white";
         Rep4.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA4.disabled = true
@@ -375,12 +415,14 @@ RepA4.addEventListener("click", function () {
         RepC4.disabled = true
         RepD4.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 }) 
 
 RepB4.addEventListener("click", function () {
     if (Reponse_quizz4 === 'B') {
         RepB4.style.backgroundColor = "green";
+        RepB4.style.color = "white";
         Rep4.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA4.disabled = true
@@ -391,6 +433,7 @@ RepB4.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepB4.style.backgroundColor = "red";
+        RepB4.style.color = "white";
         Rep4.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA4.disabled = true
@@ -398,12 +441,14 @@ RepB4.addEventListener("click", function () {
         RepC4.disabled = true
         RepD4.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepC4.addEventListener("click", function () {
     if (Reponse_quizz4 === 'C') {
         RepC4.style.backgroundColor = "green";
+        RepC4.style.color = "white";
         Rep4.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA4.disabled = true
@@ -414,6 +459,7 @@ RepC4.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepC4.style.backgroundColor = "red";
+        RepC4.style.color = "white";
         Rep4.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA4.disabled = true
@@ -421,12 +467,14 @@ RepC4.addEventListener("click", function () {
         RepC4.disabled = true
         RepD4.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepD4.addEventListener("click", function () {
     if (Reponse_quizz4 === 'D') {
         RepD4.style.backgroundColor = "green";
+        RepD4.style.color = "white";
         Rep4.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA4.disabled = true
@@ -437,6 +485,7 @@ RepD4.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepD4.style.backgroundColor = "red";
+        RepD4.style.color = "white";
         Rep4.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA4.disabled = true
@@ -444,6 +493,7 @@ RepD4.addEventListener("click", function () {
         RepC4.disabled = true
         RepD4.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
@@ -455,6 +505,7 @@ let RepD5 = document.querySelector('#RD5');
 RepA5.addEventListener("click", function () {
     if (Reponse_quizz5 === 'A') {
         RepA5.style.backgroundColor = "green";
+        RepA5.style.color = "white";
         Rep5.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA5.disabled = true
@@ -465,6 +516,7 @@ RepA5.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepA5.style.backgroundColor = "red";
+        RepA5.style.color = "white";
         Rep5.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA5.disabled = true
@@ -472,12 +524,14 @@ RepA5.addEventListener("click", function () {
         RepC5.disabled = true
         RepD5.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 }) 
 
 RepB5.addEventListener("click", function () {
     if (Reponse_quizz5 === 'B') {
         RepB5.style.backgroundColor = "green";
+        RepB5.style.color = "white";
         Rep5.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA5.disabled = true
@@ -488,6 +542,7 @@ RepB5.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepB5.style.backgroundColor = "red";
+        RepB5.style.color = "white";
         Rep5.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA5.disabled = true
@@ -495,12 +550,14 @@ RepB5.addEventListener("click", function () {
         RepC5.disabled = true
         RepD5.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepC5.addEventListener("click", function () {
     if (Reponse_quizz5 === 'C') {
         RepC5.style.backgroundColor = "green";
+        RepC5.style.color = "white";
         Rep5.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA5.disabled = true
@@ -511,6 +568,7 @@ RepC5.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepC5.style.backgroundColor = "red";
+        RepC5.style.color = "white";
         Rep5.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA5.disabled = true
@@ -518,12 +576,14 @@ RepC5.addEventListener("click", function () {
         RepC5.disabled = true
         RepD5.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepD5.addEventListener("click", function () {
     if (Reponse_quizz5 === 'D') {
         RepD5.style.backgroundColor = "green";
+        RepD5.style.color = "white";
         Rep5.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA5.disabled = true
@@ -534,6 +594,7 @@ RepD5.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepD5.style.backgroundColor = "red";
+        RepD5.style.color = "white";
         Rep5.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA5.disabled = true
@@ -541,6 +602,7 @@ RepD5.addEventListener("click", function () {
         RepC5.disabled = true
         RepD5.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
@@ -552,6 +614,7 @@ let RepD6 = document.querySelector('#RD6');
 RepA6.addEventListener("click", function () {
     if (Reponse_quizz6 === 'A') {
         RepA6.style.backgroundColor = "green";
+        RepA6.style.color = "white";
         Rep6.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA6.disabled = true
@@ -562,6 +625,7 @@ RepA6.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepA6.style.backgroundColor = "red";
+        RepA6.style.color = "white";
         Rep6.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA6.disabled = true
@@ -569,12 +633,14 @@ RepA6.addEventListener("click", function () {
         RepC6.disabled = true
         RepD6.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 }) 
 
 RepB6.addEventListener("click", function () {
     if (Reponse_quizz6 === 'B') {
         RepB6.style.backgroundColor = "green";
+        RepB6.style.color = "white";
         Rep6.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA6.disabled = true
@@ -585,6 +651,7 @@ RepB6.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepB6.style.backgroundColor = "red";
+        RepB6.style.color = "white";
         Rep6.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA6.disabled = true
@@ -592,12 +659,14 @@ RepB6.addEventListener("click", function () {
         RepC6.disabled = true
         RepD6.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepC6.addEventListener("click", function () {
     if (Reponse_quizz6 === 'C') {
         RepC6.style.backgroundColor = "green";
+        RepC6.style.color = "white";
         Rep6.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA6.disabled = true
@@ -608,6 +677,7 @@ RepC6.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepC6.style.backgroundColor = "red";
+        RepC6.style.color = "white";
         Rep6.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA6.disabled = true
@@ -615,12 +685,14 @@ RepC6.addEventListener("click", function () {
         RepC6.disabled = true
         RepD6.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepD6.addEventListener("click", function () {
     if (Reponse_quizz6 === 'D') {
         RepD6.style.backgroundColor = "green";
+        RepD6.style.color = "white";
         Rep6.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA6.disabled = true
@@ -631,6 +703,7 @@ RepD6.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepD6.style.backgroundColor = "red";
+        RepD6.style.color = "white";
         Rep6.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA6.disabled = true
@@ -638,6 +711,7 @@ RepD6.addEventListener("click", function () {
         RepC6.disabled = true
         RepD6.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
@@ -649,6 +723,7 @@ let RepD7 = document.querySelector('#RD7');
 RepA7.addEventListener("click", function () {
     if (Reponse_quizz7 === 'A') {
         RepA7.style.backgroundColor = "green";
+        RepA7.style.color = "white";
         Rep7.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA7.disabled = true
@@ -659,6 +734,7 @@ RepA7.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepA7.style.backgroundColor = "red";
+        RepA7.style.color = "white";
         Rep7.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA7.disabled = true
@@ -666,12 +742,14 @@ RepA7.addEventListener("click", function () {
         RepC7.disabled = true
         RepD7.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 }) 
 
 RepB7.addEventListener("click", function () {
     if (Reponse_quizz7 === 'B') {
         RepB7.style.backgroundColor = "green";
+        RepB7.style.color = "white";
         Rep7.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA7.disabled = true
@@ -682,6 +760,7 @@ RepB7.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepB7.style.backgroundColor = "red";
+        RepB7.style.color = "white";
         Rep7.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA7.disabled = true
@@ -689,12 +768,14 @@ RepB7.addEventListener("click", function () {
         RepC7.disabled = true
         RepD7.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepC7.addEventListener("click", function () {
     if (Reponse_quizz7 === 'C') {
         RepC7.style.backgroundColor = "green";
+        RepC7.style.color = "white";
         Rep7.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA7.disabled = true
@@ -705,6 +786,7 @@ RepC7.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepC7.style.backgroundColor = "red";
+        RepC7.style.color = "white";
         Rep7.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA7.disabled = true
@@ -712,12 +794,14 @@ RepC7.addEventListener("click", function () {
         RepC7.disabled = true
         RepD7.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepD7.addEventListener("click", function () {
     if (Reponse_quizz7 === 'D') {
         RepD7.style.backgroundColor = "green";
+        RepD7.style.color = "white";
         Rep7.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA7.disabled = true
@@ -728,6 +812,7 @@ RepD7.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepD7.style.backgroundColor = "red";
+        RepD7.style.color = "white";
         Rep7.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA7.disabled = true
@@ -735,6 +820,7 @@ RepD7.addEventListener("click", function () {
         RepC7.disabled = true
         RepD7.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
@@ -746,6 +832,7 @@ let RepD8 = document.querySelector('#RD8');
 RepA8.addEventListener("click", function () {
     if (Reponse_quizz8 === 'A') {
         RepA8.style.backgroundColor = "green";
+        RepA8.style.color = "white";
         Rep8.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA8.disabled = true
@@ -756,6 +843,7 @@ RepA8.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepA8.style.backgroundColor = "red";
+        RepA8.style.color = "white";
         Rep8.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA8.disabled = true
@@ -763,12 +851,14 @@ RepA8.addEventListener("click", function () {
         RepC8.disabled = true
         RepD8.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 }) 
 
 RepB8.addEventListener("click", function () {
     if (Reponse_quizz8 === 'B') {
         RepB8.style.backgroundColor = "green";
+        RepB8.style.color = "white";
         Rep8.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA8.disabled = true
@@ -779,6 +869,7 @@ RepB8.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepB8.style.backgroundColor = "red";
+        RepB8.style.color = "white";
         Rep8.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA8.disabled = true
@@ -786,12 +877,14 @@ RepB8.addEventListener("click", function () {
         RepC8.disabled = true
         RepD8.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepC8.addEventListener("click", function () {
     if (Reponse_quizz8 === 'C') {
         RepC8.style.backgroundColor = "green";
+        RepC8.style.color = "white";
         Rep8.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA8.disabled = true
@@ -802,6 +895,7 @@ RepC8.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepC8.style.backgroundColor = "red";
+        RepC8.style.color = "white";
         Rep8.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA8.disabled = true
@@ -809,12 +903,14 @@ RepC8.addEventListener("click", function () {
         RepC8.disabled = true
         RepD8.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepD8.addEventListener("click", function () {
     if (Reponse_quizz8 === 'D') {
         RepD8.style.backgroundColor = "green";
+        RepD8.style.color = "white";
         Rep8.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA8.disabled = true
@@ -825,6 +921,7 @@ RepD8.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepD8.style.backgroundColor = "red";
+        RepD8.style.color = "white";
         Rep8.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA8.disabled = true
@@ -832,6 +929,7 @@ RepD8.addEventListener("click", function () {
         RepC8.disabled = true
         RepD8.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
@@ -843,6 +941,7 @@ let RepD9 = document.querySelector('#RD9');
 RepA9.addEventListener("click", function () {
     if (Reponse_quizz9 === 'A') {
         RepA9.style.backgroundColor = "green";
+        RepA9.style.color = "white";
         Rep9.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA9.disabled = true
@@ -853,6 +952,7 @@ RepA9.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepA9.style.backgroundColor = "red";
+        RepA9.style.color = "white";
         Rep9.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA9.disabled = true
@@ -860,12 +960,14 @@ RepA9.addEventListener("click", function () {
         RepC9.disabled = true
         RepD9.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 }) 
 
 RepB9.addEventListener("click", function () {
     if (Reponse_quizz9 === 'B') {
         RepB9.style.backgroundColor = "green";
+        RepB9.style.color = "white";
         Rep9.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA9.disabled = true
@@ -876,6 +978,7 @@ RepB9.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepB9.style.backgroundColor = "red";
+        RepB9.style.color = "white";
         Rep9.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA9.disabled = true
@@ -883,12 +986,14 @@ RepB9.addEventListener("click", function () {
         RepC9.disabled = true
         RepD9.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepC9.addEventListener("click", function () {
     if (Reponse_quizz9 === 'C') {
         RepC9.style.backgroundColor = "green";
+        RepC9.style.color = "white";
         Rep9.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA9.disabled = true
@@ -899,6 +1004,7 @@ RepC9.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepC9.style.backgroundColor = "red";
+        RepC9.style.color = "white";
         Rep9.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA9.disabled = true
@@ -906,12 +1012,14 @@ RepC9.addEventListener("click", function () {
         RepC9.disabled = true
         RepD9.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepD9.addEventListener("click", function () {
     if (Reponse_quizz9 === 'D') {
         RepD9.style.backgroundColor = "green";
+        RepD9.style.color = "white";
         Rep9.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA9.disabled = true
@@ -922,6 +1030,7 @@ RepD9.addEventListener("click", function () {
         scoreInput.value = score
     } else {
         RepD9.style.backgroundColor = "red";
+        RepD9.style.color = "white";
         Rep9.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA9.disabled = true
@@ -929,6 +1038,7 @@ RepD9.addEventListener("click", function () {
         RepC9.disabled = true
         RepD9.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
@@ -938,9 +1048,12 @@ let RepC10 = document.querySelector('#RC10');
 let RepD10 = document.querySelector('#RD10');
 let showscore = document.querySelector('.win');
 
+let scorewin = document.querySelector('.scorewinner')
+
 RepA10.addEventListener("click", function () {
     if (Reponse_quizz10 === 'A') {
         RepA10.style.backgroundColor = "green";
+        RepA10.style.color = "white";
         Rep10.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA10.disabled = true
@@ -951,8 +1064,10 @@ RepA10.addEventListener("click", function () {
         scoreInput.value = score
         scoreForm.style.display = "block"
         showscore.style.display="block"
+        scorewin.innerHTML = score;
     } else {
         RepA10.style.backgroundColor = "red";
+        RepA10.style.color = "white";
         Rep10.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA10.disabled = true
@@ -960,12 +1075,14 @@ RepA10.addEventListener("click", function () {
         RepC10.disabled = true
         RepD10.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 }) 
 
 RepB10.addEventListener("click", function () {
     if (Reponse_quizz10 === 'B') {
         RepB10.style.backgroundColor = "green";
+        RepB10.style.color = "white";
         Rep10.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA10.disabled = true
@@ -976,8 +1093,10 @@ RepB10.addEventListener("click", function () {
         scoreInput.value = score
         scoreForm.style.display = "block"
         showscore.style.display="block"
+        scorewin.innerHTML = score;
     } else {
         RepB10.style.backgroundColor = "red";
+        RepB10.style.color = "white";
         Rep10.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA10.disabled = true
@@ -985,12 +1104,14 @@ RepB10.addEventListener("click", function () {
         RepC10.disabled = true
         RepD10.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepC10.addEventListener("click", function () {
     if (Reponse_quizz10 === 'C') {
         RepC10.style.backgroundColor = "green";
+        RepC10.style.color = "white";
         Rep10.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA10.disabled = true
@@ -1001,8 +1122,10 @@ RepC10.addEventListener("click", function () {
         scoreInput.value = score
         scoreForm.style.display = "block"
         showscore.style.display="block"
+        scorewin.innerHTML = score;
     } else {
         RepC10.style.backgroundColor = "red";
+        RepC10.style.color = "white";
         Rep10.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA10.disabled = true
@@ -1010,12 +1133,14 @@ RepC10.addEventListener("click", function () {
         RepC10.disabled = true
         RepD10.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 
 RepD10.addEventListener("click", function () {
     if (Reponse_quizz10 === 'D') {
         RepD10.style.backgroundColor = "green";
+        RepD10.style.color = "white";
         Rep10.textContent = "Bien jouer, c'est la bonne Réponse"
         btnsui.style.display = "block"
         RepA10.disabled = true
@@ -1026,8 +1151,10 @@ RepD10.addEventListener("click", function () {
         scoreInput.value = score
         scoreForm.style.display = "block"
         showscore.style.display="block"
+        scorewin.innerHTML = score;
     } else {
         RepD10.style.backgroundColor = "red";
+        RepD10.style.color = "white";
         Rep10.textContent = "Ce n\'est pas la bonne réponse"
         btnechec.style.display = "block"
         RepA10.disabled = true
@@ -1035,6 +1162,7 @@ RepD10.addEventListener("click", function () {
         RepC10.disabled = true
         RepD10.disabled = true
         scoreForm.style.display = "block"
+        scoreechec.innerHTML = score;
     }
 })
 

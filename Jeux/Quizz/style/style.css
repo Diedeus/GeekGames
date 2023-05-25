@@ -311,10 +311,15 @@ section.echec div.affichage_echec div.position_echec h2 {
   font-size: 157px;
   font-weight: 1000;
 }
-section.echec div.affichage_echec div.position_echec p {
+section.echec div.affichage_echec div.position_echec p.titrescore {
   color: white;
   font-size: 30px;
-  margin-bottom: 80px;
+}
+section.echec div.affichage_echec div.position_echec p.scoreechec {
+  color: white;
+  font-size: 60px;
+  margin-bottom: 30px;
+  font-weight: 800;
 }
 section.echec div.affichage_echec div.position_echec article.bouton_echec {
   width: 50%;
@@ -423,10 +428,15 @@ section.win div.affichage_win div.position_win h2 {
   font-size: 157px;
   font-weight: 1000;
 }
-section.win div.affichage_win div.position_win p {
+section.win div.affichage_win div.position_win p.titrescore {
   color: white;
   font-size: 30px;
-  margin-bottom: 80px;
+}
+section.win div.affichage_win div.position_win p.scorewinner {
+  color: white;
+  font-size: 60px;
+  margin-bottom: 30px;
+  font-weight: 800;
 }
 section.win div.affichage_win div.position_win article.bouton_win {
   width: 50%;
