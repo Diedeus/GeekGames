@@ -275,6 +275,28 @@ header div.navinscri div.navright a.sign:hover {
   background-color: white;
   color: #3c2d87;
 }
+header div.navinscri div.navright a.btnadmin {
+  color: white;
+  line-height: 40px;
+  padding: 0 10px;
+  background-color: red;
+  transition: all 0.5s;
+}
+header div.navinscri div.navright a.btnadmin:hover {
+  background-color: #b60202;
+}
+header div.navinscri div.navright a.design {
+  color: white;
+  font-size: 16px;
+  line-height: 40px;
+  padding: 0 10px;
+  margin-left: 10px;
+  transition: all 0.5s;
+}
+header div.navinscri div.navright a.design:hover {
+  background-color: white;
+  color: #2b2064;
+}
 header div.navinscri span.barre {
   display: block;
   height: 2px;

@@ -77,11 +77,36 @@ session_start();
             </ul>
         </nav>
 
-        <div class="navright">
+        <!-- <div class="navright">
             <input id="searchbar" type="text" name="search" placeholder="Rechercher un jeu ...">
             <img src="../../asset/icone-mario.png" alt="">
             <a class="log" href="../index.php">Se connecter</a>
             <a class="sign" href="register.php">S'inscrire</a>
+        </div> -->
+
+        <div class="navright">
+            <input id="searchbar" type="text" name="search" placeholder="Rechercher un jeu ...">
+            <?php
+            if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) {
+                // echo "<p> bonjour " . $_SESSION['Nom_utilisateur'] . "</p>";
+                echo '<img src="../../asset/icone-mario.png" alt="">';
+                echo '<a  class="log" href="../../profil/profil.php">bonjour ' . $_SESSION['Nom_utilisateur'] . '</a>';
+                echo '<a class="design" href="../../Registration/deconnexion.php">Deconnexion</a>';
+                
+            } else{
+                ?>
+                <img src="./asset/icone-mario.png" alt="">
+                <button class="log"><p>Se connecter</p></button>
+            <!-- <a class="log" href="#">*</a> -->
+            <a class="sign" href="../../Registration/register.php">S'inscrire</a>
+            
+            <?php
+            }
+            if(isset($_SESSION['Admin'])&& $_SESSION['Admin'] === '1' ){
+                echo '<a class="btnadmin" href="../../admin/admin.php">Admin</a>';
+            }
+            ?>   
+            
         </div>
         <div class="clear"></div>
         <span class="barre"></span>

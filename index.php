@@ -68,9 +68,9 @@
             </article>
             <article class="logotexte">
                 <img src="asset/logogeekgame.png" alt="">
-                <p class="textlogo">Lorem Ipsum is simply dummy text of the printing and typesetting <br>
-                    industry. Lorem Ipsum has been the industry's standard dummy <br>
-                    text ever since the 1500s, when an unknown printer took a galle... <br> </p>
+                <p class="textlogo">Bien le bonjour jeune aventurier et bienvenur sur GEEKGAME ! Ici tu trouveras plusieurs mini jeux <br> du plus simple comme le Quizz en passant par des jeux plus complexe comme le <br>Flappy bird ou encore le Snake .. <br>
+                    Entraine toi et compare tes scores avec ceux de tes amis et devient le MEILLEUR DES GEEKS !
+                    <br> </p>
             </article>
 
             <article class="textejeu">
