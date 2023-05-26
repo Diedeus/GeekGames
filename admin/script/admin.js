@@ -39,7 +39,7 @@ let btnsuppjp = document.querySelectorAll('.suppJprix')
 let fcupt = document.querySelectorAll('.fcupt')
 let divbtn = document.querySelectorAll('.btnElement')
 
-
+let btnupdjp = document.querySelectorAll('.UpdtJprix')
 
 
 console.log(btnsuppjp)
@@ -48,14 +48,28 @@ btnsuppjp.forEach((bouton,index) => bouton.addEventListener ("click", function()
     bouton.style.display = "none"
     let confsupp = document.querySelectorAll('.confsupp')
     confsupp.forEach((btnconf,index2) => { if(index === index2){btnconf.style.display ="block"}})
-    let btnupdjp = document.querySelectorAll('.UpdtJprix')
-    btnupdjp.forEach((btnup, index3) => {if(index === index3){btnup.style.display="none"}})
+    btnupdjp.forEach((btnup, index3) => {if(index === index3){
+        btnup.style.display="none"
+        
+    }})
     let numid = document.querySelectorAll('.numid')
-    console.log(numid)
-    console.log(typeof numid)
     numid.forEach((numero, index4) => {if (index === index4){
         let fcsupp = document.querySelectorAll('.fcsupp')
         fcsupp.forEach((fcsupp, index5) => {if(index4 === index5) {fcsupp.value = parseInt(numero.textContent)}})
     
     }})
 }))
+
+btnupdjp.forEach((bouton2, index8) => bouton2.addEventListener("click", function(){
+        bouton2.style.display = "none"
+        btnsuppjp.forEach((bouton,index) => { if( index === index8){bouton.style.display = "none"}}) 
+        let modprix  = document.querySelectorAll('.modprix')
+        modprix.forEach((inpprix, index6) => { if( index8 === index6){inpprix.style.display = "block";}})
+        let modbtn = document.querySelectorAll('.modbtn2')
+        modbtn.forEach((btnmod, index7 ) => { if( index8 === index7){btnmod.style.display = "block";}})
+        let numid = document.querySelectorAll('.numid')
+        numid.forEach((numero, index10) => {if (index10 === index8){
+            let fcupp = document.querySelectorAll('.fcupp')
+            fcupp.forEach((idval,index9) => { if( index10 === index9 ){idval.value = parseInt(numero.textContent)}})
+        }})
+    }))
