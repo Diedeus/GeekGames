@@ -107,10 +107,10 @@ section.container_allprofil{
         width: 20%;
         float: left;
         align-items: center;
-        padding-top: 50px;
+        padding-top: 30px;
         img{
-            width: 40%;
-            margin-bottom: 50px;
+            width: 50%;
+            margin-bottom: 30px;
         }
         span{
             width: 80%;
@@ -121,24 +121,13 @@ section.container_allprofil{
         }
         button{
             width: 80%;
-            height:60px ;
+            height:60px;
             border: 0;
-            cursor: pointer;
-            background-color: #080808;
-            color: white;
-            transition: all 0.5s;
-            &:hover{
-                color: #080808;
-                background-color: white;
-            }
+            cursor:default;
+            color: #151515;
+            margin-bottom: 80px;
         }
-        button.on {
-            color: #080808;
-            background-color: white;
-        }
-        button.para{
-            margin-bottom: 30px;
-        }
+        
         article{
             width: 70%;
             margin-bottom: 10px;
@@ -148,6 +137,7 @@ section.container_allprofil{
             }
             p{
                 background-color: white;
+                font-weight: 600;
                 text-align: center;
                 width: 100%;
                 padding: 5px 0;
@@ -162,7 +152,7 @@ section.container_allprofil{
             color: white;
             text-align: center;
             padding: 5px 0;
-            margin-bottom: 50px;
+            margin-bottom: 65px;
 
         }
         div.btnbas {
@@ -239,10 +229,11 @@ section.container_allprofil{
 
         div.bas{
             height: 70vh;
-            padding: 0 70px;
+            padding: 0 40px;
             article{
                 display: flex;
                margin-top: -75px;
+               margin-bottom: 30px;
                 img{
                     width: 150px;
                     border: solid 2px white;
@@ -253,6 +244,105 @@ section.container_allprofil{
                     font-size: 30px;
                     font-weight: 600;
                     margin-left: 20px;
+                }
+            }
+            div.update{
+                display: flex;
+                width: 100%;
+                div.titre_update{
+                    width: 40%;
+                    margin-top: 15px;
+                    margin-right: 70px;
+                    p{
+                        text-align: right;
+                        color: white;
+                        font-size: 20px;
+                        line-height: 60px;
+                    }
+                    button.modif{
+                        float: right;
+                        background-color: white;
+                        margin-top: 20px;
+                        font-weight: 600;
+                        color: #151515;
+                        border: 0;
+                        height: 30px;
+                        width: 150px;
+                        transition: all 0.5s;
+                        font-size: 10px;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: rgb(204, 203, 203);
+                        }
+                    }
+                }
+                span.update{
+                    width: 1px;
+                    display: block;
+                    height: 500px;
+                    background-color: white;
+                }
+                div.profil_update{
+                    width: 25%;
+                    margin-top: 15px;
+                    margin-left: 70px;
+                    p{
+                        color: white;
+                        font-size: 20px;
+                        line-height: 60px;
+                    }
+                    p.mdp{
+                        line-height: 85px;
+                    }
+                    button.supprcompte{
+                        background-color: red;
+                        margin-top: 20px;
+                        color: white;
+                        border: 0;
+                        height: 30px;
+                        width: 150px;
+                        transition: all 0.5s;
+                        font-size: 10px;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: rgb(209, 4, 4);
+                        }
+                    }
+                }
+                div.score {
+                    margin-top: -70px;
+                    padding-left: 180px;
+                    div.hautscore{
+                        img{
+                            margin-bottom: 25px;
+                        }
+                        article{
+                            margin: 0;
+                            display: flex;
+                            justify-content: space-between;
+                            p{
+                                line-height: 0;
+                                margin: 0;
+                            }
+                            p.bestscore{
+                                font-weight: 200;
+                                font-size: 24px;
+                                span{
+                                    font-weight: 800;
+                                }
+                            }
+                        }
+                    }
+                    div.basscore{
+                        margin-top: 60px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        img{
+                            width: 32%;
+                            margin-bottom: 10px;
+                        }
+                    }
                 }
             }
         }

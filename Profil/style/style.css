@@ -95,11 +95,11 @@ section.container_allprofil div.gauche {
   width: 20%;
   float: left;
   align-items: center;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 section.container_allprofil div.gauche img {
-  width: 40%;
-  margin-bottom: 50px;
+  width: 50%;
+  margin-bottom: 30px;
 }
 section.container_allprofil div.gauche span {
   width: 80%;
@@ -110,23 +110,11 @@ section.container_allprofil div.gauche span {
 }
 section.container_allprofil div.gauche button {
   width: 80%;
-  height: 60px ;
+  height: 60px;
   border: 0;
-  cursor: pointer;
-  background-color: #080808;
-  color: white;
-  transition: all 0.5s;
-}
-section.container_allprofil div.gauche button:hover {
-  color: #080808;
-  background-color: white;
-}
-section.container_allprofil div.gauche button.on {
-  color: #080808;
-  background-color: white;
-}
-section.container_allprofil div.gauche button.para {
-  margin-bottom: 30px;
+  cursor: default;
+  color: #151515;
+  margin-bottom: 80px;
 }
 section.container_allprofil div.gauche article {
   width: 70%;
@@ -138,6 +126,7 @@ section.container_allprofil div.gauche article img {
 }
 section.container_allprofil div.gauche article p {
   background-color: white;
+  font-weight: 600;
   text-align: center;
   width: 100%;
   padding: 5px 0;
@@ -151,7 +140,7 @@ section.container_allprofil div.gauche a.voirjeux {
   color: white;
   text-align: center;
   padding: 5px 0;
-  margin-bottom: 50px;
+  margin-bottom: 65px;
 }
 section.container_allprofil div.gauche div.btnbas {
   width: 90%;
@@ -224,11 +213,12 @@ section.container_allprofil div.droite div.haut span.barre {
 }
 section.container_allprofil div.droite div.bas {
   height: 70vh;
-  padding: 0 70px;
+  padding: 0 40px;
 }
 section.container_allprofil div.droite div.bas article {
   display: flex;
   margin-top: -75px;
+  margin-bottom: 30px;
 }
 section.container_allprofil div.droite div.bas article img {
   width: 150px;
@@ -240,4 +230,101 @@ section.container_allprofil div.droite div.bas article p {
   font-size: 30px;
   font-weight: 600;
   margin-left: 20px;
+}
+section.container_allprofil div.droite div.bas div.update {
+  display: flex;
+  width: 100%;
+}
+section.container_allprofil div.droite div.bas div.update div.titre_update {
+  width: 40%;
+  margin-top: 15px;
+  margin-right: 70px;
+}
+section.container_allprofil div.droite div.bas div.update div.titre_update p {
+  text-align: right;
+  color: white;
+  font-size: 20px;
+  line-height: 60px;
+}
+section.container_allprofil div.droite div.bas div.update div.titre_update button.modif {
+  float: right;
+  background-color: white;
+  margin-top: 20px;
+  font-weight: 600;
+  color: #151515;
+  border: 0;
+  height: 30px;
+  width: 150px;
+  transition: all 0.5s;
+  font-size: 10px;
+  cursor: pointer;
+}
+section.container_allprofil div.droite div.bas div.update div.titre_update button.modif:hover {
+  background-color: #cccbcb;
+}
+section.container_allprofil div.droite div.bas div.update span.update {
+  width: 1px;
+  display: block;
+  height: 500px;
+  background-color: white;
+}
+section.container_allprofil div.droite div.bas div.update div.profil_update {
+  width: 25%;
+  margin-top: 15px;
+  margin-left: 70px;
+}
+section.container_allprofil div.droite div.bas div.update div.profil_update p {
+  color: white;
+  font-size: 20px;
+  line-height: 60px;
+}
+section.container_allprofil div.droite div.bas div.update div.profil_update p.mdp {
+  line-height: 85px;
+}
+section.container_allprofil div.droite div.bas div.update div.profil_update button.supprcompte {
+  background-color: red;
+  margin-top: 20px;
+  color: white;
+  border: 0;
+  height: 30px;
+  width: 150px;
+  transition: all 0.5s;
+  font-size: 10px;
+  cursor: pointer;
+}
+section.container_allprofil div.droite div.bas div.update div.profil_update button.supprcompte:hover {
+  background-color: #d10404;
+}
+section.container_allprofil div.droite div.bas div.update div.score {
+  margin-top: -70px;
+  padding-left: 180px;
+}
+section.container_allprofil div.droite div.bas div.update div.score div.hautscore img {
+  margin-bottom: 25px;
+}
+section.container_allprofil div.droite div.bas div.update div.score div.hautscore article {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+section.container_allprofil div.droite div.bas div.update div.score div.hautscore article p {
+  line-height: 0;
+  margin: 0;
+}
+section.container_allprofil div.droite div.bas div.update div.score div.hautscore article p.bestscore {
+  font-weight: 200;
+  font-size: 24px;
+}
+section.container_allprofil div.droite div.bas div.update div.score div.hautscore article p.bestscore span {
+  font-weight: 800;
+}
+section.container_allprofil div.droite div.bas div.update div.score div.basscore {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+section.container_allprofil div.droite div.bas div.update div.score div.basscore img {
+  width: 32%;
+  margin-bottom: 10px;
 }
