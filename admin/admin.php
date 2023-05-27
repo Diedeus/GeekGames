@@ -617,12 +617,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="btnElement">
         <button class="suppJprix" style="display:block;">Supprimer</button>
         <button class="UpdtJprix" style="display:block;">Mettre à Jour</button>
+        
         <form method="POST" action="#">
         <input type="hidden" name="fcsupp" class="fcsupp" value="" >
-        <input type="hidden" name="fcupt" class="fcupt" value="">
         <input type="submit" class="confsupp" style="display:none;" value="êtes vous sûr de vouloir supprimer cet élément">
         </form>
         
+        <form action="#" method="post">
+          <input type="text" class="modprix" name="modprix" style="display:none;" value="">
+          <input type="hidden" class="fcupp" name="fcupp" value="">
+          <input type="submit" class="modbtn2" style="display:none;" value="Mettre à jour">
+          
+        </form>
         
         
     </div>
@@ -638,6 +644,14 @@ if(isset($_POST['fcsupp'])){
     $idjp = $_POST['fcsupp'];
     $query10 = "DELETE FROM `Jeu_Jprix` WHERE id_Jprix = $idjp";
     $result10 = mysqli_query($conn, $query10);
+}
+
+if(isset($_POST['fcupp'])&&isset($_POST['modprix'])){
+  $idjp2 = $_POST['fcupp'];
+  $prixmodifie = $_POST['modprix'];
+  $query11 = $conn->prepare("UPDATE Jeu_Jprix SET Reponse_Jprix = ? WHERE id_Jprix = ?");
+  $query11->bind_param("si", $prixmodifie, $idjp2);
+  $query11->execute();
 }
 ?>
 </section>
