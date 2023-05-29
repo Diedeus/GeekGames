@@ -130,7 +130,7 @@ $res = mysqli_query($conn, $query);
     <input class="update-delete" type="submit" value="Supprimer la question" name="submit" class="connecter">
   </form>
 
-  <?php
+<?php
 
 //todo on vérifie si le champ "id_question" est défini 
 if(isset($_REQUEST["id_userssup"])){
