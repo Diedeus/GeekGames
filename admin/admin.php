@@ -567,8 +567,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <section class="container_update7diff">
   <h1>UPDATE 7DIFF</h1>
-</section>
 
+<form method="post" enctype="multipart/form-data">
+            <input type="file" name="Image1">
+            <input type="file" name="Image2">
+            <input type="file" name="Image3">
+            <input type="submit">
+        </form>
+  </section>     
 <section class="container_updatejusteprix">
   <h1>UPDATE JUSTE PRIX</h1>
 
