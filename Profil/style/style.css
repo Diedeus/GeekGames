@@ -92,7 +92,7 @@ section.container_allprofil div.gauche {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 20%;
+  width: 18%;
   float: left;
   align-items: center;
   padding-top: 30px;
@@ -155,7 +155,7 @@ section.container_allprofil div.gauche div.btnbas a:hover {
   color: white;
 }
 section.container_allprofil div.droite {
-  width: 80%;
+  width: 82%;
   float: left;
   height: 100vh;
   background-color: #151515;
@@ -327,4 +327,158 @@ section.container_allprofil div.droite div.bas div.update div.score div.basscore
 section.container_allprofil div.droite div.bas div.update div.score div.basscore img {
   width: 32%;
   margin-bottom: 10px;
+}
+section.formupdate_profil {
+  display: none;
+  position: absolute;
+  top: 0;
+  background-color: #080808bb;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+section.formupdate_profil img {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+section.formupdate_profil form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50px;
+  width: 600px;
+  background-color: white;
+}
+section.formupdate_profil form h2 {
+  color: #393795;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 800;
+}
+section.formupdate_profil form label {
+  font-size: 13px;
+  font-weight: 600;
+}
+section.formupdate_profil form div.box-form {
+  width: 49%;
+}
+section.formupdate_profil form input {
+  background-color: #dadada;
+}
+section.formupdate_profil form input.submitprofile {
+  margin: 0;
+  width: 40%;
+  color: white;
+  background-color: #393795;
+  text-indent: 0;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+section.formupdate_profil form input.submitprofile:hover {
+  background-color: #2b2064;
+}
+div.succes {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 500px;
+  height: 90px;
+  background-color: #101010d6;
+  border-radius: 5px;
+  border: solid 1px #00d900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: succes 0.5s linear;
+}
+div.succes img {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+div.succes article {
+  display: flex;
+  flex-direction: column;
+}
+div.succes article h3 {
+  color: white;
+  font-size: 18px;
+  margin-top: 0;
+}
+div.succes article p {
+  color: white;
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+div.succes article button {
+  color: white;
+  background-color: #00d900;
+  border: 0;
+  width: 150px;
+  height: 20px ;
+  cursor: pointer;
+  border-radius: 2px;
+}
+@keyframes succes {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+div.error {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 500px;
+  height: 90px;
+  background-color: #101010d6;
+  border-radius: 5px;
+  border: solid 1px #e30000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: error 0.5s linear;
+}
+div.error img {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+div.error article {
+  display: flex;
+  flex-direction: column;
+}
+div.error article h3 {
+  color: white;
+  font-size: 18px;
+  margin-top: 0;
+}
+div.error article p {
+  color: white;
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+div.error article button {
+  color: white;
+  background-color: #e30000;
+  border: 0;
+  width: 150px;
+  height: 20px ;
+  cursor: pointer;
+  border-radius: 2px;
+}
+@keyframes error {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
 }

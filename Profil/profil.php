@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>Geekgame - Profil</title>
+    <script src="./script/profil.js" defer></script>
 </head>
 <body>
 
@@ -95,8 +96,8 @@ if(isset($_SESSION['id_users'])){
             <p>Votre prenom</p>
             <p>Votre pseudo</p>
             <p>Votre âge</p>
-            <p>Votre adresse mail</p>
-            <p>Votre numero de tel</p>
+            <p>Votre e-mail</p>
+            <p>Votre adresse</p>
             <p>Votre mot de passe</p>
             <button class="modif">Modifier les informations</button>
             </div>
@@ -147,7 +148,134 @@ if(isset($_SESSION['id_users'])){
         </div>
         </div>
     </section>
+    <div class="clear"></div>
 
+    <section class="formupdate_profil">
+        <img class="closeformupdate" src="./asset/croix.png" alt="">
+
+    <?php
+    // Vérification de la soumission du formulaire de sélection
+    if(isset($_SESSION['id_users'])){
+        $userupdate2 = $_SESSION['id_users'];
+        $sql2 = "SELECT * FROM users WHERE id_users = $userupdate2 ";
+        $query2 = mysqli_query($conn, $sql2);
+        $donnes2 = mysqli_fetch_array($query2, MYSQLI_ASSOC);
+
+            $idu = $donnes2['id_users'];
+            $Nomu = $donnes2['Nom'];
+            $Prenomu = $donnes2['Prenom'];
+            $Pseudou = $donnes2['Nom_utilisateur'];
+            $Emailu = $donnes2['Email'];
+            $Birthdayu = $donnes2['Date_de_naissance'];
+            $Adresseu = $donnes2['adresse'];
+            $Adminu = $donnes2['Admin'];
+
+
+            // Affichage du formulaire de modification avec les valeurs existantes
+            echo '<form method="POST" action="" name="editForm" class="updateform">';
+            echo '<h2 class="box-title">Modifier vos informations</h2>';
+            echo '<input type="hidden" name="idu" value="' . $idu . '">';
+            echo '<div class="box-form"><label>Nom : </label>
+            <input type="text" name="Nomu"  value="' . $Nomu .'"><br></div>';
+            echo '<div class="box-form"><label>Prenom : </label>
+            <input type="text"  name="Prenomu" value="' . $Prenomu . '"><br></div>';
+            echo '<div class="box-form"><label>Nom d\'utilisateur : </label>
+            <input type="text"  name="Pseudou" value="' . $Pseudou . '"><br></div>';
+            // echo '<div class="box-form"><label>Nom d\'utilisateur : </label>
+            // <input type="text"  name="Pseudou" value="' . $Pseudou . '"><br></div>';
+            echo '<label>Email : </label>
+            <input type="text" name="Emailu" value="' . $Emailu . '"><br>';
+            echo '<label> Date de naissance : </label>
+            <input type="text"  name="Birthdayu" value="' . $Birthdayu . '"><br>';
+            echo '<label> Adresse : </label>
+            <input type="text"  name="Adresseu" value="' . $Adresseu . '"><br>';
+            echo '<input type="submit" value="Valider les modifications" class="submitprofile">';
+            echo '</form>';
+        }
+        ?>
+    </section>
+    <?php
+        if(isset($_POST['idu'], $_POST['Nomu'], $_POST['Prenomu'], $_POST['Pseudou'], $_POST['Emailu'], $_POST['Birthdayu'], $_POST['Adresseu'])){
+            $idu2 = $_POST['idu'];
+            $Nomu2 = $_POST['Nomu'];
+            $Prenomu2 = $_POST['Prenomu'];
+            $Pseudou2 = $_POST['Pseudou'];
+            $Emailu2 = $_POST['Emailu'];
+            $Birthdayu2 = $_POST['Birthdayu'];
+            $Adresseu2 = $_POST['Adresseu'];
+
+            $stmt = $conn->prepare("UPDATE users SET Nom = '$Nomu2', Prenom = '$Prenomu2', Nom_utilisateur = '$Pseudou2', Email = '$Emailu2', Date_de_naissance = '$Birthdayu2', adresse = '$Adresseu2' WHERE id_users = $idu2");
+    
+    
+    if ($stmt->execute()) { ?>
+        <div class='succes'>
+             <img src="./asset/iconsucces.png" alt="">
+             <article>
+            <h3>IMPORTANT !</h3>
+            <p>Modifications éffectuées avec succès. </p>
+            <button class="closesucces">Fermer la fenêtre</button>
+            </article>
+      </div>
+   <?php }else {
+      echo " 
+      <div class='error'> "; ?>
+      <img src="./asset/warningicone.png" alt="">
+      <?php
+      echo "<article>
+     <h3>ATTENTION !</h3>
+     <p>Erreur lors de la mise à jour de l'enregistrement  </p>
+     <button class=\"closeerror\">Fermer la fenêtre</button>
+     </article>
+</div> " . $stmt->error;
+      
+    } 
+   
+        }
+
+?>
+    
+    
+
+    <?php // Assurez-vous d'appeler session_start() au début du fichier
+
+// Vérifier si l'utilisateur est connecté et récupérer son ID
+if (isset($_SESSION['id_users'])) {
+  $idUtilisateur = $_SESSION['id_users'];
+
+  // Vérifier si le formulaire de suppression a été soumis
+  if (isset($_POST['id_users'])) {
+    // Suppression des enregistrements liés dans la table `score_quizz`
+    $stmt = $conn->prepare("DELETE FROM score_quizz WHERE id_users = ?");
+    $stmt->bind_param("i", $idUtilisateur);
+    $stmt->execute();
+
+    // Suppression des enregistrements liés dans la table `score_jprix`
+    $stmt = $conn->prepare("DELETE FROM score_jprix WHERE id_users = ?");
+    $stmt->bind_param("i", $idUtilisateur);
+    $stmt->execute();
+
+    // Suppression de l'utilisateur
+    $stmt = $conn->prepare("DELETE FROM users WHERE id_users = ?");
+    $stmt->bind_param("i", $idUtilisateur);
+
+    if ($stmt->execute()) {
+        header('Location: ../index.html');
+  exit();
+        
+    } else {
+      echo "<div class='error'>
+        <h3>Erreur lors de la suppression de l'utilisateur :</h3>
+      </div>" . $stmt->error;
+    }
+  }
+}
+?>
+
+<form method="POST" action="">
+  <h2 class="box-title">Supprimer votre compte</h2>
+  <input type="hidden" name="id_users" value="<?php echo isset($idUtilisateur) ? $idUtilisateur : ''; ?>">
+  <input type="submit" value="Supprimer" class="id_question">
+</form>
 
 
 </body>
