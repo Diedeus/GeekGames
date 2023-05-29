@@ -16,6 +16,54 @@ let tour = 0
  let chronominute = 0
  let afftimer = document.querySelector('#timer')
 
+
+ function affSpan(){
+    let divbtn = document.querySelector('.btnAll')
+    let span1 = document.createElement("span")
+    span1.id = "err1"
+    span1.classList.add("erreurs")
+    span1.style.left = "60px"
+    span1.style.top = "10px"
+    divbtn.appendChild(span1)
+    let span2 = document.createElement("span")
+    span2.id = "err2"
+    span2.classList.add("erreurs")
+    span2.style.left = "60px"
+    span2.style.top = "185px"
+    divbtn.appendChild(span2)
+    let span3 = document.createElement("span")
+    span3.id = "err3"
+    span3.classList.add("erreurs")
+    span3.style.left = "157.5px"
+    span3.style.top = "300px"
+    divbtn.appendChild(span3)
+    let span4 = document.createElement("span")
+    span4.id ="err4"
+    span4.classList.add("erreurs")
+    span4.style.left = "405px"
+    span4.style.top = "155px"
+    divbtn.appendChild(span4)
+    let span5 = document.createElement("span")
+    span5.id = "err5"
+    span5.classList.add("erreurs")
+    span5.style.left = "460px"
+    span5.style.top = "200px"
+    divbtn.appendChild(span5)
+    let span6 = document.createElement("span")
+    span6.id = "err6"
+    span6.classList.add("erreurs")
+    span6.style.left = "430px"
+    span6.style.top = "125px"
+    divbtn.appendChild(span6)
+    let span7 = document.createElement("span")
+    span7.id = "err7"
+    span7.classList.add("erreurs")
+    span7.style.left = "247px"
+    span7.style.top = "470px"
+    divbtn.appendChild(span7)
+ }
+ affSpan()
+
 function startTimer(){
     startTime = Date.now()       //Enregistre le temps de début du timer
     timer = setTimeout(function(){
@@ -23,6 +71,9 @@ function startTimer(){
         let elapsedTime = endTime - startTime; // calcule le temps écoulé
         
         tour += 1
+        
+        
+
         console.log(tour)
         chronoS =  minuteur - tour
         console.log(chronoS)
@@ -33,6 +84,12 @@ function startTimer(){
         afftimer.textContent= ""
         afftimer.textContent ='il reste : ' + chronominute + 'min' + chronoseconde
         startTimer()
+        if ( tour === 30 ) {
+            let gameOver = document.querySelector('#gameover')
+            gameOver.style.display = "block"
+            clearTimeout(timer);
+        }
+        
     }, 1000)
 }
 
@@ -88,6 +145,16 @@ element.addEventListener("click", function(event){
     } if ( erreur1 === true && erreur2 === true && erreur3 === true && erreur4 === true && erreur5 === true && erreur6 === true && erreur7 === true){
         console.log("tas win bro")
         stopTimer()
+        console.log("timer final = " + chronoS)
+        let modchronoF = chronoS % 10
+        let chronoF = chronoS - modchronoF
+        let score7diff = (( chronoF / 10 ) + 1) * 100
+        let inpscore = document.querySelector('#inpScore')
+        let formscore = document.querySelector('#formScore')
+        let affscore = document.querySelector("#affScore")
+        affscore.textContent = "votre score est : " + score7diff
+        formscore.style.display = "block"
+        inpscore.value = score7diff
     }
     
     
