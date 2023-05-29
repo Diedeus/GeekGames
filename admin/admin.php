@@ -568,13 +568,97 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <section class="container_update7diff">
   <h1>UPDATE 7DIFF</h1>
 
-<form method="post" enctype="multipart/form-data">
-            <input type="file" name="Image1">
-            <input type="file" name="Image2">
-            <input type="file" name="Image3">
-            <input type="submit">
-        </form>
+  <form method="post" enctype="multipart/form-data">
+    <label for="Image">L'image de base</label>
+    <input type="file" name="Image">
+    <label for="Imagediff">L'image avec les différences</label>
+    <input type="file" name="Imagediff">
+    <label for="script">Le script javascript des réponses</label>
+    <input type="file" name="script">
+    <input type="submit">
+  </form>
+   
+<?php
+
+if(isset($_FILES['Image']['tmp_name'], $_FILES['Imagediff']['tmp_name'], $_FILES['script']['tmp_name'])){
+  $destdoss = '../Jeux/7diff/asset/' ; 
+  $destimg = $destdoss . $_FILES['Image']['name'];
+  $img = 'http://localhost:4000/Jeux/7diff/asset/' . $_FILES['Image']['name'];
+  $destimgdiff = $destdoss . $_FILES['Imagediff']['name'];
+  $imgdiff = 'http://localhost:4000/Jeux/7diff/asset/' . $_FILES['Imagediff']['name'];
+  $destscript = $destdoss . $_FILES['script']['name'];
+  $imgscript = 'http://localhost:4000/Jeux/7diff/asset/' . $_FILES['script']['name'];
+
+  $retour = copy($_FILES['Image']['tmp_name'], $destimg);
+  $retour2 = copy($_FILES['Imagediff']['tmp_name'], $destimgdiff);
+  $retour3 = copy($_FILES['script']['tmp_name'], $destscript);
+
+      if(isset($img) && isset($imgdiff) && isset($imgscript)){
+      $query13 = "INSERT into `jeu_7diff` (Image1, Image2, Reponse_7diff) VALUES ('$img', '$imgdiff', '$imgscript')";
+      $reponse13 = mysqli_query($conn, $query13);
+
+      } else {
+        echo '<p>Erreur lors de l\'enregistrement de la photo dans le dossier de destination.</p>';
+    }
+
+}
+
+
+?>
+  <section class="corps7diff" style="display:flex;flex-wrap:wrap;justify-content:space-between;">
+    <?php
+        $sql14 = "SELECT * FROM `jeu_7diff` ORDER BY id_Imagediff ";
+        $reponse7diff = mysqli_query($conn, $sql14);
+        while($donnees7diff = mysqli_fetch_array($reponse7diff, MYSQLI_ASSOC)){
+    ?>
+
+      <article class="Element7diff">
+        <div class="AffElement">
+
+        <img src="<?php $donnees7diff['Image1'] ?>" alt="">
+        <img src="<?php $donnees7diff['Image2'] ?>" alt="">
+        <p>echo <?php $donnees7diff['Reponse_7diff'] ?></p>
+        <p>echo <?php $donnees7diff['id_Imagediff'] ?></p>
+
+        </div>
+
+        <div class="Btn7diff">
+
+          <button class="supp7diff">Supprimer</button>
+
+          <form action="#" method="POST">
+            <input type="hidden" name="supp7diff" class="supp7diff" value="">
+            <input type="submit" class="confsupp7diff" style="display:none;" value="êtes vous sûr de vouloir supprimer cet element">
+          </form>
+
+        </div>
+      </article>
+
+        <?php } ?>
+
+
+        <?php
+
+          if(isset($_POST['supp7diff'])){
+            $id7d = $_POST['supp7diff'];
+            $query15 = "DELETE FROM `jeu_7diff` WHERE id_Image7diff = $id7d" ;
+            $result15 = mysqli_query($conn, $query15);
+          }
+
+        ?>
+
+  </section>
+
+
+
   </section>     
+
+
+
+
+
+
+
 <section class="container_updatejusteprix">
   <h1>UPDATE JUSTE PRIX</h1>
 

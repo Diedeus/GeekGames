@@ -73,3 +73,13 @@ btnupdjp.forEach((bouton2, index8) => bouton2.addEventListener("click", function
             fcupp.forEach((idval,index9) => { if( index10 === index9 ){idval.value = parseInt(numero.textContent)}})
         }})
     }))
+
+    let btnsupp7d = document.querySelectorAll('.supp7diff')
+    let btnconf7d = document.querySelectorAll('.confsupp7diff')
+
+    btnsupp7d.forEach((btn7d, index7d) => btn7d.addEventListener("click", function(){
+        let btnconf7d = document.querySelectorAll('.confsupp7diff')
+        btnconf7d.forEach((btn7d2,index7d2) =>{ if (index7d === index7d2){
+            btn7d2.style.display = "block"
+        }})
+    }))
