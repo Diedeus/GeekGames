@@ -269,7 +269,7 @@ section.container_allprofil div.droite div.bas div.update span.update {
   background-color: white;
 }
 section.container_allprofil div.droite div.bas div.update div.profil_update {
-  width: 25%;
+  width: 90%;
   margin-top: 15px;
   margin-left: 70px;
 }
@@ -297,7 +297,7 @@ section.container_allprofil div.droite div.bas div.update div.profil_update butt
 }
 section.container_allprofil div.droite div.bas div.update div.score {
   margin-top: -70px;
-  padding-left: 180px;
+  padding-left: 60px;
 }
 section.container_allprofil div.droite div.bas div.update div.score div.hautscore img {
   margin-bottom: 25px;
