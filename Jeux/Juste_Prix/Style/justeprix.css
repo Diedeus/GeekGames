@@ -255,14 +255,18 @@ header div.navinscri div.navright img {
   padding: 7px;
   margin-left: 50px;
 }
-header div.navinscri div.navright a.log {
+header div.navinscri div.navright button.log {
   color: white;
   background-color: #3c2d87;
   line-height: 40px;
   padding: 0 10px;
   transition: all 0.5s;
+  border: 0;
+  font-family: 'montserrat', sans-serif;
+  cursor: pointer;
+  font-size: 16px;
 }
-header div.navinscri div.navright a.log:hover {
+header div.navinscri div.navright button.log:hover {
   background-color: #2b2064;
 }
 header div.navinscri div.navright a.sign {

@@ -9,6 +9,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>Geekgame - Profil</title>
     <script src="./script/profil.js" defer></script>
+    
 </head>
 <body>
 
@@ -18,6 +19,11 @@ require('../Registration/config.php');
 // Initialiser la session
 session_save_path("../tmp");
 session_start();
+if (empty($_SESSION)) {
+    header('Location: ../index.php');
+exit();
+    
+}
 
 
 
@@ -150,6 +156,63 @@ if(isset($_SESSION['id_users'])){
     </section>
     <div class="clear"></div>
 
+
+
+
+
+    <?php // Assurez-vous d'appeler session_start() au début du fichier
+
+// Vérifier si l'utilisateur est connecté et récupérer son ID
+if (isset($_SESSION['id_users'])) {
+  $idUtilisateur = $_SESSION['id_users'];
+
+  // Vérifier si le formulaire de suppression a été soumis
+  if (isset($_POST['id_users'])) {
+    // Suppression des enregistrements liés dans la table `score_quizz`
+    $stmt = $conn->prepare("DELETE FROM score_quizz WHERE id_users = ?");
+    $stmt->bind_param("i", $idUtilisateur);
+    $stmt->execute();
+
+    // Suppression des enregistrements liés dans la table `score_jprix`
+    $stmt = $conn->prepare("DELETE FROM score_jprix WHERE id_users = ?");
+    $stmt->bind_param("i", $idUtilisateur);
+    $stmt->execute();
+
+    // Suppression de l'utilisateur
+    $stmt = $conn->prepare("DELETE FROM users WHERE id_users = ?");
+    $stmt->bind_param("i", $idUtilisateur);
+
+    if ($stmt->execute()) {
+        session_destroy();
+        header('Location: ../index.php');
+  exit();
+        
+    } else {
+      echo "<div class='error'>
+        <h3>Erreur lors de la suppression de l'utilisateur :</h3>
+      </div>" . $stmt->error;
+    }
+  }
+}
+?>
+<section class="suppression">
+<div class="supprimcompte">
+    <img src="./asset/warningicone.png" alt="">
+    <article>
+    <h2 class="box-title">ATTENTION !</h2>
+<p class="topsuppr">Vous êtes sur le point de supprimer votre compte</p>
+<p>Êtes vous sur :</p>
+<div class="btnsuppr">
+<form method="POST" action="">
+  <input type="hidden" name="id_users" value="<?php echo isset($idUtilisateur) ? $idUtilisateur : ''; ?>">
+  <input type="submit" value="OUI, je suis sur !">
+</form>
+<button class="closesuppr">NON, je ne veux pas !</button>
+</div>
+</article>
+</div>
+</section>
+
     <section class="formupdate_profil">
         <img class="closeformupdate" src="./asset/croix.png" alt="">
 
@@ -175,20 +238,14 @@ if(isset($_SESSION['id_users'])){
             echo '<form method="POST" action="" name="editForm" class="updateform">';
             echo '<h2 class="box-title">Modifier vos informations</h2>';
             echo '<input type="hidden" name="idu" value="' . $idu . '">';
-            echo '<div class="box-form"><label>Nom : </label>
-            <input type="text" name="Nomu"  value="' . $Nomu .'"><br></div>';
-            echo '<div class="box-form"><label>Prenom : </label>
-            <input type="text"  name="Prenomu" value="' . $Prenomu . '"><br></div>';
-            echo '<div class="box-form"><label>Nom d\'utilisateur : </label>
-            <input type="text"  name="Pseudou" value="' . $Pseudou . '"><br></div>';
-            // echo '<div class="box-form"><label>Nom d\'utilisateur : </label>
-            // <input type="text"  name="Pseudou" value="' . $Pseudou . '"><br></div>';
-            echo '<label>Email : </label>
-            <input type="text" name="Emailu" value="' . $Emailu . '"><br>';
-            echo '<label> Date de naissance : </label>
-            <input type="text"  name="Birthdayu" value="' . $Birthdayu . '"><br>';
-            echo '<label> Adresse : </label>
-            <input type="text"  name="Adresseu" value="' . $Adresseu . '"><br>';
+            echo '<div class="box-form"><input type="text" name="Nomu"  value="' . $Nomu .'"><br></div>';
+            echo '<div class="box-form"><input type="text"  name="Prenomu" value="' . $Prenomu . '"><br></div>';
+            echo '<div class="box-form"><input type="text"  name="Pseudou" value="' . $Pseudou . '"><br></div>';
+            echo '<div class="box-form">
+            <input type="password"  name="Pseudou" value="' . $Pseudou . '"><br></div>';
+            echo '<input type="text" name="Emailu" value="' . $Emailu . '"><br>';
+            echo '<input type="text"  name="Birthdayu" value="' . $Birthdayu . '"><br>';
+            echo '<input type="text"  name="Adresseu" value="' . $Adresseu . '"><br>';
             echo '<input type="submit" value="Valider les modifications" class="submitprofile">';
             echo '</form>';
         }
@@ -207,8 +264,9 @@ if(isset($_SESSION['id_users'])){
             $stmt = $conn->prepare("UPDATE users SET Nom = '$Nomu2', Prenom = '$Prenomu2', Nom_utilisateur = '$Pseudou2', Email = '$Emailu2', Date_de_naissance = '$Birthdayu2', adresse = '$Adresseu2' WHERE id_users = $idu2");
     
     
-    if ($stmt->execute()) { ?>
-        <div class='succes'>
+    if (!empty($Nomu2) && !empty($Prenomu2) && !empty($Pseudou2) && !empty($Emailu2) && !empty($Birthdayu2) && !empty($Adresseu2)) { 
+        $stmt->execute()?>
+        <div class="succes">
              <img src="./asset/iconsucces.png" alt="">
              <article>
             <h3>IMPORTANT !</h3>
@@ -228,54 +286,13 @@ if(isset($_SESSION['id_users'])){
      </article>
 </div> " . $stmt->error;
       
-    } 
-   
-        }
-
-?>
-    
-    
-
-    <?php // Assurez-vous d'appeler session_start() au début du fichier
-
-// Vérifier si l'utilisateur est connecté et récupérer son ID
-if (isset($_SESSION['id_users'])) {
-  $idUtilisateur = $_SESSION['id_users'];
-
-  // Vérifier si le formulaire de suppression a été soumis
-  if (isset($_POST['id_users'])) {
-    // Suppression des enregistrements liés dans la table `score_quizz`
-    $stmt = $conn->prepare("DELETE FROM score_quizz WHERE id_users = ?");
-    $stmt->bind_param("i", $idUtilisateur);
-    $stmt->execute();
-
-    // Suppression des enregistrements liés dans la table `score_jprix`
-    $stmt = $conn->prepare("DELETE FROM score_jprix WHERE id_users = ?");
-    $stmt->bind_param("i", $idUtilisateur);
-    $stmt->execute();
-
-    // Suppression de l'utilisateur
-    $stmt = $conn->prepare("DELETE FROM users WHERE id_users = ?");
-    $stmt->bind_param("i", $idUtilisateur);
-
-    if ($stmt->execute()) {
-        header('Location: ../index.html');
-  exit();
-        
-    } else {
-      echo "<div class='error'>
-        <h3>Erreur lors de la suppression de l'utilisateur :</h3>
-      </div>" . $stmt->error;
+        } 
     }
-  }
-}
 ?>
+    
+    <script src="./script/updateprofil.js"></script>
 
-<form method="POST" action="">
-  <h2 class="box-title">Supprimer votre compte</h2>
-  <input type="hidden" name="id_users" value="<?php echo isset($idUtilisateur) ? $idUtilisateur : ''; ?>">
-  <input type="submit" value="Supprimer" class="id_question">
-</form>
+    
 
 
 </body>
