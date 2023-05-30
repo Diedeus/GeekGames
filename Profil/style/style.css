@@ -47,6 +47,7 @@ body {
   width: 100%;
   display: block;
   font-family: 'montserrat', sans-serif;
+  overflow: hidden;
 }
 img,
 object,
@@ -318,6 +319,21 @@ section.container_allprofil div.droite div.bas div.update div.score div.hautscor
 section.container_allprofil div.droite div.bas div.update div.score div.hautscore article p.bestscore span {
   font-weight: 800;
 }
+section.container_allprofil div.droite div.bas div.update div.score .hautscorejprix {
+  display: none;
+}
+section.container_allprofil div.droite div.bas div.update div.score .hautscore7diff {
+  display: none;
+}
+section.container_allprofil div.droite div.bas div.update div.score .hautscoresnake {
+  display: none;
+}
+section.container_allprofil div.droite div.bas div.update div.score .hautscoreflappybird {
+  display: none;
+}
+section.container_allprofil div.droite div.bas div.update div.score .hautscorepingpong {
+  display: none;
+}
 section.container_allprofil div.droite div.bas div.update div.score div.basscore {
   margin-top: 60px;
   display: flex;
@@ -325,8 +341,76 @@ section.container_allprofil div.droite div.bas div.update div.score div.basscore
   justify-content: space-between;
 }
 section.container_allprofil div.droite div.bas div.update div.score div.basscore img {
+  cursor: pointer;
   width: 32%;
   margin-bottom: 10px;
+  overflow: hidden;
+}
+section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscorequizz {
+  -webkit-filter: grayscale(0%);
+  /* Chrome, Safari, Opera */
+  filter: grayscale(0%);
+  transition: all 0.5s;
+}
+section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscorequizz:hover {
+  -webkit-filter: grayscale(0%);
+  /* Chrome, Safari, Opera */
+  filter: grayscale(0%);
+}
+section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscore7diff {
+  -webkit-filter: grayscale(100%);
+  /* Chrome, Safari, Opera */
+  filter: grayscale(100%);
+  transition: all 0.5s;
+}
+section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscore7diff:hover {
+  -webkit-filter: grayscale(0%);
+  /* Chrome, Safari, Opera */
+  filter: grayscale(0%);
+}
+section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscorejprix {
+  -webkit-filter: grayscale(100%);
+  /* Chrome, Safari, Opera */
+  filter: grayscale(100%);
+  transition: all 0.5s;
+}
+section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscorejprix:hover {
+  -webkit-filter: grayscale(0%);
+  /* Chrome, Safari, Opera */
+  filter: grayscale(0%);
+}
+section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscoresnake {
+  -webkit-filter: grayscale(100%);
+  /* Chrome, Safari, Opera */
+  filter: grayscale(100%);
+  transition: all 0.5s;
+}
+section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscoresnake:hover {
+  -webkit-filter: grayscale(0%);
+  /* Chrome, Safari, Opera */
+  filter: grayscale(0%);
+}
+section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscoreflappybird {
+  -webkit-filter: grayscale(100%);
+  /* Chrome, Safari, Opera */
+  filter: grayscale(100%);
+  transition: all 0.5s;
+}
+section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscoreflappybird:hover {
+  -webkit-filter: grayscale(0%);
+  /* Chrome, Safari, Opera */
+  filter: grayscale(0%);
+}
+section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscorepingpong {
+  -webkit-filter: grayscale(100%);
+  /* Chrome, Safari, Opera */
+  filter: grayscale(100%);
+  transition: all 0.5s;
+}
+section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscorepingpong:hover {
+  -webkit-filter: grayscale(0%);
+  /* Chrome, Safari, Opera */
+  filter: grayscale(0%);
 }
 section.formupdate_profil {
   display: none;

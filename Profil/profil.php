@@ -32,7 +32,7 @@ exit();
     <section class="container_allprofil">
 
         <div class="gauche">
-            <img src="../asset/logogeekgame.png" alt="">
+            <img src="../asset/logoblanc.png" alt="">
             <span></span>
             <button >Votre compte</button>
             <article>
@@ -128,22 +128,64 @@ if(isset($_SESSION['id_users'])){
 
 
             <div class="score">
-                <div class="hautscore">
+                <div class="hautscore hautscorequizz">
                 <img src="../asset/backjeuun.jpg" alt="">
                     <article>
                         <p class="nomjeu">QUIZZ GEEK</p>
                         <p class="bestscore">Meilleur score : <span>2000</span></p>
                     </article>
-                    
                 </div>
+
+                <div class="hautscore hautscore7diff">
+                <img src="../asset/backjeuun.jpg" alt="">
+                    <article>
+                        <p class="nomjeu">QUIZZ GEEK</p>
+                        <p class="bestscore">Meilleur score : <span>2000</span></p>
+                    </article>
+                </div>
+
+                <div class="hautscore hautscorejprix">
+                <img src="../asset/backjeuun.jpg" alt="">
+                    <article>
+                        <p class="nomjeu">QUIZZ GEEK</p>
+                        <p class="bestscore">Meilleur score : <span>2000</span></p>
+                    </article>
+                </div>
+
+                <div class="hautscore hautscoresnake">
+                <img src="../asset/backjeuun.jpg" alt="">
+                    <article>
+                        <p class="nomjeu">QUIZZ GEEK</p>
+                        <p class="bestscore">Meilleur score : <span>2000</span></p>
+                    </article>
+                </div>
+
+                <div class="hautscore hautscoreflappybird">
+                <img src="../asset/backjeuun.jpg" alt="">
+                    <article>
+                        <p class="nomjeu">QUIZZ GEEK</p>
+                        <p class="bestscore">Meilleur score : <span>2000</span></p>
+                    </article>
+                </div>
+
+                <div class="hautscore hautscorepingpong">
+                <img src="../asset/backjeuun.jpg" alt="">
+                    <article>
+                        <p class="nomjeu">QUIZZ GEEK</p>
+                        <p class="bestscore">Meilleur score : <span>2000</span></p>
+                    </article>
+                </div>
+
+
+                
                 <div class="clear"></div>
                 <div class="basscore">
-                    <img src="./asset/quizzgeek.jpg" alt="">
-                    <img src="./asset/7diffnoirblanc.jpg" alt="">
-                    <img src="./asset/justeprixnoirblanc.jpg" alt="">
-                    <img src="./asset/quizzgeeknoirblanc.jpg" alt="">
-                    <img src="./asset/7diffnoirblanc.jpg" alt="">
-                    <img src="./asset/justeprixnoirblanc.jpg" alt="">
+                    <img class="btnscorequizz" src="./asset/quizzgeek.jpg" alt="">
+                    <img class="btnscore7diff" src="./asset/7diff.jpg" alt="">
+                    <img class="btnscorejprix" src="./asset/justeprix.jpg" alt="">
+                    <img class="btnscoresnake" src="./asset/snake.jpg" alt="">
+                    <img class="btnscoreflappybird" src="./asset/flappybird.jpg" alt="">
+                    <img class="btnscorepingpong" src="./asset/pingpong.jpg" alt="">
 
                     </a>
                 </div>
