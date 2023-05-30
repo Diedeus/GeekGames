@@ -9,16 +9,21 @@ closeupdate.addEventListener("click",function(){
     formupdate.style.display= "none"
 })
 
+let opensuppr = document.querySelector('.supprcompte')
+let closesuppr = document.querySelector('.closesuppr')
+let suppression = document.querySelector('.suppression')
+
+opensuppr.addEventListener("click", function(){
+    suppression.style.display="flex"
+})
+closesuppr.addEventListener("click", function(){
+    suppression.style.display="none"
+})
+
 let closesucces = document.querySelector('.closesucces')
 let messsucces = document.querySelector('.succes')
 
 closesucces.addEventListener("click",function(){
     messsucces.style.display="none"
-})
+});
 
-let closeerror = document.querySelector('.closeerror')
-let messserror = document.querySelector('.error')
-
-closeerror.addEventListener("click",function(){
-    messserror.style.display="none"
-})

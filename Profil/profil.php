@@ -9,6 +9,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>Geekgame - Profil</title>
     <script src="./script/profil.js" defer></script>
+    
 </head>
 <body>
 
@@ -194,12 +195,23 @@ if (isset($_SESSION['id_users'])) {
   }
 }
 ?>
-
+<section class="suppression">
+<div class="supprimcompte">
+    <img src="./asset/warningicone.png" alt="">
+    <article>
+    <h2 class="box-title">ATTENTION !</h2>
+<p class="topsuppr">Vous êtes sur le point de supprimer votre compte</p>
+<p>Êtes vous sur :</p>
+<div class="btnsuppr">
 <form method="POST" action="">
-  <h2 class="box-title">Supprimer votre compte</h2>
   <input type="hidden" name="id_users" value="<?php echo isset($idUtilisateur) ? $idUtilisateur : ''; ?>">
-  <input type="submit" value="Supprimer" class="id_question">
+  <input type="submit" value="OUI, je suis sur !">
 </form>
+<button class="closesuppr">NON, je ne veux pas !</button>
+</div>
+</article>
+</div>
+</section>
 
     <section class="formupdate_profil">
         <img class="closeformupdate" src="./asset/croix.png" alt="">
@@ -252,8 +264,9 @@ if (isset($_SESSION['id_users'])) {
             $stmt = $conn->prepare("UPDATE users SET Nom = '$Nomu2', Prenom = '$Prenomu2', Nom_utilisateur = '$Pseudou2', Email = '$Emailu2', Date_de_naissance = '$Birthdayu2', adresse = '$Adresseu2' WHERE id_users = $idu2");
     
     
-    if ($stmt->execute()) { ?>
-        <div class='succes'>
+    if (!empty($Nomu2) && !empty($Prenomu2) && !empty($Pseudou2) && !empty($Emailu2) && !empty($Birthdayu2) && !empty($Adresseu2)) { 
+        $stmt->execute()?>
+        <div class="succes">
              <img src="./asset/iconsucces.png" alt="">
              <article>
             <h3>IMPORTANT !</h3>
@@ -277,7 +290,7 @@ if (isset($_SESSION['id_users'])) {
     }
 ?>
     
-    
+    <script src="./script/updateprofil.js"></script>
 
     
 

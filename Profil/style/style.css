@@ -282,7 +282,7 @@ section.container_allprofil div.droite div.bas div.update div.profil_update p.md
   line-height: 85px;
 }
 section.container_allprofil div.droite div.bas div.update div.profil_update button.supprcompte {
-  background-color: red;
+  background-color: #ff3333;
   margin-top: 20px;
   color: white;
   border: 0;
@@ -293,7 +293,7 @@ section.container_allprofil div.droite div.bas div.update div.profil_update butt
   cursor: pointer;
 }
 section.container_allprofil div.droite div.bas div.update div.profil_update button.supprcompte:hover {
-  background-color: #d10404;
+  background-color: #d52727;
 }
 section.container_allprofil div.droite div.bas div.update div.score {
   margin-top: -70px;
@@ -390,11 +390,11 @@ div.succes {
   height: 90px;
   background-color: #101010d6;
   border-radius: 5px;
-  border: solid 1px #00d900;
+  border: solid 1px #4af74a;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: succes 0.5s linear;
+  animation: succes 0.3s linear;
 }
 div.succes img {
   width: 60px;
@@ -417,7 +417,7 @@ div.succes article p {
 }
 div.succes article button {
   color: white;
-  background-color: #00d900;
+  background-color: #4af74a;
   border: 0;
   width: 150px;
   height: 20px ;
@@ -426,10 +426,10 @@ div.succes article button {
 }
 @keyframes succes {
   0% {
-    opacity: 0%;
+    right: -500px;
   }
   100% {
-    opacity: 100%;
+    opacity: 20px;
   }
 }
 div.error {
@@ -440,11 +440,11 @@ div.error {
   height: 90px;
   background-color: #101010d6;
   border-radius: 5px;
-  border: solid 1px #e30000;
+  border: solid 1px #ff3333;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: error 0.5s linear;
+  animation: error 0.3s linear;
 }
 div.error img {
   width: 60px;
@@ -467,7 +467,7 @@ div.error article p {
 }
 div.error article button {
   color: white;
-  background-color: #e30000;
+  background-color: #ff3333;
   border: 0;
   width: 150px;
   height: 20px ;
@@ -476,9 +476,77 @@ div.error article button {
 }
 @keyframes error {
   0% {
-    opacity: 0%;
+    right: -500px;
   }
   100% {
-    opacity: 100%;
+    opacity: 20px;
   }
+}
+section.suppression {
+  display: none;
+  position: absolute;
+  top: 0;
+  background-color: #080808bb;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+section.suppression div.supprimcompte {
+  width: 700px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.suppression div.supprimcompte img {
+  width: 140px;
+  margin-right: 30px;
+}
+section.suppression div.supprimcompte article {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section.suppression div.supprimcompte article h2 {
+  color: #ff3333;
+  font-size: 28px ;
+  font-weight: 800;
+}
+section.suppression div.supprimcompte article p {
+  margin-bottom: 10px;
+}
+section.suppression div.supprimcompte article p.topsuppr {
+  margin-bottom: 15px;
+}
+section.suppression div.supprimcompte article div.btnsuppr {
+  display: flex;
+}
+section.suppression div.supprimcompte article div.btnsuppr form {
+  height: 30px;
+  margin-right: 20px;
+}
+section.suppression div.supprimcompte article div.btnsuppr form input {
+  background-color: #ff3333;
+  padding: 0 15px;
+  text-indent: 0;
+  color: white;
+  height: 30px;
+  line-height: 30px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+section.suppression div.supprimcompte article div.btnsuppr form input:hover {
+  background-color: #d52727;
+}
+section.suppression div.supprimcompte article div.btnsuppr button {
+  width: 40%;
+  background-color: #151515;
+  text-indent: 0;
+  color: white;
+  height: 30px;
+  line-height: 30px;
+  border: 0;
+  cursor: pointer;
 }
