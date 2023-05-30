@@ -34,7 +34,7 @@ session_start();
    
     </section>
     <p id="timer">il reste 5 min</p>
-    <script src="./essaie.js"></script>
+    <script src="./Image1.js"></script>
     <p id="affScore"></p>
     <p id="gameover" style="display:none">VOUS AVEZ ECHOUE</p>
 

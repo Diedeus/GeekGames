@@ -75,6 +75,7 @@ element.addEventListener("click", function(event){
     }if ( x > 45 && x < 70 && y > 180 && y < 190 && erreur2 === false){
         console.log("ceci est l'erreur numero 2")
         erreur2 = true
+        let divbtn = document.querySelector('.btnAll')
         let span2 = document.createElement("span")
         span2.id = "err2"
         span2.classList.add("erreurs")
@@ -86,6 +87,7 @@ element.addEventListener("click", function(event){
     } if (x > 150 && x < 160 && y > 290 && y < 305 && erreur3 === false ){
         console.log("ceci est l'erreur numero 3")
         erreur3 = true
+        let divbtn = document.querySelector('.btnAll')
         let span3 = document.createElement("span")
         span3.id = "err3"
         span3.classList.add("erreurs")
@@ -97,6 +99,7 @@ element.addEventListener("click", function(event){
     } if (x > 385 && x < 415 && y > 130 && y < 190 && erreur4 === false ){
         console.log("ceci est l'erreur numero 4")
         erreur4 = true
+        let divbtn = document.querySelector('.btnAll')
         let span4 = document.createElement("span")
         span4.id ="err4"
         span4.classList.add("erreurs")
@@ -108,6 +111,7 @@ element.addEventListener("click", function(event){
     } if (x > 460 && x < 480 && y > 180 && y < 250 && erreur5 === false ){
         console.log("ceci est l'erreur numero 5")
         erreur5 = true
+        let divbtn = document.querySelector('.btnAll')
         let span5 = document.createElement("span")
         span5.id = "err5"
         span5.classList.add("erreurs")
@@ -119,6 +123,7 @@ element.addEventListener("click", function(event){
     } if (x > 420 && x < 440 && y > 120 && y < 135 && erreur6 === false ){
         console.log("ceci est l'erreur numero 6")
         erreur6 = true
+        let divbtn = document.querySelector('.btnAll')
         let span6 = document.createElement("span")
         span6.id = "err6"
         span6.classList.add("erreurs")
@@ -130,6 +135,7 @@ element.addEventListener("click", function(event){
     }if (x > 200 && x < 260 && y > 440 && y < 490 && erreur7 === false ){
         console.log("ceci est l'erreur numero 7")
         erreur7 = true
+        let divbtn = document.querySelector('.btnAll')
         let span7 = document.createElement("span")
         span7.id = "err7"
         span7.classList.add("erreurs")

@@ -615,10 +615,12 @@ if(isset($_FILES['Image']['tmp_name'], $_FILES['Imagediff']['tmp_name'], $_FILES
       <article class="Element7diff">
         <div class="AffElement">
 
-        <img src="<?php $donnees7diff['Image1'] ?>" alt="">
-        <img src="<?php $donnees7diff['Image2'] ?>" alt="">
-        <p>echo <?php $donnees7diff['Reponse_7diff'] ?></p>
-        <p>echo <?php $donnees7diff['id_Imagediff'] ?></p>
+        <img src="<?php echo $donnees7diff['Image1'] ?>" alt="">
+        <img src="<?php echo $donnees7diff['Image2'] ?>" alt="">
+        <p><?php echo $donnees7diff['Reponse_7diff'] ?></p>
+        <p class="idimg"><?php echo $donnees7diff['id_Imagediff'] ?></p>
+        <input type="hidden" value="<?php echo $donnees7diff['id_Imagediff'] ?>" class="idimg">
+
 
         </div>
 
@@ -627,7 +629,7 @@ if(isset($_FILES['Image']['tmp_name'], $_FILES['Imagediff']['tmp_name'], $_FILES
           <button class="supp7diff">Supprimer</button>
 
           <form action="#" method="POST">
-            <input type="hidden" name="supp7diff" class="supp7diff" value="">
+            <input type="hidden" name="supp7diff" class="supp7diff2" value="">
             <input type="submit" class="confsupp7diff" style="display:none;" value="êtes vous sûr de vouloir supprimer cet element">
           </form>
 
