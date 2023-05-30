@@ -95,7 +95,7 @@ session_start();
                 
             } else{
                 ?>
-                <img src="./asset/icone-mario.png" alt="">
+                <img src="../../asset/icone-mario.png" alt="">
                 <button class="log"><p>Se connecter</p></button>
             <!-- <a class="log" href="#">*</a> -->
             <a class="sign" href="../../Registration/register.php">S'inscrire</a>
