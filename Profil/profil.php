@@ -9,6 +9,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>Geekgame - Profil</title>
     <script src="./script/profil.js" defer></script>
+    <script src="./script/update.js" defer></script>
     
 </head>
 <body>
@@ -369,8 +370,8 @@ if (isset($_SESSION['id_users'])) {
             </article>
       </div>
    <?php }else {
-      echo " 
-      <div class='error'> "; ?>
+      echo ' 
+      <div class="error"> '; ?>
       <img src="./asset/warningicone.png" alt="">
       <?php
       echo "<article>
@@ -443,6 +444,9 @@ if(isset($_SESSION['id_users'])){
         }
     }
 
+
+
+    echo '<section class="container_formmdp none"><div class="formmdp">';
     echo '<form method="POST" action="" name="editMdp">';
     echo '<h2 class="box-title">Modifier votre mot de passe</h2>';
     echo '<input type="hidden" name="mdpu" value="' . $idu . '">';
@@ -450,9 +454,11 @@ if(isset($_SESSION['id_users'])){
     echo '<input type="password" name="mdpu_confirm" value="" placeholder="Confirmer votre mot de passe">';
     echo '<input type="submit" value="Modifier" class="submitmdp">';
     echo '</form>';
-} ?>
+    echo '<img class="closemdp" src="./asset/croix.png" alt="">';
+    echo '</div></section>';
     
-    <script src="./script/updateprofil.js"></script>
+} ?>
+
 
     
 

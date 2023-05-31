@@ -141,7 +141,21 @@ btnscorepingpong.addEventListener('click', function(){
 
 })
 
+let openmodifmdp = document.querySelector('.openmodifmdp')
+let formmdp = document.querySelector('.container_formmdp')
+let closeformmdp = document.querySelector('.closemdp')
 
+
+openmodifmdp.addEventListener("click", function(){
+    formmdp.classList.remove("none")
+})
+
+
+
+
+closeformmdp.addEventListener("click", function(){
+    formmdp.classList.add("none")
+})
 
 
 let closesucces = document.querySelector('.closesucces')

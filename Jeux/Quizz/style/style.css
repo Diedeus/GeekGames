@@ -326,23 +326,26 @@ section.echec div.affichage_echec div.position_echec article.bouton_echec {
   display: flex;
   justify-content: center;
 }
-section.echec div.affichage_echec div.position_echec article.bouton_echec button {
+section.echec div.affichage_echec div.position_echec article.bouton_echec a {
   width: 30%;
   height: 50px;
   border: 0;
   cursor: pointer;
+  line-height: 50px;
+  text-align: center;
+  background-color: white;
   transition: all 0.5s;
 }
-section.echec div.affichage_echec div.position_echec article.bouton_echec button:hover {
+section.echec div.affichage_echec div.position_echec article.bouton_echec a:hover {
   background-color: #c1c1c1;
 }
-section.echec div.affichage_echec div.position_echec article.bouton_echec button.reco {
+section.echec div.affichage_echec div.position_echec article.bouton_echec a.reco {
   margin: 0 15px;
   background-color: #ff0036;
   color: white;
   transition: all 0.5s;
 }
-section.echec div.affichage_echec div.position_echec article.bouton_echec button.reco:hover {
+section.echec div.affichage_echec div.position_echec article.bouton_echec a.reco:hover {
   background-color: #c8012c;
 }
 section.echec div.affichage_echec div.position_echec article.bouton_echec form {
@@ -443,23 +446,26 @@ section.win div.affichage_win div.position_win article.bouton_win {
   display: flex;
   justify-content: center;
 }
-section.win div.affichage_win div.position_win article.bouton_win button {
+section.win div.affichage_win div.position_win article.bouton_win a {
   width: 30%;
   height: 50px;
   border: 0;
   cursor: pointer;
+  line-height: 50px;
+  text-align: center;
+  background-color: white;
   transition: all 0.5s;
 }
-section.win div.affichage_win div.position_win article.bouton_win button:hover {
+section.win div.affichage_win div.position_win article.bouton_win a:hover {
   background-color: #c1c1c1;
 }
-section.win div.affichage_win div.position_win article.bouton_win button.reco2 {
+section.win div.affichage_win div.position_win article.bouton_win a.reco2 {
   margin: 0 15px;
   background-color: #3c2d87;
   color: white;
   transition: all 0.5s;
 }
-section.win div.affichage_win div.position_win article.bouton_win button.reco2:hover {
+section.win div.affichage_win div.position_win article.bouton_win a.reco2:hover {
   background-color: #2b2064;
 }
 section.win div.affichage_win div.position_win article.bouton_win form {

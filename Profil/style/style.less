@@ -99,6 +99,10 @@ textarea {
     }
 }
 
+.none{
+    display: none;
+}
+
 section.container_allprofil{
     div.gauche{
         background-color: #080808;
@@ -663,4 +667,59 @@ section.reconnexion{
         }
 
     }
+}
+
+section.container_formmdp{
+    display: flex;
+    background-color: #080808bb;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    div.formmdp{
+        background-color: white;
+        width :500px;
+        padding: 20px 50px;
+        form{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            h2{
+                font-size: 25px;
+                color: #393795;
+                font-weight: 800;
+                margin-bottom: 20px;
+            }
+            input{
+                width: 100%;
+                background-color: rgb(216, 216, 216);
+            }
+            input.submitmdp{
+                height: 40px;
+                line-height: 40px;
+                width:40% ;
+                text-indent: 0;
+                background-color: #393795;
+                color: white;
+                transition: all 0.5s;
+                cursor: pointer;
+                &:hover{
+                    background-color: #3c2d87;
+                }
+            }
+        }
+        img{
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 30px;
+            cursor: pointer;
+        }
+    }
+}
+section.none{
+    display: none;
 }

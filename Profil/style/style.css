@@ -87,6 +87,9 @@ textarea {
   clear: both;
   visibility: hidden;
 }
+.none {
+  display: none;
+}
 section.container_allprofil div.gauche {
   background-color: #080808;
   display: flex;
@@ -633,4 +636,58 @@ section.reconnexion div article a {
   padding: 5px 10px;
   background-color: #393795;
   color: white;
+}
+section.container_formmdp {
+  display: flex;
+  background-color: #080808bb;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+section.container_formmdp div.formmdp {
+  background-color: white;
+  width: 500px;
+  padding: 20px 50px;
+}
+section.container_formmdp div.formmdp form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+section.container_formmdp div.formmdp form h2 {
+  font-size: 25px;
+  color: #393795;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+section.container_formmdp div.formmdp form input {
+  width: 100%;
+  background-color: #d8d8d8;
+}
+section.container_formmdp div.formmdp form input.submitmdp {
+  height: 40px;
+  line-height: 40px;
+  width: 40% ;
+  text-indent: 0;
+  background-color: #393795;
+  color: white;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+section.container_formmdp div.formmdp form input.submitmdp:hover {
+  background-color: #3c2d87;
+}
+section.container_formmdp div.formmdp img {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+section.none {
+  display: none;
 }

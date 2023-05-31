@@ -468,7 +468,7 @@ if(isset($_POST['score'])){
                     <p class="scoreechec"></p>
                     <article class="bouton_echec">
                     <a href="../../index.php">Retour à l'accueil</a> 
-                  <a href="Quizz.php">Recommencer</a>
+                  <a class="reco" href="Quizz.php">Recommencer</a>
                     <form id="scoreForm" method="POST">
                         <input type="hidden" id="scoreInput" name="score2" value="">
                         <input type="submit" id="submitScore" value="Envoyer le score">
@@ -490,7 +490,7 @@ if(isset($_POST['score'])){
                     <p class="scorewinner"></p>
                     <article class="bouton_win">
                     <a href="../../index.php">Retour à l'accueil</a> 
-                    <a href="Quizz.php">Recommencer</a>
+                    <a class="reco2" href="Quizz.php">Recommencer</a>
                     <form id="scoreForm2" method="POST">
                         <input type="hidden" id="scoreInput2" name="score" value="">
                         <input type="submit" id="submitScore2" value="Envoyer le score">
