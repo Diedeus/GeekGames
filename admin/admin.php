@@ -643,7 +643,7 @@ if(isset($_FILES['Image']['tmp_name'], $_FILES['Imagediff']['tmp_name'], $_FILES
 
           if(isset($_POST['supp7diff'])){
             $id7d = $_POST['supp7diff'];
-            $query15 = "DELETE FROM `jeu_7diff` WHERE id_Image7diff = $id7d" ;
+            $query15 = "DELETE FROM `jeu_7diff` WHERE id_Imagediff = $id7d" ;
             $result15 = mysqli_query($conn, $query15);
           }
 

@@ -30,6 +30,7 @@ let winner = document.querySelector('.win')
 let scoreechec = document.querySelector('.scoreechec');
 
 
+
 console.log(Reponse_quizz1)
 let score = 0 
 let scoreInput = document.getElementById("scoreInput")
@@ -141,34 +142,21 @@ RepD.addEventListener("click", function () {
     }
 })
 
-let acc = document.querySelector('.acc')
-let reco = document.querySelector('.reco')
-let acc2 = document.querySelector('.acc2')
-let reco2 = document.querySelector('.reco2')
 
-let suiv = document.querySelector('.questionSuivante')
-let y = 1
+document.addEventListener('DOMContentLoaded', function () {
+    let suiv = document.querySelector('.questionSuivante');
+    let y = 1;
+  
+    if (btnsui) {
+      btnsui.addEventListener("click", function () {
+        y += 1;
+        btnsui.style.display = "none";
+        refresh(y);
+        console.log(y);
+      });
+    }
+  });
 
-acc.addEventListener("click", function(){
-    window.location.href = "../../index.php"
-})
-
-reco.addEventListener("click", function(){
-    location.reload()
-})
-acc2.addEventListener("click", function(){
-    window.location.href = "../../index.php"
-})
-
-reco2.addEventListener("click", function(){
-    location.reload()
-})
-
-suiv.addEventListener("click",function(){
-    y += 1
-    refresh(y)
-    btnsui.style.display = "none"
-})
 
 let RepA2 = document.querySelector('#RA2');
 let RepB2 = document.querySelector('#RB2');
@@ -1049,20 +1037,23 @@ let RepD10 = document.querySelector('#RD10');
 let showscore = document.querySelector('.win');
 
 let scorewin = document.querySelector('.scorewinner')
+let scoreform2 = document.querySelector('#scoreForm2')
+let scoreinput2 = document.querySelector('#scoreInput2')
+let submitscore2 = document.querySelector('#submitScore2')
 
 RepA10.addEventListener("click", function () {
     if (Reponse_quizz10 === 'A') {
         RepA10.style.backgroundColor = "green";
         RepA10.style.color = "white";
         Rep10.textContent = "Bien jouer, c'est la bonne Réponse"
-        btnsui.style.display = "block"
+       
         RepA10.disabled = true
         RepB10.disabled = true
         RepC10.disabled = true
         RepD10.disabled = true
         score += 50
-        scoreInput.value = score
-        scoreForm.style.display = "block"
+        scoreinput2.value = score
+        scoreform2.style.display = "block"
         showscore.style.display="block"
         scorewin.innerHTML = score;
     } else {
@@ -1084,14 +1075,13 @@ RepB10.addEventListener("click", function () {
         RepB10.style.backgroundColor = "green";
         RepB10.style.color = "white";
         Rep10.textContent = "Bien jouer, c'est la bonne Réponse"
-        btnsui.style.display = "block"
         RepA10.disabled = true
         RepB10.disabled = true
         RepC10.disabled = true
         RepD10.disabled = true
         score += 50
-        scoreInput.value = score
-        scoreForm.style.display = "block"
+        scoreinput2.value = score
+        scoreform2.style.display = "block"
         showscore.style.display="block"
         scorewin.innerHTML = score;
     } else {
@@ -1113,14 +1103,14 @@ RepC10.addEventListener("click", function () {
         RepC10.style.backgroundColor = "green";
         RepC10.style.color = "white";
         Rep10.textContent = "Bien jouer, c'est la bonne Réponse"
-        btnsui.style.display = "block"
+
         RepA10.disabled = true
         RepB10.disabled = true
         RepC10.disabled = true
         RepD10.disabled = true
         score += 50
-        scoreInput.value = score
-        scoreForm.style.display = "block"
+        scoreinput2.value = score
+        scoreform2.style.display = "block"
         showscore.style.display="block"
         scorewin.innerHTML = score;
     } else {
@@ -1142,14 +1132,14 @@ RepD10.addEventListener("click", function () {
         RepD10.style.backgroundColor = "green";
         RepD10.style.color = "white";
         Rep10.textContent = "Bien jouer, c'est la bonne Réponse"
-        btnsui.style.display = "block"
+
         RepA10.disabled = true
         RepB10.disabled = true
         RepC10.disabled = true
         RepD10.disabled = true
         score += 50
-        scoreInput.value = score
-        scoreForm.style.display = "block"
+        scoreinput2.value = score
+        scoreform2.style.display = "block"
         showscore.style.display="block"
         scorewin.innerHTML = score;
     } else {

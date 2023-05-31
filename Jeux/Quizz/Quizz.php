@@ -467,10 +467,10 @@ if(isset($_POST['score'])){
                     <p class="titrescore">Votre score</p>
                     <p class="scoreechec"></p>
                     <article class="bouton_echec">
-                    <button class="acc">Retour à l'accueil</button>
-                    <button class="reco">Recommencer</button>
+                    <a href="../../index.php">Retour à l'accueil</a> 
+                  <a href="Quizz.php">Recommencer</a>
                     <form id="scoreForm" method="POST">
-                        <input type="hidden" id="scoreInput" name="score" value="">
+                        <input type="hidden" id="scoreInput" name="score2" value="">
                         <input type="submit" id="submitScore" value="Envoyer le score">
                     </form>
                     </article>
@@ -489,11 +489,11 @@ if(isset($_POST['score'])){
                     <p class="titrescore">Votre score</p>
                     <p class="scorewinner"></p>
                     <article class="bouton_win">
-                    <button class="acc2">Retour à l'accueil</button>
-                    <button class="reco2">Recommencer</button>
-                    <form id="scoreForm" method="POST">
-                        <input type="hidden" id="scoreInput" name="score" value="">
-                        <input type="submit" id="submitScore" value="Envoyer le score">
+                    <a href="../../index.php">Retour à l'accueil</a> 
+                    <a href="Quizz.php">Recommencer</a>
+                    <form id="scoreForm2" method="POST">
+                        <input type="hidden" id="scoreInput2" name="score" value="">
+                        <input type="submit" id="submitScore2" value="Envoyer le score">
                     </form>
                     </article>
                     </div>
@@ -501,6 +501,17 @@ if(isset($_POST['score'])){
                 <img class="winbot" src="./asset/winbottom.png" alt="">
             </section>
 
+            <?php
+            
+            if(isset($_POST['score2'])){
+                $score = $_POST['score2'];
+                $datescore = date( 'Y-m-d' );
+                $id = $_SESSION['id_users'];
+                $query11 = "INSERT into `Score_quizz`(Score_Quizz, Date_Scquizz, id_users) VALUES ('$score', '$datescore', '$id')";
+                $result11 = $conn->query($query11); 
+            }
+            
+            ?>
 
 
 
