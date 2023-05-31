@@ -156,19 +156,6 @@ section.container_allprofil{
             margin-bottom: 65px;
 
         }
-        div.btnbas {
-            width: 90%;
-            display: flex;
-            justify-content: space-between;
-            a{
-                color: #848484;
-                transition: all 0.5s;
-                &:hover{
-                    color: white;
-                }
-            }
-        }
-
     }
 
     div.droite{
@@ -210,13 +197,27 @@ section.container_allprofil{
                     }
                 }
             }
-            #searchbar{
+            div.navdroite{
                 margin-top: 70px;
+                    margin-right: 70px;
                 float: right;
-                margin-right: 70px;
-                width:300px ;
-                height: 40px;
-                outline: none;
+                #searchbar{
+                    margin-right: 20px;
+                    width:300px ;
+                    height: 40px;
+                    outline: none;
+                }
+                a{
+                    color: white;
+                    line-height: 40px;
+                    margin: 0 5px;
+                    padding: 10px 10px;
+                    transition: all 0.5s;
+                    &:hover{
+                        color: #241a5a;
+                        background-color: white;
+                    }
+                }
             }
             span.barre{
                 z-index: 1000;
@@ -234,7 +235,7 @@ section.container_allprofil{
             article{
                 display: flex;
                margin-top: -75px;
-               margin-bottom: 30px;
+               margin-bottom: 10px;
                 img{
                     width: 150px;
                     border: solid 2px white;
@@ -311,7 +312,7 @@ section.container_allprofil{
                     }
                 }
                 div.score {
-                    margin-top: -70px;
+                    margin-top: -50px;
                     padding-left: 60px;
                     div.hautscore{
                         img{
@@ -360,52 +361,7 @@ section.container_allprofil{
                             margin-bottom: 10px;
                             overflow: hidden;
                         }
-                        img.btnscorequizz{
-                            -webkit-filter: grayscale(0%); /* Chrome, Safari, Opera */
-                            filter: grayscale(0%);
-                            transition: all 0.5s;
-                            &:hover{
-                                -webkit-filter: grayscale(0%); /* Chrome, Safari, Opera */
-                            filter: grayscale(0%);
-                            }
-                        }
-                        img.btnscore7diff{
-                            -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
-                            filter: grayscale(100%);
-                            transition: all 0.5s;
-                            &:hover{
-                                -webkit-filter: grayscale(0%); /* Chrome, Safari, Opera */
-                            filter: grayscale(0%);
-                            }
-                        }
-                        img.btnscorejprix{
-                            -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
-                            filter: grayscale(100%);
-                            transition: all 0.5s;
-                            &:hover{
-                                -webkit-filter: grayscale(0%); /* Chrome, Safari, Opera */
-                            filter: grayscale(0%);
-                            }
-                        }
-                        img.btnscoresnake{
-                            -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
-                            filter: grayscale(100%);
-                            transition: all 0.5s;
-                            &:hover{
-                                -webkit-filter: grayscale(0%); /* Chrome, Safari, Opera */
-                            filter: grayscale(0%);
-                            }
-                        }
-                        img.btnscoreflappybird{
-                            -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
-                            filter: grayscale(100%);
-                            transition: all 0.5s;
-                            &:hover{
-                                -webkit-filter: grayscale(0%); /* Chrome, Safari, Opera */
-                            filter: grayscale(0%);
-                            }
-                        }
-                        img.btnscorepingpong{
+                        img.test{
                             -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
                             filter: grayscale(100%);
                             transition: all 0.5s;

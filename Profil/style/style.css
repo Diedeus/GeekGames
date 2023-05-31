@@ -143,18 +143,6 @@ section.container_allprofil div.gauche a.voirjeux {
   padding: 5px 0;
   margin-bottom: 65px;
 }
-section.container_allprofil div.gauche div.btnbas {
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-}
-section.container_allprofil div.gauche div.btnbas a {
-  color: #848484;
-  transition: all 0.5s;
-}
-section.container_allprofil div.gauche div.btnbas a:hover {
-  color: white;
-}
 section.container_allprofil div.droite {
   width: 82%;
   float: left;
@@ -196,13 +184,27 @@ section.container_allprofil div.droite div.haut nav.home ul li a.on {
   background-color: white;
   color: #3c2d87;
 }
-section.container_allprofil div.droite div.haut #searchbar {
+section.container_allprofil div.droite div.haut div.navdroite {
   margin-top: 70px;
-  float: right;
   margin-right: 70px;
+  float: right;
+}
+section.container_allprofil div.droite div.haut div.navdroite #searchbar {
+  margin-right: 20px;
   width: 300px ;
   height: 40px;
   outline: none;
+}
+section.container_allprofil div.droite div.haut div.navdroite a {
+  color: white;
+  line-height: 40px;
+  margin: 0 5px;
+  padding: 10px 10px;
+  transition: all 0.5s;
+}
+section.container_allprofil div.droite div.haut div.navdroite a:hover {
+  color: #241a5a;
+  background-color: white;
 }
 section.container_allprofil div.droite div.haut span.barre {
   z-index: 1000;
@@ -219,7 +221,7 @@ section.container_allprofil div.droite div.bas {
 section.container_allprofil div.droite div.bas article {
   display: flex;
   margin-top: -75px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 section.container_allprofil div.droite div.bas article img {
   width: 150px;
@@ -297,7 +299,7 @@ section.container_allprofil div.droite div.bas div.update div.profil_update butt
   background-color: #d52727;
 }
 section.container_allprofil div.droite div.bas div.update div.score {
-  margin-top: -70px;
+  margin-top: -50px;
   padding-left: 60px;
 }
 section.container_allprofil div.droite div.bas div.update div.score div.hautscore img {
@@ -346,68 +348,13 @@ section.container_allprofil div.droite div.bas div.update div.score div.basscore
   margin-bottom: 10px;
   overflow: hidden;
 }
-section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscorequizz {
-  -webkit-filter: grayscale(0%);
-  /* Chrome, Safari, Opera */
-  filter: grayscale(0%);
-  transition: all 0.5s;
-}
-section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscorequizz:hover {
-  -webkit-filter: grayscale(0%);
-  /* Chrome, Safari, Opera */
-  filter: grayscale(0%);
-}
-section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscore7diff {
+section.container_allprofil div.droite div.bas div.update div.score div.basscore img.test {
   -webkit-filter: grayscale(100%);
   /* Chrome, Safari, Opera */
   filter: grayscale(100%);
   transition: all 0.5s;
 }
-section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscore7diff:hover {
-  -webkit-filter: grayscale(0%);
-  /* Chrome, Safari, Opera */
-  filter: grayscale(0%);
-}
-section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscorejprix {
-  -webkit-filter: grayscale(100%);
-  /* Chrome, Safari, Opera */
-  filter: grayscale(100%);
-  transition: all 0.5s;
-}
-section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscorejprix:hover {
-  -webkit-filter: grayscale(0%);
-  /* Chrome, Safari, Opera */
-  filter: grayscale(0%);
-}
-section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscoresnake {
-  -webkit-filter: grayscale(100%);
-  /* Chrome, Safari, Opera */
-  filter: grayscale(100%);
-  transition: all 0.5s;
-}
-section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscoresnake:hover {
-  -webkit-filter: grayscale(0%);
-  /* Chrome, Safari, Opera */
-  filter: grayscale(0%);
-}
-section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscoreflappybird {
-  -webkit-filter: grayscale(100%);
-  /* Chrome, Safari, Opera */
-  filter: grayscale(100%);
-  transition: all 0.5s;
-}
-section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscoreflappybird:hover {
-  -webkit-filter: grayscale(0%);
-  /* Chrome, Safari, Opera */
-  filter: grayscale(0%);
-}
-section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscorepingpong {
-  -webkit-filter: grayscale(100%);
-  /* Chrome, Safari, Opera */
-  filter: grayscale(100%);
-  transition: all 0.5s;
-}
-section.container_allprofil div.droite div.bas div.update div.score div.basscore img.btnscorepingpong:hover {
+section.container_allprofil div.droite div.bas div.update div.score div.basscore img.test:hover {
   -webkit-filter: grayscale(0%);
   /* Chrome, Safari, Opera */
   filter: grayscale(0%);
