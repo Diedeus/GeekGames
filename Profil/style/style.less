@@ -52,7 +52,7 @@ body {
     width: 100%;
     display: block;
     font-family: 'montserrat', sans-serif;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 img,
@@ -166,7 +166,7 @@ section.container_allprofil{
         div.haut{
             width: 100%;
             height: 30vh;
-            background-image: url(../../asset/background-ratchetclank.jpg);
+            background-image: url(../asset/backnav.png);
             background-position: center;
             border-bottom: solid 5px #363636;
             nav.home{
@@ -293,8 +293,24 @@ section.container_allprofil{
                         font-size: 20px;
                         line-height: 60px;
                     }
-                    p.mdp{
-                        line-height: 85px;
+                    div.mdp{
+                        display: flex;
+                        button{
+                        background-color: white;
+                        margin-top: 15px;
+                        margin-left: 20px;
+                        font-weight: 600;
+                        color: #151515;
+                        border: 0;
+                        height: 20px;
+                        width: 100px;
+                        transition: all 0.5s;
+                        font-size: 10px;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: rgb(204, 203, 203);
+                        }
+                        }
                     }
                     button.supprcompte{
                         background-color: #ff3333;
@@ -399,7 +415,7 @@ section.formupdate_profil{
         flex-wrap: wrap;
         justify-content: space-between;
         padding: 50px;
-        width: 600px;
+        width: 500px;
         background-color: white;
         h2{
             color: #393795;
@@ -423,6 +439,9 @@ section.formupdate_profil{
             width: 40%;
             color: white;
             background-color: #393795;
+            height: 30px;
+            line-height: 30px;
+            pad: 0 10px;
             text-indent: 0;
             cursor: pointer;
             transition: all 0.5s;
@@ -436,8 +455,8 @@ section.formupdate_profil{
 div.succes{
     position: absolute;
     bottom: 20px;
-    right: 20px;
-    width: 500px;
+    left: 20px;
+    width: 420px;
     height: 90px;
     background-color: #101010d6;
     border-radius: 5px;
@@ -478,7 +497,7 @@ div.succes{
 }
 @keyframes succes {
     0%{
-        right: -500px;
+        left: -500px;
     }
     100%{
         opacity: 20px;
@@ -489,8 +508,8 @@ div.succes{
 div.error{
     position: absolute;
     bottom: 20px;
-    right: 20px;
-    width: 500px;
+    left: 20px;
+    width: 420px;
     height: 90px;
     background-color: #101010d6;
     border-radius: 5px;
@@ -531,7 +550,7 @@ div.error{
 }
 @keyframes error {
     0%{
-        right: -500px;
+        left: -500px;
     }
     100%{
         opacity: 20px;
@@ -604,5 +623,44 @@ section.suppression{
                 }
             }
         }
+    }
+}
+
+section.reconnexion{
+    position: absolute;
+    top: 0;
+    background-color: #080808bb;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div{
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        padding: 20px 0;
+        h2{
+            font-size: 25px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #393795;
+        }
+        article{
+            p{
+                margin-bottom: 10px;
+            }
+            a{
+                float: left;
+                font-size: 14px;
+                padding: 5px 10px;
+                background-color: #393795;
+                color: white;
+            }
+        }
+
     }
 }

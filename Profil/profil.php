@@ -51,6 +51,7 @@ exit();
             </article>
 
             <a href="../index.php" class="voirjeux">Tous les jeux</a>
+
         </div>
 
         <div class="droite">
@@ -118,7 +119,7 @@ if(isset($_SESSION['id_users'])){
                 echo "<p>". $donnes['Date_de_naissance'] ."</p>";
                 echo "<p>". $donnes['Email'] ."</p>";
                 echo "<p>". $donnes['adresse'] ."</p>";
-                echo "<p>****************</p>";
+                echo "<div class=\"mdp\"><p>****************</p><button class=\"openmodifmdp\">Modifier</button></div>";
                 ?>
                 <button class="supprcompte">Supprimer le compte</button>
             </div>
@@ -162,7 +163,7 @@ if(isset($_SESSION['id_users'])){
                    <?php if ($affichequizz && isset($affichequizz['Max_Score'])) {
                     echo "<p class=\"bestscore\">Meilleur score :  <span>" . $affichequizz['Max_Score'] . "</span></p>";
                 } else {
-                    echo "<p class=\"bestscore\">0</p>";
+                    echo "<p class=\"bestscore\">Meilleur score : 0</p>";
                 } ?>
                     </article>
                 </div>
@@ -336,11 +337,10 @@ if (isset($_SESSION['id_users'])) {
             echo '<div class="box-form"><input type="text"  name="Prenomu" value="' . $Prenomu . '"><br></div>';
             echo '<div class="box-form"><input type="text"  name="Pseudou" value="' . $Pseudou . '"><br></div>';
             echo '<div class="box-form">
-            <input type="password"  name="Pseudou" value="' . $Pseudou . '"><br></div>';
+            <input type="text"  name="Birthdayu" value="' . $Birthdayu . '"><br></div>';
             echo '<input type="text" name="Emailu" value="' . $Emailu . '"><br>';
-            echo '<input type="text"  name="Birthdayu" value="' . $Birthdayu . '"><br>';
             echo '<input type="text"  name="Adresseu" value="' . $Adresseu . '"><br>';
-            echo '<input type="submit" value="Valider les modifications" class="submitprofile">';
+            echo '<input type="submit" value="Modifier" class="submitprofile">';
             echo '</form>';
         }
         ?>
@@ -383,6 +383,74 @@ if (isset($_SESSION['id_users'])) {
         } 
     }
 ?>
+
+<?php
+if(isset($_SESSION['id_users'])){
+    $userupdatemdp = $_SESSION['id_users'];
+    $sqlmdp = "SELECT * FROM users WHERE id_users = $userupdate2 ";
+    $querymdp = mysqli_query($conn, $sqlmdp);
+    $updatemdp = mysqli_fetch_array($querymdp, MYSQLI_ASSOC);
+
+    $mdpidu = $updatemdp['id_users'];
+    $mdpu = $updatemdp['Mot_de_passe'];
+
+    if(isset($_POST['mdpu']) && isset($_POST['mdpu_confirm'])) {
+        $newPassword = $_POST['mdpu'];
+        $newPasswordhash = hash('sha256', $newPassword);
+        $confirmPassword = $_POST['mdpu_confirm'];
+
+        $stmt = $conn->prepare("UPDATE users SET Mot_de_passe = ? WHERE id_users = ?");
+        $stmt->bind_param("si", $newPasswordhash, $userupdate2);
+
+        if($newPassword === $confirmPassword) {
+            // Vérification de la complexité du mot de passe
+            $passwordPattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/";
+            if(preg_match($passwordPattern, $newPassword)) {
+                $stmt->execute();
+                echo "<section class=\"reconnexion\">
+                <div class=\"reco\">
+                <h2>ATTENTION ! </h2>
+                <article>
+                <p>Le mot de passe a été modifié avec succès !<br> Veuillez vous reconnecter.</p>
+                <a href=\"../Registration/deconnexion.php\">Se reconnecter</a>
+                </article>
+                </div>
+                </section>";
+            } else {
+                echo " 
+      <div class='error'> "; ?>
+      <img src="./asset/warningicone.png" alt="">
+      <?php
+      echo "<article>
+     <h3>ATTENTION !</h3>
+     <p>Le mot de passe ne respecte pas les critères<br> de complexité.  </p>
+     <button class=\"closeerror\">Fermer la fenêtre</button>
+     </article>
+</div> " . $stmt->error;
+            }
+        } else {
+
+            echo " 
+      <div class='error'> "; ?>
+      <img src="./asset/warningicone.png" alt="">
+      <?php
+      echo "<article>
+     <h3>ATTENTION !</h3>
+     <p>Les mots de passe ne correspondent pas. </p>
+     <button class=\"closeerror\">Fermer la fenêtre</button>
+     </article>
+</div> " . $stmt->error;
+        }
+    }
+
+    echo '<form method="POST" action="" name="editMdp">';
+    echo '<h2 class="box-title">Modifier votre mot de passe</h2>';
+    echo '<input type="hidden" name="mdpu" value="' . $idu . '">';
+    echo '<input type="password" name="mdpu" value="" placeholder="Votre nouveau mot de passe">';
+    echo '<input type="password" name="mdpu_confirm" value="" placeholder="Confirmer votre mot de passe">';
+    echo '<input type="submit" value="Modifier" class="submitmdp">';
+    echo '</form>';
+} ?>
     
     <script src="./script/updateprofil.js"></script>
 
