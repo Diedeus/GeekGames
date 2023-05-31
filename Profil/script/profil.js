@@ -27,93 +27,118 @@ let btnscoresnake = document.querySelector('.btnscoresnake')
 let btnscoreflappybird = document.querySelector('.btnscoreflappybird')
 let btnscorepingpong = document.querySelector('.btnscorepingpong')
 
-btnscore7diff.addEventListener('click', function(){
-    btnscore7diff.setAttribute("style","-webkit-filter:grayscale(" + 0 + "%)")
-    btnscore7diff.style.filter="grayscale(0%)"
-    btnscorepingpong.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscoreflappybird.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscorejprix.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscorequizz.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscoresnake.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscorepingpong.filter="grayscale(0%)"
-    btnscoreflappybird.filter="grayscale(0%)"
-    btnscorejprix.filter="grayscale(0%)"
-    btnscorequizz.filter="grayscale(0%)"
-    btnscoresnake.filter="grayscale(0%)"
-})
+let affichscorequizz = document.querySelector('.hautscorequizz')
+let affichscore7diff = document.querySelector('.hautscore7diff')
+let affichscorejprix = document.querySelector('.hautscorejprix')
+let affichscoresnake = document.querySelector('.hautscoresnake')
+let affichscoreflappybird = document.querySelector('.hautscoreflappybird')
+let affichscorepinpong = document.querySelector('.hautscorepingpong')
+
 
 btnscorequizz.addEventListener('click', function(){
-    btnscorequizz.setAttribute("style","-webkit-filter:grayscale(" + 0 + "%)")
-    btnscorequizz.style.filter="grayscale(0%)"
-    btnscorepingpong.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscoreflappybird.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscorejprix.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscore7diff.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscoresnake.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscorepingpong.filter="grayscale(0%)"
-    btnscoreflappybird.filter="grayscale(0%)"
-    btnscorejprix.filter="grayscale(0%)"
-    btnscore7diff.filter="grayscale(0%)"
-    btnscoresnake.filter="grayscale(0%)"
+    btnscorequizz.classList.remove("test")
+    affichscorequizz.style.display="block"
+
+    btnscore7diff.classList.add("test")
+    btnscorejprix.classList.add("test")
+    btnscoresnake.classList.add("test")
+    btnscoreflappybird.classList.add("test")
+    btnscorepingpong.classList.add("test")
+
+    affichscore7diff.style.display="none"
+    affichscorejprix.style.display="none"
+    affichscoresnake.style.display="none"
+    affichscoreflappybird.style.display="none"
+    affichscorepinpong.style.display="none"
 })
 
-btnscorejprix.addEventListener('click', function(){
-    btnscorejprix.setAttribute("style","-webkit-filter:grayscale(" + 0 + "%)")
-    btnscorejprix.style.filter="grayscale(0%)"
-    btnscorepingpong.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscoreflappybird.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscorequizz.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscore7diff.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscoresnake.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscorepingpong.filter="grayscale(0%)"
-    btnscoreflappybird.filter="grayscale(0%)"
-    btnscorequizz.filter="grayscale(0%)"
-    btnscore7diff.filter="grayscale(0%)"
-    btnscoresnake.filter="grayscale(0%)"
+
+btnscore7diff.addEventListener('click', function(){
+    btnscore7diff.classList.remove("test")
+    affichscore7diff.style.display="block"
+
+    btnscorequizz.classList.add("test")
+    btnscorejprix.classList.add("test")
+    btnscoresnake.classList.add("test")
+    btnscoreflappybird.classList.add("test")
+    btnscorepingpong.classList.add("test") 
+    
+    affichscorequizz.style.display="none"
+    affichscorejprix.style.display="none"
+    affichscoresnake.style.display="none"
+    affichscoreflappybird.style.display="none"
+    affichscorepinpong.style.display="none"
 })
+
+
+btnscorejprix.addEventListener('click', function(){
+    btnscorejprix.classList.remove("test")
+    affichscorejprix.style.display="block"
+
+    btnscorequizz.classList.add("test")
+    btnscore7diff.classList.add("test")
+    btnscoresnake.classList.add("test")
+    btnscoreflappybird.classList.add("test")
+    btnscorepingpong.classList.add("test")  
+
+    affichscorequizz.style.display="none"
+    affichscore7diff.style.display="none"
+    affichscoresnake.style.display="none"
+    affichscoreflappybird.style.display="none"
+    affichscorepinpong.style.display="none"
+})
+
+
 btnscoresnake.addEventListener('click', function(){
-    btnscoresnake.setAttribute("style","-webkit-filter:grayscale(" + 0 + "%)")
-    btnscoresnake.style.filter="grayscale(0%)"
-    btnscorepingpong.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscoreflappybird.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscorequizz.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscore7diff.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscorejprix.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscorepingpong.filter="grayscale(0%)"
-    btnscoreflappybird.filter="grayscale(0%)"
-    btnscorequizz.filter="grayscale(0%)"
-    btnscore7diff.filter="grayscale(0%)"
-    btnscorejprix.filter="grayscale(0%)"
+    btnscoresnake.classList.remove("test")
+    affichscoresnake.style.display="block"
+
+    btnscorequizz.classList.add("test")
+    btnscore7diff.classList.add("test")
+    btnscorejprix.classList.add("test")
+    btnscoreflappybird.classList.add("test")
+    btnscorepingpong.classList.add("test")  
+
+    affichscorequizz.style.display="none"
+    affichscore7diff.style.display="none"
+    affichscorejprix.style.display="none"
+    affichscoreflappybird.style.display="none"
+    affichscorepinpong.style.display="none"
 })
 
 btnscoreflappybird.addEventListener('click', function(){
-    btnscoreflappybird.setAttribute("style","-webkit-filter:grayscale(" + 0 + "%)")
-    btnscoreflappybird.style.filter="grayscale(0%)"
-    btnscorepingpong.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscoresnake.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscorequizz.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscore7diff.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscorejprix.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscorepingpong.filter="grayscale(0%)"
-    btnscoresnake.filter="grayscale(0%)"
-    btnscorequizz.filter="grayscale(0%)"
-    btnscore7diff.filter="grayscale(0%)"
-    btnscorejprix.filter="grayscale(0%)"
+    btnscoreflappybird.classList.remove("test")
+    affichscoreflappybird.style.display="block"
+
+    btnscorequizz.classList.add("test")
+    btnscore7diff.classList.add("test")
+    btnscorejprix.classList.add("test")
+    btnscoresnake.classList.add("test")
+    btnscorepingpong.classList.add("test")  
+
+    affichscorequizz.style.display="none"
+    affichscore7diff.style.display="none"
+    affichscorejprix.style.display="none"
+    affichscoresnake.style.display="none"
+    affichscorepinpong.style.display="none"
 })
 
 btnscorepingpong.addEventListener('click', function(){
-    btnscorepingpong.setAttribute("style","-webkit-filter:grayscale(" + 0 + "%)")
-    btnscorepingpong.style.filter="grayscale(0%)"
-    btnscoreflappybird.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscoresnake.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscorequizz.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscore7diff.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscorejprix.setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)")
-    btnscoreflappybird.filter="grayscale(0%)"
-    btnscoresnake.filter="grayscale(0%)"
-    btnscorequizz.filter="grayscale(0%)"
-    btnscore7diff.filter="grayscale(0%)"
-    btnscorejprix.filter="grayscale(0%)"
+    btnscorepingpong.classList.remove("test")
+    affichscorepinpong.style.display="block"
+
+    btnscorequizz.classList.add("test")
+    btnscore7diff.classList.add("test")
+    btnscorejprix.classList.add("test")
+    btnscoresnake.classList.add("test")
+    btnscoreflappybird.classList.add("test") 
+
+    affichscorequizz.style.display="none"
+    affichscore7diff.style.display="none"
+    affichscorejprix.style.display="none"
+    affichscoresnake.style.display="none"
+    affichscoreflappybird.style.display="none"
+
 })
 
 

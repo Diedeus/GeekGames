@@ -51,11 +51,6 @@ exit();
             </article>
 
             <a href="../index.php" class="voirjeux">Tous les jeux</a>
-
-            <div class="btnbas">
-                <a href="#">Mentions légales</a>
-                <a href="#">Deconnexion</a>
-            </div>
         </div>
 
         <div class="droite">
@@ -68,7 +63,10 @@ exit();
                 <li><a href="#">NOUS CONTACTER</a></li>
             </ul>
         </nav>
+        <div class="navdroite">
         <input id="searchbar" type="text" name="search" placeholder="Rechercher un jeu ...">
+        <a class="btndeco" href="../Registration/deconnexion.php">Deconnexion</a>
+        </div>
         <div class="clear"></div>
         <span class="barre"></span>
         </div>
@@ -127,52 +125,105 @@ if(isset($_SESSION['id_users'])){
             <?php }?>
 
 
+
+    <?php if(isset($_SESSION['id_users'])){
+    $userscore = $_SESSION['id_users'];
+    $scorequizz = "SELECT MAX(Score_Quizz) AS Max_Score FROM Score_quizz WHERE id_users = $userscore";
+    $queryquizz = mysqli_query($conn, $scorequizz);
+    $affichequizz = mysqli_fetch_array($queryquizz, MYSQLI_ASSOC);
+
+    $score7diff = "SELECT MAX(Score_7diff) AS Max_Score FROM Score_7diff WHERE id_users = $userscore";
+    $query7diff = mysqli_query($conn, $score7diff);
+    $affiche7diff = mysqli_fetch_array($query7diff, MYSQLI_ASSOC);
+
+    $scorejprix = "SELECT MAX(Score_Jprix) AS Max_Score FROM Score_Jprix WHERE id_users = $userscore";
+    $queryjprix = mysqli_query($conn, $scorejprix);
+    $affichejprix = mysqli_fetch_array($queryjprix, MYSQLI_ASSOC);
+
+    $scoresnake = "SELECT MAX(Score_Snake) AS Max_Score FROM Score_Snake WHERE id_users = $userscore";
+    $querysnake = mysqli_query($conn, $scoresnake);
+    $affichesnake = mysqli_fetch_array($querysnake, MYSQLI_ASSOC);
+
+    $scorefbirds = "SELECT MAX(Score_Fbirds) AS Max_Score FROM Score_Fbirds WHERE id_users = $userscore";
+    $queryfbirds = mysqli_query($conn, $scorefbirds);
+    $affichefbirds = mysqli_fetch_array($queryfbirds, MYSQLI_ASSOC);
+
+    $scorePingpong = "SELECT MAX(Score_Pingpong) AS Max_Score FROM Score_Pingpong WHERE id_users = $userscore";
+    $queryPingpong = mysqli_query($conn, $scorePingpong);
+    $affichePingpong = mysqli_fetch_array($queryPingpong, MYSQLI_ASSOC);
+    
+
+?>
             <div class="score">
                 <div class="hautscore hautscorequizz">
                 <img src="../asset/backjeuun.jpg" alt="">
                     <article>
                         <p class="nomjeu">QUIZZ GEEK</p>
-                        <p class="bestscore">Meilleur score : <span>2000</span></p>
+                   <?php if ($affichequizz && isset($affichequizz['Max_Score'])) {
+                    echo "<p class=\"bestscore\">Meilleur score :  <span>" . $affichequizz['Max_Score'] . "</span></p>";
+                } else {
+                    echo "<p class=\"bestscore\">0</p>";
+                } ?>
                     </article>
                 </div>
 
                 <div class="hautscore hautscore7diff">
-                <img src="../asset/backjeuun.jpg" alt="">
+                <img src="../asset/backjeudeux.jpg" alt="">
                     <article>
-                        <p class="nomjeu">QUIZZ GEEK</p>
-                        <p class="bestscore">Meilleur score : <span>2000</span></p>
+                        <p class="nomjeu">7 DIFFERENCES</p>
+                        <?php if ($affiche7diff && isset($affiche7diff['Max_Score'])) {
+                    echo "<p class=\"bestscore\">Meilleur score :  <span>" . $affiche7diff['Max_Score'] . "</span></p>";
+                } else {
+                    echo "<p class=\"bestscore\">Meilleur score : 0</p>";
+                } ?>
                     </article>
                 </div>
 
                 <div class="hautscore hautscorejprix">
-                <img src="../asset/backjeuun.jpg" alt="">
+                <img src="../asset/backjeutrois.jpg" alt="">
                     <article>
-                        <p class="nomjeu">QUIZZ GEEK</p>
-                        <p class="bestscore">Meilleur score : <span>2000</span></p>
+                        <p class="nomjeu">LE JUSTE PRIX</p>
+                        <?php if ($affichejprix && isset($affichejprix['Max_Score'])) {
+                    echo "<p class=\"bestscore\">Meilleur score :  <span>" . $affichejprix['Max_Score'] . "</span></p>";
+                } else {
+                    echo "<p class=\"bestscore\">Meilleur score : 0</p>";
+                } ?>
                     </article>
                 </div>
 
                 <div class="hautscore hautscoresnake">
-                <img src="../asset/backjeuun.jpg" alt="">
+                <img src="../asset/backjeuquatre.jpg" alt="">
                     <article>
-                        <p class="nomjeu">QUIZZ GEEK</p>
-                        <p class="bestscore">Meilleur score : <span>2000</span></p>
+                        <p class="nomjeu">SNAKE</p>
+                        <?php if ($affichesnake && isset($affichesnake['Max_Score'])) {
+                    echo "<p class=\"bestscore\">Meilleur score :  <span>" . $affichesnake['Max_Score'] . "</span></p>";
+                } else {
+                    echo "<p class=\"bestscore\">Meilleur score : 0</p>";
+                } ?>
                     </article>
                 </div>
 
                 <div class="hautscore hautscoreflappybird">
-                <img src="../asset/backjeuun.jpg" alt="">
+                <img src="../asset/backjeucinq.jpg" alt="">
                     <article>
-                        <p class="nomjeu">QUIZZ GEEK</p>
-                        <p class="bestscore">Meilleur score : <span>2000</span></p>
+                        <p class="nomjeu">FLAPPY BIRD</p>
+                        <?php if ($affichefbirds && isset($affichefbirds['Max_Score'])) {
+                    echo "<p class=\"bestscore\">Meilleur score :  <span>" . $affichefbirds['Max_Score'] . "</span></p>";
+                } else {
+                    echo "<p class=\"bestscore\">Meilleur score : 0</p>";
+                } ?>
                     </article>
                 </div>
 
                 <div class="hautscore hautscorepingpong">
-                <img src="../asset/backjeuun.jpg" alt="">
+                <img src="../asset/backjeusix.jpg" alt="">
                     <article>
-                        <p class="nomjeu">QUIZZ GEEK</p>
-                        <p class="bestscore">Meilleur score : <span>2000</span></p>
+                        <p class="nomjeu">PING PONG</p>
+                        <?php if ($affichePingpong && isset($affichePingpong['Max_Score'])) {
+                    echo "<p class=\"bestscore\">Meilleur score :  <span>" . $affichePingpong['Max_Score'] . "</span></p>";
+                } else {
+                    echo "<p class=\"bestscore\">Meilleur score : 0</p>";
+                } ?>
                     </article>
                 </div>
 
@@ -181,15 +232,16 @@ if(isset($_SESSION['id_users'])){
                 <div class="clear"></div>
                 <div class="basscore">
                     <img class="btnscorequizz" src="./asset/quizzgeek.jpg" alt="">
-                    <img class="btnscore7diff" src="./asset/7diff.jpg" alt="">
-                    <img class="btnscorejprix" src="./asset/justeprix.jpg" alt="">
-                    <img class="btnscoresnake" src="./asset/snake.jpg" alt="">
-                    <img class="btnscoreflappybird" src="./asset/flappybird.jpg" alt="">
-                    <img class="btnscorepingpong" src="./asset/pingpong.jpg" alt="">
+                    <img class="btnscore7diff test" src="./asset/7diff.jpg" alt="">
+                    <img class="btnscorejprix test" src="./asset/justeprix.jpg" alt="">
+                    <img class="btnscoresnake test" src="./asset/snake.jpg" alt="">
+                    <img class="btnscoreflappybird test" src="./asset/flappybird.jpg" alt="">
+                    <img class="btnscorepingpong test" src="./asset/pingpong.jpg" alt="">
 
                     </a>
                 </div>
             </div>
+            <?php }?>
 
             </div>
 
