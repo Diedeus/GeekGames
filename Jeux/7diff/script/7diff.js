@@ -29,6 +29,22 @@ idimgsub.addEventListener("click", function(event){
     let id2 = parseInt(idimgSelect.value)
     idimgSelect2.value = id2
 })
+let test = document.querySelector('.test')
+idimgsub2.addEventListener("click", function(event){
+    event.preventDefault()
+    let presentation = document.querySelector('.presentation')
+    let sectImg = document.querySelector('.sectImg')
+    let corps7diff = document.querySelector('.corps7diff')
+    
+    let infos = document.querySelector('.infos')
+
+    
+    corps7diff.style.display = "block"
+    test.style.display = "block"
+    infos.style.display = "block"
+    presentation.style.display = "none"
+    sectImg.style.display = "none"
+})
 
 
 
