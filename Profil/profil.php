@@ -67,7 +67,18 @@ exit();
         </nav>
         <div class="navdroite">
         <input id="searchbar" type="text" name="search" placeholder="Rechercher un jeu ...">
-        <a class="btndeco" href="../Registration/deconnexion.php">Deconnexion</a>
+        <?php
+            if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) {
+                // echo "<p> bonjour " . $_SESSION['Nom_utilisateur'] . "</p>";
+                echo '<img src="../asset/icone-mario.png" alt="">';
+                echo '<a  class="user" href="./profil.php">bonjour ' . $_SESSION['Nom_utilisateur'] . '</a>';
+                echo '<a class="design" href="../Registration/deconnexion.php">Deconnexion</a>';
+                
+            }
+            if(isset($_SESSION['Admin'])&& $_SESSION['Admin'] === '1' ){
+                echo '<a class="btnadmin" href="../admin/admin.php">Admin</a>';
+            }
+            ?>  
         </div>
         <div class="clear"></div>
         <span class="barre"></span>
@@ -120,7 +131,7 @@ if(isset($_SESSION['id_users'])){
                 echo "<p>". $donnes['Date_de_naissance'] ."</p>";
                 echo "<p>". $donnes['Email'] ."</p>";
                 echo "<p>". $donnes['adresse'] ."</p>";
-                echo "<div class=\"mdp\"><p>****************</p><button class=\"openmodifmdp\">Modifier</button></div>";
+                echo "<div class=\"mdp\"><p>****************</p><button class=\"openmodifmdp\">Modifier le mot de passe</button></div>";
                 ?>
                 <button class="supprcompte">Supprimer le compte</button>
             </div>

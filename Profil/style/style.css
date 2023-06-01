@@ -189,6 +189,7 @@ section.container_allprofil div.droite div.haut nav.home ul li a.on {
 section.container_allprofil div.droite div.haut div.navdroite {
   margin-top: 70px;
   margin-right: 70px;
+  display: flex;
   float: right;
 }
 section.container_allprofil div.droite div.haut div.navdroite #searchbar {
@@ -198,15 +199,43 @@ section.container_allprofil div.droite div.haut div.navdroite #searchbar {
   outline: none;
 }
 section.container_allprofil div.droite div.haut div.navdroite a {
+  height: 40px;
   color: white;
-  line-height: 40px;
-  margin: 0 5px;
   padding: 10px 10px;
   transition: all 0.5s;
 }
 section.container_allprofil div.droite div.haut div.navdroite a:hover {
   color: #241a5a;
   background-color: white;
+}
+section.container_allprofil div.droite div.haut div.navdroite img {
+  width: 40px ;
+  height: 40px;
+  background-color: #3c2d87;
+  padding: 7px;
+  margin-left: 50px;
+}
+section.container_allprofil div.droite div.haut div.navdroite a.user {
+  margin-right: 10px;
+  color: white;
+  background-color: #3c2d87;
+  line-height: 40px;
+  padding: 0 10px;
+  transition: all 0.5s;
+  border: 0;
+}
+section.container_allprofil div.droite div.haut div.navdroite a.user:hover {
+  background-color: #2b2064;
+}
+section.container_allprofil div.droite div.haut div.navdroite a.btnadmin {
+  color: white;
+  line-height: 40px;
+  padding: 0 10px;
+  background-color: red;
+  transition: all 0.5s;
+}
+section.container_allprofil div.droite div.haut div.navdroite a.btnadmin:hover {
+  background-color: #b60202;
 }
 section.container_allprofil div.droite div.haut span.barre {
   z-index: 1000;
@@ -294,7 +323,7 @@ section.container_allprofil div.droite div.bas div.update div.profil_update div.
   color: #151515;
   border: 0;
   height: 20px;
-  width: 100px;
+  width: 150px;
   transition: all 0.5s;
   font-size: 10px;
   cursor: pointer;

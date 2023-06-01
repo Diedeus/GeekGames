@@ -203,7 +203,8 @@ section.container_allprofil{
             }
             div.navdroite{
                 margin-top: 70px;
-                    margin-right: 70px;
+                margin-right: 70px;
+                display: flex;
                 float: right;
                 #searchbar{
                     margin-right: 20px;
@@ -212,14 +213,43 @@ section.container_allprofil{
                     outline: none;
                 }
                 a{
+                    height: 40px;
                     color: white;
-                    line-height: 40px;
-                    margin: 0 5px;
                     padding: 10px 10px;
                     transition: all 0.5s;
                     &:hover{
                         color: #241a5a;
                         background-color: white;
+                    }
+                }
+                img{
+                    width:40px ;
+                    height: 40px;
+                    background-color: #3c2d87;
+                    padding: 7px;
+                    margin-left: 50px;
+                }
+                a.user{
+                    margin-right: 10px;
+                    color: white;
+                    background-color: #3c2d87;
+                    line-height: 40px;
+                    padding: 0 10px;
+                    transition: all 0.5s;
+        
+                    border: 0;
+                    &:hover{
+                        background-color: #2b2064;
+                    }
+                }
+                a.btnadmin{
+                    color: white;
+                    line-height: 40px;
+                    padding: 0 10px;
+                    background-color: red;
+                    transition: all 0.5s;
+                    &:hover{
+                        background-color: rgb(182, 2, 2);
                     }
                 }
             }
@@ -307,7 +337,7 @@ section.container_allprofil{
                         color: #151515;
                         border: 0;
                         height: 20px;
-                        width: 100px;
+                        width: 150px;
                         transition: all 0.5s;
                         font-size: 10px;
                         cursor: pointer;
