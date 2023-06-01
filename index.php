@@ -23,7 +23,7 @@
     <header id="test">
         <nav class="home">
             <ul>
-                <li><a class="on" href="#">MINI JEUX</a></li>
+                <li><a class="on" href="#">ACCUEIL</a></li>
                 <li><a href="#">CREDITS</a></li>
                 <li><a href="#">NOUS CONTACTER</a></li>
             </ul>
@@ -34,7 +34,6 @@
             <input id="searchbar" type="text" name="search" placeholder="Rechercher un jeu ...">
             <?php
             if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) {
-                // echo "<p> bonjour " . $_SESSION['Nom_utilisateur'] . "</p>";
                 echo '<img src="./asset/icone-mario.png" alt="">';
                 echo '<a  class="user" href="./profil/profil.php">bonjour ' . $_SESSION['Nom_utilisateur'] . '</a>';
                 echo '<a class="design" href="./Registration/deconnexion.php">Deconnexion</a>';
@@ -43,7 +42,6 @@
                 ?>
                 <img src="./asset/icone-mario.png" alt="">
                 <button class="log"><p>Se connecter</p></button>
-            <!-- <a class="log" href="#">*</a> -->
             <a class="sign" href="./Registration/register.php">S'inscrire</a>
             
             <?php
@@ -68,7 +66,7 @@
             </article>
             <article class="logotexte">
                 <img src="asset/logogeekgame.png" alt="">
-                <p class="textlogo">Bien le bonjour jeune aventurier et bienvenur sur GEEKGAME ! Ici tu trouveras plusieurs mini jeux <br> du plus simple comme le Quizz en passant par des jeux plus complexe comme le <br>Flappy bird ou encore le Snake .. <br>
+                <p class="textlogo">Bien le bonjour jeune aventurier et bienvenur sur GEEKGAME !<br> Ici tu trouveras plusieurs mini jeux  du plus simple comme le Quizz en <br>passant par des jeux plus complexe comme le Flappy bird ou encore le Snake .. <br>
                     Entraine toi et compare tes scores avec ceux de tes amis et devient le MEILLEUR DES GEEKS !
                     <br> </p>
             </article>
@@ -79,9 +77,9 @@
                     <a id="aquizz" href="./Jeux/Quizz/Quizz.php" style="display:block">Jouer au Quizz</a>
                     <a id="a7diff" href="" style="display:none">Jouer au Sept Diff</a>
                     <a id="ajusteprix" href="./Jeux/Juste_Prix/justeprix.php" style="display:none">Jouer au juste prix</a>
-                    <a id="asnake" href="#" style="display:none">Jouer au snake</a>
-                    <a id="aflappybird" href="#" style="display:none">Jouer au flappy bird</a>
-                    <a id="apingpong" href="#" style="display:none">Jouer au ping pong</a>
+                    <a id="aflappybird" href="" style="display:none">Jouer au flappy bird</a>
+                    <a id="asnake" href="./index.php" style="display:none">Jouer au snake</a>
+                    <a id="apingpong" href="./index.php" style="display:none">Jouer au ping pong</a>
             </article>
         </div>
 
@@ -103,18 +101,18 @@
                     <h2>LE JUSTE PRIX</h2>
                 </article>
 
-                <article id="snake">
-                    <img id="imgsnake" src="asset/backjeuquatre.jpg" alt="">
-                    <h2>SNAKE</h2>
-                </article>
-
                 <article id="flappybird">
                     <img id="imgflappybird" src="asset/backjeucinq.jpg" alt="">
                     <h2>FLAPPY BIRD</h2>
                 </article>
 
+                <article id="snake">
+                    <img id="imgsnake" src="asset/backjeuquatrenondispo.jpg" alt="">
+                    <h2>SNAKE</h2>
+                </article>
+
                 <article id="pingpong">
-                    <img id="imgpingpong" src="asset/backjeusix.jpg" alt="">
+                    <img id="imgpingpong" src="asset/backjeusixnondispo.jpg" alt="">
                     <h2>PING PONG</h2>
                 </article>
             </div>

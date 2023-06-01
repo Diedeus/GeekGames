@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="asset/icone.png" />
+    <link rel="icon" type="image/png" href="../../asset/icone.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <title>GeekGames - Home</title>
+    <title>GeekGames - QuizzGeek</title>
     <script src="./Script/script.js" defer></script>
     <script src="./script/refresh.js" defer></script>
     <link rel="stylesheet" href="./style/style.css">
@@ -20,6 +20,8 @@
     <?php 
 
 require('../../../geekgames/Registration/config.php');
+session_save_path("../../tmp");
+session_start();
 
 ?>
 
@@ -27,7 +29,7 @@ require('../../../geekgames/Registration/config.php');
 
         <nav class="home">
             <ul>
-                <li><a href="../../index.php">MINI JEUX</a></li>
+                <li><a href="../../index.php">ACCUEIL</a></li>
                 <li><a href="#">CREDITS</a></li>
                 <li><a href="#">NOUS CONTACTER</a></li>
             </ul>
@@ -35,9 +37,27 @@ require('../../../geekgames/Registration/config.php');
 
         <div class="right">
             <input id="searchbar" type="text" name="search" placeholder="Rechercher un jeu ...">
-            <img src="../../asset/icone-mario.png" alt="">
-            <button class=log>Se connecter</button>
-            <a class="sign" href="register.php">S'inscrire</a>
+            <?php
+            if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) {
+                // echo "<p> bonjour " . $_SESSION['Nom_utilisateur'] . "</p>";
+                echo '<img src="../../asset/icone-mario.png" alt="">';
+                echo '<a  class="user" href="../../profil/profil.php">bonjour ' . $_SESSION['Nom_utilisateur'] . '</a>';
+                echo '<a class="design" href="../../Registration/deconnexion.php">Deconnexion</a>';
+                
+            } else{
+                ?>
+                <img src="./asset/icone-mario.png" alt="">
+                <button class="log"><p>Se connecter</p></button>
+            <!-- <a class="log" href="#">*</a> -->
+            <a class="sign" href="../../Registration/register.php">S'inscrire</a>
+            
+            <?php
+            }
+            if(isset($_SESSION['Admin'])&& $_SESSION['Admin'] === '1' ){
+                echo '<a class="btnadmin" href="../../admin/admin.php">Admin</a>';
+            }
+            ?>   
+            
         </div>
         <div class="clear"></div>
         <span class="barre"></span>
@@ -46,10 +66,9 @@ require('../../../geekgames/Registration/config.php');
             <h1>QUIZZ GEEK</h1>
             <Section class="demarage">
                 <div class="explication">
-                    <h2>Bienvenue dans ce Quizz</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias iure amet illum minima
-                        eveniet asperiores impedit similique voluptatum! Ipsum ratione atque facere fuga fugit
-                        distinctio totam quos impedit ab assumenda!</p>
+                    <h2>Bienvenue dans le Quizz Geek</h2>
+                    <p> Êtes-vous prêt à tester vos connaissances et à devenir un véritable expert ? Mettez vos compétences à l'épreuve et découvrez si vous avez ce qu'il faut pour relever ce défi passionnant.<br> 
+                        Que la force geek soit avec vous !</p>
                     <button id="demQuizz">Démarrer le quizz</button>
                 </div>
 
@@ -61,8 +80,6 @@ require('../../../geekgames/Registration/config.php');
                     <?php
         $query1 = "SELECT intitule_question, Reponse_A, Reponse_B, Reponse_C, Reponse_D, Reponse_Quizz, Difficulte_question FROM jeu_quizz WHERE Difficulte_question = 1 ORDER BY RAND() LIMIT 1";
         $result1 = $conn->query($query1);
-        session_save_path("../../tmp");
-        session_start();
 
 
         if ($result1->num_rows > 0) {

@@ -88,7 +88,7 @@
     <div class="navinscri">
     <nav class="home">
             <ul>
-                <li><a href="../index.php">MINI JEUX</a></li>
+                <li><a href="../index.php">ACCUEIL</a></li>
                 <li><a href="#">CREDITS</a></li>
                 <li><a href="#">NOUS CONTACTER</a></li>
             </ul>

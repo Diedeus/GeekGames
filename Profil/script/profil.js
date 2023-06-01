@@ -89,22 +89,22 @@ btnscorejprix.addEventListener('click', function(){
 })
 
 
-btnscoresnake.addEventListener('click', function(){
-    btnscoresnake.classList.remove("test")
-    affichscoresnake.style.display="block"
+// btnscoresnake.addEventListener('click', function(){
+//     btnscoresnake.classList.remove("test")
+//     affichscoresnake.style.display="block"
 
-    btnscorequizz.classList.add("test")
-    btnscore7diff.classList.add("test")
-    btnscorejprix.classList.add("test")
-    btnscoreflappybird.classList.add("test")
-    btnscorepingpong.classList.add("test")  
+//     btnscorequizz.classList.add("test")
+//     btnscore7diff.classList.add("test")
+//     btnscorejprix.classList.add("test")
+//     btnscoreflappybird.classList.add("test")
+//     btnscorepingpong.classList.add("test")  
 
-    affichscorequizz.style.display="none"
-    affichscore7diff.style.display="none"
-    affichscorejprix.style.display="none"
-    affichscoreflappybird.style.display="none"
-    affichscorepinpong.style.display="none"
-})
+//     affichscorequizz.style.display="none"
+//     affichscore7diff.style.display="none"
+//     affichscorejprix.style.display="none"
+//     affichscoreflappybird.style.display="none"
+//     affichscorepinpong.style.display="none"
+// })
 
 btnscoreflappybird.addEventListener('click', function(){
     btnscoreflappybird.classList.remove("test")
@@ -123,23 +123,23 @@ btnscoreflappybird.addEventListener('click', function(){
     affichscorepinpong.style.display="none"
 })
 
-btnscorepingpong.addEventListener('click', function(){
-    btnscorepingpong.classList.remove("test")
-    affichscorepinpong.style.display="block"
+// btnscorepingpong.addEventListener('click', function(){
+//     btnscorepingpong.classList.remove("test")
+//     affichscorepinpong.style.display="block"
 
-    btnscorequizz.classList.add("test")
-    btnscore7diff.classList.add("test")
-    btnscorejprix.classList.add("test")
-    btnscoresnake.classList.add("test")
-    btnscoreflappybird.classList.add("test") 
+//     btnscorequizz.classList.add("test")
+//     btnscore7diff.classList.add("test")
+//     btnscorejprix.classList.add("test")
+//     btnscoresnake.classList.add("test")
+//     btnscoreflappybird.classList.add("test") 
 
-    affichscorequizz.style.display="none"
-    affichscore7diff.style.display="none"
-    affichscorejprix.style.display="none"
-    affichscoresnake.style.display="none"
-    affichscoreflappybird.style.display="none"
+//     affichscorequizz.style.display="none"
+//     affichscore7diff.style.display="none"
+//     affichscorejprix.style.display="none"
+//     affichscoresnake.style.display="none"
+//     affichscoreflappybird.style.display="none"
 
-})
+// })
 
 let openmodifmdp = document.querySelector('.openmodifmdp')
 let formmdp = document.querySelector('.container_formmdp')

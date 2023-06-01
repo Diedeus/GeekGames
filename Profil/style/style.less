@@ -130,26 +130,23 @@ section.container_allprofil{
             border: 0;
             cursor:default;
             color: #151515;
-            margin-bottom: 80px;
+            margin-bottom: 50px;
         }
         
         article{
             width: 70%;
-            margin-bottom: 10px;
-            img{
-                width: 100%;
-                margin: 0;
+            margin-bottom: 15px;
+
+            a{
+                img{
+                    width: 100%;
+                    margin: 0;
+                    transition: all 0.5s;
+                    &:hover{
+                        scale: 1.02;
+                    }
+                }
             }
-            p{
-                background-color: white;
-                font-weight: 600;
-                text-align: center;
-                width: 100%;
-                padding: 5px 0;
-            }
-        }
-        article.last{
-            margin-bottom: 5px;
         }
         a.voirjeux{
             width: 70%;
@@ -410,6 +407,12 @@ section.container_allprofil{
                             width: 32%;
                             margin-bottom: 10px;
                             overflow: hidden;
+                        }
+                        img.btnscoresnake{
+                            cursor: default;
+                        }
+                        img.btnscorepingpong{
+                            cursor: default;
                         }
                         img.test{
                             -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */

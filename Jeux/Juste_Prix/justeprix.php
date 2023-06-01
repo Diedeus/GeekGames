@@ -2,9 +2,10 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="../../asset/icone.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Juste Prix</title>
+    <title>GeekGames - Juste Prix</title>
     <link rel="stylesheet" href="./Style/justeprix.css">
     
 </head>
@@ -71,7 +72,7 @@ session_start();
         <div class="navinscri">
         <nav class="home">
             <ul>
-                <li><a href="../../index.php">MINI JEUX</a></li>
+                <li><a href="../../index.php">ACCUEIL</a></li>
                 <li><a href="#">CREDITS</a></li>
                 <li><a href="#">NOUS CONTACTER</a></li>
             </ul>
@@ -90,7 +91,7 @@ session_start();
             if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) {
                 // echo "<p> bonjour " . $_SESSION['Nom_utilisateur'] . "</p>";
                 echo '<img src="../../asset/icone-mario.png" alt="">';
-                echo '<a  class="log" href="../../profil/profil.php">bonjour ' . $_SESSION['Nom_utilisateur'] . '</a>';
+                echo '<a  class="user" href="../../profil/profil.php">bonjour ' . $_SESSION['Nom_utilisateur'] . '</a>';
                 echo '<a class="design" href="../../Registration/deconnexion.php">Deconnexion</a>';
                 
             } else{
