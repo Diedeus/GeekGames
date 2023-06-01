@@ -66,8 +66,8 @@
             </article>
             <article class="logotexte">
                 <img src="asset/logogeekgame.png" alt="">
-                <p class="textlogo">Bien le bonjour jeune aventurier et bienvenur sur GEEKGAME !<br> Ici tu trouveras plusieurs mini jeux  du plus simple comme le Quizz en <br>passant par des jeux plus complexe comme le Flappy bird ou encore le Snake .. <br>
-                    Entraine toi et compare tes scores avec ceux de tes amis et devient le MEILLEUR DES GEEKS !
+                <p class="textlogo">Bien le bonjour jeune aventurier et bienvenue sur GEEKGAME !<br> Ici tu trouveras plusieurs mini jeux  du plus simple comme le Quizz en <br>passant par des jeux plus complexe comme le Flappy bird ou encore le Snake .. <br>
+                    Entraîne toi et compare tes scores avec ceux de tes amis et devient le MEILLEUR DES GEEKS !
                     <br> </p>
             </article>
 

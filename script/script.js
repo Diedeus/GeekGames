@@ -210,12 +210,12 @@ function refresh(x) {
         aflappybird.style.display = "none"
         apingpong.style.display = "none"
         descijeuid.innerHTML = "Les 7 différences : Plongez dans un univers geek captivant  <br>" +
-            "avec notre jeu des 7différences. Mettez votre sens de l'observation à  <br>" +
+            "avec notre jeu des 7 différences. Mettez votre sens de l'observation à  <br>" +
             "l'épreuve en comparant deux images apparemment identiques et trouvez les  <br>" +
             "7 différences dissimulées. Explorez des scènes épiques de films, de séries <br>" +
-            " de bandes dessinées et de jeux vidéo emblématiques.Chaque niveau vous présentera<br>" +
-            " de nouvelles images et des détails subtils à repérer.Soyez attentif, car le temps <br> " +
-            "est limité ! Défiez vos amis et voyez qui peut repérer toutes lesdifférences en premier." ;
+            " de bandes dessinées et de jeux vidéo emblématiques. Chaque niveau vous présentera<br>" +
+            " de nouvelles images et des détails subtils à repérer. Soyez attentif, car le temps <br> " +
+            "est limité ! Défiez vos amis et voyez qui peut repérer toutes les différences en premier." ;
 
     }
     if (x === 3) {
@@ -281,8 +281,8 @@ function refresh(x) {
             "Utilisez votre raquette pour frapper la balle et marquer des points en la  <br>" +
             "faisant rebondir sur le terrain de jeu. Réagissez rapidement aux mouvements <br>" +
             "de votre adversaire et anticipez les rebonds de la balle pour obtenir l'avantage.<br>" +
-            "Avec des graphismes rétro et des commandes simples, ce jeu vous ramènera aux débuts des jeux vidéo.<br>" +
-            "Défiez-vous et voyez qui sera couronné champion du Ping Pong Rétro !<br>" ;
+            "Avec des graphismes rétro et des commandes simples, ce jeu vous ramènera aux débuts <br>" +
+            "des jeux vidéo. Défiez-vous et voyez qui sera couronné champion du Ping Pong Rétro !<br>" ;
 
     }
 
