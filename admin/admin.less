@@ -179,17 +179,19 @@ body{
             background-color: rgb(205, 205, 205);
         }
     }
-    
+
 
 section.container_quizzgeek{
     display: none;
-    section.container_formquiz{
+}
+    section.container_formquiz,.container_formuser{
         display: none;
         padding: 0 40px;
         height: 75vh;
         display: flex;
         align-items: center;
         margin-bottom: 50px;
+        
         div.formleft{
             width: 80%;
             padding-right: 60px;
@@ -238,6 +240,9 @@ section.container_quizzgeek{
                     padding:15px 0;
                 }
             }
+        }
+        div.userform{
+            width: 40%;
         }
         div.tableauquiz{
             height: 700px;
@@ -317,11 +322,87 @@ section.container_quizzgeek{
             }
         }
     }
-}
+
 section.container_update7diff{
     display: none;
+    padding-top: 50px;
+   
+    div.form7diff{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        
+        
+        form{
+            background-color: white;
+            padding: 40px;
+            width: 500px;
+            margin-bottom: 70px;
+            h1{
+                text-align: center;
+                color: #3c2d87;
+                margin-bottom: 30px;
+            }
+            input{
+                text-indent: 0;
+            }
+            input#file-upload-button{
+                background-color: #3c2d87;
+                color: 0;
+                outline: 0;
+            }
+            input.ajoutimg7diff{
+                margin: 0;
+                background-color: #3c2d87;
+                color: white;
+                transition: all 0.5s;
+                cursor: pointer;
+                &:hover{
+                    background-color: #241a5a;
+                }
+            }
+        }
+    }
+  section.container_corps7diff{
+    h1{
+        margin-left: 40px;
+        color: white;
+        margin-bottom: 20px;
+        font-size: 23px;
+    }
+    div.corps7diff{
+        width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+        div.Element7diff{
+            width:25%;
+            padding: 0 40px;
+            margin-bottom: 40px;
+            background-color: white;
+            article.image7diff{
+                display: flex;
+                img{
+                    width: 50%;
+                    margin-bottom: 10px;
+                }
+            }
+            p{
+                color: white;
+                margin-bottom: 5px;
+            }
+            div.Btn7diff{
+                button{
+                    width: 100%;
+                    border: 0;
+                    height: 40px;
+                }
+            }
+        }
+    }
+  }
 }
 section.container_updatejusteprix{
     display: none;
 }
 }
+

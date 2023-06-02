@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,12 +10,12 @@
     <title>GeekGames - Home</title>
     <link rel="stylesheet" href="styles/style.css">
     <script src="Script/Script.js" defer></script>
- 
+
 
 </head>
 
 <body>
-    <?php 
+    <?php
     session_save_path("./tmp");
     session_start(); ?>
 
@@ -37,20 +36,21 @@
                 echo '<img src="./asset/icone-mario.png" alt="">';
                 echo '<a  class="user" href="./profil/profil.php">bonjour ' . $_SESSION['Nom_utilisateur'] . '</a>';
                 echo '<a class="design" href="./Registration/deconnexion.php">Deconnexion</a>';
-                
-            } else{
-                ?>
+            } else {
+            ?>
                 <img src="./asset/icone-mario.png" alt="">
-                <button class="log"><p>Se connecter</p></button>
-            <a class="sign" href="./Registration/register.php">S'inscrire</a>
-            
+                <button class="log">
+                    <p>Se connecter</p>
+                </button>
+                <a class="sign" href="./Registration/register.php">S'inscrire</a>
+
             <?php
             }
-            if(isset($_SESSION['Admin'])&& $_SESSION['Admin'] === '1' ){
+            if (isset($_SESSION['Admin']) && $_SESSION['Admin'] === '1') {
                 echo '<a class="btnadmin" href="./admin/admin.php">Admin</a>';
             }
-            ?>   
-            
+            ?>
+
         </div>
         <div class="clear"></div>
         <span class="barre"></span>
@@ -66,20 +66,21 @@
             </article>
             <article class="logotexte">
                 <img src="asset/logogeekgame.png" alt="">
-                <p class="textlogo">Bien le bonjour jeune aventurier et bienvenue sur GEEKGAME !<br> Ici tu trouveras plusieurs mini jeux  du plus simple comme le Quizz en <br>passant par des jeux plus complexe comme le Flappy bird ou encore le Snake .. <br>
+                <p class="textlogo">Bien le bonjour jeune aventurier et bienvenue sur GEEKGAME !<br> Ici tu trouveras plusieurs mini jeux du plus simple comme le Quizz en <br>passant par des jeux plus complexe comme le Flappy bird ou encore le Snake .. <br>
                     Entraîne toi et compare tes scores avec ceux de tes amis et devient le MEILLEUR DES GEEKS !
-                    <br> </p>
+                    <br>
+                </p>
             </article>
 
             <article class="textejeu">
                 <h1 id="titrejeu"></h1>
                 <p class="descrijeu" id="descijeuid"></p>
-                    <a id="aquizz" href="./Jeux/Quizz/Quizz.php" style="display:block">Jouer au Quizz</a>
-                    <a id="a7diff" href="" style="display:none">Jouer au Sept Diff</a>
-                    <a id="ajusteprix" href="./Jeux/Juste_Prix/justeprix.php" style="display:none">Jouer au juste prix</a>
-                    <a id="aflappybird" href="" style="display:none">Jouer au flappy bird</a>
-                    <a id="asnake" href="./index.php" style="display:none">Jouer au snake</a>
-                    <a id="apingpong" href="./index.php" style="display:none">Jouer au ping pong</a>
+                <a id="aquizz" href="./Jeux/Quizz/Quizz.php" style="display:block">Jouer au Quizz</a>
+                <a id="a7diff" href="" style="display:none">Jouer au Sept Diff</a>
+                <a id="ajusteprix" href="./Jeux/Juste_Prix/justeprix.php" style="display:none">Jouer au juste prix</a>
+                <a id="aflappybird" href="" style="display:none">Jouer au flappy bird</a>
+                <a id="asnake" href="./index.php" style="display:none">Jouer au snake</a>
+                <a id="apingpong" href="./index.php" style="display:none">Jouer au ping pong</a>
             </article>
         </div>
 
@@ -96,7 +97,7 @@
                     <h2>7 DIFFERENCES</h2>
                 </article>
 
-                <article  id="justeprix">
+                <article id="justeprix">
                     <img id="imgjusteprix" src="asset/backjeutrois.jpg" alt="">
                     <h2>LE JUSTE PRIX</h2>
                 </article>
@@ -116,62 +117,61 @@
                     <h2>PING PONG</h2>
                 </article>
             </div>
-            
+
         </section>
 
     </header>
 
     <section class="login">
         <div class="connexion">
-        <?php
-require('Registration/config.php');
+            <?php
+            require('Registration/config.php');
 
 
-if (isset($_POST['Nom_utilisateur'])){
- 
-  $username = stripslashes($_REQUEST['Nom_utilisateur']);
-  $username = mysqli_real_escape_string($conn, $username);
-  $_SESSION['Nom_utilisateur'] = $username;
-  $password = stripslashes($_REQUEST['Mot_de_passe']);
-  $password = mysqli_real_escape_string($conn, $password);
-    $query = "SELECT * FROM `users` WHERE Nom_utilisateur='$username' 
-  and Mot_de_passe='".hash('sha256', $password)."'";
+            if (isset($_POST['Nom_utilisateur'])) {
 
-  
-  $result = mysqli_query($conn,$query) or die(mysqli_error($conn));
-  if (mysqli_num_rows($result) == 1) {
-    $user = mysqli_fetch_assoc($result); 
-    $_SESSION['id_users'] = $user['id_users'];
-    $_SESSION['Nom_utilisateur'] = $user['Nom_utilisateur'];
-    $_SESSION['id_users'] = $user['id_users'];
-    $_SESSION['loggedIn'] = true;
-    $_SESSION['Admin'] = $user['Admin'];
-   
-   ?>
-   <script>
-     window.location.href = "../index.php"
-   </script>
-   <?php 
-  }else{
-    $message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
-    
-  }
-}
+                $username = stripslashes($_REQUEST['Nom_utilisateur']);
+                $username = mysqli_real_escape_string($conn, $username);
+                $_SESSION['Nom_utilisateur'] = $username;
+                $password = stripslashes($_REQUEST['Mot_de_passe']);
+                $password = mysqli_real_escape_string($conn, $password);
+                $query = "SELECT * FROM `users` WHERE Nom_utilisateur='$username' 
+  and Mot_de_passe='" . hash('sha256', $password) . "'";
 
-?>
-<form class="box" action="" method="post" name="login">
-<h2 class="box-title">CONNEXION</h2>
-<input type="text" class="box-input" name="Nom_utilisateur" placeholder="Nom d'utilisateur">
-<input type="password" class="box-input" name="Mot_de_passe" placeholder="Mot de passe">
-<input type="submit" value="Se connecter" name="submit" class="connecter">
-<?php if (! empty($message)) { ?>
-    <p class="errorMessage"><?php echo $message; ?></p>
-<?php } ?>
-</form>
-<img src="asset/logogeekgame.png" alt="">
-<p class="inscriptionhome">Vous n’avez pas de compte ?
-  <a href="Registration/register.php">Inscrivez vous !</a>
-</p>
+
+                $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
+                if (mysqli_num_rows($result) == 1) {
+                    $user = mysqli_fetch_assoc($result);
+                    $_SESSION['id_users'] = $user['id_users'];
+                    $_SESSION['Nom_utilisateur'] = $user['Nom_utilisateur'];
+                    $_SESSION['id_users'] = $user['id_users'];
+                    $_SESSION['loggedIn'] = true;
+                    $_SESSION['Admin'] = $user['Admin'];
+
+            ?>
+                    <script>
+                        window.location.href = "../index.php"
+                    </script>
+            <?php
+                } else {
+                    $message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
+                }
+            }
+
+            ?>
+            <form class="box" action="" method="post" name="login">
+                <h2 class="box-title">CONNEXION</h2>
+                <input type="text" class="box-input" name="Nom_utilisateur" placeholder="Nom d'utilisateur">
+                <input type="password" class="box-input" name="Mot_de_passe" placeholder="Mot de passe">
+                <input type="submit" value="Se connecter" name="submit" class="connecter">
+                <?php if (!empty($message)) { ?>
+                    <p class="errorMessage"><?php echo $message; ?></p>
+                <?php } ?>
+            </form>
+            <img src="asset/logogeekgame.png" alt="">
+            <p class="inscriptionhome">Vous n’avez pas de compte ?
+                <a href="Registration/register.php">Inscrivez vous !</a>
+            </p>
         </div>
         <img class="closelogin" src="asset/croix.png" alt="">
     </section>
