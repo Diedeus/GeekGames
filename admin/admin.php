@@ -40,7 +40,7 @@
     <ul>
       <li><a href="../index.php">ACCUEIL</a></li>
       <li><a href="#">CREDITS</a></li>
-      <li><a href="#">NOUS CONTACTER</a></li>
+      <li><a href="../contact/contact.php">NOUS CONTACTER</a></li>
     </ul>
   </nav>
   <div class="droite">
@@ -592,47 +592,46 @@
     <section class="container_corps7diff">
       <h1>Affichage et suppression des images 7 différences</h1>
       <div class="corps7diff">
-      <?php
-      $sql14 = "SELECT * FROM `jeu_7diff` ORDER BY id_Imagediff ";
-      $reponse7diff = mysqli_query($conn, $sql14);
-      while ($donnees7diff = mysqli_fetch_array($reponse7diff, MYSQLI_ASSOC)) {
-      ?>
+        <?php
+        $sql14 = "SELECT * FROM `jeu_7diff` ORDER BY id_Imagediff ";
+        $reponse7diff = mysqli_query($conn, $sql14);
+        while ($donnees7diff = mysqli_fetch_array($reponse7diff, MYSQLI_ASSOC)) {
+        ?>
 
-        <div class="Element7diff">
-          <article class="image7diff">
-            <img src="<?php echo $donnees7diff['Image1'] ?>" alt="">
-            <img src="<?php echo $donnees7diff['Image2'] ?>" alt="">
-          </article>
-          <p><?php echo $donnees7diff['Reponse_7diff'] ?></p>
-          <p class="idimg"><?php echo $donnees7diff['id_Imagediff'] ?></p>
-          <input type="hidden" value="<?php echo $donnees7diff['id_Imagediff'] ?>" class="idimg">
-
+          <div class="Element7diff">
+            <article class="image7diff">
+              <img src="<?php echo $donnees7diff['Image1'] ?>" alt="">
+              <img src="<?php echo $donnees7diff['Image2'] ?>" alt="">
+            </article>
+            <p class="idimg"> ID de l'image : <?php echo $donnees7diff['id_Imagediff'] ?></p>
+            <input type="hidden" value="<?php echo $donnees7diff['id_Imagediff'] ?>" class="idimg">
 
 
-          <div class="Btn7diff">
 
-            <button class="supp7diff">Supprimer</button>
+            <div class="Btn7diff">
 
-            <form action="#" method="POST">
-              <input type="hidden" name="supp7diff" class="supp7diff2" value="">
-              <input type="submit" class="confsupp7diff" style="display:none;" value="êtes vous sûr de vouloir supprimer cet element">
-            </form>
+              <button class="supp7diff">Supprimer</button>
 
+              <form action="#" method="POST">
+                <input type="hidden" name="supp7diff" class="supp7diff2" value="">
+                <input type="submit" class="confsupp7diff" value="êtes vous sûr de vouloir supprimer cet element">
+              </form>
+
+            </div>
           </div>
-        </div>
 
-      <?php } ?>
+        <?php } ?>
 
 
-      <?php
+        <?php
 
-      if (isset($_POST['supp7diff'])) {
-        $id7d = $_POST['supp7diff'];
-        $query15 = "DELETE FROM `jeu_7diff` WHERE id_Imagediff = $id7d";
-        $result15 = mysqli_query($conn, $query15);
-      }
+        if (isset($_POST['supp7diff'])) {
+          $id7d = $_POST['supp7diff'];
+          $query15 = "DELETE FROM `jeu_7diff` WHERE id_Imagediff = $id7d";
+          $result15 = mysqli_query($conn, $query15);
+        }
 
-      ?>
+        ?>
       </div>
     </section>
 
@@ -647,13 +646,16 @@
 
 
   <section class="container_updatejusteprix">
-    <h1>UPDATE JUSTE PRIX</h1>
 
-    <form method="post" enctype="multipart/form-data">
-      <input type="file" name="photo">
-      <input type="text" name="prix">
-      <input type="submit">
-    </form>
+    <div class="jprixform">
+      <form method="post" enctype="multipart/form-data">
+        <h1>Update juste prix</h1>
+        <label for="photo">image du produit</label>
+        <input type="file" name="photo">
+        <input class="textprix" type="text" name="prix" placeholder="Prix du produit">
+        <input class="ajoutimgjprix" type="submit">
+      </form>
+    </div>
 
 
     <?php
@@ -671,39 +673,39 @@
 
         $query = "INSERT into `jeu_jprix` (Element_Jprix, Reponse_Jprix) VALUES ('$NomFileBdd', '$prix')";
         $reponse12 = mysqli_query($conn, $query);
+      } else {
+        echo '<p>Erreur lors de l\'enregistrement de la photo dans le dossier de destination.</p>';
       }
-    } else {
-      echo '<p>Erreur lors de l\'enregistrement de la photo dans le dossier de destination.</p>';
     }
 
     ?>
 
-    <section class="corpsJprix" style="display:flex;flex-wrap:wrap;justify-content:space-between;">
+    <section class="corpsJprix">
       <?php
       $sql3 = "SELECT * FROM `Jeu_Jprix` ORDER BY id_Jprix";
       $reponseJprix = mysqli_query($conn, $sql3);
       while ($donneesJprix = mysqli_fetch_array($reponseJprix, MYSQLI_ASSOC)) {
       ?>
 
-        <Article class="ElementJprix" style="width:30%;padding:0 10px;">
+        <Article class="ElementJprix">
           <div class="imgElement">
             <img src="<?php echo $donneesJprix['Element_Jprix'] ?>" alt="">
-            <p><?php echo $donneesJprix['Reponse_Jprix'] ?>€</p>
-            <p class="numid"><?php echo $donneesJprix['id_Jprix'] ?></p>
+            <p>Prix du produit : <?php echo $donneesJprix['Reponse_Jprix'] ?>€</p>
+            <p class="numid"> ID du produit : <?php echo $donneesJprix['id_Jprix'] ?></p>
           </div>
           <div class="btnElement">
-            <button class="suppJprix" style="display:block;">Supprimer</button>
-            <button class="UpdtJprix" style="display:block;">Mettre à Jour</button>
+            <button class="suppJprix">Supprimer</button>
+            <button class="UpdtJprix">Mettre à Jour</button>
 
             <form method="POST" action="#">
               <input type="hidden" name="fcsupp" class="fcsupp" value="">
-              <input type="submit" class="confsupp" style="display:none;" value="êtes vous sûr de vouloir supprimer cet élément">
+              <input type="submit" class="confsupp" value="êtes vous sûr de vouloir supprimer cet élément">
             </form>
 
             <form action="#" method="post">
-              <input type="text" class="modprix" name="modprix" style="display:none;" value="">
+              <input type="text" class="modprix" name="modprix" placeholder="Prix du produit">
               <input type="hidden" class="fcupp" name="fcupp" value="">
-              <input type="submit" class="modbtn2" style="display:none;" value="Mettre à jour">
+              <input type="submit" class="modbtn2" value="Mettre à jour">
 
             </form>
 

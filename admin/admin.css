@@ -377,14 +377,13 @@ body section.container_update7diff section.container_corps7diff div.corps7diff d
   width: 25%;
   padding: 0 40px;
   margin-bottom: 40px;
-  background-color: white;
 }
 body section.container_update7diff section.container_corps7diff div.corps7diff div.Element7diff article.image7diff {
   display: flex;
 }
 body section.container_update7diff section.container_corps7diff div.corps7diff div.Element7diff article.image7diff img {
   width: 50%;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 body section.container_update7diff section.container_corps7diff div.corps7diff div.Element7diff p {
   color: white;
@@ -394,7 +393,106 @@ body section.container_update7diff section.container_corps7diff div.corps7diff d
   width: 100%;
   border: 0;
   height: 40px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+body section.container_update7diff section.container_corps7diff div.corps7diff div.Element7diff div.Btn7diff button:hover {
+  background-color: #dddddd;
+}
+body section.container_update7diff section.container_corps7diff div.corps7diff div.Element7diff div.Btn7diff form input {
+  text-indent: 0;
+}
+body section.container_update7diff section.container_corps7diff div.corps7diff div.Element7diff div.Btn7diff form input.confsupp7diff {
+  display: none;
+  transition: all 0.5s;
+  cursor: pointer;
+  height: 40px;
+}
+body section.container_update7diff section.container_corps7diff div.corps7diff div.Element7diff div.Btn7diff form input.confsupp7diff:hover {
+  background-color: #dddddd;
 }
 body section.container_updatejusteprix {
+  display: none;
+  padding-top: 50px;
+}
+body section.container_updatejusteprix div.jprixform {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body section.container_updatejusteprix div.jprixform form {
+  background-color: white;
+  padding: 40px;
+  width: 500px;
+  margin-bottom: 70px;
+}
+body section.container_updatejusteprix div.jprixform form h1 {
+  text-align: center;
+  color: #3c2d87;
+  margin-bottom: 30px;
+}
+body section.container_updatejusteprix div.jprixform form input {
+  text-indent: 0;
+}
+body section.container_updatejusteprix div.jprixform form input.textprix {
+  background-color: #d8d8d8;
+  text-indent: 20px;
+}
+body section.container_updatejusteprix div.jprixform form input.ajoutimgjprix {
+  margin: 0;
+  background-color: #3c2d87;
+  color: white;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+body section.container_updatejusteprix div.jprixform form input.ajoutimgjprix:hover {
+  background-color: #241a5a;
+}
+body section.container_updatejusteprix section.corpsJprix {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+body section.container_updatejusteprix section.corpsJprix article.ElementJprix {
+  width: 25%;
+  padding: 0 40px;
+  margin-bottom: 40px;
+}
+body section.container_updatejusteprix section.corpsJprix article.ElementJprix div.imgElement img {
+  margin-bottom: 5px;
+}
+body section.container_updatejusteprix section.corpsJprix article.ElementJprix p {
+  color: white;
+  margin-bottom: 5px;
+}
+body section.container_updatejusteprix section.corpsJprix article.ElementJprix div.btnElement button {
+  width: 100%;
+  border: 0;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.5s;
+  margin-bottom: 5px;
+}
+body section.container_updatejusteprix section.corpsJprix article.ElementJprix div.btnElement button:hover {
+  background-color: #dddddd;
+}
+body section.container_updatejusteprix section.corpsJprix article.ElementJprix div.btnElement form input {
+  text-indent: 0;
+}
+body section.container_updatejusteprix section.corpsJprix article.ElementJprix div.btnElement form input.confsupp {
+  transition: all 0.5s;
+  cursor: pointer;
+  height: 40px;
+  display: none;
+}
+body section.container_updatejusteprix section.corpsJprix article.ElementJprix div.btnElement form input.confsupp:hover {
+  background-color: #dddddd;
+}
+body section.container_updatejusteprix section.corpsJprix article.ElementJprix div.btnElement form input.modprix {
+  text-indent: 20px;
+  display: none;
+}
+body section.container_updatejusteprix section.corpsJprix article.ElementJprix div.btnElement form input.modbtn2 {
+  cursor: pointer;
   display: none;
 }
