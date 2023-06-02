@@ -24,7 +24,7 @@
             <ul>
                 <li><a class="on" href="#">ACCUEIL</a></li>
                 <li><a href="#">CREDITS</a></li>
-                <li><a href="#">NOUS CONTACTER</a></li>
+                <li><a href="./contact/contact.php">NOUS CONTACTER</a></li>
             </ul>
         </nav>
 
