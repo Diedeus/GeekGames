@@ -1,0 +1,36 @@
+[
+    {
+        "Img_name": "img1",
+        "url1": "/Jeux/SeptDiff/Asset/image1.png",
+        "url2": "/Jeux/SeptDiff/Asset/image1diff.png",
+        "err1x1": "40",
+        "err1x2": "80",
+        "err1y1": "0",
+        "err1y2": "30",
+        "err2x1": "45",
+        "err2x2": "70",
+        "err2y1": "180",
+        "err2y2": "195",
+        "err3x1": "150",
+        "err3x2": "160",
+        "err3y1": "290",
+        "err3y2": "305",
+        "err4x1": "385",
+        "err4x2": "415",
+        "err4y1": "130",
+        "err4y2": "190",
+        "err5x1": "460",
+        "err5x2": "480",
+        "err5y1": "180",
+        "err5y2": "250",
+        "err6x1": "420",
+        "err6x2": "440",
+        "err6y1": "120",
+        "err6y2": "135",
+        "err7x1": "200",
+        "err7x2": "260",
+        "err7y1": "440",
+        "err7y2": "490"
+        
+    }
+]

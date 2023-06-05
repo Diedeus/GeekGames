@@ -48,3 +48,36 @@ idimgsub2.addEventListener("click", function(event){
 
 
 
+fetch('/Jeux/7diff/script/test.json')
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(element => {
+        const el = document.createElement('img')
+        el.src = element.url1
+        el.style.position = "fixed"
+        el.style.width = "20vw"
+        el.style.height = "20vw"
+        el.style.left = Math.floor(Math.random() * 80) + "vw"
+        el.style.top = Math.floor(Math.random() * 80) + "vh"
+        const body = document.querySelector('body')
+        body.appendChild(el)
+        el.addEventListener("click", e => {
+        console.log(e.clientX) 
+        })
+        
+  }) 
+})
+  .then(()=> {
+    let img = document.querySelectorAll('img')
+    let imgarray = [...img]
+    // imgarray.forEach(element => console.log(element.src)) 
+    // let img72 = img.filter(img => img.src === 'http://localhost:4000/Jeux/7diff/asset/image1diff.jpg')
+    // console.log(img72)
+    //! ne fonctionne pas car pas destructurer
+    let img7 = imgarray.filter(img => img.src === 'http://localhost:4000/Jeux/7diff/asset/image1diff.jpg')
+    console.log(img7)
+  })
+  .catch(error => {
+    // Gestion des erreurs
+    console.error('Une erreur s\'est produite :', error);
+  });

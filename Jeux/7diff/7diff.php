@@ -10,7 +10,7 @@
     <title>GeekGames - Home</title>
     <link rel="stylesheet" href="./style/7diff.css">
 
-
+    <script src="./script/7diff.js" defer></script>
 
 </head>
 
@@ -18,7 +18,9 @@
 
     <?php
 
-    require('../../Registration/config.php');
+    // require('../../Registration/config.php');
+    // var_dump(file_get_contents("../Juste_Prix/test.json"));
+    // var_dump($conn);
     session_save_path("../../tmp");
     session_start();
 
@@ -153,7 +155,7 @@
         }
     }
     ?>
-    <script src="./script/7diff.js"></script>
+    
     
 </body>
 
