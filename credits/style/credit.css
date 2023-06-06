@@ -1,0 +1,259 @@
+@charset "utf-8";
+header,
+section,
+footer,
+aside,
+nav,
+main,
+article,
+figure {
+  display: block;
+}
+div,
+header,
+nav,
+article,
+section,
+aside,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+li,
+figure,
+figcaption,
+class,
+img {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  border: 0 solid transparent;
+  font-size: 16px;
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+  width: 100%;
+  display: block;
+  font-family: 'montserrat', sans-serif;
+  background-color: #3c2d87;
+}
+img,
+object,
+embed,
+canvas,
+video,
+audio,
+picture {
+  max-width: 100%;
+  height: auto;
+}
+img {
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+input,
+textarea {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 15px;
+  border: 0;
+  line-height: 40px;
+  text-indent: 20px;
+  outline: none;
+}
+.clear {
+  display: block;
+  zoom: 1;
+}
+.clear:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+nav.home {
+  z-index: 1000;
+  float: left;
+  margin-top: 70px;
+  margin-left: 70px;
+}
+nav.home ul {
+  display: flex;
+}
+nav.home ul li {
+  list-style-type: none;
+  margin-right: 20px;
+}
+nav.home ul li a {
+  padding: 10px 15px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+nav.home ul li a:hover {
+  background-color: white;
+  color: #2b2064;
+}
+nav.home ul li a.on {
+  background-color: white;
+  color: #2b2064;
+}
+div.right {
+  z-index: 1000;
+  margin-top: 65px;
+  margin-right: 115px;
+  margin-bottom: 15px;
+  float: right;
+  display: flex;
+}
+div.right #searchbar {
+  width: 300px ;
+  height: 40px;
+  outline: none;
+  margin: 0;
+}
+div.right img {
+  width: 40px ;
+  height: 40px;
+  background-color: #2b2064;
+  padding: 7px;
+  margin-left: 50px;
+}
+div.right a.user {
+  color: white;
+  background-color: #2b2064;
+  line-height: 40px;
+  padding: 0 10px;
+  transition: all 0.5s;
+  border: 0;
+}
+div.right a.user:hover {
+  background-color: #2b2064;
+}
+div.right a.btnadmin {
+  color: white;
+  line-height: 40px;
+  padding: 0 10px;
+  background-color: red;
+  transition: all 0.5s;
+}
+div.right a.btnadmin:hover {
+  background-color: #b60202;
+}
+div.right a.design {
+  color: white;
+  font-size: 16px;
+  line-height: 40px;
+  padding: 0 10px;
+  margin-left: 10px;
+  transition: all 0.5s;
+}
+div.right a.design:hover {
+  background-color: white;
+  color: #2b2064;
+}
+div.right button.log {
+  color: white;
+  background-color: #3c2d87;
+  line-height: 40px;
+  padding: 0 10px;
+  transition: all 0.5s;
+  margin-right: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'montserrat', sans-serif;
+  border: 0;
+}
+div.right button.log:hover {
+  background-color: #2b2064;
+}
+div.right a.sign {
+  color: white;
+  line-height: 40px;
+  padding: 0 10px;
+  transition: all 0.5s;
+}
+div.right a.sign:hover {
+  background-color: white;
+  color: #3c2d87;
+}
+span.barre {
+  z-index: 1000;
+  display: block;
+  height: 2px;
+  width: 92.5%;
+  background-color: white;
+  margin: 0 auto;
+}
+section.container_credit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 86vh;
+}
+section.container_credit div.credit {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section.container_credit div.credit p {
+  color: white;
+  margin-bottom: 20px;
+}
+section.container_credit div.credit p span {
+  font-weight: 600;
+}
+section.container_credit div.credit img {
+  width: 15%;
+}
+section.container_credit div.dev {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+section.container_credit div.dev article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  margin: 0 50px;
+}
+section.container_credit div.dev article img {
+  margin-bottom: 10px;
+}
+section.container_credit div.dev article p {
+  color: white;
+  margin-bottom: 10px;
+}
+section.container_credit div.dev article div.reseaux {
+  display: flex;
+}
+section.container_credit div.dev article div.reseaux img {
+  width: 20px;
+  margin: 0 10px;
+  transition: all 0.5s;
+}
+section.container_credit div.dev article div.reseaux img:hover {
+  scale: 1.15;
+}
