@@ -87,21 +87,21 @@ btnupdjp.forEach((bouton2, index8) => bouton2.addEventListener("click", function
 //         }
 //     }))
 
-    let btnsupp7d = document.querySelectorAll('.supp7diff')
+    // let btnsupp7d = document.querySelectorAll('.supp7diff')
     
    
-    btnsupp7d.forEach((btn7d, index7d) => btn7d.addEventListener("click", function(){
-        btn7d.style.display = "none"
-        let btnconf7d = document.querySelectorAll('.confsupp7diff')
-        btnconf7d.forEach((btn7d2,index7d2) =>{ if (index7d === index7d2){
-            btn7d2.style.display = "block"
-            let inthidden = document.querySelectorAll('.supp7diff2')
-            inthidden.forEach((inphid, index7d3) => { if ( index7d3 === index7d){
-                let idimg = document.querySelectorAll('.idimg')
-                idimg.forEach((idimag, index7d4) => { if (index7d4 === index7d){
-                    console.log(idimag)
-                    inphid.value = parseInt(idimag.value)
-                }})   
-            }})
-        }})
-    }))
+    // btnsupp7d.forEach((btn7d, index7d) => btn7d.addEventListener("click", function(){
+    //     btn7d.style.display = "none"
+    //     let btnconf7d = document.querySelectorAll('.confsupp7diff')
+    //     btnconf7d.forEach((btn7d2,index7d2) =>{ if (index7d === index7d2){
+    //         btn7d2.style.display = "block"
+    //         let inthidden = document.querySelectorAll('.supp7diff2')
+    //         inthidden.forEach((inphid, index7d3) => { if ( index7d3 === index7d){
+    //             let idimg = document.querySelectorAll('.idimg')
+    //             idimg.forEach((idimag, index7d4) => { if (index7d4 === index7d){
+    //                 console.log(idimag)
+    //                 inphid.value = parseInt(idimag.value)
+    //             }})   
+    //         }})
+    //     }})
+    // }))

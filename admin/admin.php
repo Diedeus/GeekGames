@@ -558,33 +558,21 @@
         <input type="file" name="Image">
         <label for="Imagediff">L'image avec les différences</label>
         <input type="file" name="Imagediff">
-        <label for="script">Le script javascript des réponses</label>
-        <input type="file" name="script">
-        <input class="ajoutimg7diff" type="submit">
+        <input type="submit" value="Enregistrer">
       </form>
     </div>
 
     <?php
 
-    if (isset($_FILES['Image']['tmp_name'], $_FILES['Imagediff']['tmp_name'], $_FILES['script']['tmp_name'])) {
+    if (isset($_FILES['Image']['tmp_name'], $_FILES['Imagediff']['tmp_name'])) {
       $destdoss = '../Jeux/7diff/asset/';
       $destimg = $destdoss . $_FILES['Image']['name'];
       $img = 'http://localhost:4000/Jeux/7diff/asset/' . $_FILES['Image']['name'];
       $destimgdiff = $destdoss . $_FILES['Imagediff']['name'];
       $imgdiff = 'http://localhost:4000/Jeux/7diff/asset/' . $_FILES['Imagediff']['name'];
-      $destscript = $destdoss . $_FILES['script']['name'];
-      $imgscript = 'http://localhost:4000/Jeux/7diff/asset/' . $_FILES['script']['name'];
-
+      
       $retour = copy($_FILES['Image']['tmp_name'], $destimg);
       $retour2 = copy($_FILES['Imagediff']['tmp_name'], $destimgdiff);
-      $retour3 = copy($_FILES['script']['tmp_name'], $destscript);
-
-      if (isset($img) && isset($imgdiff) && isset($imgscript)) {
-        $query13 = "INSERT into `jeu_7diff` (Image1, Image2, Reponse_7diff) VALUES ('$img', '$imgdiff', '$imgscript')";
-        $reponse13 = mysqli_query($conn, $query13);
-      } else {
-        echo '<p>Erreur lors de l\'enregistrement de la photo dans le dossier de destination.</p>';
-      }
     }
 
 
