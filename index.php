@@ -22,7 +22,7 @@
     <header id="test">
         <nav class="home">
             <ul>
-                <li><a class="on" href="#">ACCUEIL</a></li>
+                <li><a class="on" href="./index.php">ACCUEIL</a></li>
                 <li><a href="./credits/credit.php">CREDITS</a></li>
                 <li><a href="./contact/contact.php">NOUS CONTACTER</a></li>
             </ul>
@@ -76,7 +76,7 @@
                 <h1 id="titrejeu"></h1>
                 <p class="descrijeu" id="descijeuid"></p>
                 <a id="aquizz" href="./Jeux/Quizz/Quizz.php" style="display:block">Jouer au Quizz</a>
-                <a id="a7diff" href="" style="display:none">Jouer au Sept Diff</a>
+                <a id="a7diff" href="./Jeux/SeptDiff/7diff.php" style="display:none">Jouer au Sept Diff</a>
                 <a id="ajusteprix" href="./Jeux/Juste_Prix/justeprix.php" style="display:none">Jouer au juste prix</a>
                 <a id="aflappybird" href="" style="display:none">Jouer au flappy bird</a>
                 <a id="asnake" href="./index.php" style="display:none">Jouer au snake</a>

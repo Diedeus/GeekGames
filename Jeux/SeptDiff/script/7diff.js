@@ -1,13 +1,30 @@
-const presentationSection = document.createElement("section");
+const contpresentationSection = document.createElement("section");
+contpresentationSection.className = "container_presentation";
+contpresentationSection.style.width="50%";
+contpresentationSection.style.float="left"
+contpresentationSection.style.height="86vh"
+contpresentationSection.style.display="flex"
+contpresentationSection.style.flexDirection="column"
+contpresentationSection.style.justifyContent="center"
+contpresentationSection.style.alignItems="center"
+
+document.body.appendChild(contpresentationSection)
+
+const presentationSection = document.createElement("div");
 presentationSection.className = "presentation";
+contpresentationSection.appendChild(presentationSection);
 
 const title = document.createElement("h1");
 title.textContent = "Le jeu des 7 différences";
 title.className = "titreJeu";
+title.style.color= "white";
+title.style.marginBottom= "20px";
 
 const paragraph = document.createElement("p");
-paragraph.textContent =
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, iste neque, magni, id ducimus adipisci veritatis dolor omnis sunt animi voluptas! Ipsa soluta facere architecto modi in, autem earum perspiciatis?";
+paragraph.style.color="white"
+paragraph.style.marginBottom="10px"
+paragraph.innerHTML =
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, iste neque <br> magni, id ducimus adipisci veritatis dolor omnis sunt animi voluptas! Ipsa soluta <br> facere architecto modi in, autem earum perspiciatis?";
 paragraph.className = "textPres";
 
 const basprezDiv = document.createElement("div");
@@ -15,25 +32,39 @@ basprezDiv.className = "basprez";
 
 const btn1 = document.createElement("button");
 btn1.id = "btnSelect";
+btn1.style.width="200px"
+btn1.style.height="40px"
+btn1.style.color="white"
+btn1.style.backgroundColor="#2b2064"
+btn1.style.border="0"
+btn1.style.cursor="pointer"
+
 btn1.textContent = "Selectionner";
 
 const btn2 = document.createElement("button");
 btn2.id = "btnBegin";
+btn2.style.width="200px"
+btn2.style.height="40px"
+btn2.style.color="white"
+btn2.style.backgroundColor="#2b2064"
+btn2.style.border="0"
+btn2.style.cursor="pointer"
 btn2.textContent = "Commencer";
 btn2.style.display = "none";
 
 const presImgSelect = document.createElement("div");
 presImgSelect.id = "pImgSel";
-presImgSelect.style.width = "100px";
-presImgSelect.style.height = "100px";
+presImgSelect.style.width = "200px";
+presImgSelect.style.height = "200px";
+presImgSelect.style.marginBottom = "10px";
 presImgSelect.style.display = "none";
 
 basprezDiv.appendChild(btn1);
 basprezDiv.appendChild(btn2);
 
-const corps7diff = document.createElement("section");
+const corps7diff = document.createElement("div");
 corps7diff.className = "corps7diff";
-corps7diff.style.display = "none";
+corps7diff.style.display = "flex";
 corps7diff.style.position = "relative";
 corps7diff.style.width = "1000px";
 corps7diff.style.height = "500px";
@@ -57,13 +88,19 @@ corps7diff.appendChild(img1);
 corps7diff.appendChild(imgDiff);
 corps7diff.appendChild(btnAll);
 
-const infos = document.createElement("section");
+const infos = document.createElement("div");
 infos.className = "infos";
-infos.style.display = "none";
+infos.style.width = "1000px";
+infos.style.marginTop = "20px";
+
 
 const afftimer = document.createElement("p");
 afftimer.id = "afftimer";
 afftimer.textContent = " il reste 5 minutes ";
+afftimer.style.backgroundColor="white"
+afftimer.style.textAlign="center"
+afftimer.style.lineHeight="50px"
+afftimer.style.fontWeight="600"
 
 const affScore = document.createElement("p");
 affScore.id = "affScore";
@@ -77,18 +114,48 @@ infos.appendChild(afftimer);
 infos.appendChild(affScore);
 infos.appendChild(gameover);
 
+
 presentationSection.appendChild(title);
 presentationSection.appendChild(paragraph);
 presentationSection.appendChild(presImgSelect);
 presentationSection.appendChild(basprezDiv);
 
-document.body.appendChild(presentationSection);
-document.body.appendChild(corps7diff);
-document.body.appendChild(infos);
+const contjeu7diff = document.createElement("section")
+contjeu7diff.style.display="none"
+contjeu7diff.style.height="86vh"
+contjeu7diff.style.flexDirection="column"
+contjeu7diff.style.justifyContent="center"
+contjeu7diff.style.alignItems="center"
 
-const prezImg = document.createElement("section");
+
+document.body.appendChild(contjeu7diff);
+contjeu7diff.appendChild(corps7diff);
+contjeu7diff.appendChild(infos);
+
+const titreselec = document.createElement("h2");
+titreselec.style.color="white"
+titreselec.style.textAlign="center"
+titreselec.style.marginBottom="50px"
+titreselec.textContent="Selectionner une image"
+
+const contprezImg = document.createElement("section")
+contprezImg.style.paddingTop="50px"
+contprezImg.style.width="50%";
+contprezImg.style.height="86vh"
+contprezImg.style.float="left"
+
+const prezImg = document.createElement("div");
 prezImg.className = "prezImg";
-document.body.appendChild(prezImg);
+prezImg.style.display="flex"
+prezImg.style.flexWrap="wrap"
+prezImg.style.justifyContent="space-around"
+prezImg.style.alignItems="start"
+
+document.body.appendChild(contprezImg);
+contprezImg.appendChild(titreselec)
+contprezImg.appendChild(prezImg)
+
+
 
 let erreur1 = false;
 let erreur2 = false;
@@ -127,6 +194,7 @@ function startTimer() {
       let gameOver = document.querySelector("#gameover");
       gameOver.style.display = "block";
       clearTimeout(timer);
+      // mettre anim de loose
     }
   }, 1000);
 }
@@ -143,6 +211,9 @@ fetch("/Jeux/SeptDiff/Asset/7diff.json")
       el.src = element.url1;
       el.className = "Img";
       el.style.cursor = "pointer";
+      el.style.width="23%"
+      el.style.height="auto"
+      el.style.padding="4px"
       prezImg.appendChild(el);
       let Select = false;
       el.addEventListener("click", function () {
@@ -354,18 +425,19 @@ fetch("/Jeux/SeptDiff/Asset/7diff.json")
               infos.appendChild(formScore)
               formScore.appendChild(inputScore)
               formScore.appendChild(btnscore)
+              // mettre anim de win
             }
           });
 
-          el.style.border = "2px solid blue";
+          el.style.border = "2px solid white";
           Select = true;
           btn1.style.display = "block";
           btn2.style.display = "none";
 
           const imgSelect = document.createElement("img");
           imgSelect.src = element.url1;
-          imgSelect.style.width = "100px";
-          imgSelect.style.height = "100px";
+          imgSelect.style.width = "200px";
+          imgSelect.style.height = "200px";
           presImgSelect.innerHTML = "";
           presImgSelect.appendChild(imgSelect);
           presImgSelect.style.display = "block";
@@ -376,10 +448,9 @@ fetch("/Jeux/SeptDiff/Asset/7diff.json")
           });
 
           btn2.addEventListener("click", function () {
-            presentationSection.style.display = "none";
-            prezImg.style.display = "none";
-            corps7diff.style.display = "block";
-            infos.style.display = "block";
+            contpresentationSection.style.display = "none";
+            contprezImg.style.display = "none";
+            contjeu7diff.style.display = "flex";
             startTimer();
           });
         } else if (Select === true) {
