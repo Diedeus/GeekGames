@@ -10,6 +10,7 @@
   <title>GeekGames - Home</title>
   <link rel="stylesheet" href="admin.css">
   <script src="./script/admin.js" defer></script>
+  
 
 
 </head>
@@ -552,78 +553,34 @@
 
   <section class="container_update7diff">
     <div class="form7diff">
-      <form method="post" enctype="multipart/form-data">
+      <form method="post" enctype="multipart/form-data" id="formAdminDiff" action="./admin7diff.php">
         <h1>Ajout d'images jeu 7 differences</h1>
         <label for="Image">L'image sans différences</label>
         <input type="file" name="Image">
         <label for="Imagediff">L'image avec les différences</label>
         <input type="file" name="Imagediff">
-        <input type="submit" value="Enregistrer">
+        <button type="text" id="btn7diff" onclick={lancement}>Enregistrer</button>
+       
       </form>
     </div>
 
     <?php
 
     if (isset($_FILES['Image']['tmp_name'], $_FILES['Imagediff']['tmp_name'])) {
-      $destdoss = '../Jeux/7diff/asset/';
+      $destdoss = '../Jeux/SeptDiff/Asset/';
       $destimg = $destdoss . $_FILES['Image']['name'];
-      $img = 'http://localhost:4000/Jeux/7diff/asset/' . $_FILES['Image']['name'];
+      $img = 'http://localhost:4000/Jeux/SeptDiff/Asset/' . $_FILES['Image']['name'];
       $destimgdiff = $destdoss . $_FILES['Imagediff']['name'];
-      $imgdiff = 'http://localhost:4000/Jeux/7diff/asset/' . $_FILES['Imagediff']['name'];
+      $imgdiff = 'http://localhost:4000/Jeux/SeptDiff/Asset/' . $_FILES['Imagediff']['name'];
       
       $retour = copy($_FILES['Image']['tmp_name'], $destimg);
       $retour2 = copy($_FILES['Imagediff']['tmp_name'], $destimgdiff);
     }
 
-
     ?>
-    <section class="container_corps7diff">
-      <h1>Affichage et suppression des images 7 différences</h1>
-      <div class="corps7diff">
-        <?php
-        $sql14 = "SELECT * FROM `jeu_7diff` ORDER BY id_Imagediff ";
-        $reponse7diff = mysqli_query($conn, $sql14);
-        while ($donnees7diff = mysqli_fetch_array($reponse7diff, MYSQLI_ASSOC)) {
-        ?>
+    
 
-          <div class="Element7diff">
-            <article class="image7diff">
-              <img src="<?php echo $donnees7diff['Image1'] ?>" alt="">
-              <img src="<?php echo $donnees7diff['Image2'] ?>" alt="">
-            </article>
-            <p class="idimg"> ID de l'image : <?php echo $donnees7diff['id_Imagediff'] ?></p>
-            <input type="hidden" value="<?php echo $donnees7diff['id_Imagediff'] ?>" class="idimg">
-
-
-
-            <div class="Btn7diff">
-
-              <button class="supp7diff">Supprimer</button>
-
-              <form action="#" method="POST">
-                <input type="hidden" name="supp7diff" class="supp7diff2" value="">
-                <input type="submit" class="confsupp7diff" value="êtes vous sûr de vouloir supprimer cet element">
-              </form>
-
-            </div>
-          </div>
-
-        <?php } ?>
-
-
-        <?php
-
-        if (isset($_POST['supp7diff'])) {
-          $id7d = $_POST['supp7diff'];
-          $query15 = "DELETE FROM `jeu_7diff` WHERE id_Imagediff = $id7d";
-          $result15 = mysqli_query($conn, $query15);
-        }
-
-        ?>
-      </div>
-    </section>
-
-
+   
 
   </section>
 
