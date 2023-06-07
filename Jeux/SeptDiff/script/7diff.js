@@ -103,6 +103,8 @@ afftimer.style.lineHeight="50px"
 afftimer.style.fontWeight="600"
 
 const affScore = document.createElement("p");
+affScore.style.color="white"
+affScore.style.fontSize="25px"
 affScore.id = "affScore";
 
 const gameover = document.createElement("p");
@@ -111,7 +113,6 @@ gameover.style.display = "none";
 gameover.textContent = "Vous avez echoué";
 
 infos.appendChild(afftimer);
-infos.appendChild(affScore);
 infos.appendChild(gameover);
 
 
@@ -154,6 +155,108 @@ prezImg.style.alignItems="start"
 document.body.appendChild(contprezImg);
 contprezImg.appendChild(titreselec)
 contprezImg.appendChild(prezImg)
+
+const animWin = document.createElement("section")
+animWin.className = "sectionwin";
+animWin.style.position="relative"
+animWin.style.height="100vh"
+animWin.style.width="100%"
+animWin.style.top="-99.1%"
+animWin.style.left="0"
+animWin.style.backgroundColor="#0b0b0bf6"
+animWin.style.overflow="hidden"
+animWin.style.visibility="hidden"
+
+document.body.appendChild(animWin)
+
+const winTop = document.createElement("img")
+winTop.src='./Asset/winhaut.png'
+winTop.style.position="absolute"
+winTop.style.top="0"
+winTop.style.left="-100%"
+winTop.style.transition="all 0.5s"
+animWin.appendChild(winTop)
+
+const winBot = document.createElement("img")
+winBot.src='./Asset/winbas.png'
+winBot.style.position="absolute"
+winBot.style.bottom="0"
+winBot.style.right="-100%"
+winBot.style.transition="all 0.5s"
+animWin.appendChild(winBot)
+
+const divScoreWin = document.createElement("div")
+divScoreWin.style.opacity="0%";
+divScoreWin.style.display="flex"
+divScoreWin.style.flexDirection="column"
+divScoreWin.style.height="100vh"
+divScoreWin.style.width="100%"
+divScoreWin.style.justifyContent="center"
+divScoreWin.style.alignItems="center"
+divScoreWin.style.top="0"
+divScoreWin.style.left="0"
+divScoreWin.style.position="absolute"
+animWin.appendChild(divScoreWin)
+
+const spany = document.createElement("span")
+spany.style.color = "#00c6ff"
+spany.style.fontSize = "180px"
+spany.style.fontWeight = "800"
+spany.textContent="Y"
+
+
+const spanWin = document.createElement("span")
+spanWin.style.color = "white"
+spanWin.style.fontSize = "180px"
+spanWin.style.fontWeight = "800"
+spanWin.textContent="OU WIN"
+
+const titreWin = document.createElement("h2")
+titreWin.appendChild(spany)
+titreWin.appendChild(spanWin)
+divScoreWin.appendChild(titreWin)
+
+
+const scoreWin = document.createElement("p")
+scoreWin.style.color="white"
+scoreWin.style.fontSize="65px"
+scoreWin.style.fontWeight="600"
+scoreWin.style.marginBottom="30px"
+divScoreWin.appendChild(affScore)
+divScoreWin.appendChild(scoreWin)
+
+const artwin = document.createElement("article")
+artwin.style.display="flex"
+artwin.style.justifyContent="center"
+divScoreWin.appendChild(artwin)
+
+const backHomeWin = document.createElement("a")
+backHomeWin.textContent= "Retour à l'accueil"
+backHomeWin.style.backgroundColor="white"
+backHomeWin.style.cursor="pointer"
+backHomeWin.style.width="300px"
+backHomeWin.style.height="50px"
+backHomeWin.style.lineHeight="50px"
+backHomeWin.style.textAlign="center"
+backHomeWin.href="../../index.php"
+artwin.appendChild(backHomeWin)
+
+const restarWin = document.createElement("a")
+restarWin.textContent= "Recommencer"
+restarWin.style.backgroundColor="#00c6ff"
+restarWin.style.color="white"
+restarWin.style.margin="0 20px"
+restarWin.style.cursor="pointer"
+restarWin.style.width="300px"
+restarWin.style.height="50px"
+restarWin.style.lineHeight="50px"
+restarWin.style.textAlign="center"
+restarWin.href="./7diff.php"
+artwin.appendChild(restarWin)
+
+
+
+
 
 
 
@@ -410,7 +513,8 @@ fetch("/Jeux/SeptDiff/Asset/7diff.json")
               let chronoF = chronoS - modchronoF;
               let score7diff = (chronoF / 10 + 1) * 100;
               affScore.textContent =
-                "votre score est de " + score7diff + " points";
+                "votre score :";
+                scoreWin.textContent= score7diff
               const formScore = document.createElement("form");
               formScore.method = 'POST'
               const inputScore = document.createElement("input");
@@ -421,10 +525,25 @@ fetch("/Jeux/SeptDiff/Asset/7diff.json")
               const btnscore = document.createElement("input");
               btnscore.type = "submit";
               btnscore.value = "Enregistrer votre score";
+              btnscore.style.width="300px"
+              btnscore.style.fontFamily="montserrat"
+              btnscore.style.cursor="pointer"
+              btnscore.style.height="50px"
+              btnscore.style.backgroundColor="white"
+              btnscore.style.lineHeight="50px"
+              btnscore.style.textAlign="center"
+              btnscore.style.textIndent="0"
               btnscore.id = "btnscore";
-              infos.appendChild(formScore)
+              artwin.appendChild(formScore)
               formScore.appendChild(inputScore)
               formScore.appendChild(btnscore)
+              animWin.style.visibility="visible"
+              winTop.style.left="0"
+              winBot.style.right="0"
+              setTimeout(function() {
+                divScoreWin.style.transition = 'opacity 200ms';
+                divScoreWin.style.opacity = "100%";
+            }, 500);
               // mettre anim de win
             }
           });
