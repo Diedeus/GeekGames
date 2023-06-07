@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<script type="module" src="./script/admin7diff.js"></script>
+<script src="../dist/admin7diff.js"></script>
 
 </body>
 </html>

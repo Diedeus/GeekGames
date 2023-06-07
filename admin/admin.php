@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="admin.css">
   <script src="./script/admin.js" defer></script>
   
+  
 
 
 </head>
@@ -553,13 +554,13 @@
 
   <section class="container_update7diff">
     <div class="form7diff">
-      <form method="post" enctype="multipart/form-data" id="formAdminDiff" action="./admin7diff.php">
+      <form method="post" enctype="multipart/form-data" id="formAdminDiff" action="">
         <h1>Ajout d'images jeu 7 differences</h1>
         <label for="Image">L'image sans différences</label>
         <input type="file" name="Image">
         <label for="Imagediff">L'image avec les différences</label>
         <input type="file" name="Imagediff">
-        <button type="text" id="btn7diff" onclick={lancement}>Enregistrer</button>
+        <button type="text" id="btn7diff">Enregistrer</button>
        
       </form>
     </div>
@@ -575,6 +576,22 @@
       
       $retour = copy($_FILES['Image']['tmp_name'], $destimg);
       $retour2 = copy($_FILES['Imagediff']['tmp_name'], $destimgdiff);
+      
+      $_SESSION['url1'] = $img ; 
+      $_SESSION['url2'] = $imgdiff;
+
+      $url1 = $_SESSION['url1'];
+      $url2 = $_SESSION['url2'];
+        if(isset($url1)){
+          var_dump($url1)
+          ?>
+          <script>
+            let urlImg = "<?php echo $url1; ?>"
+            let urlImgDiff = "<?php echo $url2; ?>"
+          </script>
+          <script src="./script/admin7diff.js"></script>
+          <?php
+        }
     }
 
     ?>
