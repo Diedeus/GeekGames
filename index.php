@@ -49,8 +49,8 @@
                         <article>
                             <h3>7 DIFFERENCES</h3>
                             <p>Plongez dans un univers geek captivant
-avec notre jeu des 7 différences. Mettez votre sens de l'observation à
-l'épreuve..</p>
+                                avec notre jeu des 7 différences. Mettez votre sens de l'observation à
+                                l'épreuve..</p>
                         </article>
                     </a>
                 </li>
@@ -61,8 +61,8 @@ l'épreuve..</p>
                         <article>
                             <h3>LE JUSTE PRIX</h3>
                             <p>Êtes-vous prêt à estimer la valeur des objets et
-à défier votre instinct? Mettez vos talents d'évaluation
-à l'épreuve..</p>
+                                à défier votre instinct? Mettez vos talents d'évaluation
+                                à l'épreuve..</p>
                         </article>
                     </a>
                 </li>
@@ -73,7 +73,7 @@ l'épreuve..</p>
                         <article>
                             <h3>FLAPPY BIRD</h3>
                             <p> Préparez-vous à vous envoler dans le monde de Flappy Bird
-version DRAGON BALL ! un jeu addictif et plein de défis !</p>
+                                version DRAGON BALL ! un jeu addictif et plein de défis !</p>
                         </article>
                     </a>
                 </li>
@@ -132,7 +132,9 @@ version DRAGON BALL ! un jeu addictif et plein de défis !</p>
         </div>
 
         <section class="minijeu">
-            <h2>LISTE DES JEUX</h2>
+            <span></span>
+            <h2 class="listejeu">LISTE DES JEUX</h2>
+            <span></span>
             <div class="jeux">
                 <article id="quiz">
                     <img id="imgquizz" src="asset/backjeuun.jpg" alt="">

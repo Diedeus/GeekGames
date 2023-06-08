@@ -1,6 +1,5 @@
 @charset "utf-8";
 
-
 header,
 section,
 footer,
@@ -9,7 +8,7 @@ nav,
 main,
 article,
 figure {
-    display: block;
+  display: block;
 }
 
 div,
@@ -33,25 +32,25 @@ figure,
 figcaption,
 class,
 img {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    height: 100%;
-    border: 0 solid transparent;
-    font-size: 16px;
-    margin: 0;
-    min-height: 100%;
-    padding: 0;
-    width: 100%;
-    display: block;
-    font-family: 'montserrat', sans-serif;
+  height: 100%;
+  border: 0 solid transparent;
+  font-size: 16px;
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+  width: 100%;
+  display: block;
+  font-family: "montserrat", sans-serif;
 }
 
 img,
@@ -61,414 +60,416 @@ canvas,
 video,
 audio,
 picture {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 img {
-    display: block;
+  display: block;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 input,
 textarea {
-    width: 100%;
-    height: 50px;
-    margin-bottom: 15px;
-    border: 0;
-    line-height: 40px;
-    text-indent: 20px;
-    outline: none;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 15px;
+  border: 0;
+  line-height: 40px;
+  text-indent: 20px;
+  outline: none;
 }
 .clear {
-    display: block;
-    zoom: 1;
+  display: block;
+  zoom: 1;
 
-    &:after {
-        content: " ";
-        display: block;
-        font-size: 0;
-        height: 0;
-        clear: both;
-        visibility: hidden;
-    }
+  &:after {
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
 }
 
-header#test{
-    width: 100%;
-    height: 100vh;
-    background-image: url(../asset/background-ratchetclank.jpg);
-    background-size: cover;
-    transition: all 0.5s;
-    nav.home{
-        z-index: 1000;
-        float: left;
-        margin-top: 70px;
-        margin-left: 70px;
-        ul{
-            display: flex;
-            li{
-                list-style-type: none;
-                margin-right: 20px;
-                a{
-                    padding: 10px 15px;
-                    color: white;
-                    font-size: 18px;
-                    font-weight: 600;
-                    transition: all 0.5s;
-                    &:hover{
-                        background-color: white;
-                        color: #3c2d87;
-                    }
-                }
-                a.on {
-                    background-color: white;
-                    color: #3c2d87;
-                }
-            }
-        }
-    }
-    div.right{
-        z-index: 1000;
-        margin-top: 65px;
-        margin-right: 115px;
-        margin-bottom: 15px;
-        float: right;
-        display: flex;
-        #searchbar{
-            width:300px ;
-            height: 40px;
-            outline: none;
-            margin: 0;
-        }
-        ul.searchjeu{
-            position: absolute;
-            top: 107px;
-            width: 300px;
+header#test {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../asset/background-ratchetclank.jpg);
+  background-size: cover;
+  transition: all 0.5s;
+  nav.home {
+    z-index: 1000;
+    float: left;
+    margin-top: 70px;
+    margin-left: 70px;
+    ul {
+      display: flex;
+      li {
+        list-style-type: none;
+        margin-right: 20px;
+        a {
+          padding: 10px 15px;
+          color: white;
+          font-size: 18px;
+          font-weight: 600;
+          transition: all 0.5s;
+          &:hover {
             background-color: white;
-            // transition: all 0.1s;
-            visibility: hidden;
-            opacity: 0;
-            li{
-                background-color: white;
-                list-style: none;
-                padding: 10px;
-                height: auto;
-                transition: all 0.5s;
-                &:hover{
-                    background-color: #e2e2e2;
-                }
-                a{
-                    display: flex;
-                    justify-content: space-between;
-                    img{
-                        margin-right: 5px;
-                    }
-                    article{
-                        width: 59%;
-                        h3{
-                            font-size: 13px;
-                            margin-bottom: 3px;
-                            font-weight: 800;
-                        }
-                        p{
-                            font-size: 9px;
-                        }
-                    }
-                }
-            }
-            span{
-                display: block;
-                width: 100%;
-                margin: 0 auto;
-                height: 1px;
-                background-color: #c5c5c5;
-            }
-
+            color: #3c2d87;
+          }
         }
-        img.icone{
-            width:40px ;
-            height: 40px;
-            background-color: #3c2d87;
-            padding: 7px;
-            margin-left: 50px;
+        a.on {
+          background-color: white;
+          color: #3c2d87;
         }
-        a.user{
-            height: 40px;
-            color: white;
-            background-color: #3c2d87;
-            line-height: 40px;
-            padding: 0 10px;
-            transition: all 0.5s;
-
-            border: 0;
-            &:hover{
-                background-color: #2b2064;
-            }
-        }
-        a.btnadmin{
-            color: white;
-            line-height: 40px;
-            height: 40px;
-            padding: 0 10px;
-            background-color: red;
-            transition: all 0.5s;
-            &:hover{
-                background-color: rgb(182, 2, 2);
-            }
-        }
-        a.design{
-            color: white;
-            font-size: 16px;
-            line-height: 40px;
-            height: 40px;
-            padding: 0 10px;
-            margin-left: 10px;
-            transition: all 0.5s;
-            &:hover{
-                background-color: white;
-                color: #2b2064;
-            }
-        }
-        button.log{
-            color: white;
-            background-color: #3c2d87;
-            line-height: 40px;
-            height: 40px;
-            padding: 0 10px;
-            transition: all 0.5s;
-            margin-right: 10px;
-            font-size: 14px;
-            cursor: pointer;
-            font-family: 'montserrat', sans-serif;
-
-            border: 0;
-            &:hover{
-                background-color: #2b2064;
-            }
-        }
-        a.sign{
-            color: white;
-            line-height: 40px;
-            height: 40px;
-            padding: 0 10px;
-            transition: all 0.5s;
-            &:hover{
-                background-color: white;
-                    color: #3c2d87;
-            }
-        }
+      }
     }
-    span.barre{
-        z-index: 1000;
-        display: block;
-        height: 2px;
-        width: 92.5%;
+  }
+  div.right {
+    z-index: 1000;
+    margin-top: 65px;
+    margin-right: 115px;
+    margin-bottom: 15px;
+    float: right;
+    display: flex;
+    #searchbar {
+      width: 300px;
+      height: 40px;
+      outline: none;
+      margin: 0;
+    }
+    ul.searchjeu {
+      position: absolute;
+      top: 107px;
+      width: 300px;
+      background-color: white;
+      // transition: all 0.1s;
+      visibility: hidden;
+      opacity: 0;
+      li {
         background-color: white;
+        list-style: none;
+        padding: 10px;
+        height: auto;
+        transition: all 0.5s;
+        &:hover {
+          background-color: #e2e2e2;
+        }
+        a {
+          display: flex;
+          justify-content: space-between;
+          img {
+            margin-right: 5px;
+          }
+          article {
+            width: 59%;
+            h3 {
+              font-size: 13px;
+              margin-bottom: 3px;
+              font-weight: 800;
+            }
+            p {
+              font-size: 9px;
+            }
+          }
+        }
+      }
+      span {
+        display: block;
+        width: 100%;
         margin: 0 auto;
+        height: 1px;
+        background-color: #c5c5c5;
+      }
     }
-    div.rondlogo{
-        height: 500px;
-        margin-left: 35px;
-        margin-bottom: 50px;
-        display: flex;
-        align-items: center;
-        article.span{
-            margin-top: 150px;
-            display: flex;
-            flex-direction: column;
-            margin-right: 60px;
-        span{
-            display: block;
-            height: 23px;
-            width: 23px;
-            border: 2px solid white;
-            border-radius: 50%;
-            margin: 7px 0;
-            transition: all 0.5s;
-        }
-        span.rondun{
-            display: block;
-            height: 23px;
-            width: 23px;
-            background-color: white;
-            border-radius: 50%;
-            margin: 7px 0;
-        }
+    img.icone {
+      width: 40px;
+      height: 40px;
+      background-color: #3c2d87;
+      padding: 7px;
+      margin-left: 50px;
     }
-    article.logotexte{
-        padding-top: 70px;
-        img{
-            width: 825px;
-            margin-bottom: 10px;
-        }
-        p{
-            text-align: justify;
+    a.user {
+      height: 40px;
+      color: white;
+      background-color: #3c2d87;
+      line-height: 40px;
+      padding: 0 10px;
+      transition: all 0.5s;
+
+      border: 0;
+      &:hover {
+        background-color: #2b2064;
+      }
+    }
+    a.btnadmin {
+      color: white;
+      line-height: 40px;
+      height: 40px;
+      padding: 0 10px;
+      background-color: red;
+      transition: all 0.5s;
+      &:hover {
+        background-color: rgb(182, 2, 2);
+      }
+    }
+    a.design {
+      color: white;
+      font-size: 16px;
+      line-height: 40px;
+      height: 40px;
+      padding: 0 10px;
+      margin-left: 10px;
+      transition: all 0.5s;
+      &:hover {
+        background-color: white;
+        color: #2b2064;
+      }
+    }
+    button.log {
+      color: white;
+      background-color: #3c2d87;
+      line-height: 40px;
+      height: 40px;
+      padding: 0 10px;
+      transition: all 0.5s;
+      margin-right: 10px;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: "montserrat", sans-serif;
+
+      border: 0;
+      &:hover {
+        background-color: #2b2064;
+      }
+    }
+    a.sign {
+      color: white;
+      line-height: 40px;
+      height: 40px;
+      padding: 0 10px;
+      transition: all 0.5s;
+      &:hover {
+        background-color: white;
+        color: #3c2d87;
+      }
+    }
+  }
+  span.barre {
+    z-index: 1000;
+    display: block;
+    height: 2px;
+    width: 92.5%;
+    background-color: white;
+    margin: 0 auto;
+  }
+  div.rondlogo {
+    height: 500px;
+    margin-left: 35px;
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    article.span {
+      margin-top: 150px;
+      display: flex;
+      flex-direction: column;
+      margin-right: 60px;
+      span {
+        display: block;
+        height: 23px;
+        width: 23px;
+        border: 2px solid white;
+        border-radius: 50%;
+        margin: 7px 0;
+        transition: all 0.5s;
+      }
+      span.rondun {
+        display: block;
+        height: 23px;
+        width: 23px;
+        background-color: white;
+        border-radius: 50%;
+        margin: 7px 0;
+      }
+    }
+    article.logotexte {
+      padding-top: 70px;
+      img {
+        width: 750px;
+        margin-bottom: 10px;
+      }
+      p {
+        text-align: justify;
+        padding-left: 10px;
+        color: white;
+        font-size: 17px;
+        font-weight: 400;
+      }
+    }
+    article.textejeu {
+      display: none;
+      margin-top: 70px;
+      margin-bottom: 18px;
+      p.descrijeu {
+        line-height: 25px;
+      }
+      h1 {
+        font-size: 60px;
+        margin-left: 10px;
+        font-weight: 1000;
+        margin-bottom: 20px;
+        color: white;
+        transition: all 0.5s;
+      }
+      p {
+        transition: all 0.5s;
         padding-left: 10px;
         color: white;
         font-size: 18px;
         font-weight: 400;
+        margin-bottom: 30px;
+      }
+      a {
+        color: white;
+        padding: 15px 20px;
+        background-color: #393795;
+        margin-left: 10px;
+        text-align: center;
+        transition: all 0.5s;
+        &:hover {
+          background-color: #2b2064;
         }
+      }
+      a#aquizz {
+        width: 180px;
+      }
+      a#a7diff {
+        width: 200px;
+      }
+      a#ajusteprix {
+        width: 200px;
+      }
+      a#asnake {
+        width: 170px;
+      }
+      a#aflappybird {
+        width: 210px;
+      }
+      a#apingpong {
+        width: 210px;
+      }
     }
-    article.textejeu{
-        display: none;
-        margin-top: 70px;
-        margin-bottom: 18px;
-        p.descrijeu{
-            line-height: 25px;
-        }
-        h1{
-            font-size: 60px;
-            margin-left: 10px;
-            font-weight: 1000;
-            margin-bottom: 20px;
-            color: white;
-            transition: all 0.5s;
-        }
-        p{
-            transition: all 0.5s;
-            padding-left: 10px;
-            color: white;
-            font-size: 18px;
-            font-weight: 400;
-            margin-bottom: 30px;
-            }
-            a{
-                color: white;
-                padding: 15px 20px;
-                background-color: #393795 ;
-                margin-left: 10px;
-                text-align: center;
-                transition: all 0.5s;
-                &:hover{
-                    background-color: #2b2064;
-                }
-            }
-            a#aquizz{
-                width: 180px;
-            }
-            a#a7diff{
-                width: 200px;
-            }
-            a#ajusteprix{
-                width: 200px;
-            }
-            a#asnake{
-                width: 170px;
-            }
-            a#aflappybird{
-                width: 210px;
-            }
-            a#apingpong{
-                width: 210px;
-            }
-    }
-    }
+  }
 
-    section.minijeu{
-        width: 97%;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        h2 {
-            color: white;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        div.jeux{
-            display: flex;
-            justify-content: space-between;
-            article{
-                width: 280px;
-                transition: all 0.5s;
-                &:hover{
-                    cursor: pointer;
-                    scale: 1.07;
-                }
-                h2{
-                    text-align: center;
-                    background-color: white;
-                    padding: 5px 0;
-                    font-size: 15px;
-                    font-weight: 600;
-                    color: black;
-                }
-            }
-        }
-    }
-
-}
-
-section.login{
-    visibility: hidden;
-    position: absolute;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.858);
-    z-index: 1000;
+  section.minijeu {
+    width: 97%;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    div.connexion{
-        background-color: white;
-        width: 550px;
-        height: 540px;
-        padding: 110px 95px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        form{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin-bottom: 63px;
-            h2{
-                color: #393795;
-                text-align: center;
-                font-size: 50px;
-                font-weight: 800;
-                margin-bottom: 25px;
-            }
-            input{
-                background-color: #d2d2d2;
-            }
-            input.connecter{
-                text-indent: 0;
-                background-color: #393795;
-                color: white;
-                cursor: pointer;
-                width: 40%;
-                height: 40px;
-                &:hover{
-                    background-color: #2b2064;
-                }
-            }
-            p{
-                font-size: 13px;
-            }
-        }
-        img{
-            width: 110px;
-            margin-bottom: 5px;
-        }
-        p.inscriptionhome{
-            color: #191919;
-            a{
-                color: #393795;
-            }
-        }
+    flex-direction: column;
+    h2.listejeu {
+      width: 15%;
+      font-size: 16px;
+      text-align: center;
+      padding: 5px 0;
+      background-color: white;
+      margin-bottom: 10px;
+      color: #3c2d87;
+      font-weight: 1000;
     }
-    img.closelogin{
-        width: 25px;
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        cursor: pointer;
+    div.jeux {
+      display: flex;
+      justify-content: space-between;
+      article {
+        width: 280px;
+        transition: all 0.5s;
+        &:hover {
+          cursor: pointer;
+          scale: 1.04;
+        }
+        h2 {
+          text-align: center;
+          background-color: white;
+          padding: 5px 0;
+          font-size: 15px;
+          font-weight: 600;
+          color: black;
+        }
+      }
     }
+  }
 }
 
+section.login {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.858);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div.connexion {
+    background-color: white;
+    width: 550px;
+    height: 540px;
+    padding: 110px 95px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 63px;
+      h2 {
+        color: #393795;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 800;
+        margin-bottom: 25px;
+      }
+      input {
+        background-color: #d2d2d2;
+      }
+      input.connecter {
+        text-indent: 0;
+        background-color: #393795;
+        color: white;
+        cursor: pointer;
+        width: 40%;
+        height: 40px;
+        &:hover {
+          background-color: #2b2064;
+        }
+      }
+      p {
+        font-size: 13px;
+      }
+    }
+    img {
+      width: 110px;
+      margin-bottom: 5px;
+    }
+    p.inscriptionhome {
+      color: #191919;
+      a {
+        color: #393795;
+      }
+    }
+  }
+  img.closelogin {
+    width: 25px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+  }
+}

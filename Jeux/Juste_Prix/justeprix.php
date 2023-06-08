@@ -77,14 +77,7 @@ session_start();
                 <li><a href="../../credits/credit.php">CREDITS</a></li>
                 <li><a href="../../contact/contact.php">NOUS CONTACTER</a></li>
             </ul>
-        </nav>
-
-        <!-- <div class="navright">
-            <input id="searchbar" type="text" name="search" placeholder="Rechercher un jeu ...">
-            <img src="../../asset/icone-mario.png" alt="">
-            <a class="log" href="../index.php">Se connecter</a>
-            <a class="sign" href="register.php">S'inscrire</a>
-        </div> -->
+            </nav>
 
         <div class="navright">
             <input id="searchbar" onkeyup="search_jeu()" type="text" name="searchjeu" placeholder="Rechercher un jeu ...">
@@ -142,7 +135,7 @@ version DRAGON BALL ! un jeu addictif et plein de défis !</p>
             } else {
             ?>
                 <img class="icone" src="../../asset/icone-mario.png" alt="">
-                <button class="log">
+                <button class="user">
                     <p>Se connecter</p>
                 </button>
                 <a class="sign" href="../../Registration/register.php">S'inscrire</a>

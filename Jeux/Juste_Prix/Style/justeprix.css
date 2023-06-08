@@ -309,6 +309,20 @@ header div.navinscri div.navright a.user {
 header div.navinscri div.navright a.user:hover {
   background-color: #2b2064;
 }
+header div.navinscri div.navright button.user {
+  font-family: montserrat;
+  color: white;
+  background-color: #3c2d87;
+  line-height: 40px;
+  padding: 0 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-right: 10px;
+  border: 0;
+}
+header div.navinscri div.navright button.user:hover {
+  background-color: #2b2064;
+}
 header div.navinscri div.navright a.sign {
   color: white;
   line-height: 40px;
