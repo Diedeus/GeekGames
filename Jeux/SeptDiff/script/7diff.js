@@ -2,7 +2,7 @@ const contpresentationSection = document.createElement("section");
 contpresentationSection.className = "container_presentation";
 contpresentationSection.style.width="50%";
 contpresentationSection.style.float="left"
-contpresentationSection.style.height="86vh"
+contpresentationSection.style.height="80vh"
 contpresentationSection.style.display="flex"
 contpresentationSection.style.flexDirection="column"
 contpresentationSection.style.justifyContent="center"
@@ -107,14 +107,7 @@ affScore.style.color="white"
 affScore.style.fontSize="25px"
 affScore.id = "affScore";
 
-const gameover = document.createElement("p");
-gameover.id = "gameover";
-gameover.style.display = "none";
-gameover.textContent = "Vous avez echoué";
-
 infos.appendChild(afftimer);
-infos.appendChild(gameover);
-
 
 presentationSection.appendChild(title);
 presentationSection.appendChild(paragraph);
@@ -123,7 +116,7 @@ presentationSection.appendChild(basprezDiv);
 
 const contjeu7diff = document.createElement("section")
 contjeu7diff.style.display="none"
-contjeu7diff.style.height="86vh"
+contjeu7diff.style.height="80vh"
 contjeu7diff.style.flexDirection="column"
 contjeu7diff.style.justifyContent="center"
 contjeu7diff.style.alignItems="center"
@@ -134,16 +127,21 @@ contjeu7diff.appendChild(corps7diff);
 contjeu7diff.appendChild(infos);
 
 const titreselec = document.createElement("h2");
-titreselec.style.color="white"
+titreselec.style.color="#3c2d87"
+titreselec.style.backgroundColor="white"
+titreselec.style.padding="15px 0"
 titreselec.style.textAlign="center"
 titreselec.style.marginBottom="50px"
+titreselec.style.margintop="50px"
 titreselec.textContent="Selectionner une image"
 
 const contprezImg = document.createElement("section")
-contprezImg.style.paddingTop="50px"
-contprezImg.style.width="50%";
-contprezImg.style.height="86vh"
+contprezImg.style.margintop="50px"
+contprezImg.style.backgroundColor="#2b2064"
+contprezImg.style.width="48%";
+contprezImg.style.height="75vh"
 contprezImg.style.float="left"
+contprezImg.style.overflow="auto"
 
 const prezImg = document.createElement("div");
 prezImg.className = "prezImg";
@@ -158,15 +156,14 @@ contprezImg.appendChild(prezImg)
 
 const animWin = document.createElement("section")
 animWin.className = "sectionwin";
-animWin.style.position="relative"
+animWin.style.position="absolute"
 animWin.style.height="100vh"
 animWin.style.width="100%"
-animWin.style.top="-99.1%"
+animWin.style.top="0"
 animWin.style.left="0"
 animWin.style.backgroundColor="#0b0b0bf6"
 animWin.style.overflow="hidden"
 animWin.style.visibility="hidden"
-
 document.body.appendChild(animWin)
 
 const winTop = document.createElement("img")
@@ -254,8 +251,106 @@ restarWin.style.textAlign="center"
 restarWin.href="./7diff.php"
 artwin.appendChild(restarWin)
 
+const animLoose = document.createElement("section")
+animLoose.className = "sectionloose";
+animLoose.style.position="absolute"
+animLoose.style.height="100vh"
+animLoose.style.width="100%"
+animLoose.style.top="0"
+animLoose.style.left="0"
+animLoose.style.backgroundColor="#0b0b0bf6"
+animLoose.style.overflow="hidden"
+animLoose.style.visibility="hidden"
+document.body.appendChild(animLoose)
+
+const looseTop = document.createElement("img")
+looseTop.src='./Asset/loosetop.png'
+looseTop.style.position="absolute"
+looseTop.style.left="-100%"
+looseTop.style.top="0"
+looseTop.style.transition="all 0.5s"
+animLoose.appendChild(looseTop)
+
+const looseBot = document.createElement("img")
+looseBot.src='./Asset/loosebot.png'
+looseBot.style.position="absolute"
+looseBot.style.bottom="0"
+looseBot.style.right="-100%"
+looseBot.style.transition="all 0.5s"
+animLoose.appendChild(looseBot)
+
+const divScoreLoose = document.createElement("div")
+divScoreLoose.style.opacity="0%";
+divScoreLoose.style.display="flex"
+divScoreLoose.style.flexDirection="column"
+divScoreLoose.style.height="100vh"
+divScoreLoose.style.width="100%"
+divScoreLoose.style.justifyContent="center"
+divScoreLoose.style.alignItems="center"
+divScoreLoose.style.top="0"
+divScoreLoose.style.left="0"
+divScoreLoose.style.position="absolute"
+animLoose.appendChild(divScoreLoose)
+
+const spany2 = document.createElement("span")
+spany2.style.color = "#e03332"
+spany2.style.fontSize = "180px"
+spany2.style.fontWeight = "800"
+spany2.textContent="Y"
 
 
+const spanLoose = document.createElement("span")
+spanLoose.style.color = "white"
+spanLoose.style.fontSize = "180px"
+spanLoose.style.fontWeight = "800"
+spanLoose.textContent="OU LOST"
+
+const titreLoose = document.createElement("h2")
+titreLoose.appendChild(spany2)
+titreLoose.appendChild(spanLoose)
+divScoreLoose.appendChild(titreLoose)
+
+const affLoose = document.createElement("p")
+affLoose.style.color="white"
+affLoose.textContent="Votre score :"
+affLoose.style.fontSize="30px"
+divScoreLoose.appendChild(affLoose)
+const scoreLoose = document.createElement("p")
+scoreLoose.style.color="white"
+scoreLoose.textContent="00"
+scoreLoose.style.fontSize="65px"
+scoreLoose.style.fontWeight="600"
+scoreLoose.style.marginBottom="30px"
+divScoreLoose.appendChild(scoreLoose)
+
+const artLoose = document.createElement("article")
+artLoose.style.display="flex"
+artLoose.style.justifyContent="center"
+divScoreLoose.appendChild(artLoose)
+
+const backHomeLoose = document.createElement("a")
+backHomeLoose.textContent= "Retour à l'accueil"
+backHomeLoose.style.backgroundColor="white"
+backHomeLoose.style.cursor="pointer"
+backHomeLoose.style.width="300px"
+backHomeLoose.style.height="50px"
+backHomeLoose.style.lineHeight="50px"
+backHomeLoose.style.textAlign="center"
+backHomeLoose.href="../../index.php"
+artLoose.appendChild(backHomeLoose)
+
+const restarLoose = document.createElement("a")
+restarLoose.textContent= "Recommencer"
+restarLoose.style.backgroundColor="#e03332"
+restarLoose.style.color="white"
+restarLoose.style.margin="0 20px"
+restarLoose.style.cursor="pointer"
+restarLoose.style.width="300px"
+restarLoose.style.height="50px"
+restarLoose.style.lineHeight="50px"
+restarLoose.style.textAlign="center"
+restarLoose.href="./7diff.php"
+artLoose.appendChild(restarLoose)
 
 
 
@@ -294,9 +389,14 @@ function startTimer() {
     afftimer.textContent = "il reste : " + chronominute + "min" + chronoseconde;
     startTimer();
     if (tour === 300) {
-      let gameOver = document.querySelector("#gameover");
-      gameOver.style.display = "block";
       clearTimeout(timer);
+      animLoose.style.visibility="visible"
+              looseTop.style.left="0"
+              looseBot.style.right="0"
+              setTimeout(function() {
+                divScoreLoose.style.transition = 'opacity 200ms';
+                divScoreLoose.style.opacity = "100%";
+            }, 500);
       // mettre anim de loose
     }
   }, 1000);
@@ -314,7 +414,7 @@ fetch("/Jeux/SeptDiff/Asset/7diff.json")
       el.src = element.url1;
       el.className = "Img";
       el.style.cursor = "pointer";
-      el.style.width="23%"
+      el.style.width="19%"
       el.style.height="auto"
       el.style.padding="4px"
       prezImg.appendChild(el);
@@ -544,7 +644,6 @@ fetch("/Jeux/SeptDiff/Asset/7diff.json")
                 divScoreWin.style.transition = 'opacity 200ms';
                 divScoreWin.style.opacity = "100%";
             }, 500);
-              // mettre anim de win
             }
           });
 
