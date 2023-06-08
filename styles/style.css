@@ -136,7 +136,50 @@ header#test div.right #searchbar {
   outline: none;
   margin: 0;
 }
-header#test div.right img {
+header#test div.right ul.searchjeu {
+  position: absolute;
+  top: 107px;
+  width: 300px;
+  background-color: white;
+  visibility: hidden;
+  opacity: 0;
+}
+header#test div.right ul.searchjeu li {
+  background-color: white;
+  list-style: none;
+  padding: 10px;
+  height: auto;
+  transition: all 0.5s;
+}
+header#test div.right ul.searchjeu li:hover {
+  background-color: #e2e2e2;
+}
+header#test div.right ul.searchjeu li a {
+  display: flex;
+  justify-content: space-between;
+}
+header#test div.right ul.searchjeu li a img {
+  margin-right: 5px;
+}
+header#test div.right ul.searchjeu li a article {
+  width: 59%;
+}
+header#test div.right ul.searchjeu li a article h3 {
+  font-size: 13px;
+  margin-bottom: 3px;
+  font-weight: 800;
+}
+header#test div.right ul.searchjeu li a article p {
+  font-size: 9px;
+}
+header#test div.right ul.searchjeu span {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  height: 1px;
+  background-color: #c5c5c5;
+}
+header#test div.right img.icone {
   width: 40px ;
   height: 40px;
   background-color: #3c2d87;
@@ -144,6 +187,7 @@ header#test div.right img {
   margin-left: 50px;
 }
 header#test div.right a.user {
+  height: 40px;
   color: white;
   background-color: #3c2d87;
   line-height: 40px;
@@ -157,6 +201,7 @@ header#test div.right a.user:hover {
 header#test div.right a.btnadmin {
   color: white;
   line-height: 40px;
+  height: 40px;
   padding: 0 10px;
   background-color: red;
   transition: all 0.5s;
@@ -168,6 +213,7 @@ header#test div.right a.design {
   color: white;
   font-size: 16px;
   line-height: 40px;
+  height: 40px;
   padding: 0 10px;
   margin-left: 10px;
   transition: all 0.5s;
@@ -180,6 +226,7 @@ header#test div.right button.log {
   color: white;
   background-color: #3c2d87;
   line-height: 40px;
+  height: 40px;
   padding: 0 10px;
   transition: all 0.5s;
   margin-right: 10px;
@@ -194,6 +241,7 @@ header#test div.right button.log:hover {
 header#test div.right a.sign {
   color: white;
   line-height: 40px;
+  height: 40px;
   padding: 0 10px;
   transition: all 0.5s;
 }
@@ -315,6 +363,7 @@ header#test section.minijeu {
 header#test section.minijeu h2 {
   color: white;
   margin-bottom: 20px;
+  font-weight: 600;
 }
 header#test section.minijeu div.jeux {
   display: flex;
@@ -333,7 +382,7 @@ header#test section.minijeu div.jeux article h2 {
   background-color: white;
   padding: 5px 0;
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 600;
   color: black;
 }
 section.login {
@@ -403,155 +452,4 @@ section.login img.closelogin {
   top: 30px;
   right: 30px;
   cursor: pointer;
-}
-header#inscription {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-image: url(../asset/background-ratchetclank.jpg);
-  background-size: cover;
-  transition: all 0.5s;
-}
-header#inscription section.inscriptiondroite {
-  width: 50%;
-  height: 100vh;
-  float: right;
-}
-header#inscription section.inscriptiondroite div.droithaut {
-  background-image: url(../asset/backmarioinscription.jpg);
-  height: 65%;
-  background-position: top;
-}
-header#inscription section.inscriptiondroite div.droitbas {
-  background-color: white;
-  padding-top: 25px;
-  height: 35%;
-}
-header#inscription section.inscriptiondroite div.droitbas img {
-  margin: 0 auto 25px;
-  width: 550px;
-}
-header#inscription section.inscriptiondroite div.droitbas p {
-  color: #3c2d87;
-  text-align: center;
-}
-header#inscription section.inscriptiongauche {
-  background-image: url(../asset/backgaucheinscription.jpg);
-  height: 100vh;
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-header#inscription section.inscriptiongauche form {
-  display: flex;
-  flex-wrap: wrap;
-  width: 500px;
-  margin-top: 100px;
-  justify-content: space-between;
-}
-header#inscription section.inscriptiongauche form h1 {
-  color: white;
-  font-size: 45px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-header#inscription section.inscriptiongauche form input.nomprenom {
-  width: 200px;
-}
-header#inscription section.inscriptiongauche form input.boutonenvoyer {
-  width: 200px;
-  background-color: white;
-  cursor: pointer;
-  color: #3c2d87;
-  padding: 0;
-  transition: all 0.5s;
-  text-indent: 0;
-}
-header#inscription section.inscriptiongauche form input.boutonenvoyer:hover {
-  color: white;
-  background-color: #130546;
-}
-header#inscription section.inscriptiongauche form p {
-  color: white;
-}
-header#inscription div.navinscri {
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-header#inscription div.navinscri nav.home {
-  z-index: 1000;
-  float: left;
-  margin-top: 70px;
-  margin-left: 70px;
-}
-header#inscription div.navinscri nav.home ul {
-  display: flex;
-}
-header#inscription div.navinscri nav.home ul li {
-  list-style-type: none;
-  margin-right: 20px;
-}
-header#inscription div.navinscri nav.home ul li a {
-  padding: 10px 15px;
-  color: white;
-  font-size: 18px;
-  font-weight: 600;
-  transition: all 0.5s;
-}
-header#inscription div.navinscri nav.home ul li a:hover {
-  background-color: white;
-  color: #3c2d87;
-}
-header#inscription div.navinscri nav.home ul li a.on {
-  background-color: white;
-  color: #3c2d87;
-}
-header#inscription div.navinscri div.right {
-  margin-top: 65px;
-  margin-right: 115px;
-  margin-bottom: 15px;
-  float: right;
-  display: flex;
-}
-header#inscription div.navinscri div.right #searchbar {
-  width: 300px ;
-  height: 40px;
-  outline: none;
-  margin: 0;
-}
-header#inscription div.navinscri div.right img {
-  width: 40px ;
-  height: 40px;
-  background-color: #3c2d87;
-  padding: 7px;
-  margin-left: 50px;
-}
-header#inscription div.navinscri div.right a.log {
-  color: white;
-  background-color: #3c2d87;
-  line-height: 40px;
-  padding: 0 10px;
-  transition: all 0.5s;
-}
-header#inscription div.navinscri div.right a.log:hover {
-  background-color: #2b2064;
-}
-header#inscription div.navinscri div.right a.sign {
-  color: white;
-  line-height: 40px;
-  padding: 0 10px;
-  transition: all 0.5s;
-}
-header#inscription div.navinscri div.right a.sign:hover {
-  background-color: white;
-  color: #3c2d87;
-}
-header#inscription div.navinscri span.barre {
-  display: block;
-  height: 2px;
-  width: 92.5%;
-  background-color: white;
-  margin: 0 auto;
 }

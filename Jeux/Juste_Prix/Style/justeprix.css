@@ -248,10 +248,53 @@ header div.navinscri div.navright #searchbar {
   outline: none;
   margin: 0;
 }
-header div.navinscri div.navright img {
+header div.navinscri div.navright ul.searchjeu {
+  position: absolute;
+  top: 107px;
+  width: 300px;
+  background-color: white;
+  visibility: hidden;
+  opacity: 0;
+}
+header div.navinscri div.navright ul.searchjeu li {
+  background-color: white;
+  list-style: none;
+  padding: 10px;
+  height: auto;
+  transition: all 0.5s;
+}
+header div.navinscri div.navright ul.searchjeu li:hover {
+  background-color: #e2e2e2;
+}
+header div.navinscri div.navright ul.searchjeu li a {
+  display: flex;
+  justify-content: space-between;
+}
+header div.navinscri div.navright ul.searchjeu li a img {
+  margin-right: 5px;
+}
+header div.navinscri div.navright ul.searchjeu li a article {
+  width: 59%;
+}
+header div.navinscri div.navright ul.searchjeu li a article h3 {
+  font-size: 13px;
+  margin-bottom: 3px;
+  font-weight: 800;
+}
+header div.navinscri div.navright ul.searchjeu li a article p {
+  font-size: 9px;
+}
+header div.navinscri div.navright ul.searchjeu span {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  height: 1px;
+  background-color: #c5c5c5;
+}
+header div.navinscri div.navright img.icone {
   width: 40px ;
   height: 40px;
-  background-color: #3c2d87;
+  background-color: #2b2064;
   padding: 7px;
   margin-left: 50px;
 }

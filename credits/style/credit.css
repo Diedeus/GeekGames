@@ -130,7 +130,50 @@ div.right #searchbar {
   outline: none;
   margin: 0;
 }
-div.right img {
+div.right ul.searchjeu {
+  position: absolute;
+  top: 107px;
+  width: 300px;
+  background-color: white;
+  visibility: hidden;
+  opacity: 0;
+}
+div.right ul.searchjeu li {
+  background-color: white;
+  list-style: none;
+  padding: 10px;
+  height: auto;
+  transition: all 0.5s;
+}
+div.right ul.searchjeu li:hover {
+  background-color: #e2e2e2;
+}
+div.right ul.searchjeu li a {
+  display: flex;
+  justify-content: space-between;
+}
+div.right ul.searchjeu li a img {
+  margin-right: 5px;
+}
+div.right ul.searchjeu li a article {
+  width: 59%;
+}
+div.right ul.searchjeu li a article h3 {
+  font-size: 13px;
+  margin-bottom: 3px;
+  font-weight: 800;
+}
+div.right ul.searchjeu li a article p {
+  font-size: 9px;
+}
+div.right ul.searchjeu span {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  height: 1px;
+  background-color: #c5c5c5;
+}
+div.right img.icone {
   width: 40px ;
   height: 40px;
   background-color: #2b2064;
@@ -172,7 +215,7 @@ div.right a.design:hover {
 }
 div.right button.log {
   color: white;
-  background-color: #3c2d87;
+  background-color: #2b2064;
   line-height: 40px;
   padding: 0 10px;
   transition: all 0.5s;

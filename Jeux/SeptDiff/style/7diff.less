@@ -140,7 +140,52 @@ div.right{
         outline: none;
         margin: 0;
     }
-    img{
+    ul.searchjeu{
+        position: absolute;
+        top: 107px;
+        width: 300px;
+        background-color: white;
+        // transition: all 0.1s;
+        visibility: hidden;
+        opacity: 0;
+        li{
+            background-color: white;
+            list-style: none;
+            padding: 10px;
+            height: auto;
+            transition: all 0.5s;
+            &:hover{
+                background-color: #e2e2e2;
+            }
+            a{
+                display: flex;
+                justify-content: space-between;
+                img{
+                    margin-right: 5px;
+                }
+                article{
+                    width: 59%;
+                    h3{
+                        font-size: 13px;
+                        margin-bottom: 3px;
+                        font-weight: 800;
+                    }
+                    p{
+                        font-size: 9px;
+                    }
+                }
+            }
+        }
+        span{
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+            height: 1px;
+            background-color: #c5c5c5;
+        }
+
+    }
+    img.icone{
         width:40px ;
         height: 40px;
         background-color: #2b2064;

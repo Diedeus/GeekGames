@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GekkGames - 7 différences</title>
     <script src="./script/7diff.js" defer></script>
+    <script src="../../script/liste.js" defer></script>
 </head>
 <body>
 <?php
@@ -29,15 +30,61 @@ session_start();
 
 
         <div class="right">
-            <input id="searchbar" type="text" name="search" placeholder="Rechercher un jeu ...">
+            <input id="searchbar" onkeyup="search_jeu()" type="text" name="searchjeu" placeholder="Rechercher un jeu ...">
+            <ul class="searchjeu">
+                <li class="jeuxhome">
+                    <a href="../../Jeux/Quizz/Quizz.php">
+                        <img src="../../asset/jeux1search.jpg" alt="">
+                        <article>
+                            <h3>QUIZZ GEEK</h3>
+                            <p>Êtes-vous un véritable passionné de la culture geek ? Mettez vos connaissances à l'épreuve avec notre quiz geek.</p>
+                        </article>
+                    </a>
+                </li>
+                <span class="spanjeu"></span>
+                <li class="jeuxhome">
+                    <a href="../../Jeux/SeptDiff/7diff.php">
+                        <img src="../../asset/jeux2search.jpg" alt="">
+                        <article>
+                            <h3>7 DIFFERENCES</h3>
+                            <p>Plongez dans un univers geek captivant
+avec notre jeu des 7 différences. Mettez votre sens de l'observation à
+l'épreuve..</p>
+                        </article>
+                    </a>
+                </li>
+                <span class="spanjeu"></span>
+                <li class="jeuxhome">
+                    <a href="../../Jeux/Juste_Prix/justeprix.php">
+                        <img src="../../asset/jeux3search.jpg" alt="">
+                        <article>
+                            <h3>LE JUSTE PRIX</h3>
+                            <p>Êtes-vous prêt à estimer la valeur des objets et
+à défier votre instinct? Mettez vos talents d'évaluation
+à l'épreuve..</p>
+                        </article>
+                    </a>
+                </li>
+                <span class="spanjeu"></span>
+                <li class="jeuxhome">
+                    <a href="">
+                        <img src="../../asset/jeux4search.jpg" alt="">
+                        <article>
+                            <h3>FLAPPY BIRD</h3>
+                            <p> Préparez-vous à vous envoler dans le monde de Flappy Bird
+version DRAGON BALL ! un jeu addictif et plein de défis !</p>
+                        </article>
+                    </a>
+                </li>
+            </ul>
             <?php
             if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) {
-                echo '<img src="../../asset/icone-mario.png" alt="">';
+                echo '<img class="icone" src="../../asset/icone-mario.png" alt="">';
                 echo '<a  class="user" href="../../profil/profil.php">bonjour ' . $_SESSION['Nom_utilisateur'] . '</a>';
                 echo '<a class="design" href="../../Registration/deconnexion.php">Deconnexion</a>';
             } else {
             ?>
-                <img src="../../asset/icone-mario.png" alt="">
+                <img class="icone" src="../../asset/icone-mario.png" alt="">
                 <button class="log">
                     <p>Se connecter</p>
                 </button>
@@ -46,7 +93,7 @@ session_start();
             <?php
             }
             if (isset($_SESSION['Admin']) && $_SESSION['Admin'] === '1') {
-                echo '<a class="btnadmin" href="../admin/admin.php">Admin</a>';
+                echo '<a class="btnadmin" href="../../admin/admin.php">Admin</a>';
             }
             ?>
 

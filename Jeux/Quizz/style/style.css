@@ -132,15 +132,58 @@ header div.right {
   display: flex;
 }
 header div.right #searchbar {
-  width: 300px;
+  width: 300px ;
   height: 40px;
   outline: none;
   margin: 0;
 }
-header div.right img {
-  width: 40px;
+header div.right ul.searchjeu {
+  position: absolute;
+  top: 107px;
+  width: 300px;
+  background-color: white;
+  visibility: hidden;
+  opacity: 0;
+}
+header div.right ul.searchjeu li {
+  background-color: white;
+  list-style: none;
+  padding: 10px;
+  height: auto;
+  transition: all 0.5s;
+}
+header div.right ul.searchjeu li:hover {
+  background-color: #e2e2e2;
+}
+header div.right ul.searchjeu li a {
+  display: flex;
+  justify-content: space-between;
+}
+header div.right ul.searchjeu li a img {
+  margin-right: 5px;
+}
+header div.right ul.searchjeu li a article {
+  width: 59%;
+}
+header div.right ul.searchjeu li a article h3 {
+  font-size: 13px;
+  margin-bottom: 3px;
+  font-weight: 800;
+}
+header div.right ul.searchjeu li a article p {
+  font-size: 9px;
+}
+header div.right ul.searchjeu span {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  height: 1px;
+  background-color: #c5c5c5;
+}
+header div.right img.icone {
+  width: 40px ;
   height: 40px;
-  background-color: #3c2d87;
+  background-color: #2b2064;
   padding: 7px;
   margin-left: 50px;
 }

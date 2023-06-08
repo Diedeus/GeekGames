@@ -181,33 +181,77 @@ section.container_allprofil div.droite div.haut nav.home ul li a.on {
   color: #3c2d87;
 }
 section.container_allprofil div.droite div.haut div.navdroite {
-  margin-top: 70px;
+  margin-top: 65px;
   margin-right: 70px;
+  margin-bottom: 15px;
   display: flex;
   float: right;
 }
 section.container_allprofil div.droite div.haut div.navdroite #searchbar {
-  margin-right: 20px;
   width: 300px ;
   height: 40px;
   outline: none;
+  margin: 0;
 }
-section.container_allprofil div.droite div.haut div.navdroite a {
-  height: 40px;
-  color: white;
-  padding: 10px 10px;
+section.container_allprofil div.droite div.haut div.navdroite ul.searchjeu {
+  position: absolute;
+  top: 107px;
+  width: 300px;
+  background-color: white;
+  visibility: hidden;
+  opacity: 0;
+}
+section.container_allprofil div.droite div.haut div.navdroite ul.searchjeu li {
+  background-color: white;
+  list-style: none;
+  padding: 10px;
+  height: auto;
   transition: all 0.5s;
 }
-section.container_allprofil div.droite div.haut div.navdroite a:hover {
-  color: #241a5a;
-  background-color: white;
+section.container_allprofil div.droite div.haut div.navdroite ul.searchjeu li:hover {
+  background-color: #e2e2e2;
 }
-section.container_allprofil div.droite div.haut div.navdroite img {
+section.container_allprofil div.droite div.haut div.navdroite ul.searchjeu li a {
+  display: flex;
+  justify-content: space-between;
+}
+section.container_allprofil div.droite div.haut div.navdroite ul.searchjeu li a img {
+  margin-right: 5px;
+}
+section.container_allprofil div.droite div.haut div.navdroite ul.searchjeu li a article {
+  width: 59%;
+}
+section.container_allprofil div.droite div.haut div.navdroite ul.searchjeu li a article h3 {
+  font-size: 13px;
+  margin-bottom: 3px;
+  font-weight: 800;
+}
+section.container_allprofil div.droite div.haut div.navdroite ul.searchjeu li a article p {
+  font-size: 9px;
+}
+section.container_allprofil div.droite div.haut div.navdroite ul.searchjeu span {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  height: 1px;
+  background-color: #c5c5c5;
+}
+section.container_allprofil div.droite div.haut div.navdroite img.icone {
   width: 40px ;
   height: 40px;
   background-color: #3c2d87;
   padding: 7px;
   margin-left: 50px;
+}
+section.container_allprofil div.droite div.haut div.navdroite a.deco {
+  height: 40px;
+  color: white;
+  padding: 10px 10px;
+  transition: all 0.5s;
+}
+section.container_allprofil div.droite div.haut div.navdroite a.deco:hover {
+  color: #241a5a;
+  background-color: white;
 }
 section.container_allprofil div.droite div.haut div.navdroite a.user {
   margin-right: 10px;
