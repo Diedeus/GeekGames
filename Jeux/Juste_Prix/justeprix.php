@@ -11,14 +11,18 @@
     
 </head>
 <body>
-
 <?php 
 
 require('../../Registration/config.php');
 session_save_path("../../tmp");
 session_start();
 
-?>
+
+// if(!isset($_SESSION['id_user'])){
+//     header('Location: ../../index.php');
+//     exit();
+// }
+// ?>
 
     <header>
         <section class="accueil corps">
@@ -177,10 +181,6 @@ version DRAGON BALL ! un jeu addictif et plein de défis !</p>
         </div>
     </section>
     
-    <!-- <form id="myForm" method="post">
-        <input type="hidden" name="scorefinal" id="valeurCacheeInput">
-        <input type="submit" value="Enregistrer votre Score" style="z-index:10">
-        </form> -->
 
         <?php
         if(isset($_POST['scorefinal'])){

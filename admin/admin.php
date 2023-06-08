@@ -21,9 +21,10 @@
   <?php
   // ON VA CHERCHER LES LOGS DE LA DB DANS LE FICHIER CONFIG.PHP
   require('../Registration/config.php');
-  ?>
-
-  <?php
+  if(!isset($_SESSION['id_user'])){
+    header('Location: ../../index.php');
+    exit();
+}
   // VERIFICATION ADMIN OU UTILISATEUR
 
   // Initialiser la session
