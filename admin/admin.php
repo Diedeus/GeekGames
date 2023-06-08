@@ -21,15 +21,19 @@
   <?php
   // ON VA CHERCHER LES LOGS DE LA DB DANS LE FICHIER CONFIG.PHP
   require('../Registration/config.php');
-  if(!isset($_SESSION['id_user'])){
-    header('Location: ../../index.php');
-    exit();
-}
+
+
   // VERIFICATION ADMIN OU UTILISATEUR
 
   // Initialiser la session
   session_save_path("../tmp");
   session_start();
+  if(!isset($_SESSION['id_users'])){
+    header('Location: ../../index.php');
+    exit();
+}
+
+
   $id_user = $_SESSION['id_users'];
   $admin = "SELECT admin FROM users WHERE id_users=$id_user";
   // Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
