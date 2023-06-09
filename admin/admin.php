@@ -28,7 +28,7 @@
   // Initialiser la session
   session_save_path("../tmp");
   session_start();
-  if(!isset($_SESSION['id_users'])){
+  if(!isset($_SESSION['id_users']) && $_SESSION['Admin'] === 0 ){
     header('Location: ../../index.php');
     exit();
 }

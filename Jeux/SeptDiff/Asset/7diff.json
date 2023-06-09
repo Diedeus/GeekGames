@@ -1,6 +1,5 @@
 [
     {
-        "Img_name": "img1",
         "url1": "/Jeux/SeptDiff/Asset/image1.jpg",
         "url2": "/Jeux/SeptDiff/Asset/image1diff.jpg",
         "err1x1": "40",
@@ -35,7 +34,6 @@
     },
     
     {
-        "Img_name": "img2",
         "url1": "/Jeux/SeptDiff/Asset/image2.jpg",
         "url2": "/Jeux/SeptDiff/Asset/image2diff.jpg",
         "err1x1": "25",

@@ -94,6 +94,13 @@ let erreur7 = false
     donnees.appendChild(AffiErr7)
     let AffErr7 = document.querySelector('.AffErr7')
 
+    let Tab = []
+    let object = {}
+
+    object = { "url1" : urlImg,
+                "url2" : urlImgDiff}
+                Tab.push(object)
+
     PreviImg.addEventListener("click", function (event) {
 
         console.log( 'Avant le if, click = ' + click)
@@ -106,20 +113,20 @@ let erreur7 = false
         
         if (click === 0){
 
-            const in1 = document.createElement('input')
-            in1.type = 'hidden'
-            in1.value = x 
-
-            const in2 = document.createElement('input')
-            in2.type = 'hidden'
-            in2.value = y
-            
+            const Err1x1 = x
+            const Err1y1 = y
 
             const Affcoor1 =document.createElement('p')
             Affcoor1.textContent = "Err1x1 = " + x + "   Err1y1 = " + y
             Affcoor1.style.color = "red"
             Affcoor1.id = 'p1'
             AffErr1.appendChild(Affcoor1)
+
+            object = { "Err1x1" : Err1x1,
+                        "Err1y1" : Err1y1}
+            Tab.push(object)
+
+                        console.log( object)
           
         }
         if (click === 1 ){
@@ -142,12 +149,22 @@ let erreur7 = false
             AffErr1.appendChild(btnValid1)
             let btnVal1 = document.querySelector('.btnVal1')
 
+           PreviImg.style.pointerEvents = "none"
+
+            object = {"Err1x2" : Err1x2, 
+                        "Err1y2" : Err1y2}
+                        Tab.push(object)
+
+                        console.log(object)
+
             btnVal1.addEventListener("click", function(){
                     p1.style.color = "black"
                     Affcoor2.style.color = "black"
                     erreur1 = true
                     btnVal1.remove()
                     btnReco1.remove()
+                    PreviImg.style.pointerEvents = "auto"
+
             })
 
             const btnRecom1 = document.createElement('button')
@@ -163,6 +180,11 @@ let erreur7 = false
                 btnVal1.remove()
                 btnReco1.remove()
 
+                PreviImg.style.pointerEvents = "auto"
+
+                Tab.splice(Tab.length - 2, 2)
+             
+
             })
 
         }
@@ -176,6 +198,10 @@ let erreur7 = false
             Affcoor3.style.color = "red"
             Affcoor3.id = 'p3'
             AffErr2.appendChild(Affcoor3)
+
+            object = { "Err2x1" : Err2x1,
+            "Err2y1" : Err2y1}
+            Tab.push(object)
 
             
 
@@ -200,6 +226,11 @@ let erreur7 = false
             AffErr2.appendChild(btnValid2)
             let btnVal2 = document.querySelector('.btnVal2')
 
+            object = { "Err2x2" : Err2x2,
+            "Err2y2" : Err2y2}
+            Tab.push(object)
+
+            PreviImg.style.pointerEvents = "none"
 
             btnVal2.addEventListener("click", function(){
 
@@ -209,6 +240,7 @@ let erreur7 = false
                     erreur2 = true
                     btnVal2.remove()
                     btnReco2.remove()
+                    PreviImg.style.pointerEvents = "auto"
 
             })
 
@@ -226,6 +258,10 @@ let erreur7 = false
                 p4.remove()
                 btnVal2.remove()
                 btnReco2.remove()
+
+                Tab.splice(Tab.length - 4, 2)
+
+                PreviImg.style.pointerEvents = "auto"
             
             })
         } 
@@ -239,6 +275,10 @@ let erreur7 = false
             Affcoor5.style.color = "red"
             Affcoor5.id = 'p5'
             AffErr3.appendChild(Affcoor5)
+
+            object = { "Err3x1" : Err3x1,
+            "Err3y1" : Err3y1}
+            Tab.push(object)
 
             
 
@@ -262,6 +302,10 @@ let erreur7 = false
             btnValid3.className = 'btnVal3'
             AffErr3.appendChild(btnValid3)
             let btnVal3 = document.querySelector('.btnVal3')
+            object = { "Err3x2" : Err3x2,
+            "Err3y2" : Err3y2}
+            Tab.push(object)
+            PreviImg.style.pointerEvents = "none"
 
 
             btnVal3.addEventListener("click", function(){
@@ -272,6 +316,7 @@ let erreur7 = false
                     erreur3 = true
                     btnVal3.remove()
                     btnReco3.remove()
+                    PreviImg.style.pointerEvents = "auto"
 
             })
 
@@ -289,7 +334,10 @@ let erreur7 = false
                 p6.remove()
                 btnVal3.remove()
                 btnReco3.remove()
-            
+
+                PreviImg.style.pointerEvents = "auto"
+                
+                Tab.splice(Tab.length - 6, 2)
             })
         }        
          if (click === 6 && erreur3 === true){
@@ -302,6 +350,10 @@ let erreur7 = false
             Affcoor7.style.color = "red"
             Affcoor7.id = 'p7'
             AffErr4.appendChild(Affcoor7)
+
+            object = { "Err4x1" : Err4x1,
+            "Err4y1" : Err4y1}
+            Tab.push(object)
 
             
 
@@ -326,6 +378,12 @@ let erreur7 = false
             AffErr4.appendChild(btnValid4)
             let btnVal4 = document.querySelector('.btnVal4')
 
+            PreviImg.style.pointerEvents = "none"
+
+            object = { "Err4x2" : Err4x2,
+            "Err4y2" : Err4y2}
+            Tab.push(object)
+
 
             btnVal4.addEventListener("click", function(){
 
@@ -335,6 +393,8 @@ let erreur7 = false
                     erreur4 = true
                     btnVal4.remove()
                     btnReco4.remove()
+
+                    PreviImg.style.pointerEvents = "auto"
 
             })
 
@@ -352,6 +412,10 @@ let erreur7 = false
                 p8.remove()
                 btnVal4.remove()
                 btnReco4.remove()
+
+                PreviImg.style.pointerEvents = "auto"
+
+                Tab.splice(Tab.length - 8, 2)
             
             })
         }        if (click === 8 && erreur4 === true ){
@@ -364,6 +428,10 @@ let erreur7 = false
             Affcoor9.style.color = "red"
             Affcoor9.id = 'p9'
             AffErr5.appendChild(Affcoor9)
+
+            object = { "Err5x1" : Err5x1,
+            "Err5y1" : Err5y1}
+            Tab.push(object)
 
             
 
@@ -388,6 +456,12 @@ let erreur7 = false
             AffErr5.appendChild(btnValid5)
             let btnVal5 = document.querySelector('.btnVal5')
 
+            PreviImg.style.pointerEvents = "none"
+
+            object = { "Err5x2" : Err5x2,
+            "Err5y2" : Err5y2}
+            Tab.push(object)
+
 
             btnVal5.addEventListener("click", function(){
 
@@ -397,6 +471,8 @@ let erreur7 = false
                     erreur5 = true
                     btnVal5.remove()
                     btnReco5.remove()
+
+                    PreviImg.style.pointerEvents = "auto"
 
             })
 
@@ -414,6 +490,10 @@ let erreur7 = false
                 p10.remove()
                 btnVal5.remove()
                 btnReco5.remove()
+
+                PreviImg.style.pointerEvents = "auto"
+
+                Tab.splice(Tab.length - 10, 2)
             
             })
         }
@@ -427,6 +507,10 @@ let erreur7 = false
             Affcoor11.style.color = "red"
             Affcoor11.id = 'p11'
             AffErr6.appendChild(Affcoor11)
+
+            object = { "Err6x1" : Err6x1,
+            "Err6y1" : Err6y1}
+            Tab.push(object)
 
             
 
@@ -451,6 +535,12 @@ let erreur7 = false
             AffErr6.appendChild(btnValid6)
             let btnVal6 = document.querySelector('.btnVal6')
 
+            PreviImg.style.pointerEvents = "none"
+            
+            object = { "Err6x2" : Err6x2,
+            "Err6y2" : Err6y2}
+            Tab.push(object)
+
 
             btnVal6.addEventListener("click", function(){
 
@@ -460,6 +550,8 @@ let erreur7 = false
                     erreur6 = true
                     btnVal6.remove()
                     btnReco6.remove()
+
+                    PreviImg.style.pointerEvents = "auto"
 
             })
 
@@ -477,6 +569,10 @@ let erreur7 = false
                 p12.remove()
                 btnVal6.remove()
                 btnReco6.remove()
+
+                PreviImg.style.pointerEvents = "auto"
+
+                Tab.splice(Tab.length - 12, 2)
             
             })
         }      
@@ -490,6 +586,10 @@ let erreur7 = false
             Affcoor13.style.color = "red"
             Affcoor13.id = 'p13'
             AffErr7.appendChild(Affcoor13)
+
+            object = { "Err7x1" : Err7x1,
+            "Err7y1" : Err7y1}
+            Tab.push(object)
 
             
 
@@ -514,6 +614,12 @@ let erreur7 = false
             AffErr7.appendChild(btnValid7)
             let btnVal7 = document.querySelector('.btnVal7')
 
+            PreviImg.style.pointerEvents = "none"
+
+            object = { "Err7x2" : Err7x2,
+            "Err7y2" : Err7y2}
+            Tab.push(object)
+
 
             btnVal7.addEventListener("click", function(){
 
@@ -523,6 +629,44 @@ let erreur7 = false
                     erreur7 = true
                     btnVal7.remove()
                     btnReco7.remove()
+
+                    PreviImg.style.pointerEvents = "auto"
+
+                    const validFinal = document.createElement('button')
+                    validFinal.textContent = 'Valider et enregistrer'
+                    validFinal.id = 'validFinal'
+                    CreateJson.appendChild(validFinal)
+                   
+
+    
+                    PreviImg.style.pointerEvents = "none"
+
+                    let objectFinal = {};
+
+                for(const objet of Tab){
+                    objectFinal = {...objectFinal, ...objet}
+
+                    console.log( "test ojt final = " + JSON.stringify(objectFinal))
+                    
+                    let valid = document.querySelector('#validFinal')
+                    
+                    valid.addEventListener("click", function(){
+                        console.log( "test ojt final 2 = " + JSON.stringify(objectFinal))
+                        fetch("/Jeux/SeptDiff/Asset/7diff.json")
+                        .then(response => response.json())
+                            .then(jsonData => {
+                                    let tabFinal = jsonData.tab
+
+                                    console.log(tabFinal)
+
+                                    // tabFinal.push(JSON.stringify(objectFinal))
+                                
+                                    // const newData = JSON.stringify(jsonData)
+                            })
+                        })
+                    
+            }
+    
 
             })
 
@@ -540,24 +684,14 @@ let erreur7 = false
                 p14.remove()
                 btnVal7.remove()
                 btnReco7.remove()
+
+                PreviImg.style.pointerEvents = "auto"
+
+                Tab.splice(Tab.length - 14, 2)
             
             })
         }
-        if ( erreur1 ===true &&
-            erreur2 === true &&
-            erreur3 === true &&
-            erreur4 === true &&
-            erreur5 === true &&
-            erreur6 === true &&
-            erreur7 === true){
-                const validFinal = document.createElement('button')
-                validFinal.textContent = 'Valider et enregistrer'
-                CreateJson.appendChild(validFinal)
-                console.log (Err2x1)
-                let test = parseInt(document.querySelector('#p1').value)
-                console.log(test)
-            }
-
+        
 
 
 
@@ -574,6 +708,8 @@ let erreur7 = false
         if(erreur5 === true){console.log('erreur5 = true')}
         if(erreur6 === true){console.log('erreur6 = true')}
         if(erreur7 === true){console.log('erreur7 = true')}
+        console.log(object)
+        console.log(Tab)
 
     })
 
