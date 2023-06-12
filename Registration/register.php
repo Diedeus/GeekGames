@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style/register.css">
   <script src="../script/liste.js" defer></script>
+  <script src="./script/register.js" defer></script>
   <title>GeekGames - Inscription</title>
 </head>
 
@@ -65,9 +66,11 @@
       <form class="box" action="" method="post">
         <h1>PAGE D'INSCRIPTION</h1>
 
+        <div class="nameform">
         <input type="text" class="nomprenom" name="Nom" placeholder="Votre nom :" required />
 
         <input type="text" class="nomprenom" name="Prenom" placeholder="Votre prenom" required />
+        </div>
 
         <input type="text" class="box-input" name="Nom_utilisateur" placeholder="Nom d'utilisateur" required />
 
@@ -79,9 +82,13 @@
 
         <input type="password" class="box-input" name="Mot_de_passe" placeholder="Mot de passe" required />
 
-        <input type="submit" name="submit" value="S'inscrire" class="boutonenvoyer" />
+        <div class="politique">
 
-        <p class="box-register">Vous êtes déjà inscrit?
+        <input type="submit" name="submit" value="S'inscrire" class="boutonenvoyer" />
+    
+        <input type="checkbox" class="checkpoli"> <label for=""><a href="../politique/politique.php"><span>J'accepte la </span>politique de confidentialité</a></label></div>
+
+        <p class="box-register">Vous êtes déjà inscrit ?
           <a href="../index.php">Connectez-vous !</a></p>
       </form>
       <?php } ?>

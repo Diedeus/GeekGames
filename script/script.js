@@ -171,8 +171,18 @@ closelogin.addEventListener("click", function () {
     loginuser.style.visibility = "hidden";
 });
 
+let openmdpoublie = document.querySelector('.mdpoublie')
+let formmdpoublie = document.querySelector('.mdpperdu')
+let closemdpperdu = document.querySelector('.closemdpperdu')
 
+openmdpoublie.addEventListener('click',function(){
+    loginuser.style.visibility = "hidden";
+    formmdpoublie.style.visibility = "visible";
+})
 
+closemdpperdu.addEventListener("click", function () {
+    formmdpoublie.style.visibility = "hidden";
+});
 
 
 function refresh(x) {

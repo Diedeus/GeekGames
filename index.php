@@ -17,6 +17,7 @@
 
 <body>
     <?php
+    require('Registration/config.php');
     session_save_path("./tmp");
     session_start(); ?>
 
@@ -102,34 +103,39 @@
         <div class="clear"></div>
         <span class="barre"></span>
 
-        <div class="rondlogo">
-            <article class="span">
-                <span class="rond rondun"></span>
-                <span class="rond ronddeux"></span>
-                <span class="rond rondtrois"></span>
-                <span class="rond rondquatre"></span>
-                <span class="rond rondcinq"></span>
-                <span class="rond rondsix"></span>
-            </article>
-            <article class="logotexte">
-                <img src="asset/logogeekgame.png" alt="">
-                <p class="textlogo">Bien le bonjour jeune aventurier et bienvenue sur GEEKGAME !<br> Ici tu trouveras plusieurs mini jeux du plus simple comme le Quizz en <br>passant par des jeux plus complexe comme le Flappy bird ou encore le Snake .. <br>
-                    Entraîne toi et compare tes scores avec ceux de tes amis et devient le MEILLEUR DES GEEKS !
-                    <br>
-                </p>
-            </article>
+        <section class="testvideo">
+            <div class="rondlogo">
+                <article class="span">
+                    <span class="rond rondun"></span>
+                    <span class="rond ronddeux"></span>
+                    <span class="rond rondtrois"></span>
+                    <span class="rond rondquatre"></span>
+                    <span class="rond rondcinq"></span>
+                    <span class="rond rondsix"></span>
+                </article>
+                <article class="logotexte">
+                    <img src="asset/logogeekgame.png" alt="">
+                    <p class="textlogo">Bien le bonjour jeune aventurier et bienvenue sur GEEKGAME !<br> Ici tu trouveras plusieurs mini jeux du plus simple comme le Quizz en <br>passant par des jeux plus complexe comme le Flappy bird ou encore le Snake .. <br>
+                        Entraîne toi et compare tes scores avec ceux de tes amis et devient le MEILLEUR DES GEEKS !
+                        <br>
+                    </p>
+                </article>
 
-            <article class="textejeu">
-                <h1 id="titrejeu"></h1>
-                <p class="descrijeu" id="descijeuid"></p>
-                <a id="aquizz" href="./Jeux/Quizz/Quizz.php" style="display:block">Jouer au Quizz</a>
-                <a id="a7diff" href="./Jeux/SeptDiff/7diff.php" style="display:none">Jouer au Sept Diff</a>
-                <a id="ajusteprix" href="./Jeux/Juste_Prix/justeprix.php" style="display:none">Jouer au juste prix</a>
-                <a id="aflappybird" href="" style="display:none">Jouer au flappy bird</a>
-                <a id="asnake" href="./index.php" style="display:none">Jouer au snake</a>
-                <a id="apingpong" href="./index.php" style="display:none">Jouer au ping pong</a>
-            </article>
-        </div>
+                <article class="textejeu">
+                    <h1 id="titrejeu"></h1>
+                    <p class="descrijeu" id="descijeuid"></p>
+                    <a id="aquizz" href="./Jeux/Quizz/Quizz.php" style="display:block">Jouer au Quizz</a>
+                    <a id="a7diff" href="./Jeux/SeptDiff/7diff.php" style="display:none">Jouer au Sept Diff</a>
+                    <a id="ajusteprix" href="./Jeux/Juste_Prix/justeprix.php" style="display:none">Jouer au juste prix</a>
+                    <a id="aflappybird" href="" style="display:none">Jouer au flappy bird</a>
+                    <a id="asnake" href="./index.php" style="display:none">Jouer au snake</a>
+                    <a id="apingpong" href="./index.php" style="display:none">Jouer au ping pong</a>
+                </article>
+            </div>
+            <!-- <video autoplay muted loop class="videoquizz">
+  <source src="./asset/Buzzez pour de vrai ! - Quiz Room.mp4">
+</video> -->
+        </section>
 
         <section class="minijeu">
             <span></span>
@@ -174,7 +180,7 @@
     <section class="login">
         <div class="connexion">
             <?php
-            require('Registration/config.php');
+
 
 
             if (isset($_POST['Nom_utilisateur'])) {
@@ -211,7 +217,8 @@
             <form class="box" action="" method="post" name="login">
                 <h2 class="box-title">CONNEXION</h2>
                 <input type="text" class="box-input" name="Nom_utilisateur" placeholder="Nom d'utilisateur">
-                <input type="password" class="box-input" name="Mot_de_passe" placeholder="Mot de passe">
+                <input type="password" class="passwordinput" name="Mot_de_passe" placeholder="Mot de passe">
+                <p class="mdpoublie">Mot de passe oublié ?</p>
                 <input type="submit" value="Se connecter" name="submit" class="connecter">
                 <?php if (!empty($message)) { ?>
                     <p class="errorMessage"><?php echo $message; ?></p>
@@ -225,6 +232,75 @@
         <img class="closelogin" src="asset/croix.png" alt="">
     </section>
 
+<section class="mdpperdu">
+    <form action="" method="post" class="formmdpperdu">
+        <h2>MODIFIER LE MOT DE PASSE</h2>
+        <input type="hidden" name="email_from" value="cgeekgames@gmail.com">
+        <input type="email" name="email_to" placeholder="Votre adresse mail :">
+        <input class="submitmdpmodif" type="submit" value="Modifier le mot de passe">
+        <img src="asset/logogeekgame.png" alt="">
+            <p class="inscriptionhome">Vous n’avez pas de compte ?
+                <a href="Registration/register.php">Inscrivez vous !</a>
+            </p>
+    </form>
+    <img class="closemdpperdu" src="asset/croix.png" alt="">
+    </section>
+
+
+    <?php
+require './asset/PHPMailer-master/src/Exception.php';
+require './asset/PHPMailer-master/src/PHPMailer.php';
+require './asset/PHPMailer-master/src/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+if (isset($_POST['email_to'])) {
+    // Création d'une nouvelle instance de PHPMailer
+    $mail = new PHPMailer(true);
+
+    try {
+        // Configuration du serveur SMTP
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com'; // Remplacez par l'adresse de votre serveur SMTP
+        $mail->SMTPAuth = true;
+        $mail->Username = 'cgeekgames@gmail.com'; // Remplacez par votre nom d'utilisateur SMTP
+        $mail->Password = 'ovgohazddioabzfx'; // Remplacez par votre mot de passe SMTP
+        $mail->SMTPSecure = 'tls'; // Utilisez 'tls' ou 'ssl' en fonction de votre configuration
+        $mail->Port = 587; // Port SMTP
+
+        // Paramètres de l'expéditeur
+        $mail->setFrom('cgeekgames@gmail.com', 'GeekGames'); // Remplacez par votre adresse e-mail et votre nom
+
+        // Paramètres du destinataire
+        $emailTo = $_POST['email_to'];
+        $mail->addAddress($emailTo); // Remplacez par l'adresse e-mail et le nom du destinataire
+        
+        // Générer un token aléatoire
+        $token = bin2hex(random_bytes(32));
+        
+        // Préparer la requête SQL pour remplacer le token dans la base de données
+        $sql = "UPDATE users SET token = '$token' WHERE Email = '$emailTo'";
+        
+        // Exécution de la requête
+        if ($conn->query($sql) === TRUE) {
+            // Contenu du mail
+            $mail->isHTML(true);
+            $mail->Subject = 'Modifier le mot de passe'; // Objet du mail
+            $mail->Body = "Cliquez sur le lien suivant pour réinitialiser votre mot de passe : <a href='http://" . $_SERVER['HTTP_HOST'] . "/changemdp/changemdp.php?token=" . $token . "'>Réinitialiser le mot de passe</a>";
+            
+            // Envoi du mail
+            $mail->send();
+            echo 'Le mail a été envoyé avec succès !';
+        } else {
+            echo "Une erreur est survenue lors de l'exécution de la requête SQL : " . $conn->error;
+        }
+    } catch (Exception $e) {
+        echo "Une erreur est survenue lors de l'envoi du mail : {$mail->ErrorInfo}";
+    }
+}
+?>
 
 </body>
 

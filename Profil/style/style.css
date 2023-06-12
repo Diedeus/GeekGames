@@ -402,6 +402,7 @@ section.container_allprofil div.droite div.bas div.update div.score div.hautscor
 }
 section.container_allprofil div.droite div.bas div.update div.score div.hautscore article p.bestscore {
   font-weight: 200;
+  text-transform: none;
   font-size: 24px;
 }
 section.container_allprofil div.droite div.bas div.update div.score div.hautscore article p.bestscore span {
