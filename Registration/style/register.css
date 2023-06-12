@@ -290,7 +290,7 @@ header#inscription div.navinscri div.right a.design:hover {
   background-color: white;
   color: #2b2064;
 }
-header#inscription div.navinscri div.right button.log {
+header#inscription div.navinscri div.right a.log {
   color: white;
   background-color: #3c2d87;
   line-height: 40px;
@@ -303,7 +303,7 @@ header#inscription div.navinscri div.right button.log {
   font-family: 'montserrat', sans-serif;
   border: 0;
 }
-header#inscription div.navinscri div.right button.log:hover {
+header#inscription div.navinscri div.right a.log:hover {
   background-color: #2b2064;
 }
 header#inscription div.navinscri div.right a.sign {

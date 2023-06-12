@@ -151,9 +151,9 @@ version DRAGON BALL ! un jeu addictif et plein de défis !</p>
             } else {
             ?>
                 <img class="icone" src="../asset/icone-mario.png" alt="">
-                <button class="log">
+                <a class="log">
                     <p>Se connecter</p>
-                </button>
+                </a>
                 <a class="sign" href="../Registration/register.php">S'inscrire</a>
 
             <?php

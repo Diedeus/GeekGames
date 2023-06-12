@@ -246,3 +246,70 @@ span.barre {
   background-color: white;
   margin: 0 auto 50px;
 }
+section.login {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.858);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.login div.connexion {
+  background-color: white;
+  width: 550px;
+  height: 540px;
+  padding: 110px 95px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section.login div.connexion form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 63px;
+}
+section.login div.connexion form h2 {
+  color: #393795;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+section.login div.connexion form input {
+  background-color: #d2d2d2;
+}
+section.login div.connexion form input.connecter {
+  text-indent: 0;
+  background-color: #393795;
+  color: white;
+  cursor: pointer;
+  width: 40%;
+  height: 40px;
+}
+section.login div.connexion form input.connecter:hover {
+  background-color: #2b2064;
+}
+section.login div.connexion form p {
+  font-size: 13px;
+}
+section.login div.connexion img {
+  width: 110px;
+  margin-bottom: 5px;
+}
+section.login div.connexion p.inscriptionhome {
+  color: #191919;
+}
+section.login div.connexion p.inscriptionhome a {
+  color: #393795;
+}
+section.login img.closelogin {
+  width: 25px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+}

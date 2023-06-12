@@ -1,6 +1,5 @@
 @charset "utf-8";
 
-
 header,
 section,
 footer,
@@ -9,7 +8,7 @@ nav,
 main,
 article,
 figure {
-    display: block; 
+  display: block;
 }
 
 div,
@@ -33,25 +32,25 @@ figure,
 figcaption,
 class,
 img {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    height: 100%;
-    border: 0 solid transparent;
-    font-size: 16px;
-    margin: 0;
-    min-height: 100%;
-    padding: 0;
-    width: 100%;
-    display: block;
-    font-family: 'montserrat', sans-serif;
+  height: 100%;
+  border: 0 solid transparent;
+  font-size: 16px;
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+  width: 100%;
+  display: block;
+  font-family: "montserrat", sans-serif;
 }
 
 img,
@@ -61,452 +60,505 @@ canvas,
 video,
 audio,
 picture {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 img {
-    display: block;
+  display: block;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 input,
 textarea {
-    width: 100%;
-    height: 50px;
-    margin-bottom: 15px;
-    border: 0;
-    line-height: 40px;
-    text-indent: 20px;
-    outline: none;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 15px;
+  border: 0;
+  line-height: 40px;
+  text-indent: 20px;
+  outline: none;
 }
 .clear {
-    display: block;
-    zoom: 1;
+  display: block;
+  zoom: 1;
 
-    &:after {
-        content: " ";
-        display: block;
-        font-size: 0;
-        height: 0;
-        clear: both;
-        visibility: hidden;
-    }
+  &:after {
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
 }
 
 header .accueil {
-    display: flex;
-  }
-  header .jeujp{
-    display: none;
-  }
-
-header{
-    width: 100%;
-    height: 100vh;
-    background-color: #3c2d87;
-    display: flex;
-    section.accueil{
-        div.startgame{
-            width: 505px;
-            h1{
-                margin-bottom: 0;
-            }
-            P{
-                color: white;
-                margin-bottom: 10px;
-            }
-            button{
-                background-color: #241a5a;
-                transition: all 0.5s;
-                color: white;
-                border: 0;
-                &:hover{
-                    background-color: #181140;
-                }
-            }
-        }
-    }
-    .jeujp{
-        display: none;
-    }
-    .corps{
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        position: relative;
-        width: 50%;
-        height: 100%;
-        background-image: url(../../../asset/backjusteprix.jpg);
-        background-position: center;
-        h1{
-            font-size: 40px;
-            color: white;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        input{
-            width: 500px;
-            height: 50px;
-        }
-         button {
-                width: 500px;
-                height: 40px;
-                cursor: pointer;
-                margin-bottom: 50px;
-            }
-            p{
-                color: white;
-                margin-bottom: 10px;
-            }
-            p.affichscore{
-                font-weight: 800;
-                font-size: 40px;
-            }
-        
-        span {
-            height: 10px;
-            width: 100%;
-            background-color: #161616;
-            display: block;
-            position: absolute;
-            bottom: 0;
-        }
-    
-    }
-    div.right{
-        width: 50%;
-        height: 100%;
-        .imageprix{
-            width: 100%;
-            height: 70%;
-            background-color: #161616;
-            display: flex;
-            flex-direction: column-reverse;
-            justify-content: center;
-            align-items: center;
-            p.trouvezprix{
-                color: white;
-                font-size: 25px;
-                margin-bottom: 15px;
-                display: none;
-            }
-            img{
-                width: 50%;
-            }
-        }
-
-        .reponse {
-            background-color: white;
-            height: 30%;
-            // padding: 10px 8px ;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            p {
-                background-color: #3c2d87;
-                line-height: 60px;
-                height: 23%;
-                color: white;
-                width: 99%;
-                text-align: center;
-                margin: 0.3% 0;
-            }
-        }
-    }
-
-    div.navinscri{
-        position: absolute;
-        top: 0;
-        width: 100%;
-        nav.home{
-            z-index: 1000;
-            float: left;
-            margin-top: 70px;
-            margin-left: 70px;
-            ul{
-                display: flex;
-                li{
-                    list-style-type: none;
-                    margin-right: 20px;
-                    a{
-                        padding: 10px 15px;
-                        color: white;
-                        font-size: 18px;
-                        font-weight: 600;
-                        transition: all 0.5s;
-                        &:hover{
-                            background-color: white;
-                            color: #3c2d87;
-                        }
-                    }
-                    a.on {
-                        background-color: white;
-                        color: #3c2d87;
-                    }
-                }
-            }
-        }
-        div.navright{
-            margin-top: 65px;
-            margin-right: 115px;
-            margin-bottom: 15px;
-            float: right;
-            display: flex;
-            #searchbar{
-                width:300px ;
-                height: 40px;
-                outline: none;
-                margin: 0;
-            }
-            ul.searchjeu{
-                position: absolute;
-                top: 107px;
-                width: 300px;
-                background-color: white;
-                // transition: all 0.1s;
-                visibility: hidden;
-                opacity: 0;
-                li{
-                    background-color: white;
-                    list-style: none;
-                    padding: 10px;
-                    height: auto;
-                    transition: all 0.5s;
-                    &:hover{
-                        background-color: #e2e2e2;
-                    }
-                    a{
-                        display: flex;
-                        justify-content: space-between;
-                        img{
-                            margin-right: 5px;
-                        }
-                        article{
-                            width: 59%;
-                            h3{
-                                font-size: 13px;
-                                margin-bottom: 3px;
-                                font-weight: 800;
-                            }
-                            p{
-                                font-size: 9px;
-                            }
-                        }
-                    }
-                }
-                span{
-                    display: block;
-                    width: 100%;
-                    margin: 0 auto;
-                    height: 1px;
-                    background-color: #c5c5c5;
-                }
-        
-            }
-            img.icone{
-                width:40px ;
-                height: 40px;
-                background-color: #2b2064;
-                padding: 7px;
-                margin-left: 50px;
-            }
-            a.user {
-                color: white;
-                background-color: #3c2d87;
-                line-height: 40px;
-                padding: 0 10px;
-                transition: all 0.5s;
-    
-                border: 0;
-    
-                &:hover {
-                    background-color: #2b2064;
-                }
-            }
-            button.user {
-                font-family: montserrat;
-                color: white;
-                background-color: #3c2d87;
-                line-height: 40px;
-                padding: 0 10px;
-                transition: all 0.5s;
-                cursor: pointer;
-                margin-right: 10px;
-                border: 0;
-    
-                &:hover {
-                    background-color: #2b2064;
-                }
-            }
-            a.sign{
-                color: white;
-                line-height: 40px;
-                padding: 0 10px;
-                transition: all 0.5s;
-                &:hover{
-                    background-color: white;
-                        color: #3c2d87;
-                }
-            }
-            a.btnadmin{
-                color: white;
-                line-height: 40px;
-                padding: 0 10px;
-                background-color: red;
-                transition: all 0.5s;
-                &:hover{
-                    background-color: rgb(182, 2, 2);
-                }
-            }
-            a.design{
-                color: white;
-                font-size: 16px;
-                line-height: 40px;
-                padding: 0 10px;
-                margin-left: 10px;
-                transition: all 0.5s;
-                &:hover{
-                    background-color: white;
-                    color: #2b2064;
-                }
-            }
-        }
-        span.barre{
-            display: block;
-            height: 2px;
-            width: 92.5%;
-            background-color: white;
-            margin: 0 auto;
-        }
-    }
-
+  display: flex;
+}
+header .jeujp {
+  display: none;
 }
 
+header {
+  width: 100%;
+  height: 100vh;
+  background-color: #3c2d87;
+  display: flex;
+  section.accueil {
+    div.startgame {
+      width: 505px;
+      h1 {
+        margin-bottom: 0;
+      }
+      P {
+        color: white;
+        margin-bottom: 10px;
+      }
+      button {
+        background-color: #241a5a;
+        transition: all 0.5s;
+        color: white;
+        border: 0;
+        &:hover {
+          background-color: #181140;
+        }
+      }
+    }
+  }
+  .jeujp {
+    display: none;
+  }
+  .corps {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-image: url(../../../asset/backjusteprix.jpg);
+    background-position: center;
+    h1 {
+      font-size: 40px;
+      color: white;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    input {
+      width: 500px;
+      height: 50px;
+    }
+    button {
+      width: 500px;
+      height: 40px;
+      cursor: pointer;
+      margin-bottom: 50px;
+    }
+    p {
+      color: white;
+      margin-bottom: 10px;
+    }
+    p.affichscore {
+      font-weight: 800;
+      font-size: 40px;
+    }
 
+    span {
+      height: 10px;
+      width: 100%;
+      background-color: #161616;
+      display: block;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+  div.right {
+    width: 50%;
+    height: 100%;
+    .imageprix {
+      width: 100%;
+      height: 70%;
+      background-color: #161616;
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      p.trouvezprix {
+        color: white;
+        font-size: 25px;
+        margin-bottom: 15px;
+        display: none;
+      }
+      img {
+        width: 50%;
+      }
+    }
+
+    .reponse {
+      background-color: white;
+      height: 30%;
+      // padding: 10px 8px ;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p {
+        background-color: #3c2d87;
+        line-height: 60px;
+        height: 23%;
+        color: white;
+        width: 99%;
+        text-align: center;
+        margin: 0.3% 0;
+      }
+    }
+  }
+
+  div.navinscri {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    nav.home {
+      z-index: 1000;
+      float: left;
+      margin-top: 70px;
+      margin-left: 70px;
+      ul {
+        display: flex;
+        li {
+          list-style-type: none;
+          margin-right: 20px;
+          a {
+            padding: 10px 15px;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.5s;
+            &:hover {
+              background-color: white;
+              color: #3c2d87;
+            }
+          }
+          a.on {
+            background-color: white;
+            color: #3c2d87;
+          }
+        }
+      }
+    }
+    div.navright {
+      margin-top: 65px;
+      margin-right: 115px;
+      margin-bottom: 15px;
+      float: right;
+      display: flex;
+      #searchbar {
+        width: 300px;
+        height: 40px;
+        outline: none;
+        margin: 0;
+      }
+      ul.searchjeu {
+        position: absolute;
+        top: 107px;
+        width: 300px;
+        background-color: white;
+        // transition: all 0.1s;
+        visibility: hidden;
+        opacity: 0;
+        li {
+          background-color: white;
+          list-style: none;
+          padding: 10px;
+          height: auto;
+          transition: all 0.5s;
+          &:hover {
+            background-color: #e2e2e2;
+          }
+          a {
+            display: flex;
+            justify-content: space-between;
+            img {
+              margin-right: 5px;
+            }
+            article {
+              width: 59%;
+              h3 {
+                font-size: 13px;
+                margin-bottom: 3px;
+                font-weight: 800;
+              }
+              p {
+                font-size: 9px;
+              }
+            }
+          }
+        }
+        span {
+          display: block;
+          width: 100%;
+          margin: 0 auto;
+          height: 1px;
+          background-color: #c5c5c5;
+        }
+      }
+      img.icone {
+        width: 40px;
+        height: 40px;
+        background-color: #2b2064;
+        padding: 7px;
+        margin-left: 50px;
+      }
+      a.user {
+        color: white;
+        background-color: #3c2d87;
+        line-height: 40px;
+        padding: 0 10px;
+        transition: all 0.5s;
+
+        border: 0;
+
+        &:hover {
+          background-color: #2b2064;
+        }
+      }
+      button.user {
+        font-family: montserrat;
+        color: white;
+        background-color: #3c2d87;
+        line-height: 40px;
+        padding: 0 10px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin-right: 10px;
+        border: 0;
+
+        &:hover {
+          background-color: #2b2064;
+        }
+      }
+      a.sign {
+        color: white;
+        line-height: 40px;
+        padding: 0 10px;
+        transition: all 0.5s;
+        &:hover {
+          background-color: white;
+          color: #3c2d87;
+        }
+      }
+      a.btnadmin {
+        color: white;
+        line-height: 40px;
+        padding: 0 10px;
+        background-color: red;
+        transition: all 0.5s;
+        &:hover {
+          background-color: rgb(182, 2, 2);
+        }
+      }
+      a.design {
+        color: white;
+        font-size: 16px;
+        line-height: 40px;
+        padding: 0 10px;
+        margin-left: 10px;
+        transition: all 0.5s;
+        &:hover {
+          background-color: white;
+          color: #2b2064;
+        }
+      }
+    }
+    span.barre {
+      display: block;
+      height: 2px;
+      width: 92.5%;
+      background-color: white;
+      margin: 0 auto;
+    }
+  }
+}
 
 section.win {
-    position: relative;
-    display: none;
-    top: -100%;
+  position: relative;
+  display: none;
+  top: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: #0b0b0bf6;
+  overflow: hidden;
+  video {
+    width: 120%;
+    height: 116%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    opacity: 85%;
+  }
+
+  div.affichage_win {
+    position: absolute;
+    z-index: 10;
     width: 100%;
     height: 100vh;
-    background-color: #0b0b0bf6;
-    overflow: hidden;
-    video {
-        width: 120%;
-        height: 116%;
-        position: absolute;
-        top: 0;
-        z-index: 1;
-        opacity: 85%;
-    }
+    animation: showscore 1s linear;
 
-
-    div.affichage_win {
-        position: absolute;
-        z-index: 10;
-        width: 100%;
-        height: 100vh;
-        animation: showscore 1s linear;
-        
-
-        div.position_win {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            img{
-                margin-bottom: 10px;
-            }
-            p.titrescore{
-                color: white;
-                font-size: 30px;
-            }
-            p.scorejp{
-                color: white;
-                font-size: 60px;
-                margin-bottom: 30px;
-                font-weight: 800;
-            }
-            article.bouton_win{
-                width: 50%;
-                display: flex;
-                justify-content: center;
-                button{
-                    width: 30%;
-                    height: 50px;
-                    border: 0;
-                    cursor: pointer;
-                    transition: all 0.5s;
-                    &:hover{
-                        background-color: rgb(193, 193, 193);
-                    }
-                }
-                button.reco{
-                    margin: 0 15px;
-                    background-color: #ffa800;
-                    color: white;
-                    transition:all 0.5s;
-                    &:hover{
-                        background-color: #d38d02;
-                    }
-                }
-                form{
-                    width: 30%;
-                    input{
-                        text-indent: 0;
-                        cursor: pointer;
-                        transition: all 0.5s;
-                        &:hover{
-                            background-color: rgb(193, 193, 193);
-                        }
-                    }
-                }
-            }
+    div.position_win {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      img {
+        margin-bottom: 10px;
+      }
+      p.titrescore {
+        color: white;
+        font-size: 30px;
+      }
+      p.scorejp {
+        color: white;
+        font-size: 60px;
+        margin-bottom: 30px;
+        font-weight: 800;
+      }
+      article.bouton_win {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        button {
+          width: 30%;
+          height: 50px;
+          border: 0;
+          cursor: pointer;
+          transition: all 0.5s;
+          &:hover {
+            background-color: rgb(193, 193, 193);
+          }
         }
+        button.reco {
+          margin: 0 15px;
+          background-color: #ffa800;
+          color: white;
+          transition: all 0.5s;
+          &:hover {
+            background-color: #d38d02;
+          }
+        }
+        form {
+          width: 30%;
+          input {
+            text-indent: 0;
+            cursor: pointer;
+            transition: all 0.5s;
+            &:hover {
+              background-color: rgb(193, 193, 193);
+            }
+          }
+        }
+      }
     }
+  }
 }
 
 @keyframes wintopslide {
-    0%{
-        left: -100%;
-    }
-    100%{
-        left: 0;
-    }
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
 }
 
 @keyframes winbotslide {
-    0%{
-        right: -100%;
-    }
-    100%{
-        right: 0;
-    }
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
+  }
 }
 @keyframes showscore {
-    0%{
-        opacity: 0;
-    }
-    20%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 100;
-    }
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
 }
 
-
-
-
-
-
-
-
+section.login {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.858);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div.connexion {
+    background-color: white;
+    width: 550px;
+    height: 540px;
+    padding: 110px 95px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 63px;
+      h2 {
+        color: #393795;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 800;
+        margin-bottom: 25px;
+      }
+      input {
+        background-color: #d2d2d2;
+      }
+      input.connecter {
+        text-indent: 0;
+        background-color: #393795;
+        color: white;
+        cursor: pointer;
+        width: 40%;
+        height: 40px;
+        &:hover {
+          background-color: #2b2064;
+        }
+      }
+      p {
+        font-size: 13px;
+      }
+    }
+    img {
+      width: 110px;
+      margin-bottom: 5px;
+    }
+    p.inscriptionhome {
+      color: #191919;
+      a {
+        color: #393795;
+      }
+    }
+  }
+  img.closelogin {
+    width: 25px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+  }
+}
