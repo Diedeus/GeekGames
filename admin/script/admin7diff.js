@@ -652,17 +652,20 @@ let erreur7 = false
                     
                     valid.addEventListener("click", function(){
                         console.log( "test ojt final 2 = " + JSON.stringify(objectFinal))
-                        fetch("/Jeux/SeptDiff/Asset/7diff.json")
-                        .then(response => response.json())
+                        fetch("http://localhost:4000/Jeux/SeptDiff/Asset/7diff.json")
+                            .then(response => response.json())
                             .then(jsonData => {
-                                    let tabFinal = jsonData.tab
 
-                                    console.log(tabFinal)
+                                for (let i = 0; i < jsonData.length; i++) {
+                                    console.log("Objet", i + 1, ":", JSON.stringify(jsonData[i]));
+                                }
 
-                                    // tabFinal.push(JSON.stringify(objectFinal))
-                                
-                                    // const newData = JSON.stringify(jsonData)
-                            })
+                                jsonData.push(objectFinal)
+
+                                let jsonDataString = JSON.stringify(jsonData)
+                                console.log("jsonDatastring = " + jsonDataString)
+
+                                })
                         })
                     
             }
