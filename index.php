@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <script src="Script/Script.js" defer></script>
     <script src="Script/liste.js" defer></script>
+    <script src="Script/error.js" defer></script>
 
 
 </head>
@@ -132,9 +133,6 @@
                     <a id="apingpong" href="./index.php" style="display:none">Jouer au ping pong</a>
                 </article>
             </div>
-            <!-- <video autoplay muted loop class="videoquizz">
-  <source src="./asset/Buzzez pour de vrai ! - Quiz Room.mp4">
-</video> -->
         </section>
 
         <section class="minijeu">
@@ -232,75 +230,112 @@
         <img class="closelogin" src="asset/croix.png" alt="">
     </section>
 
-<section class="mdpperdu">
-    <form action="" method="post" class="formmdpperdu">
-        <h2>MODIFIER LE MOT DE PASSE</h2>
-        <input type="hidden" name="email_from" value="cgeekgames@gmail.com">
-        <input type="email" name="email_to" placeholder="Votre adresse mail :">
-        <input class="submitmdpmodif" type="submit" value="Modifier le mot de passe">
-        <img src="asset/logogeekgame.png" alt="">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <section class="mdpperdu">
+        <form action="" method="post" class="formmdpperdu">
+            <h2>MODIFIER LE MOT DE PASSE</h2>
+            <input type="hidden" name="email_from" value="cgeekgames@gmail.com">
+            <input type="email" name="email_to" placeholder="Votre adresse mail :">
+            <input class="submitmdpmodif" type="submit" value="Modifier le mot de passe">
+            <img src="asset/logogeekgame.png" alt="">
             <p class="inscriptionhome">Vous n’avez pas de compte ?
                 <a href="Registration/register.php">Inscrivez vous !</a>
             </p>
-    </form>
-    <img class="closemdpperdu" src="asset/croix.png" alt="">
+        </form>
+        <img class="closemdpperdu" src="asset/croix.png" alt="">
     </section>
-
-
     <?php
-require './asset/PHPMailer-master/src/Exception.php';
-require './asset/PHPMailer-master/src/PHPMailer.php';
-require './asset/PHPMailer-master/src/SMTP.php';
+    require './asset/PHPMailer-master/src/Exception.php';
+    require './asset/PHPMailer-master/src/PHPMailer.php';
+    require './asset/PHPMailer-master/src/SMTP.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
 
-if (isset($_POST['email_to'])) {
-    // Création d'une nouvelle instance de PHPMailer
-    $mail = new PHPMailer(true);
+    if (isset($_POST['email_to'])) {
+        // Création d'une nouvelle instance de PHPMailer
+        $mail = new PHPMailer(true);
 
-    try {
-        // Configuration du serveur SMTP
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com'; // Remplacez par l'adresse de votre serveur SMTP
-        $mail->SMTPAuth = true;
-        $mail->Username = 'cgeekgames@gmail.com'; // Remplacez par votre nom d'utilisateur SMTP
-        $mail->Password = 'ovgohazddioabzfx'; // Remplacez par votre mot de passe SMTP
-        $mail->SMTPSecure = 'tls'; // Utilisez 'tls' ou 'ssl' en fonction de votre configuration
-        $mail->Port = 587; // Port SMTP
+        try {
+            // Configuration du serveur SMTP
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com'; // Remplacez par l'adresse de votre serveur SMTP
+            $mail->SMTPAuth = true;
+            $mail->Username = 'cgeekgames@gmail.com'; // Remplacez par votre nom d'utilisateur SMTP
+            $mail->Password = 'ovgohazddioabzfx'; // Remplacez par votre mot de passe SMTP
+            $mail->SMTPSecure = 'tls'; // Utilisez 'tls' ou 'ssl' en fonction de votre configuration
+            $mail->Port = 587; // Port SMTP
 
-        // Paramètres de l'expéditeur
-        $mail->setFrom('cgeekgames@gmail.com', 'GeekGames'); // Remplacez par votre adresse e-mail et votre nom
+            // Paramètres de l'expéditeur
+            $mail->setFrom('cgeekgames@gmail.com', 'GeekGames'); // Remplacez par votre adresse e-mail et votre nom
 
-        // Paramètres du destinataire
-        $emailTo = $_POST['email_to'];
-        $mail->addAddress($emailTo); // Remplacez par l'adresse e-mail et le nom du destinataire
-        
-        // Générer un token aléatoire
-        $token = bin2hex(random_bytes(32));
-        
-        // Préparer la requête SQL pour remplacer le token dans la base de données
-        $sql = "UPDATE users SET token = '$token' WHERE Email = '$emailTo'";
-        
-        // Exécution de la requête
-        if ($conn->query($sql) === TRUE) {
-            // Contenu du mail
-            $mail->isHTML(true);
-            $mail->Subject = 'Modifier le mot de passe'; // Objet du mail
-            $mail->Body = "Cliquez sur le lien suivant pour réinitialiser votre mot de passe : <a href='http://" . $_SERVER['HTTP_HOST'] . "/changemdp/changemdp.php?token=" . $token . "'>Réinitialiser le mot de passe</a>";
-            
-            // Envoi du mail
-            $mail->send();
-            echo 'Le mail a été envoyé avec succès !';
-        } else {
-            echo "Une erreur est survenue lors de l'exécution de la requête SQL : " . $conn->error;
+            // Paramètres du destinataire
+            $emailTo = $_POST['email_to'];
+            $mail->addAddress($emailTo); // Remplacez par l'adresse e-mail et le nom du destinataire
+
+            // Générer un token aléatoire
+            $token = bin2hex(random_bytes(32));
+
+            // Préparer la requête SQL pour remplacer le token dans la base de données
+            $sql = "UPDATE users SET token = '$token' WHERE Email = '$emailTo'";
+
+            // Exécution de la requête
+            if ($conn->query($sql) === TRUE) {
+                // Contenu du mail
+                $message = "
+                <center><img style='margin:0 auto;width:150px; height:150px;' src=' https://i.ibb.co/zNYLKpP/icone.png' alt=''></center>
+                    <h2 style='font-weight:800;font-size:30px; color:#393795; margin-bottom:30px;margin-top:-20px; text-align:center;' >MODIFIER VOTRE MOT DE PASSE</h2>
+                    <p style='text-align:center;'>Si vous n'êtes pas à l'origine de cette demande, veuillez contacter notre <a style='text-decoration:none; color:#2b2064' href='http://" . $_SERVER['HTTP_HOST'] . "/contact/contact.php'>service client</a>.</p>
+                    <p style='margin-bottom:20px;text-align:center;'>Cliquez sur le lien suivant pour réinitialiser votre mot de passe :</p>
+                    <center><a style='color:white;background-color:#393795; padding:10px 20px; height:50px;line-height: 5; text-decoration:none;' href='http://" . $_SERVER['HTTP_HOST'] . "/changemdp/changemdp.php?token=" . $token . "'>Réinitialiser le mot de passe</a></center>";
+
+
+                $mail->isHTML(true);
+                $mail->Subject = 'Modification du mot de passe'; // Objet du mail
+                $mail->Body = $message;
+
+                // Envoi du mail
+                $mail->send();
+
+                echo ' 
+      <div class="succes"> '; ?>
+                <img src="./asset/iconsucces.png" alt="">
+            <?php
+                echo "<article>
+     <h3>IMPORTANT !</h3>
+     <p>Le mail a été envoyé avec succès !</p>
+     <button class=\"closesucces\">Fermer la fenêtre</button>
+     </article>
+</div> ";
+            } else {
+                echo ' 
+      <div class="error"> '; ?>
+                <img src="./asset/warningicone.png" alt="">
+            <?php
+                echo "<article>
+     <h3>ATTENTION !</h3>
+     <p>Une erreur est survenue lors de l'exécution de la requête</p>
+     <button class=\"closeerror\">Fermer la fenêtre</button>
+     </article>
+</div> ";
+            }
+        } catch (Exception $e) {
+            echo ' 
+      <div class="error"> '; ?>
+            <img src="./asset/warningicone.png" alt="">
+    <?php
+            echo "<article>
+     <h3>ATTENTION !</h3>
+     <p>Une erreur est survenue lors de l'envoi du mail</p>
+     <button class=\"closeerror\">Fermer la fenêtre</button>
+     </article>
+</div> ";
         }
-    } catch (Exception $e) {
-        echo "Une erreur est survenue lors de l'envoi du mail : {$mail->ErrorInfo}";
     }
-}
-?>
+    ?>
+
+
 
 </body>
 

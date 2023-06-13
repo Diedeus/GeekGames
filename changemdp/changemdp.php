@@ -29,17 +29,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // Vérification que les mots de passe correspondent
   if ($newPassword === $confirmPassword) {
-    // Hashage du nouveau mot de passe
-    $hashedPassword = hash('sha256', $newPassword);
+    // Vérification du pattern pour le mot de passe
+    if (preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/', $newPassword)) {
+      // Hashage du nouveau mot de passe
+      $hashedPassword = hash('sha256', $newPassword);
 
-    // Préparer la requête SQL pour mettre à jour le mot de passe
-    $sql = "UPDATE users SET Mot_de_passe = '$hashedPassword' WHERE token = '$token'";
+      // Préparer la requête SQL pour mettre à jour le mot de passe
+      $sql = "UPDATE users SET Mot_de_passe = '$hashedPassword' WHERE token = '$token'";
 
-    // Exécuter la requête
-    if ($conn->query($sql) === TRUE) {
-        echo "Le mot de passe a été changé avec succès pour le token : $token";
+      // Exécuter la requête
+      if ($conn->query($sql) === TRUE) {
+          echo "Le mot de passe a été changé avec succès pour le token : $token";
+      } else {
+          echo "Erreur lors de la mise à jour du mot de passe : " . $conn->error;
+      }
     } else {
-        echo "Erreur lors de la mise à jour du mot de passe : " . $conn->error;
+      echo "Le mot de passe ne respecte pas le pattern requis.";
     }
   } else {
     // Affichage d'un message d'erreur si les mots de passe ne correspondent pas

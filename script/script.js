@@ -297,3 +297,12 @@ function refresh(x) {
     }
 
 }
+
+
+let closesucces = document.querySelector('.closesucces')
+let messsucces = document.querySelector('.succes')
+
+closesucces.addEventListener("click",function(){
+    messsucces.style.display="none"
+});
+

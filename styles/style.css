@@ -35,6 +35,7 @@ img {
 }
 * {
   box-sizing: border-box;
+  font-family: "montserrat", sans-serif;
 }
 html,
 body {
@@ -526,4 +527,104 @@ section.mdpperdu img.closemdpperdu {
   top: 30px;
   right: 30px;
   cursor: pointer;
+}
+div.error {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 420px;
+  height: 90px;
+  background-color: #101010d6;
+  border-radius: 5px;
+  border: solid 1px #ff3333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: error 0.3s linear;
+}
+div.error img {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+div.error article {
+  display: flex;
+  flex-direction: column;
+}
+div.error article h3 {
+  color: white;
+  font-size: 18px;
+  margin-top: 0;
+}
+div.error article p {
+  color: white;
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+div.error article button {
+  color: white;
+  background-color: #ff3333;
+  border: 0;
+  width: 150px;
+  height: 20px ;
+  cursor: pointer;
+  border-radius: 2px;
+}
+@keyframes error {
+  0% {
+    left: -500px;
+  }
+  100% {
+    opacity: 20px;
+  }
+}
+div.succes {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 420px;
+  height: 90px;
+  background-color: #101010d6;
+  border-radius: 5px;
+  border: solid 1px #4af74a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: succes 0.3s linear;
+}
+div.succes img {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+div.succes article {
+  display: flex;
+  flex-direction: column;
+}
+div.succes article h3 {
+  color: white;
+  font-size: 18px;
+  margin-top: 0;
+}
+div.succes article p {
+  color: white;
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+div.succes article button {
+  color: white;
+  background-color: #4af74a;
+  border: 0;
+  width: 150px;
+  height: 20px ;
+  cursor: pointer;
+  border-radius: 2px;
+}
+@keyframes succes {
+  0% {
+    left: -500px;
+  }
+  100% {
+    opacity: 20px;
+  }
 }

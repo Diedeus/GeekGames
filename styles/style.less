@@ -38,6 +38,7 @@ img {
 
 * {
   box-sizing: border-box;
+  font-family: "montserrat", sans-serif;
 }
 
 html,
@@ -369,11 +370,6 @@ header#test {
       }
     }
   }
-  // video{
-  //   aspect-ratio: 16/9;
-  //   width: 750px;
-  //   margin-right: 150px;
-  // }
 }
 
   section.minijeu {
@@ -548,4 +544,108 @@ section.mdpperdu {
     right: 30px;
     cursor: pointer;
   }
+}
+
+div.error{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 420px;
+  height: 90px;
+  background-color: #101010d6;
+  border-radius: 5px;
+  border: solid 1px #ff3333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: error 0.3s linear;
+  img{
+      width: 60px;
+      height: 60px;
+      margin-right: 20px;
+  }
+
+  article{
+      display: flex;
+      flex-direction: column;
+      h3{
+          color: white;
+          font-size: 18px;
+          margin-top: 0;
+      }
+      p{
+          color: white;
+          font-size: 13px;
+          margin-bottom: 3px;
+      }
+      button{
+          color: white;
+          background-color: #ff3333;
+          border: 0;
+          width: 150px;
+          height:20px ;
+          cursor: pointer; 
+          border-radius: 2px;
+      }
+  }
+}
+@keyframes error {
+  0%{
+      left: -500px;
+  }
+  100%{
+      opacity: 20px;
+  }    
+}
+
+div.succes{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 420px;
+  height: 90px;
+  background-color: #101010d6;
+  border-radius: 5px;
+  border: solid 1px #4af74a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: succes 0.3s linear;
+  img{
+      width: 60px;
+      height: 60px;
+      margin-right: 20px;
+  }
+
+  article{
+      display: flex;
+      flex-direction: column;
+      h3{
+          color: white;
+          font-size: 18px;
+          margin-top: 0;
+      }
+      p{
+          color: white;
+          font-size: 13px;
+          margin-bottom: 3px;
+      }
+      button{
+          color: white;
+          background-color: #4af74a;
+          border: 0;
+          width: 150px;
+          height:20px ;
+          cursor: pointer; 
+          border-radius: 2px;
+      }
+  }
+}
+@keyframes succes {
+  0%{
+      left: -500px;
+  }
+  100%{
+      opacity: 20px;
+  }    
 }
