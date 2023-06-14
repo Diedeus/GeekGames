@@ -72,20 +72,20 @@ session_start(); ?>
         <h1>PAGE D'INSCRIPTION</h1>
 
         <div class="nameform">
-        <input type="text" class="nomprenom" name="Nom" placeholder="Votre nom :" required />
+        <input type="text" class="nomprenom" name="Nom" placeholder="Votre nom :" title="ce champs est obligatoire" required />
 
-        <input type="text" class="nomprenom" name="Prenom" placeholder="Votre prenom" required />
+        <input type="text" class="nomprenom" name="Prenom" placeholder="Votre prenom" title="ce champs est obligatoire" required />
         </div>
 
-        <input type="text" class="box-input" name="Nom_utilisateur" placeholder="Nom d'utilisateur" required />
+        <input type="text" class="box-input" name="Nom_utilisateur" placeholder="Nom d'utilisateur" title="ce champs est obligatoire" required />
 
-        <input type="text" class="box-input" name="Email" placeholder="Email" required />
+        <input type="text" class="box-input" name="Email" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Veuillez saisir une adresse mail conforme" required />
 
-        <input type="text" class="box-input" name="Date_de_naissance" placeholder="Date de naissance" required />
+        <input type="text" class="box-input" name="Date_de_naissance" placeholder="Date de naissance" pattern="\d{4}-\d{2}-\d{2}" title="La date doit être écrite sous la forme YYYY-MM-DD" required />
 
         <input type="text" class="box-input" name="adresse" placeholder="Votre adresse" required />
 
-        <input type="password" class="box-input" name="Mot_de_passe" placeholder="Mot de passe" required />
+        <input type="password" class="box-input" name="Mot_de_passe" placeholder="Mot de passe" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}" title="Votre mot de passe doit être composé d'une majuscule, d'une minuscule, d'un chiffre, d'un caractère spécial et doit contenir 8 caractères minimun" />
 
         <div class="politique">
 
