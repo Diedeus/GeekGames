@@ -68,14 +68,14 @@
 
         <form class="box" action="" method="post" name="users">
           <h2 class="box-title">Création d'un nouvel utilisateur</h2>
-          <input type="text" class="box-reponse" name="Nom" placeholder="Quel est son nom?" required>
-          <input type="text" class="box-reponse" name="Prenom" placeholder="Quel est son prenom" required>
-          <input type="text" class="box-reponse" name="Nom_utilisateur" placeholder="Quel est son pseudo" required>
-          <input type="text" class="box-reponse" name="Date_de_naissance" placeholder="Quand est il né?" required>
+          <input type="text" class="box-reponse" name="Nom" placeholder="Quel est son nom?" title="ce champs est obligatoire" required>
+          <input type="text" class="box-reponse" name="Prenom" placeholder="Quel est son prenom" title="ce champs est obligatoire" required>
+          <input type="text" class="box-reponse" name="Nom_utilisateur" placeholder="Quel est son pseudo" title="ce champs est obligatoire" required>
+          <input type="text" class="box-reponse" name="Date_de_naissance" placeholder="Quand est il né?" placeholder="Date de naissance" pattern="\d{4}-\d{2}-\d{2}" title="La date doit être écrite sous la forme YYYY-MM-DD" required>
           <input type="text" class="box-input" name="Email" placeholder="Quel est son email" required>
           <input type="text" class="box-input" name="adresse" placeholder="Quel est son adresse" required>
-          <input type="text" class="box-reponse" name="Mot_de_passe" placeholder="Quel est le mot de passe" required>
-          <input type="text" class="box-reponse" name="Admin" placeholder="Est il admin ? 0 pour non, 1 pour oui" required>
+          <input type="text" class="box-reponse" name="Mot_de_passe" placeholder="Quel est le mot de passe" placeholder="Mot de passe" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}" title="Votre mot de passe doit être composé d'une majuscule, d'une minuscule, d'un chiffre, d'un caractère spécial et doit contenir 8 caractères minimun" required>
+          <input type="text" class="box-reponse" name="Admin" placeholder="Est il admin ? 0 pour non, 1 pour oui" pattern="^[01]$" title="0 pour utilisateur, 1 pour administrateur" required>
           <input class="update-delete" type="submit" value="Creer l'utilisateur" name="submit" class="connecter">
           <?php if (!empty($message)) { ?>
             <p class="errorMessage"><?php echo $message; ?></p>
@@ -249,7 +249,7 @@
             echo '<label>Email : </label>
             <input type="text" class="box-reponse" name="Emailu" value="' . $Emailu . '"><br>';
             echo '<label> Date de naissance : </label>
-            <input type="text" class="box-reponse" name="Birthdayu" value="' . $Birthdayu . '"><br>';
+            <input type="text" class="box-reponse" name="Birthdayu"  pattern="\d{4}-\d{2}-\d{2}" title="La date doit être écrite sous la forme YYYY-MM-DD" value="' . $Birthdayu . '"><br>';
             echo '<label> Adresse : </label>
             <input type="text" class="box-reponse" name="Adresseu" value="' . $Adresseu . '"><br>';
             echo '<label>Admin : </label><input type="text" class="box-reponse" name="Adminu" value="' . $Adminu . '"><br>';
@@ -318,7 +318,7 @@
           <input type="text" class="box-reponse" name="Reponse_D" placeholder="Reponse D">
           <input type="text" class="box-reponse" name="Reponse_Quizz" placeholder="Reponse">
           <input type="text" class="box-reponse" name="Difficulte_question" placeholder="Qu'elle est la difficulte">
-          <input class="update-delete" type="submit" value="Creer la question" name="submit" class="connecter">
+          <input class="update-delete" type="submit" value="Creer la question" pattern="^[123]$" class="connecter">
           <?php if (!empty($message)) { ?>
             <p class="errorMessage"><?php echo $message; ?></p>
           <?php } ?>
@@ -505,7 +505,7 @@
             <input type="text" class="box-reponse" name="reponseD" value="' . $reponseD . '"><br>';
             echo '<label>Reponse QUIZZ : </label>
             <input type="text" class="box-reponse" name="reponseQuizz" value="' . $reponseQuizz . '"><br>';
-            echo '<label>Difficultée : </label><input type="text" class="box-reponse" name="difficulte" value="' . $difficulte . '"><br>';
+            echo '<label>Difficultée : </label><input type="text" class="box-reponse" pattern="^[123]$" name="difficulte" value="' . $difficulte . '"><br>';
             echo '<input type="submit" value="Modifier" class="id_question">';
             echo '</form>';
           } else {
