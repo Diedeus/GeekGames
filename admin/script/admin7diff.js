@@ -645,12 +645,36 @@ let erreur7 = false
 
                 for(const objet of Tab){
                     objectFinal = {...objectFinal, ...objet}
+                }
 
                     console.log( "test ojt final = " + JSON.stringify(objectFinal))
-                    
+
                     let valid = document.querySelector('#validFinal')
                     
                     valid.addEventListener("click", function(){
+                        const formFinal = document.createElement('form')
+                        formFinal.method = 'POST'
+                        form7diff.action = ''
+                        CreateJson.appendChild(formFinal)
+
+                        const inpFinal = document.createElement('input')
+                        inpFinal.type = 'hidden'
+                        inpFinal.id = 'inpFinal'
+                        inpFinal.name ='jsonFinal'
+                        formFinal.appendChild(inpFinal)
+
+                        const btnFinal = document.createElement('input')
+                        btnFinal.type = 'submit'
+                        btnFinal.value = 'Validation finale'
+                        btnFinal.id = 'btnfin2'
+                        formFinal.appendChild(btnFinal)
+
+                        let btnfin2 = document.querySelector('#btnfin2')
+
+                        // btnfin2.addEventListener("click", function(e){
+                        //     e.preventDefault()
+                        // })
+
                         console.log( "test ojt final 2 = " + JSON.stringify(objectFinal))
                         fetch("http://localhost:4000/Jeux/SeptDiff/Asset/7diff.json")
                             .then(response => response.json())
@@ -661,14 +685,19 @@ let erreur7 = false
                                 }
 
                                 jsonData.push(objectFinal)
+                                console.log("type de jsondata" + typeof(jsonData))
+                                console.log(jsonData.url1)
 
                                 let jsonDataString = JSON.stringify(jsonData)
                                 console.log("jsonDatastring = " + jsonDataString)
-
+                                inpFinal.value = jsonDataString
+                                
+                            
                                 })
-                        })
+                             
+                            })
                     
-            }
+            
     
 
             })

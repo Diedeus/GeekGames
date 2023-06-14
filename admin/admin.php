@@ -599,10 +599,16 @@
         }
     }
 
-    ?>
-    
+    if (isset($_POST['jsonFinal'])){
+      $jsonfin = $_POST['jsonFinal'];
+      $myfile = fopen("../Jeux/SeptDiff/Asset/7diff.json", "w");
+      fwrite($myfile, $jsonfin);
+      fclose($myfile);
 
-   
+    }
+
+    ?>
+
 
   </section>
 
@@ -644,6 +650,9 @@
         echo '<p>Erreur lors de l\'enregistrement de la photo dans le dossier de destination.</p>';
       }
     }
+
+
+
 
     ?>
 
