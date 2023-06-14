@@ -9,12 +9,13 @@
   <link rel="stylesheet" href="./style/register.css">
   <script src="../script/liste.js" defer></script>
   <script src="./script/register.js" defer></script>
+  <script src="../script/error.js" defer></script>
   <title>GeekGames - Inscription</title>
 </head>
 
 <body>
 
-<?php require('config.php');
+<?php require('../Registration/config.php');
 session_save_path("../tmp");
 session_start(); ?>
 <header id="inscription">

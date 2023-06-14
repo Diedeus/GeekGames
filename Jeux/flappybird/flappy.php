@@ -2,20 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="../../asset/icone.png" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="./style/style.css">
+  <script src="../../script/error.js" defer></script>
 </head>
 <body>
 
-<?php 
+<?php
 
 require('../../Registration/config.php');
+
 session_save_path("../../tmp");
 session_start();
-
-?>
+if(!isset($_SESSION['id_users'])){ 
+    require_once('../../inc/connexionmdp.inc.php');
+    }?>
 
 
 

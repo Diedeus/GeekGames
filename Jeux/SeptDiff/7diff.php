@@ -9,6 +9,7 @@
     <title>GekkGames - 7 différences</title>
     <script src="./script/7diff.js" defer></script>
     <script src="../../script/liste.js" defer></script>
+    <script src="../../script/error.js" defer></script>
 </head>
 <body>
 <?php
@@ -17,60 +18,9 @@ require('../../Registration/config.php');
 
 session_save_path("../../tmp");
 session_start();
-if(!isset($_SESSION['id_users'])){ ?>
-    <section class="login">
-        <div class="connexion">
-            <?php
-
-
-            if (isset($_POST['Nom_utilisateur'])) {
-
-                $username = stripslashes($_REQUEST['Nom_utilisateur']);
-                $username = mysqli_real_escape_string($conn, $username);
-                $_SESSION['Nom_utilisateur'] = $username;
-                $password = stripslashes($_REQUEST['Mot_de_passe']);
-                $password = mysqli_real_escape_string($conn, $password);
-                $query = "SELECT * FROM `users` WHERE Nom_utilisateur='$username' 
-  and Mot_de_passe='" . hash('sha256', $password) . "'";
-
-
-                $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
-                if (mysqli_num_rows($result) == 1) {
-                    $user = mysqli_fetch_assoc($result);
-                    $_SESSION['id_users'] = $user['id_users'];
-                    $_SESSION['Nom_utilisateur'] = $user['Nom_utilisateur'];
-                    $_SESSION['id_users'] = $user['id_users'];
-                    $_SESSION['loggedIn'] = true;
-                    $_SESSION['Admin'] = $user['Admin'];
-
-            ?>
-                    <script>
-                        window.location.href = "./7diff.php"
-                    </script>
-            <?php
-                } else {
-                    $message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
-                }
-            }
-
-            ?>
-            <form class="box" action="" method="post" name="login">
-                <h2 class="box-title">CONNEXION</h2>
-                <input type="text" class="box-input" name="Nom_utilisateur" placeholder="Nom d'utilisateur">
-                <input type="password" class="box-input" name="Mot_de_passe" placeholder="Mot de passe">
-                <input type="submit" value="Se connecter" name="submit" class="connecter">
-                <?php if (!empty($message)) { ?>
-                    <p class="errorMessage"><?php echo $message; ?></p>
-                <?php } ?>
-            </form>
-            <img src="asset/logogeekgame.png" alt="">
-            <p class="inscriptionhome">Vous n’avez pas de compte ?
-                <a href="../../Registration/register.php">Inscrivez vous !</a>
-            </p>
-        </div>
-        <!-- <img class="closelogin" src="../../asset/croix.png" alt=""> -->
-    </section>
-<?php }?>
+if(!isset($_SESSION['id_users'])){ 
+    require_once('../../inc/connexionmdp.inc.php');
+    }?>
 
 
 <nav class="home">

@@ -46,7 +46,7 @@ body {
   padding: 0;
   width: 100%;
   display: block;
-  font-family: 'montserrat', sans-serif;
+  font-family: "montserrat", sans-serif;
   background-color: #3c2d87;
 }
 img,
@@ -125,7 +125,7 @@ div.right {
   display: flex;
 }
 div.right #searchbar {
-  width: 300px ;
+  width: 300px;
   height: 40px;
   outline: none;
   margin: 0;
@@ -174,7 +174,7 @@ div.right ul.searchjeu span {
   background-color: #c5c5c5;
 }
 div.right img.icone {
-  width: 40px ;
+  width: 40px;
   height: 40px;
   background-color: #2b2064;
   padding: 7px;
@@ -222,7 +222,7 @@ div.right button.log {
   margin-right: 10px;
   font-size: 14px;
   cursor: pointer;
-  font-family: 'montserrat', sans-serif;
+  font-family: "montserrat", sans-serif;
   border: 0;
 }
 div.right button.log:hover {
@@ -471,7 +471,7 @@ div.error article button {
   background-color: #ff3333;
   border: 0;
   width: 150px;
-  height: 20px ;
+  height: 20px;
   cursor: pointer;
   border-radius: 2px;
 }
@@ -521,7 +521,7 @@ div.succes article button {
   background-color: #4af74a;
   border: 0;
   width: 150px;
-  height: 20px ;
+  height: 20px;
   cursor: pointer;
   border-radius: 2px;
 }

@@ -60,6 +60,7 @@
         <input type="hidden" name="email_from" value="cgeekgames@gmail.com">
         <input type="email" name="email_to" placeholder="Votre adresse mail :">
         <input class="submitmdpmodif" type="submit" value="Modifier le mot de passe">
+        <div class="clear"></div>
         <img src="http://<?php echo $_SERVER['HTTP_HOST']; ?>/asset/logogeekgame.png" alt="">
         <p class="inscriptionhome">Vous n’avez pas de compte ?
             <a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/Registration/register.php">Inscrivez vous !</a>
@@ -85,9 +86,6 @@ require ($_SERVER['DOCUMENT_ROOT'] . '/asset/PHPMailer-master/src/Exception.php'
 require ($_SERVER['DOCUMENT_ROOT'] . '/asset/PHPMailer-master/src/PHPMailer.php');
 require ($_SERVER['DOCUMENT_ROOT'] . '/asset/PHPMailer-master/src/SMTP.php');
 
-// require './asset/PHPMailer-master/src/Exception.php';
-// require './asset/PHPMailer-master/src/PHPMailer.php';
-// require './asset/PHPMailer-master/src/SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;

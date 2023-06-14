@@ -128,7 +128,7 @@
                     <a id="aquizz" href="./Jeux/Quizz/Quizz.php" style="display:block">Jouer au Quizz</a>
                     <a id="a7diff" href="./Jeux/SeptDiff/7diff.php" style="display:none">Jouer au Sept Diff</a>
                     <a id="ajusteprix" href="./Jeux/Juste_Prix/justeprix.php" style="display:none">Jouer au juste prix</a>
-                    <a id="aflappybird" href="" style="display:none">Jouer au flappy bird</a>
+                    <a id="aflappybird" href="./Jeux/flappybird/flappy.php" style="display:none">Jouer au flappy bird</a>
                     <a id="asnake" href="./index.php" style="display:none">Jouer au snake</a>
                     <a id="apingpong" href="./index.php" style="display:none">Jouer au ping pong</a>
                 </article>
