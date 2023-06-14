@@ -38,7 +38,6 @@ img {
 }
 html,
 body {
-  height: 100%;
   border: 0 solid transparent;
   font-size: 16px;
   margin: 0;
@@ -222,6 +221,7 @@ section.mdpperdu img.closemdpperdu {
   cursor: pointer;
 }
 div.error {
+  font-family: "montserrat", sans-serif;
   z-index: 20;
   position: absolute;
   bottom: 20px;
@@ -246,6 +246,7 @@ div.error article {
   flex-direction: column;
 }
 div.error article h3 {
+  text-align: left;
   color: white;
   font-size: 18px;
   margin-top: 0;
@@ -273,6 +274,7 @@ div.error article button {
   }
 }
 div.succes {
+  font-family: "montserrat", sans-serif;
   z-index: 20;
   position: absolute;
   bottom: 20px;
@@ -328,4 +330,171 @@ div.succes article button {
 }
 .closemdpperdu {
   display: none;
+}
+div.navinscri {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+div.navinscri nav.home {
+  font-family: "montserrat", sans-serif;
+  z-index: 1000;
+  float: left;
+  margin-top: 50px;
+  margin-left: 70px;
+}
+div.navinscri nav.home ul {
+  display: flex;
+}
+div.navinscri nav.home ul li {
+  list-style-type: none;
+  margin-right: 20px;
+}
+div.navinscri nav.home ul li a {
+  padding: 10px 15px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+div.navinscri nav.home ul li a:hover {
+  background-color: white;
+  color: #3c2d87;
+}
+div.navinscri nav.home ul li a.on {
+  background-color: white;
+  color: #3c2d87;
+}
+div.navinscri div.navright {
+  font-family: "montserrat", sans-serif;
+  margin-top: 45px;
+  margin-right: 115px;
+  margin-bottom: 15px;
+  float: right;
+  display: flex;
+}
+div.navinscri div.navright #searchbar {
+  width: 300px;
+  height: 40px;
+  outline: none;
+  margin: 0;
+}
+div.navinscri div.navright ul.searchjeu {
+  font-family: "montserrat", sans-serif;
+  position: absolute;
+  top: 107px;
+  width: 300px;
+  background-color: white;
+  visibility: hidden;
+  opacity: 0;
+}
+div.navinscri div.navright ul.searchjeu li {
+  font-family: "montserrat", sans-serif;
+  background-color: white;
+  list-style: none;
+  padding: 10px;
+  height: auto;
+  transition: all 0.5s;
+}
+div.navinscri div.navright ul.searchjeu li:hover {
+  background-color: #e2e2e2;
+}
+div.navinscri div.navright ul.searchjeu li a {
+  font-family: "montserrat", sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+div.navinscri div.navright ul.searchjeu li a img {
+  margin-right: 5px;
+}
+div.navinscri div.navright ul.searchjeu li a article {
+  width: 59%;
+}
+div.navinscri div.navright ul.searchjeu li a article h3 {
+  text-align: left;
+  font-size: 13px;
+  margin-bottom: 3px;
+  font-weight: 800;
+}
+div.navinscri div.navright ul.searchjeu li a article p {
+  font-size: 9px;
+  text-align: left;
+}
+div.navinscri div.navright ul.searchjeu span {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  height: 1px;
+  background-color: #c5c5c5;
+}
+div.navinscri div.navright img.icone {
+  width: 40px;
+  height: 40px;
+  background-color: #2b2064;
+  padding: 7px;
+  margin-left: 50px;
+}
+div.navinscri div.navright a.user {
+  color: white;
+  background-color: #3c2d87;
+  line-height: 40px;
+  padding: 0 10px;
+  transition: all 0.5s;
+  border: 0;
+}
+div.navinscri div.navright a.user:hover {
+  background-color: #2b2064;
+}
+div.navinscri div.navright button.user {
+  font-family: montserrat;
+  color: white;
+  background-color: #3c2d87;
+  line-height: 40px;
+  padding: 0 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-right: 10px;
+  border: 0;
+}
+div.navinscri div.navright button.user:hover {
+  background-color: #2b2064;
+}
+div.navinscri div.navright a.sign {
+  color: white;
+  line-height: 40px;
+  padding: 0 10px;
+  transition: all 0.5s;
+}
+div.navinscri div.navright a.sign:hover {
+  background-color: white;
+  color: #3c2d87;
+}
+div.navinscri div.navright a.btnadmin {
+  color: white;
+  line-height: 40px;
+  padding: 0 10px;
+  background-color: red;
+  transition: all 0.5s;
+}
+div.navinscri div.navright a.btnadmin:hover {
+  background-color: #b60202;
+}
+div.navinscri div.navright a.design {
+  color: white;
+  font-size: 16px;
+  line-height: 40px;
+  padding: 0 10px;
+  margin-left: 10px;
+  transition: all 0.5s;
+}
+div.navinscri div.navright a.design:hover {
+  background-color: white;
+  color: #2b2064;
+}
+div.navinscri span.barre {
+  display: block;
+  height: 2px;
+  width: 92.5%;
+  background-color: white;
+  margin: 0 auto;
 }

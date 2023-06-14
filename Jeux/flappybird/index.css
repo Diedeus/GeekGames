@@ -1,23 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/pressstart2p/v15/e3t4euO8T-267oIAQAu6jDQyK0nS.ttf) format('truetype');
+}
 body {
   margin: 0;
   text-align: center;
   font-family: 'Press Start 2P', cursive;
   user-select: none;
+  background-color: #393795;
 }
-header {
+section.container_header {
+  position: relative;
+  margin-top: 120px;
+}
+section.container_header header {
   margin: 0 auto;
   width: 431px;
 }
-h1 {
-  background: url("flappy-bird-set.png") 0% 340px;
-  padding: 1.2rem 0;
-  margin: 0;
-}
-.score-container {
+section.container_header header .score-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 8px 6px;
   background: #5EE270;
+}
+section.container_header header .score-container input.subscorefb {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 8px;
+  text-indent: 0;
+  margin-bottom: 0;
+  background-color: #46b054;
+  transition: all 0.5s;
+}
+section.container_header header .score-container input.subscorefb:hover {
+  background-color: #3e994a;
+}
+canvas {
+  margin-top: -46px;
+  
 }

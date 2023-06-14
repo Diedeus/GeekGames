@@ -42,7 +42,6 @@ img {
 
 html,
 body {
-  height: 100%;
   border: 0 solid transparent;
   font-size: 16px;
   margin: 0;
@@ -235,6 +234,7 @@ section.login {
   }
   
   div.error{
+    font-family: "montserrat", sans-serif;
     z-index: 20;
     position: absolute;
     bottom: 20px;
@@ -258,6 +258,7 @@ section.login {
         display: flex;
         flex-direction: column;
         h3{
+            text-align: left;
             color: white;
             font-size: 18px;
             margin-top: 0;
@@ -288,6 +289,8 @@ section.login {
   }
   
   div.succes{
+    
+    font-family: "montserrat", sans-serif;
     z-index: 20;
     position: absolute;
     bottom: 20px;
@@ -345,4 +348,175 @@ section.login {
   }
   .closemdpperdu{
     display: none;
+  }
+  div.navinscri {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    nav.home {
+        font-family: "montserrat", sans-serif;
+      z-index: 1000;
+      float: left;
+      margin-top: 50px;
+      margin-left: 70px;
+      ul {
+        display: flex;
+        li {
+          list-style-type: none;
+          margin-right: 20px;
+          a {
+            padding: 10px 15px;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.5s;
+            &:hover {
+              background-color: white;
+              color: #3c2d87;
+            }
+          }
+          a.on {
+            background-color: white;
+            color: #3c2d87;
+          }
+        }
+      }
+    }
+    div.navright {
+        font-family: "montserrat", sans-serif;
+      margin-top: 45px;
+      margin-right: 115px;
+      margin-bottom: 15px;
+      float: right;
+      display: flex;
+      #searchbar {
+        width: 300px;
+        height: 40px;
+        outline: none;
+        margin: 0;
+      }
+      ul.searchjeu {
+        font-family: "montserrat", sans-serif;
+        position: absolute;
+        top: 107px;
+        width: 300px;
+        background-color: white;
+        // transition: all 0.1s;
+        visibility: hidden;
+        opacity: 0;
+        li {
+            font-family: "montserrat", sans-serif;
+          background-color: white;
+          list-style: none;
+          padding: 10px;
+          height: auto;
+          transition: all 0.5s;
+          &:hover {
+            background-color: #e2e2e2;
+          }
+          a {
+            font-family: "montserrat", sans-serif;
+            display: flex;
+            justify-content: space-between;
+            img {
+              margin-right: 5px;
+            }
+            article {
+              width: 59%;
+              h3 {
+                text-align: left;
+                font-size: 13px;
+                margin-bottom: 3px;
+                font-weight: 800;
+              }
+              p {
+                font-size: 9px;
+                text-align: left;
+              }
+            }
+          }
+        }
+        span {
+          display: block;
+          width: 100%;
+          margin: 0 auto;
+          height: 1px;
+          background-color: #c5c5c5;
+        }
+      }
+      img.icone {
+        width: 40px;
+        height: 40px;
+        background-color: #2b2064;
+        padding: 7px;
+        margin-left: 50px;
+      }
+      a.user {
+        color: white;
+        background-color: #3c2d87;
+        line-height: 40px;
+        padding: 0 10px;
+        transition: all 0.5s;
+
+        border: 0;
+
+        &:hover {
+          background-color: #2b2064;
+        }
+      }
+      button.user {
+        font-family: montserrat;
+        color: white;
+        background-color: #3c2d87;
+        line-height: 40px;
+        padding: 0 10px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin-right: 10px;
+        border: 0;
+
+        &:hover {
+          background-color: #2b2064;
+        }
+      }
+      a.sign {
+        color: white;
+        line-height: 40px;
+        padding: 0 10px;
+        transition: all 0.5s;
+        &:hover {
+          background-color: white;
+          color: #3c2d87;
+        }
+      }
+      a.btnadmin {
+        color: white;
+        line-height: 40px;
+        padding: 0 10px;
+        background-color: red;
+        transition: all 0.5s;
+        &:hover {
+          background-color: rgb(182, 2, 2);
+        }
+      }
+      a.design {
+        color: white;
+        font-size: 16px;
+        line-height: 40px;
+        padding: 0 10px;
+        margin-left: 10px;
+        transition: all 0.5s;
+        &:hover {
+          background-color: white;
+          color: #2b2064;
+        }
+      }
+    }
+    span.barre {
+      display: block;
+      height: 2px;
+      width: 92.5%;
+      background-color: white;
+      margin: 0 auto;
+    }
   }

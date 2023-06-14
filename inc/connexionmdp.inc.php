@@ -82,9 +82,9 @@
         loginuser.style.visibility = "hidden";
     });</script>
 <?php
-require ($_SERVER['DOCUMENT_ROOT'] . '/asset/PHPMailer-master/src/Exception.php');
-require ($_SERVER['DOCUMENT_ROOT'] . '/asset/PHPMailer-master/src/PHPMailer.php');
-require ($_SERVER['DOCUMENT_ROOT'] . '/asset/PHPMailer-master/src/SMTP.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/asset/PHPMailer-mdp/src/Exception.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/asset/PHPMailer-mdp/src/PHPMailer.php');
+require ($_SERVER['DOCUMENT_ROOT'] . '/asset/PHPMailer-mdp/src/SMTP.php');
 
 
 use PHPMailer\PHPMailer\PHPMailer;
