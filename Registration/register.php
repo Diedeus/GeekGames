@@ -13,6 +13,10 @@
 </head>
 
 <body>
+
+<?php require('config.php');
+session_save_path("../tmp");
+session_start(); ?>
 <header id="inscription">
     <section class="inscriptiondroite">
       <div class="droithaut"></div>
@@ -24,7 +28,7 @@
 
     <section class="inscriptiongauche">
       <?php
-    require('config.php');
+   
 
     if(isset($_REQUEST["Nom"],$_REQUEST["Prenom"],$_REQUEST["Nom_utilisateur"],$_REQUEST["Email"],$_REQUEST["Date_de_naissance"],$_REQUEST["adresse"],$_REQUEST["Mot_de_passe"])){
 
@@ -175,6 +179,10 @@ version DRAGON BALL ! un jeu addictif et plein de défis !</p>
         <span class="barre"></span>
     </div>
     </header>
+
+    <?php
+   require_once('../inc/connexionmdp.inc.php')
+   ?>
 
 </body>
 

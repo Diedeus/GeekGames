@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./style/credit.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../script/liste.js" defer></script>
+    <script src="../script/error.js" defer></script>
     <title>GeekGames - Crédits</title>
 </head>
 
@@ -141,6 +142,10 @@ version DRAGON BALL ! un jeu addictif et plein de défis !</p>
             </article>
         </div>
     </section>
+
+    <?php
+   require_once('../inc/connexionmdp.inc.php')
+   ?>
 </body>
 
 </html>

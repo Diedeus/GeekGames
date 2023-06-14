@@ -159,30 +159,7 @@ pingpong.addEventListener("click", function () {
 
 });
 
-let connexion = document.querySelector('.log');
-let loginuser = document.querySelector('.login');
-let closelogin = document.querySelector('.closelogin');
 
-connexion.addEventListener("click", function () {
-    loginuser.style.visibility = "visible";
-});
-
-closelogin.addEventListener("click", function () {
-    loginuser.style.visibility = "hidden";
-});
-
-let openmdpoublie = document.querySelector('.mdpoublie')
-let formmdpoublie = document.querySelector('.mdpperdu')
-let closemdpperdu = document.querySelector('.closemdpperdu')
-
-openmdpoublie.addEventListener('click',function(){
-    loginuser.style.visibility = "hidden";
-    formmdpoublie.style.visibility = "visible";
-})
-
-closemdpperdu.addEventListener("click", function () {
-    formmdpoublie.style.visibility = "hidden";
-});
 
 
 function refresh(x) {
@@ -299,10 +276,5 @@ function refresh(x) {
 }
 
 
-let closesucces = document.querySelector('.closesucces')
-let messsucces = document.querySelector('.succes')
 
-closesucces.addEventListener("click",function(){
-    messsucces.style.display="none"
-});
 

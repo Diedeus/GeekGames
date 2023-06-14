@@ -35,6 +35,7 @@ img {
 }
 * {
   box-sizing: border-box;
+  font-family: "montserrat", sans-serif;
 }
 html,
 body {
@@ -86,4 +87,84 @@ textarea {
   height: 0;
   clear: both;
   visibility: hidden;
+}
+section.container_changemdp {
+  background-image: url(../../asset/iconeback.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section.container_changemdp img {
+  width: 400px;
+  margin-bottom: 20px;
+}
+section.container_changemdp h1 {
+  color: #393795;
+  font-weight: 1000;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+section.container_changemdp form {
+  width: 38vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+section.container_changemdp form input {
+  background-color: #e8e7e7;
+  width: 48%;
+}
+section.container_changemdp form input.subnewmdp {
+  text-indent: 0;
+  background-color: #393795;
+  color: white;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 0;
+  transition: all 0.5s;
+}
+section.container_changemdp form input.subnewmdp:hover {
+  background-color: #2b2a6c;
+}
+section.container_changemdp section.succesmdp {
+  width: 38vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #2b2a6c;
+}
+section.container_changemdp section.succesmdp p {
+  color: white;
+  margin-bottom: 10px;
+  padding: 20px 5px 5px;
+}
+section.container_changemdp section.succesmdp a {
+  background-color: white;
+  color: #393795;
+  width: 98.5%;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: 400;
+  margin-bottom: 5px;
+  transition: all 0.5s;
+}
+section.container_changemdp section.succesmdp a:hover {
+  background-color: #d0d0d0;
+}
+section.container_changemdp section.errormdp {
+  width: 38vw;
+  background-color: #e03332;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+}
+section.container_changemdp section.errormdp p {
+  color: white;
 }

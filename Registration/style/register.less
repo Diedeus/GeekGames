@@ -375,3 +375,243 @@ header#inscription {
     }
   }
 }
+//INCLUDE CONNEXION ET MDP PERDU
+section.login {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  height: 100dvh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.858);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div.connexion {
+    background-color: white;
+    width: 550px;
+    height: 540px;
+    padding: 110px 95px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 47px;
+      h2 {
+        color: #393795;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 800;
+        margin-bottom: 25px;
+      }
+      input {
+        background-color: #d2d2d2;
+      }
+      input.passwordinput{
+        margin-bottom: 4px;
+      }
+      input.connecter {
+        text-indent: 0;
+        background-color: #393795;
+        color: white;
+        cursor: pointer;
+        width: 40%;
+        height: 40px;
+        &:hover {
+          background-color: #2b2064;
+        }
+      }
+      p.mdpoublie{
+        font-size: 13px;
+        margin-bottom: 15px;
+        cursor: pointer;
+      }
+      p {
+        font-size: 13px;
+      }
+    }
+    img {
+      width: 110px;
+      margin-bottom: 5px;
+    }
+    p.inscriptionhome {
+      color: #191919;
+      a {
+        color: #393795;
+      }
+    }
+  }
+  img.closelogin {
+    width: 25px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+  }
+}
+
+section.mdpperdu {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  height: 100dvh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.858);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  form{
+    background-color: white;
+    padding: 50px 50px 15px;
+    width: 30%;
+    h2{
+      font-size: 30px;
+      text-align: center;
+      color: #3c2d87;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    input{
+      background-color: rgb(220, 220, 220);
+    }
+    input.submitmdpmodif{
+      text-indent: 0;
+        background-color: #393795;
+        color: white;
+        cursor: pointer;
+        width: 50%;
+        height: 40px;
+        margin: 0 0 40px;
+        &:hover {
+          background-color: #2b2064;
+        }
+
+    }
+    img {
+      width: 110px;
+      margin: 0 auto 5px;
+    }
+    p.inscriptionhome {
+      text-align: center;
+      color: #191919;
+      a {
+        color: #393795;
+      }
+    }
+  }
+  img.closemdpperdu {
+    width: 25px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+  }
+}
+
+div.error{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 420px;
+  height: 90px;
+  background-color: #101010d6;
+  border-radius: 5px;
+  border: solid 1px #ff3333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: error 0.3s linear;
+  img{
+      width: 60px;
+      height: 60px;
+      margin-right: 20px;
+  }
+
+  article{
+      display: flex;
+      flex-direction: column;
+      h3{
+          color: white;
+          font-size: 18px;
+          margin-top: 0;
+      }
+      p{
+          color: white;
+          font-size: 13px;
+          margin-bottom: 3px;
+      }
+      button{
+          color: white;
+          background-color: #ff3333;
+          border: 0;
+          width: 150px;
+          height:20px ;
+          cursor: pointer; 
+          border-radius: 2px;
+      }
+  }
+}
+@keyframes error {
+  0%{
+      left: -500px;
+  }
+  100%{
+      opacity: 20px;
+  }    
+}
+
+div.succes{
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 420px;
+  height: 90px;
+  background-color: #101010d6;
+  border-radius: 5px;
+  border: solid 1px #4af74a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: succes 0.3s linear;
+  img{
+      width: 60px;
+      height: 60px;
+      margin-right: 20px;
+  }
+
+  article{
+      display: flex;
+      flex-direction: column;
+      h3{
+          color: white;
+          font-size: 18px;
+          margin-top: 0;
+      }
+      p{
+          color: white;
+          font-size: 13px;
+          margin-bottom: 3px;
+      }
+      button{
+          color: white;
+          background-color: #4af74a;
+          border: 0;
+          width: 150px;
+          height:20px ;
+          cursor: pointer; 
+          border-radius: 2px;
+      }
+  }
+}
+@keyframes succes {
+  0%{
+      left: -500px;
+  }
+  100%{
+      opacity: 20px;
+  }    
+}
