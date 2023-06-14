@@ -5,10 +5,10 @@ img.src = "flappy-bird-set.png";
 
 // general settings
 let gamePlaying = false;
-const gravity = .5;
-const speed = 6.2;
+const gravity = .21;
+const speed = 3.0;
 const size = [85, 36];
-const jump = -8.5;
+const jump = -5.5;
 const cTenth = (canvas.width / 10);
 
 let index = 0,
@@ -85,9 +85,36 @@ const render = () => {
     ctx.drawImage(img, 432, Math.floor((index % 9) / 3) * size[1], ...size, ((canvas.width / 2) - size[0] / 2), flyHeight, ...size);
     flyHeight = (canvas.height / 2) - (size[1] / 2);
       // text accueil
-    ctx.fillText(`Le Meilleur Score : ${bestScore}`, 25, 245);
-    ctx.fillText('Clique pour jouer', 55, 535);
-    ctx.font = "bold 30px courier";
+      var text = "Votre score :";
+var textWidth = ctx.measureText(text).width;
+var centerX = canvas.width / 2 - textWidth / 2;
+ctx.fillText(text, centerX, 560);
+    ctx.font = "bold 15px 'Press Start 2P'";
+    ctx.save(); // Enregistrez l'état du contexte actuel
+
+ctx.font = "bold 25px 'Press Start 2P'"; // Augmentez la taille de la police à 20px pour bestScore
+var scoreText = ctx.measureText(bestScore);
+var scoreX = canvas.width / 2 - scoreText.width / 2; // Calcul de la position horizontale centrée
+
+ctx.fillText(bestScore, scoreX, 600);
+
+ctx.restore();
+    // ctx.fillStyle = "white";
+
+        // Récupérez la référence à l'élément de l'image
+        var imgLogo = document.getElementById('myImage');
+        var btnPlay = document.getElementById('myImage2');
+        
+        var canvasWidth = canvas.width;
+        
+        var imgLogoWidth = imgLogo.width;
+        var imgLogoX = (canvasWidth - imgLogoWidth) / 2; // Position horizontale centrée pour l'image du logo
+        
+        var btnPlayWidth = btnPlay.width;
+        var btnPlayX = (canvasWidth - btnPlayWidth) / 2; // Position horizontale centrée pour le bouton de lecture
+        
+        ctx.drawImage(imgLogo, imgLogoX, 280);
+        ctx.drawImage(btnPlay, btnPlayX, 400);
 
     let inputCache = document.querySelector('#inpCache')
     inputCache.value = bestScore
@@ -97,7 +124,7 @@ const render = () => {
 
   
   // document.getElementById('bestScore').innerHTML = `Le Best : ${bestScore}`;
-  document.getElementById('currentScore').innerHTML = `Actuel : ${currentScore}`;
+  document.getElementById('currentScore').innerHTML = `Actuel: ${currentScore}`;
 
   // tell the browser to perform anim
   window.requestAnimationFrame(render);
@@ -108,6 +135,6 @@ setup();
 img.onload = render;
 
 // start game
-document.addEventListener('click', () => gamePlaying = true);
-window.onclick = () => flight = jump;
+canvas.addEventListener('click', () => gamePlaying = true);
+canvas.onclick = () => flight = jump;
 

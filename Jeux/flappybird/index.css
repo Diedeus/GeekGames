@@ -24,21 +24,38 @@ section.container_header header .score-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 6px;
-  background: #5EE270;
+  padding: 8px 8px 8px 15px;
+  background: #1699b7;
+}
+section.container_header header .score-container div#bestScore {
+  font-size: 13px;
+  letter-spacing: 0px;
+  color: white;
+}
+section.container_header header .score-container div#currentScore {
+  font-size: 13px;
+  letter-spacing: 0px;
+  color: white;
 }
 section.container_header header .score-container input.subscorefb {
   font-family: 'Press Start 2P', cursive;
+  color: white;
   font-size: 8px;
   text-indent: 0;
   margin-bottom: 0;
-  background-color: #46b054;
+  background-color: #14829a;
   transition: all 0.5s;
+  cursor: pointer;
 }
 section.container_header header .score-container input.subscorefb:hover {
-  background-color: #3e994a;
+  background-color: #116e83;
 }
 canvas {
   margin-top: -46px;
-  
+}
+#myImage {
+  display: none;
+}
+#myImage2 {
+  display: none;
 }

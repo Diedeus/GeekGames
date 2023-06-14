@@ -38,7 +38,7 @@ if(isset($_SESSION['id_users'])){
   if(mysqli_num_rows($result) === 1){
     $row = mysqli_fetch_assoc($result);
     $scoreMax = $row['Max_score'];
-    echo '<div id="bestScore"> Le Best : ' . $scoreMax . '</div>';
+    echo '<div id="bestScore"> Best: ' . $scoreMax . '</div>';
   }
 
 
@@ -49,7 +49,7 @@ if(isset($_SESSION['id_users'])){
 
       <form method="POST">
         <input type="hidden" name="scoreFbirds" id="inpCache" value="">
-        <input class="subscorefb" type="submit" value="Enregistrer le score">
+        <input class="subscorefb" type="submit" value="Enregistrer score">
       </form>
 
       <?php 
@@ -73,6 +73,8 @@ if(isset($_SESSION['id_users'])){
   </section>
 
   <canvas id="canvas" width="431" height="768"></canvas>
+  <img id="myImage" src="./asset/logoflappyb.png" alt="">
+  <img id="myImage2" src="./asset/btnplay.png" alt="">
   <script src="index.js"></script>
   <div class="navinscri">
         <nav class="home">
