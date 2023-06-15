@@ -362,55 +362,6 @@ body section.container_update7diff div.form7diff form input.ajoutimg7diff {
 body section.container_update7diff div.form7diff form input.ajoutimg7diff:hover {
   background-color: #241a5a;
 }
-body section.container_update7diff section.container_corps7diff h1 {
-  margin-left: 40px;
-  color: white;
-  margin-bottom: 20px;
-  font-size: 23px;
-}
-body section.container_update7diff section.container_corps7diff div.corps7diff {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-body section.container_update7diff section.container_corps7diff div.corps7diff div.Element7diff {
-  width: 25%;
-  padding: 0 40px;
-  margin-bottom: 40px;
-}
-body section.container_update7diff section.container_corps7diff div.corps7diff div.Element7diff article.image7diff {
-  display: flex;
-}
-body section.container_update7diff section.container_corps7diff div.corps7diff div.Element7diff article.image7diff img {
-  width: 50%;
-  margin-bottom: 5px;
-}
-body section.container_update7diff section.container_corps7diff div.corps7diff div.Element7diff p {
-  color: white;
-  margin-bottom: 5px;
-}
-body section.container_update7diff section.container_corps7diff div.corps7diff div.Element7diff div.Btn7diff button {
-  width: 100%;
-  border: 0;
-  height: 40px;
-  cursor: pointer;
-  transition: all 0.5s;
-}
-body section.container_update7diff section.container_corps7diff div.corps7diff div.Element7diff div.Btn7diff button:hover {
-  background-color: #dddddd;
-}
-body section.container_update7diff section.container_corps7diff div.corps7diff div.Element7diff div.Btn7diff form input {
-  text-indent: 0;
-}
-body section.container_update7diff section.container_corps7diff div.corps7diff div.Element7diff div.Btn7diff form input.confsupp7diff {
-  display: none;
-  transition: all 0.5s;
-  cursor: pointer;
-  height: 40px;
-}
-body section.container_update7diff section.container_corps7diff div.corps7diff div.Element7diff div.Btn7diff form input.confsupp7diff:hover {
-  background-color: #dddddd;
-}
 body section.container_updatejusteprix {
   display: none;
   padding-top: 50px;

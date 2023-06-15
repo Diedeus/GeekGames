@@ -594,7 +594,6 @@
       $url1 = $_SESSION['url1'];
       $url2 = $_SESSION['url2'];
         if(isset($url1)){
-          var_dump($url1)
           ?>
           <script>
             let urlImg = "<?php echo $url1; ?>"

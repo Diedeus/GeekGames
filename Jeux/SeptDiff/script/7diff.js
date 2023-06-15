@@ -1,3 +1,5 @@
+const body = document.querySelector('body')
+
 const contpresentationSection = document.createElement("section");
 contpresentationSection.className = "container_presentation";
 contpresentationSection.style.width="50%";
@@ -666,6 +668,8 @@ fetch("/Jeux/SeptDiff/Asset/7diff.json")
           });
 
           btn2.addEventListener("click", function () {
+            body.style.backgroundImage="url(./Asset/back.png)"
+            body.style.backgroundColor="black"
             contpresentationSection.style.display = "none";
             contprezImg.style.display = "none";
             contjeu7diff.style.display = "flex";
