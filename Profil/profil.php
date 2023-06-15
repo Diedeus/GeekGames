@@ -341,6 +341,14 @@
             $stmt->bind_param("i", $idUtilisateur);
             $stmt->execute();
 
+            $stmt = $conn->prepare("DELETE FROM score_fbirds WHERE id_users = ?");
+            $stmt->bind_param("i", $idUtilisateur);
+            $stmt->execute();
+
+            $stmt = $conn->prepare("DELETE FROM score_7diff WHERE id_users = ?");
+            $stmt->bind_param("i", $idUtilisateur);
+            $stmt->execute();
+
             // Suppression des enregistrements liés dans la table `score_jprix`
             $stmt = $conn->prepare("DELETE FROM score_jprix WHERE id_users = ?");
             $stmt->bind_param("i", $idUtilisateur);

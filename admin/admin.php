@@ -148,10 +148,16 @@
           $id_userssup = stripslashes($_REQUEST["id_userssup"]);
           $id_userssup = mysqli_real_escape_string($conn, $id_userssup);
 
-          $query = "DELETE FROM `users`  WHERE id_users = $id_userssup";
-
-          //todo on exécute une requête de suppression sur la base de données, On supprime la ligne correspondant à l'ID de la question spécifié dans le champ de texte.
-          $reponse10 = mysqli_query($conn, $query);
+          $query100 = "DELETE FROM score_quizz WHERE id_users = $id_userssup";
+          $reponse100 = mysqli_query($conn, $query100) ;
+          $query101 = "DELETE FROM score_fbirds WHERE id_users = $id_userssup";
+          $reponse101 = mysqli_query($conn, $query101) ;
+          $query102 = "DELETE FROM score_7diff WHERE id_users = $id_userssup";
+          $reponse102 = mysqli_query($conn, $query102) ;
+          $query103 = "DELETE FROM score_jprix WHERE id_users = $id_userssup";
+          $reponse103 = mysqli_query($conn, $query103) ;
+          $query104 = "DELETE FROM users WHERE id_users = $id_userssup";
+          $reponse104 = mysqli_query($conn, $query104) ;
         }
         ?>
         <!-- Fin du formulaire de suppression -->
