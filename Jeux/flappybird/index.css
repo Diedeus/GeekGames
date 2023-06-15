@@ -11,6 +11,7 @@ body {
   font-family: 'Press Start 2P', cursive;
   user-select: none;
   background-color: #393795;
+  background-image: url(asset/backfb.jpg);
 }
 section.container_header {
   position: relative;
@@ -21,8 +22,9 @@ section.container_header header {
   width: 431px;
 }
 section.container_header header .score-container {
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 8px 8px 8px 15px;
   background: #1699b7;
@@ -33,9 +35,13 @@ section.container_header header .score-container div#bestScore {
   color: white;
 }
 section.container_header header .score-container div#currentScore {
-  font-size: 13px;
+  font-size: 25px;
   letter-spacing: 0px;
   color: white;
+  position: absolute;
+  z-index: 10000;
+  top: 120px;
+  left: 200px;
 }
 section.container_header header .score-container input.subscorefb {
   font-family: 'Press Start 2P', cursive;
@@ -44,6 +50,7 @@ section.container_header header .score-container input.subscorefb {
   text-indent: 0;
   margin-bottom: 0;
   background-color: #14829a;
+  padding: 0 20px;
   transition: all 0.5s;
   cursor: pointer;
 }

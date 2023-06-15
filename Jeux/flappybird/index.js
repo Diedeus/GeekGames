@@ -86,19 +86,22 @@ const render = () => {
     flyHeight = (canvas.height / 2) - (size[1] / 2);
       // text accueil
       var text = "Votre score :";
-var textWidth = ctx.measureText(text).width;
-var centerX = canvas.width / 2 - textWidth / 2;
-ctx.fillText(text, centerX, 560);
-    ctx.font = "bold 15px 'Press Start 2P'";
-    ctx.save(); // Enregistrez l'état du contexte actuel
-
-ctx.font = "bold 25px 'Press Start 2P'"; // Augmentez la taille de la police à 20px pour bestScore
-var scoreText = ctx.measureText(bestScore);
-var scoreX = canvas.width / 2 - scoreText.width / 2; // Calcul de la position horizontale centrée
-
-ctx.fillText(bestScore, scoreX, 600);
-
-ctx.restore();
+      var textWidth = ctx.measureText(text).width;
+      var centerX = canvas.width / 2 - textWidth / 2;
+      
+      ctx.fillStyle = "white"; // Définir la couleur du texte sur blanc
+      ctx.fillText(text, centerX, 560);
+      
+      ctx.font = "bold 12px 'Press Start 2P'";
+      ctx.save(); // Enregistrer l'état actuel du contexte
+      
+      ctx.font = "bold 20px 'Press Start 2P'"; // Augmenter la taille de la police à 20px pour bestScore
+      var scoreText = ctx.measureText(bestScore);
+      var scoreX = canvas.width / 2 - scoreText.width / 2; // Calculer la position horizontale centrée
+      
+      ctx.fillText(bestScore, scoreX, 590);
+      
+      ctx.restore();
     // ctx.fillStyle = "white";
 
         // Récupérez la référence à l'élément de l'image
@@ -121,11 +124,7 @@ ctx.restore();
 
  
   }
-
-  
-  // document.getElementById('bestScore').innerHTML = `Le Best : ${bestScore}`;
-  document.getElementById('currentScore').innerHTML = `Actuel: ${currentScore}`;
-
+  document.getElementById('currentScore').innerHTML = `${currentScore}`;
   // tell the browser to perform anim
   window.requestAnimationFrame(render);
 }
