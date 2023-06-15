@@ -135,7 +135,7 @@
 
         <form class="box" action="" method="post" name="users">
           <h2 class="box-title">Suppression des utilisateurs</h2>
-          <input type="text" class="box-input" name="id_userssup" placeholder="Quelle ligne est à supprimer">
+          <input type="text" class="box-input" name="id_userssup" pattern="^[0-9]+$" title="veuillez rensigner l'id de l'utilisateur à supprimer" placeholder="Quelle ligne est à supprimer">
           <input class="update-delete" type="submit" value="Supprimer la question" name="submit" class="connecter">
         </form>
 
@@ -215,7 +215,7 @@
       // Affichage du formulaire pour sélectionner une question à modifier
       echo '<form class="box" action="" method="post" name="users">';
       echo '<h2 class="box-title">Choisir un Utilisateur à mettre à jour</h2>';
-      echo '<input type="text" class="box-input" name="id_users2" placeholder="Quelle ligne est à mettre à jour">';
+      echo '<input type="text" class="box-input" name="id_users2" pattern="^[0-9]+$" title="Veuillez renseigner l\'id de l\'utilisateur à modifier" placeholder="Quelle ligne est à mettre à jour">';
       echo '<input class="id_question" type="submit" value="Sélectionnez" name="submit" class="connecter">';
       echo '</form>';
 
@@ -323,8 +323,8 @@
           <input type="text" class="box-reponse" name="Reponse_C" placeholder="Reponse C">
           <input type="text" class="box-reponse" name="Reponse_D" placeholder="Reponse D">
           <input type="text" class="box-reponse" name="Reponse_Quizz" placeholder="Reponse">
-          <input type="text" class="box-reponse" name="Difficulte_question" placeholder="Qu'elle est la difficulte">
-          <input class="update-delete" type="submit" value="Creer la question" pattern="^[123]$" class="connecter">
+          <input type="text" class="box-reponse" name="Difficulte_question"  pattern="^[123]$" placeholder="Qu'elle est la difficulte">
+          <input class="update-delete" type="submit" value="Creer la question" class="connecter">
           <?php if (!empty($message)) { ?>
             <p class="errorMessage"><?php echo $message; ?></p>
           <?php } ?>
@@ -382,7 +382,7 @@
         <!-- Formulaire pour supprimer les questions -->
         <form class="box" action="" method="post" name="Jeu_Quizz">
           <h2 class="box-title">Suppression des questions</h2>
-          <input type="text" class="box-input" name="id_question" placeholder="Quelle ligne est à supprimer">
+          <input type="text" class="box-input" name="id_question" pattern="^[0-9]+$" title="Veuillez renseigner l'id de la question à supprimer" placeholder="Quelle ligne est à supprimer">
           <input class="update-delete" type="submit" value="Supprimer la question" name="submit" class="connecter">
         </form>
 
@@ -468,7 +468,7 @@
       // Affichage du formulaire pour sélectionner une question à modifier
       echo '<form class="box" action="" method="post" name="Jeu_Quizz">';
       echo '<h2 class="box-title">Choisir une question à mettre à jour</h2>';
-      echo '<input type="text" class="box-input" name="id_question2" placeholder="Quelle ligne est à mettre à jour">';
+      echo '<input type="text" class="box-input" name="id_question2" pattern="^[0-9]+$" title="Veuillez renseigner l\'id de la question que vous souhaitez modifier" placeholder="Quelle ligne est à mettre à jour">';
       echo '<input class="id_question" type="submit" value="Sélectionnez" name="submit" class="connecter">';
       echo '</form>';
 
@@ -630,7 +630,7 @@
         <h1>Update juste prix</h1>
         <label for="photo">image du produit</label>
         <input type="file" name="photo">
-        <input class="textprix" type="text" name="prix" placeholder="Prix du produit">
+        <input class="textprix" type="text" name="prix" pattern="^[0-9]+$" title="Renseignez le prix de l\'objet." placeholder="Prix du produit">
         <input class="ajoutimgjprix" type="submit">
       </form>
     </div>
@@ -684,7 +684,7 @@
             </form>
 
             <form action="#" method="post">
-              <input type="text" class="modprix" name="modprix" placeholder="Prix du produit">
+              <input type="text" class="modprix" name="modprix" pattern="^[0-9]+$" title="Veuillez renseigner le prix modifié de l'objet" placeholder="Prix du produit">
               <input type="hidden" class="fcupp" name="fcupp" value="">
               <input type="submit" class="modbtn2" value="Mettre à jour">
 

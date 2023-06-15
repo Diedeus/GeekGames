@@ -37,7 +37,7 @@
         ?>
         <form class="box" action="" method="post" name="login">
             <h2 class="box-title">CONNEXION</h2>
-            <input type="text" class="box-input" name="Nom_utilisateur" placeholder="Nom d'utilisateur">
+            <input type="text" class="box-input" name="Nom_utilisateur" pattern="^[a-zA-Z0-9]+$" placeholder="Nom d'utilisateur">
             <input type="password" class="passwordinput" name="Mot_de_passe" placeholder="Mot de passe">
             <p class="mdpoublie">Mot de passe oublié ?</p>
             <input type="submit" value="Se connecter" name="submit" class="connecter">

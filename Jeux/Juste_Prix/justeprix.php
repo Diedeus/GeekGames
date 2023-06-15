@@ -51,7 +51,7 @@ if(!isset($_SESSION['id_users'])){
             </script>
 
             <h1>Le Juste Prix</h1>
-            <input type="number" id="prix" placeholder="Proposez votre prix :">
+            <input type="number" id="prix" pattern="^[0-9]+$" placeholder="Proposez votre prix :">
             <button type="submit" id="btt">Vérifier</button>
             <p>Nombre de tentatives : </p>
             <p class="affichscore"></p>
